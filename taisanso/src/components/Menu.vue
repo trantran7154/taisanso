@@ -5,6 +5,7 @@
             <v-btn text>
                 Trang chủ
             </v-btn>
+            
             <v-menu transition="scale-transition" :close-on-content-click="false" :nudge-width="1500" offset-y>
                 <template v-slot:activator="{ on, attrs }">
                     <v-btn text v-bind="attrs" v-on="on">
@@ -45,6 +46,7 @@
                     </v-tabs>
                 </v-card>
             </v-menu>
+
             <v-menu transition="scale-transition" offset-y>
                 <template v-slot:activator="{ on, attrs }">
                     <v-btn text v-bind="attrs" v-on="on">
@@ -57,9 +59,11 @@
                     </v-list-item>
                 </v-list>
             </v-menu>
+
             <v-btn text>
                 Hỗ trợ
             </v-btn>
+
             <v-btn text>
                 Blog
             </v-btn>
