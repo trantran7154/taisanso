@@ -34,7 +34,7 @@
                         <v-tab-item class="pa-3" v-for="items in itemTab" :key="items">
                             <div style="color: #1976d2">Dịch vụ chính</div>
                             <v-row>
-                                <v-col cols="3" v-for="item1 in items.subTab" :key="item1">
+                                <v-col cols="12" v-for="item1 in items.subTab" :key="item1">
                                     <div class="mt-3 ml-3">
                                         <v-icon>{{ item1.subIcon }}</v-icon> <a>{{ item1.subTitle }}</a>
                                         <br>
