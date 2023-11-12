@@ -16,8 +16,8 @@
         <v-toolbar>
             <v-img max-height="40" max-width="170" src="../img/logo.jpg"  style="float: left;"></v-img>
             <v-spacer></v-spacer>
-            <v-icon class="ma-2">mdi-magnify</v-icon>
-            <v-icon @click="drawer = true" class="ma-2">mdi-menu</v-icon>
+            <v-icon class="ma-2 d-flex d-sm-none">mdi-magnify</v-icon>
+            <v-icon @click="drawer = true" class="ma-2 d-flex d-sm-none" size="30">mdi-menu</v-icon>
         </v-toolbar>
         <v-toolbar class="d-none d-sm-flex" screen and above style="position:fixed; z-index: 10; padding: 4px 130px">
             <v-toolbar-title> <v-img max-height="50" max-width="200" src="../img/logo.jpg"></v-img></v-toolbar-title>
