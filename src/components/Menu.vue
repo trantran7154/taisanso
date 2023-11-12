@@ -180,16 +180,16 @@ export default Vue.extend({
         }
     },
     methods: {
-        close() {
-            this.items.forEach(item => {
-                if (item.active) {
-                    _.delay(function () {
-                        item.active = false
-                    }, 300)
-                    return false
-                }
-            })
-        }
+        // close() {
+        //     this.items.forEach(item => {
+        //         if (item.active) {
+        //             _.delay(function () {
+        //                 item.active = false
+        //             }, 300)
+        //             return false
+        //         }
+        //     })
+        // }
     }
 })
 </script>
