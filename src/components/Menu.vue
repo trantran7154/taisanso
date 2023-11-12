@@ -3,7 +3,7 @@
         <v-row no-gutters style="flex-wrap: nowrap;" @click="drawer = true" class="d-flex d-sm-none pa-1">
             <v-col cols="3" class="flex-grow-0 flex-shrink-0">
                 <div class="pa-2" tile>
-                    <v-icon size="45">mdi-menu</v-icon>
+                    <v-icon size="42">mdi-menu</v-icon>
                 </div>
             </v-col>
             <v-col cols="9" style="min-width: 100px;" class="flex-grow-0 flex-shrink-1">
