@@ -56,12 +56,6 @@
                             <v-btn text v-bind="attrs" v-on="on">
                                 Dịch vụ
                             </v-btn>
-                            <v-btn text>
-                                Hỗ trợ
-                            </v-btn>
-                            <v-btn text>
-                                Blog
-                            </v-btn>
                         </template>
                         <v-list>
                             <v-list-item v-for="(item, index) in itemService" :key="index">
@@ -69,7 +63,13 @@
                                 }}</a></v-list-item-title>
                             </v-list-item>
                         </v-list>
-                    </v-menu>
+                    </v-menu>         
+                    <v-btn text>
+                                Hỗ trợ
+                            </v-btn>
+                            <v-btn text>
+                                Blog
+                            </v-btn>
                 </v-toolbar-items>
                 | <v-btn icon>
                     <v-icon>mdi-magnify</v-icon>
