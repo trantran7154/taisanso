@@ -1,79 +1,109 @@
 <template>
-    <v-toolbar>
-        <v-toolbar-title> <v-img max-height="50" max-width="200" src="../img/logo.jpg"></v-img></v-toolbar-title>
-        <v-toolbar-items>
-            <v-btn text>
-                Trang chủ
-            </v-btn>
-            
-            <v-menu transition="scale-transition" :close-on-content-click="false" :nudge-width="1500" offset-y>
-                <template v-slot:activator="{ on, attrs }">
-                    <v-btn text v-bind="attrs" v-on="on">
-                        Sản phẩm
-                    </v-btn>
-                </template>
-                <v-card>
-                    <v-tabs vertical>
-                        <v-tab v-for="item in itemTab" :key="item" class="tab text-left">
-                            <v-row>
-                                <v-col>
-                                    <v-icon left class="mt-3">
-                                        {{ item.icon }}
-                                    </v-icon>
-                                </v-col>
-                                <v-col>
-                                    <div class="mt-2">
-                                        {{ item.title }}
-                                        <br />
-                                        <small mt-3 style="color: darkgray !important;"> {{ item.description }}</small>
-                                    </div>
-                                </v-col>
-                            </v-row>
-                        </v-tab>
+    <v-app app>
+        <v-app-bar app>
+            <v-app-bar-nav-icon @click="drawer = true" class="d-flex d-sm-none"></v-app-bar-nav-icon>
+            <v-img max-height="50" max-width="200" src="../img/logo.jpg"></v-img>
+            <template>
+                <v-toolbar>
+                    <v-toolbar-items>
+                        <v-btn text>
+                            Trang chủ
+                        </v-btn>
 
-                        <v-tab-item class="pa-3" v-for="items in itemTab" :key="items">
-                            <div style="color: #1976d2">Dịch vụ chính</div>
-                            <v-row>
-                                <v-col md="3" cols="12" v-for="item1 in items.subTab" :key="item1">
-                                    <div class="mt-3 ml-3">
-                                        <v-icon>{{ item1.subIcon }}</v-icon> <a>{{ item1.subTitle }}</a>
-                                        <br>
-                                        <small style="color: darkgray !important;"> {{ item1.subDescription }}</small>
-                                    </div>
-                                </v-col>
-                            </v-row>
-                        </v-tab-item>
-                    </v-tabs>
-                </v-card>
-            </v-menu>
+                        <v-menu class="dropdown" open-on-hover offset-y>
+                            <template v-slot:activator="{ on, attrs }">
+                                <v-btn text v-bind="attrs" v-on="on">
+                                    Sản phẩm
+                                </v-btn>
+                            </template>
+                            <v-card max-width="1000">
+                                <v-tabs vertical>
+                                    <v-tab v-for="item in itemTab" :key="item" class="tab text-left">
+                                        <v-row>
+                                            <v-col>
+                                                <v-icon left class="mt-3">
+                                                    {{ item.icon }}
+                                                </v-icon>
+                                            </v-col>
+                                            <v-col>
+                                                <div class="mt-2">
+                                                    {{ item.title }}
+                                                    <br />
+                                                    <small mt-3 style="color: darkgray !important;"> {{ item.description
+                                                    }}</small>
+                                                </div>
+                                            </v-col>
+                                        </v-row>
+                                    </v-tab>
 
-            <v-menu transition="scale-transition" offset-y>
-                <template v-slot:activator="{ on, attrs }">
-                    <v-btn text v-bind="attrs" v-on="on">
-                        Dịch vụ
+                                    <v-tab-item class="pa-3" v-for="items in itemTab" :key="items">
+                                        <div style="color: #1976d2">Dịch vụ chính</div>
+                                        <v-row>
+                                            <v-col md="3" cols="12" v-for="item1 in items.subTab" :key="item1">
+                                                <div class="mt-3 ml-3">
+                                                    <v-icon>{{ item1.subIcon }}</v-icon> <a>{{ item1.subTitle }}</a>
+                                                    <br>
+                                                    <small style="color: darkgray !important;"> {{ item1.subDescription
+                                                    }}</small>
+                                                </div>
+                                            </v-col>
+                                        </v-row>
+                                    </v-tab-item>
+                                </v-tabs>
+                            </v-card>
+                        </v-menu>
+
+                        <v-menu class="dropdown" open-on-hover offset-y>
+                            <template v-slot:activator="{ on, attrs }">
+                                <v-btn text v-bind="attrs" v-on="on">
+                                    Dịch vụ
+                                </v-btn>
+                            </template>
+                            <v-list>
+                                <v-list-item v-for="(item, index) in itemService" :key="index">
+                                    <v-list-item-title><v-icon>{{ item.icon }}</v-icon> <a>{{ item.title
+                                    }}</a></v-list-item-title>
+                                </v-list-item>
+                            </v-list>
+                        </v-menu>
+
+                        <v-btn text>
+                            Hỗ trợ
+                        </v-btn>
+
+                        <v-btn text>
+                            Blog
+                        </v-btn>
+                    </v-toolbar-items>
+                    | <v-btn icon>
+                        <v-icon>mdi-magnify</v-icon>
                     </v-btn>
-                </template>
-                <v-list>
-                    <v-list-item v-for="(item, index) in itemService" :key="index">
-                        <v-list-item-title><v-icon>{{ item.icon }}</v-icon> <a>{{ item.title }}</a></v-list-item-title>
+                </v-toolbar>
+            </template>
+            <v-spacer></v-spacer>
+            <v-icon>mdi-phone</v-icon> <b class="red--text ml-2">0123456789</b>
+        </v-app-bar>
+        <!-- Add a navigation bar -->
+        <v-navigation-drawer v-model="drawer" absolute temporary>
+            <v-list nav dense>
+                <v-list-item-group>
+                    <v-list-item :v-for="item in items">
+                        <v-list-item-title @click="tab = index">{{ item }}</v-list-item-title>
                     </v-list-item>
-                </v-list>
-            </v-menu>
 
-            <v-btn text>
-                Hỗ trợ
-            </v-btn>
+                </v-list-item-group>
+            </v-list>
+        </v-navigation-drawer>
 
-            <v-btn text>
-                Blog
-            </v-btn>
-        </v-toolbar-items>
-        | <v-btn icon>
-            <v-icon>mdi-magnify</v-icon>
-        </v-btn>
-        <v-spacer></v-spacer>
-        <v-icon>mdi-phone</v-icon> <b class="red--text ml-2">0123456789</b>
-    </v-toolbar>
+        <!-- Navigation bar ends -->
+        <v-content class="ma-5">
+            <v-tabs-items v-model="tab" class="d-flex flex-column align-center">
+                <v-tab-item v-for="item in items" :key="item">
+                    You are on {{ item }}
+                </v-tab-item>
+            </v-tabs-items>
+        </v-content>
+    </v-app>
 </template>
 
 <script lang="ts">
@@ -89,6 +119,13 @@ export default Vue.extend({
         return {
             menu: false,
             selectedItem: 1,
+            active: false,
+            isShow: false,
+            drawer: false,
+            tab: null,
+            items: [
+                'web', 'shopping', 'videos', 'images', 'news',
+            ],
             itemTab: [
                 {
                     title: 'Email', icon: 'mdi-email', description: 'Kinh doanh với Email',
@@ -125,10 +162,15 @@ export default Vue.extend({
                 },
             ],
             itemService: [
-                { title: 'Làm phần mềm', icon:'mdi-xml' },
-                { title: 'Blockchain', icon:'mdi-hand-coin-outline' },
-                { title: 'Tăng tương tác', icon:'mdi-arrow-up' },
+                { title: 'Làm phần mềm', icon: 'mdi-xml' },
+                { title: 'Blockchain', icon: 'mdi-hand-coin-outline' },
+                { title: 'Tăng tương tác', icon: 'mdi-arrow-up' },
             ]
+        }
+    },
+    methods: {
+        mouseOver: function () {
+            this.active = !this.active;
         }
     }
 })
@@ -154,5 +196,17 @@ export default Vue.extend({
 
 .v-tabs--vertical>.v-tabs-bar .v-tab {
     height: 54px;
+}
+
+.v-sheet.v-app-bar.v-toolbar:not(.v-sheet--outlined) {
+    box-shadow: none;
+}
+
+.theme--light.v-app-bar.v-toolbar.v-sheet {
+    background-color: white;
+}
+
+.v-sheet.v-toolbar:not(.v-sheet--outlined) {
+    box-shadow: none;
 }
 </style>
