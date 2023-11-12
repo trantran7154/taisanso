@@ -1,17 +1,24 @@
 <template>
     <v-app app>
-        <v-row no-gutters style="flex-wrap: nowrap;" @click="drawer = true" class="d-flex d-sm-none pa-1">
+        <!-- <v-row no-gutters style="flex-wrap: nowrap;" @click="drawer = true" class="d-flex d-sm-none pa-1">
             <v-col cols="3" class="flex-grow-0 flex-shrink-0">
                 <div class="pa-2" tile>
                     <v-icon size="42">mdi-menu</v-icon>
                 </div>
             </v-col>
+            <v-spacer></v-spacer>
             <v-col cols="9" style="min-width: 100px;" class="flex-grow-0 flex-shrink-1">
                 <div class="pa-2" tile>
                     <v-img max-height="40" max-width="200" src="../img/logo.jpg"></v-img>
                 </div>
             </v-col>
-        </v-row>
+        </v-row> -->
+        <v-toolbar>
+            <v-img max-height="40" max-width="170" src="../img/logo.jpg"  style="float: left;"></v-img>
+            <v-spacer></v-spacer>
+            <v-icon class="ma-2">mdi-magnify</v-icon>
+            <v-icon @click="drawer = true" class="ma-2">mdi-menu</v-icon>
+        </v-toolbar>
         <v-toolbar class="d-none d-sm-flex" screen and above style="position:fixed; z-index: 10; padding: 4px 130px">
             <v-toolbar-title> <v-img max-height="50" max-width="200" src="../img/logo.jpg"></v-img></v-toolbar-title>
             <v-toolbar-items>
@@ -84,7 +91,7 @@
             | <v-btn icon>
                 <v-icon>mdi-magnify</v-icon>
             </v-btn>
-           <span class="ml-9"> <v-icon>mdi-phone</v-icon> <b class="red--text">0123456789</b></span>
+            <span class="ml-9"> <v-icon>mdi-phone</v-icon> <b class="red--text">0123456789</b></span>
         </v-toolbar>
         <!-- Responsive -->
         <v-navigation-drawer v-model="drawer" absolute temporary>
