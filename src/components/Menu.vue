@@ -147,16 +147,19 @@
                                 </v-list-item-content>
                             </template>
                             <v-list-item link>
-                                <v-row>
-                                    <v-col md="12" cols="12" v-for="item1 in item.subTab" :key="item1">
-                                        <div class="mt-3 ml-3">
-                                            <v-icon>{{ item1.subIcon }}</v-icon> <a>{{ item1.subTitle }}</a>
-                                            <br>
-                                            <small style="color: darkgray !important;"> {{ item1.subDescription
-                                            }}</small>
-                                        </div>
-                                    </v-col>
-                                </v-row>
+                                <div class="mt-5">
+                                    <b class="ml-5">Dịch vụ chính</b>
+                                    <v-row class="ma-0">
+                                        <v-col cols="12" md="12" v-for="item1 in item.subTab" :key="item1">
+                                            <div class="ml-6">
+                                                <v-icon>{{ item1.subIcon }}</v-icon> <a>{{ item1.subTitle }}</a>
+                                                <br>
+                                                <small style="color: darkgray !important;"> {{ item1.subDescription
+                                                }}</small>
+                                            </div>
+                                        </v-col>
+                                    </v-row>
+                                </div>
                             </v-list-item>
                         </v-list-group>
                     </v-list-group>
@@ -310,14 +313,18 @@ export default Vue.extend({
     position: relative;
 }
 
+.v-application--is-ltr .v-list-group--no-action>.v-list-group__items>.v-list-item {
+    padding-left: 39px;
+}
+
 .wrap {
-  height: 200px;
-  width: 200px;
-  margin: 10px;
-  display: flex;
+    height: 200px;
+    width: 200px;
+    margin: 10px;
+    display: flex;
 }
 
 .wrap span {
-  align-self: flex-end;
+    align-self: flex-end;
 }
 </style>
