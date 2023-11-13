@@ -4,17 +4,20 @@
     <v-main>
       <router-view :size="size" />
     </v-main>
+    <Footer/>
   </v-app>
 </template>
 
 <script>
 import Vue from "vue";
 import Menu from "./components/Menu.vue";
+import Footer from "./components/Footer.vue";
 
 export default Vue.extend({
   name: "App",
   components: {
     Menu,
+    Footer,
   },
   data: () => ({
     size: {
