@@ -83,13 +83,26 @@
                 <span class="ml-9"> <v-icon>mdi-phone</v-icon> <b class="red--text">0123456789</b></span>
             </v-toolbar>
             <!-- Responsive -->
-            <v-navigation-drawer v-model="drawer" absolute
+            <!-- <v-navigation-drawer v-model="drawer" absolute
                 style="position: fixed; top: 0; z-index: 10; min-height: 0vh !important;">
                 <v-list nav dense>
                     <v-list-item-group>
                         <v-list-item>
                             <v-list-item-title>Trang chủ</v-list-item-title>
                         </v-list-item>
+                        <v-list-item-title>
+                                <v-list-group value="true">
+                                    <template v-slot:activator>
+                                        <v-list-tile-title> Sản phẩm</v-list-tile-title>
+                                    </template>
+                                    <v-list-item>
+                                        <v-list-item-title>Trang chủ</v-list-item-title>
+                                    </v-list-item>
+                                    <v-list-item>
+                                        <v-list-item-title>Trang chủ</v-list-item-title>
+                                    </v-list-item>
+                                </v-list-group>
+                            </v-list-item-title>
                         <v-list-item>
                             <v-list-item-title>Dịch vụ</v-list-item-title>
                         </v-list-item>
@@ -105,6 +118,88 @@
                             <v-icon>mdi-phone</v-icon> <b class="red--text ml-2">0123456789</b>
                         </v-list-item>
                     </v-list-item-group>
+                </v-list>
+            </v-navigation-drawer> -->
+            <v-navigation-drawer v-model="drawer" absolute
+                style="position: fixed; top: 0; z-index: 10; min-height: 0vh !important;">
+                <v-list>
+                    <v-list-item>
+                        <v-list-item-icon>
+                            <v-icon>mdi-home</v-icon>
+                        </v-list-item-icon>
+                        <v-list-item-title>Trang chủ</v-list-item-title>
+                    </v-list-item>
+
+                    <v-list-group prepend-icon="mdi mdi-archive">
+                        <template v-slot:activator>
+                            <v-list-item-title>Sản phẩm</v-list-item-title>
+                        </template>
+
+                        <v-list-group no-action sub-group v-for="item in itemTab" :key="item">
+                            <template v-slot:activator>
+                                <v-list-item-content>
+                                    <v-list-item-title><v-icon>{{ item.icon }}</v-icon> {{ item.title }}
+                                        <br />
+                                        <small mt-3 style="color: darkgray !important;">
+                                            {{ item.description }}
+                                        </small>
+                                    </v-list-item-title>
+                                </v-list-item-content>
+                            </template>
+                            <v-list-item link>
+                                <div class="mt-5">
+                                    <b class="ml-5">Dịch vụ chính</b>
+                                    <v-row class="ma-0">
+                                        <v-col cols="12" md="12" v-for="item1 in item.subTab" :key="item1">
+                                            <div class="ml-6">
+                                                <v-icon>{{ item1.subIcon }}</v-icon> <a>{{ item1.subTitle }}</a>
+                                                <br>
+                                                <small style="color: darkgray !important;"> {{ item1.subDescription
+                                                }}</small>
+                                            </div>
+                                        </v-col>
+                                    </v-row>
+                                </div>
+                            </v-list-item>
+                        </v-list-group>
+                    </v-list-group>
+
+                    <v-list-group prepend-icon="mdi mdi-store-cog" no-action>
+                        <template v-slot:activator>
+                            <v-list-item-title>Dịch vụ</v-list-item-title>
+                        </template>
+
+                        <v-list-item v-for="(item, index) in itemService" :key="index">
+                            <v-list-item-icon>
+                                <v-icon>{{ item.icon }}</v-icon>
+                            </v-list-item-icon>
+                            <v-list-item-title>{{ item.title }}</v-list-item-title>
+                        </v-list-item>
+                    </v-list-group>
+
+                    <v-list-item>
+                        <v-list-item-icon>
+                            <v-icon>mdi mdi-face-agent</v-icon>
+                        </v-list-item-icon>
+                        <v-list-item-title>Hỗ trợ</v-list-item-title>
+                    </v-list-item>
+
+                    <v-list-item>
+                        <v-list-item-icon>
+                            <v-icon>mdi-book-edit</v-icon>
+                        </v-list-item-icon>
+                        <v-list-item-title>Blog</v-list-item-title>
+                    </v-list-item>
+
+                    <v-list-item class="mt-2">
+                        <v-text-field append-icon="mdi-magnify" label="Tìm kiếm" outlined dense></v-text-field>
+                    </v-list-item>
+
+                    <v-list-item>
+                        <div class="wrap">
+                            <span><v-icon>mdi-phone</v-icon> <b class="red--text ml-2">0123456789</b></span>
+                        </div>
+                    </v-list-item>
                 </v-list>
             </v-navigation-drawer>
             <!-- Responsive -->
@@ -128,6 +223,16 @@ export default Vue.extend({
             drawer: false,
             product: false,
             tab: null,
+            admins: [
+                ['Management', 'people_outline'],
+                ['Settings', 'settings']
+            ],
+            cruds: [
+                ['Create', 'add'],
+                ['Read', 'insert_drive_file'],
+                ['Update', 'update'],
+                ['Delete', 'delete']
+            ],
             itemTab: [
                 {
                     title: 'Email', icon: 'mdi-email', description: 'Kinh doanh với Email',
@@ -176,16 +281,6 @@ export default Vue.extend({
 </script>
 
 <style scoped>
-.taisanso .v-application--wrap {
-    flex: 1 1 auto !important;
-    backface-visibility: hidden !important;
-    display: flex !important;
-    flex-direction: column !important;
-    min-height: 0vh !important;
-    max-width: 100% !important;
-    position: relative !important;
-}
-
 .tab {
     text-transform: none;
     margin-right: auto;
@@ -216,5 +311,20 @@ export default Vue.extend({
     /* min-height: 100vh; */
     max-width: 100%;
     position: relative;
+}
+
+.v-application--is-ltr .v-list-group--no-action>.v-list-group__items>.v-list-item {
+    padding-left: 39px;
+}
+
+.wrap {
+    height: 200px;
+    width: 200px;
+    margin: 10px;
+    display: flex;
+}
+
+.wrap span {
+    align-self: flex-end;
 }
 </style>
