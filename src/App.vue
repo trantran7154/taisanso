@@ -71,4 +71,8 @@ export default Vue.extend({
   font-family: montserrat;
   font-size: 18px;
 }
+
+.v-application--wrap {
+    min-height: 0vh !important;
+}
 </style>
