@@ -157,6 +157,9 @@ export default Vue.extend({
   text-align: center;
   color: white;
   .static {
+    li {
+        font-size: 16px !important;
+    }
     span {
       color: var(--color-yellow);
       font-weight: bold;
