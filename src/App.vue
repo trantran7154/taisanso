@@ -76,6 +76,6 @@ export default Vue.extend({
 }
 
 .v-application--wrap {
-    min-height: 0vh !important;
+    min-height: 5vh !important;
 }
 </style>

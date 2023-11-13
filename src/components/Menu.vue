@@ -2,18 +2,24 @@
     <div class="taisanso">
         <v-app app>
             <v-toolbar style="position: fixed; top: 0; width: 100%; z-index: 10;">
-                <v-img max-height="40" max-width="170" src="../img/logo.jpg"></v-img>
+                <a href="/">
+                    <v-img max-height="40" max-width="170" src="../img/logo.jpg"></v-img>
+                </a>
                 <v-spacer></v-spacer>
+                <a href="/login" class="ma-2 d-flex d-sm-none" style="text-decoration: none;"><v-icon>mdi-account</v-icon></a>
                 <v-icon @click="drawer = true" class="ma-2 d-flex d-sm-none">mdi-magnify</v-icon>
                 <v-icon @click="drawer = true" class="ma-2 d-flex d-sm-none" size="30">mdi-menu</v-icon>
             </v-toolbar>
             <v-toolbar class="d-none d-sm-flex" screen and above rounded tile
                 style="position: fixed; top: 0; width: 100%; z-index: 10; padding: 0px 130px">
-                <v-toolbar-title> <v-img max-height="50" max-width="200" src="../img/logo.jpg"></v-img></v-toolbar-title>
+                <v-toolbar-title>
+                    <a href="/">
+                        <v-img max-height="50" max-width="200" src="../img/logo.jpg"></v-img></a>
+                </v-toolbar-title>
                 <v-toolbar-items>
                     <v-menu class="dropdown" justify-center open-on-hover offset-y>
                         <template v-slot:activator="{ on, attrs }">
-                            <v-btn text>
+                            <v-btn href="/" text>
                                 Trang chủ
                             </v-btn>
                             <v-btn text v-bind="attrs" v-on="on">
@@ -80,46 +86,12 @@
                 | <v-btn icon>
                     <v-icon>mdi-magnify</v-icon>
                 </v-btn>
+                <v-btn href="/login" class="ml-2" color="primary" outlined small style="text-transform: none;">
+                   <v-icon size="20" class="mr-1">mdi-account</v-icon> Đăng nhập
+                </v-btn>
                 <span class="ml-9"> <v-icon>mdi-phone</v-icon> <b class="red--text">0123456789</b></span>
             </v-toolbar>
-            <!-- Responsive -->
-            <!-- <v-navigation-drawer v-model="drawer" absolute
-                style="position: fixed; top: 0; z-index: 10; min-height: 0vh !important;">
-                <v-list nav dense>
-                    <v-list-item-group>
-                        <v-list-item>
-                            <v-list-item-title>Trang chủ</v-list-item-title>
-                        </v-list-item>
-                        <v-list-item-title>
-                                <v-list-group value="true">
-                                    <template v-slot:activator>
-                                        <v-list-tile-title> Sản phẩm</v-list-tile-title>
-                                    </template>
-                                    <v-list-item>
-                                        <v-list-item-title>Trang chủ</v-list-item-title>
-                                    </v-list-item>
-                                    <v-list-item>
-                                        <v-list-item-title>Trang chủ</v-list-item-title>
-                                    </v-list-item>
-                                </v-list-group>
-                            </v-list-item-title>
-                        <v-list-item>
-                            <v-list-item-title>Dịch vụ</v-list-item-title>
-                        </v-list-item>
-                        <v-list-item>
-                            <v-list-item-title>Hỗ trợ</v-list-item-title>
-                        </v-list-item>
-                        <v-list-item>
-                            <v-list-item-title>Blog</v-list-item-title>
-                        </v-list-item>
-                        <v-text-field append-icon="mdi-magnify" label="Tìm kiếm" outlined dense></v-text-field>
-                        <v-spacer></v-spacer>
-                        <v-list-item>
-                            <v-icon>mdi-phone</v-icon> <b class="red--text ml-2">0123456789</b>
-                        </v-list-item>
-                    </v-list-item-group>
-                </v-list>
-            </v-navigation-drawer> -->
+
             <v-navigation-drawer v-model="drawer" absolute
                 style="position: fixed; top: 0; z-index: 10; min-height: 0vh !important;">
                 <v-list>
@@ -292,7 +264,7 @@ export default Vue.extend({
 }
 
 .v-sheet.v-app-bar.v-toolbar:not(.v-sheet--outlined) {
-    box-shadow: none;
+    box-shadow: rgba(0, 0, 0, 0.05) 0px 0px 0px 1px;
 }
 
 .theme--light.v-app-bar.v-toolbar.v-sheet {
@@ -300,7 +272,7 @@ export default Vue.extend({
 }
 
 .v-sheet.v-toolbar:not(.v-sheet--outlined) {
-    box-shadow: none;
+    box-shadow: rgba(0, 0, 0, 0.05) 0px 0px 0px 1px;
 }
 
 .v-application--wrap {
