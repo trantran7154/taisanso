@@ -1,8 +1,8 @@
 <template>
-  <v-container class="product">
-    <h1>Danh mục sản phẩm</h1>
+  <v-container class="service">
+    <h1>Danh sách dịch vụ</h1>
     <p>
-      Chúng tôi cung cấp hơn 200.000 sản phẩm số và bạn có thể mua nhanh chóng.
+      Các dịch vụ hỗ trợ nhanh chóng và làm nhanh quá trình công việc của bạn.
     </p>
 
     <v-row class="mt-5 wrapper">
@@ -26,10 +26,10 @@ import Vue from "vue";
 import { VueperSlides, VueperSlide } from "vueperslides";
 import "vueperslides/dist/vueperslides.css";
 
-import p_email from "../../assets/email_p.png";
-import p_software from "../../assets/software_p.png";
-import p_account from "../../assets/account_p.png";
-import p_other from "../../assets/other_p.png";
+import s_tuongtac from "../../assets/tuongtac_s.png";
+import s_software from "../../assets/software_s.png";
+import s_blockchain from "../../assets/blockchain_s.png";
+import s_other from "../../assets/other_s.png";
 
 export default Vue.extend({
   props: ["size"],
@@ -40,24 +40,24 @@ export default Vue.extend({
   data: () => ({
     items: [
       {
-        name: "Email",
-        url: p_email,
-        des: "Gmail, yahoo mail, hot mail... và nhiều hơn thế nữa",
+        name: "Tăng tương tác",
+        url: s_tuongtac,
+        des: "Tăng like, view.share, comment... cho sản phẩm của bạn",
       },
       {
-        name: "Phần mềm",
-        url: p_software,
-        des: "Các phần mềm chuyên dụng cho kiếm tiền online từ những coder uy tín",
+        name: "Dịch vụ phần mềm",
+        url: s_software,
+        des: "Dịch vụ code tool MMO, đồ họa, video... và các dịch vụ liên quan",
       },
       {
-        name: "Tài khoản",
-        url: p_account,
-        des: "Fb, BM, key window, kaspersky....",
+        name: "Blockchain",
+        url: s_blockchain,
+        des: "Dịch vụ tiền ảo, NFT, coinlist... và các dịch vụ blockchain khác",
       },
       {
-        name: "Khác",
-        url: p_other,
-        des: "Các sản phẩm số khác",
+        name: "Dịch vụ khác",
+        url: s_other,
+        des: "Các dịch vụ MMO phổ biến khác hiện nay",
       },
     ],
   }),
@@ -157,7 +157,7 @@ p {
   max-width: 1250px;
 }
 
-.product {
+.service {
   h1 {
     text-align: center;
   }
