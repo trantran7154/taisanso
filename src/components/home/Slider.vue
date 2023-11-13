@@ -1,15 +1,13 @@
 <template>
-  <div class="slider">
+  <div class="slider" :style="`padding: 0px ${size.onsize < 1260 ? size.onsize < 640 ? 10 : 50 : 100}px;`">
     <vueper-slides
       class="no-shadow"
-      :visible-slides="3"
+      :visible-slides="size.onsize < 1260 ? size.onsize < 640 ? 1 : 2 : 3"
       slide-multiple
       :gap="1"
-      :slide-ratio="1 / 6"
+      :slide-ratio="size.onsize < 1260 ? size.onsize < 640 ?  1 / 2 : 2 / 8 : 1 / 6"
       :autoplay="true"
-      :arrows="false"
       :dragging-distance="300"
-      :breakpoints="{ 800: { visibleSlides: 2, slideMultiple: 2 } }"
     >
       <vueper-slide
         style="border-radius: 10px"
@@ -18,7 +16,7 @@
         :image="item.url"
       >
         <template #arrow-left>
-          <i class="icon icon-arrow-left" />
+          <v-btn> sasas </v-btn>
         </template>
 
         <template #arrow-right>
@@ -78,6 +76,5 @@ export default Vue.extend({
 <style lang="scss" scoped>
 .slider {
   margin-top: -40px;
-  padding: 0px 100px;
 }
 </style>

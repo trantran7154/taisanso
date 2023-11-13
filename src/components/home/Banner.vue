@@ -1,6 +1,6 @@
 <template>
   <div class="banner">
-    <div class="container-banner">
+    <v-container class="container-banner">
       <h1 :style="size.onsize <= 960 ? 'font-size: 25px' : ''">
         Mang tài sản số đến cho bạn, bán hoặc mua và quảng cáo các dịch vụ liên
         quan đến tài sản số
@@ -79,7 +79,7 @@
           </v-col>
         </v-row>
       </div>
-    </div>
+    </v-container>
   </div>
 </template>
 
