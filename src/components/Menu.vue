@@ -1,117 +1,115 @@
 <template>
-    <v-app app>
-        <v-toolbar style="position:fixed; z-index: 10; padding: 0px 50px">
-            <v-img max-height="40" max-width="170" src="../img/logo.jpg" style="margin-right: 50px;"></v-img>
-            <v-icon @click="drawer = true" class="ma-2 d-flex d-sm-none">mdi-magnify</v-icon>
-            <v-icon @click="drawer = true" class="ma-2 d-flex d-sm-none" size="30">mdi-menu</v-icon>
-        </v-toolbar>
-        <v-toolbar class="d-none d-sm-flex" screen and above style="position:fixed; z-index: 10; padding: 4px 130px">
-            <v-toolbar-title> <v-img max-height="50" max-width="200" src="../img/logo.jpg"></v-img></v-toolbar-title>
-            <v-toolbar-items>
-                <v-menu class="dropdown" justify-center open-on-hover offset-y>
-                    <template v-slot:activator="{ on, attrs }">
-                        <v-btn text>
-                            Trang chủ
-                        </v-btn>
-                        <v-btn text v-bind="attrs" v-on="on">
-                            Sản phẩm
-                        </v-btn>
-                    </template>
-                    <v-card max-width="1000">
-                        <v-tabs vertical>
-                            <v-tab v-for="item in itemTab" :key="item" class="tab text-left">
-                                <v-row>
-                                    <v-col>
-                                        <v-icon left class="mt-3">
-                                            {{ item.icon }}
-                                        </v-icon>
-                                    </v-col>
-                                    <v-col>
-                                        <div class="mt-2">
-                                            {{ item.title }}
-                                            <br />
-                                            <small mt-3 style="color: darkgray !important;"> {{ item.description
-                                            }}</small>
-                                        </div>
-                                    </v-col>
-                                </v-row>
-                            </v-tab>
+    <div class="taisanso">
+        <v-app app>
+            <v-toolbar style="position: fixed; top: 0; width: 100%; z-index: 10;">
+                <v-img max-height="40" max-width="170" src="../img/logo.jpg"></v-img>
+                <v-spacer></v-spacer>
+                <v-icon @click="drawer = true" class="ma-2 d-flex d-sm-none">mdi-magnify</v-icon>
+                <v-icon @click="drawer = true" class="ma-2 d-flex d-sm-none" size="30">mdi-menu</v-icon>
+            </v-toolbar>
+            <v-toolbar class="d-none d-sm-flex" screen and above rounded tile
+                style="position: fixed; top: 0; width: 100%; z-index: 10; padding: 0px 130px">
+                <v-toolbar-title> <v-img max-height="50" max-width="200" src="../img/logo.jpg"></v-img></v-toolbar-title>
+                <v-toolbar-items>
+                    <v-menu class="dropdown" justify-center open-on-hover offset-y>
+                        <template v-slot:activator="{ on, attrs }">
+                            <v-btn text>
+                                Trang chủ
+                            </v-btn>
+                            <v-btn text v-bind="attrs" v-on="on">
+                                Sản phẩm
+                            </v-btn>
+                        </template>
+                        <v-card max-width="1000">
+                            <v-tabs vertical>
+                                <v-tab v-for="item in itemTab" :key="item" class="tab text-left">
+                                    <v-row>
+                                        <v-col>
+                                            <v-icon left class="mt-3">
+                                                {{ item.icon }}
+                                            </v-icon>
+                                        </v-col>
+                                        <v-col>
+                                            <div class="mt-2">
+                                                {{ item.title }}
+                                                <br />
+                                                <small mt-3 style="color: darkgray !important;"> {{ item.description
+                                                }}</small>
+                                            </div>
+                                        </v-col>
+                                    </v-row>
+                                </v-tab>
 
-                            <v-tab-item class="pa-3" v-for="items in itemTab" :key="items">
-                                <div style="color: #1976d2">Dịch vụ chính</div>
-                                <v-row>
-                                    <v-col md="3" cols="12" v-for="item1 in items.subTab" :key="item1">
-                                        <div class="mt-3 ml-3">
-                                            <v-icon>{{ item1.subIcon }}</v-icon> <a>{{ item1.subTitle }}</a>
-                                            <br>
-                                            <small style="color: darkgray !important;"> {{ item1.subDescription
-                                            }}</small>
-                                        </div>
-                                    </v-col>
-                                </v-row>
-                            </v-tab-item>
-                        </v-tabs>
-                    </v-card>
-                </v-menu>
+                                <v-tab-item class="pa-3" v-for="items in itemTab" :key="items">
+                                    <div style="color: #1976d2">Dịch vụ chính</div>
+                                    <v-row>
+                                        <v-col md="3" cols="12" v-for="item1 in items.subTab" :key="item1">
+                                            <div class="mt-3 ml-3">
+                                                <v-icon>{{ item1.subIcon }}</v-icon> <a>{{ item1.subTitle }}</a>
+                                                <br>
+                                                <small style="color: darkgray !important;"> {{ item1.subDescription
+                                                }}</small>
+                                            </div>
+                                        </v-col>
+                                    </v-row>
+                                </v-tab-item>
+                            </v-tabs>
+                        </v-card>
+                    </v-menu>
 
-                <v-menu class="dropdown" open-on-hover offset-y>
-                    <template v-slot:activator="{ on, attrs }">
-                        <v-btn text v-bind="attrs" v-on="on">
-                            Dịch vụ
-                        </v-btn>
-                    </template>
-                    <v-list>
-                        <v-list-item v-for="(item, index) in itemService" :key="index">
-                            <v-list-item-title><v-icon>{{ item.icon }}</v-icon> <a>{{ item.title
-                            }}</a></v-list-item-title>
+                    <v-menu class="dropdown" open-on-hover offset-y>
+                        <template v-slot:activator="{ on, attrs }">
+                            <v-btn text v-bind="attrs" v-on="on">
+                                Dịch vụ
+                            </v-btn>
+                        </template>
+                        <v-list>
+                            <v-list-item v-for="(item, index) in itemService" :key="index">
+                                <v-list-item-title><v-icon>{{ item.icon }}</v-icon> <a>{{ item.title
+                                }}</a></v-list-item-title>
+                            </v-list-item>
+                        </v-list>
+                    </v-menu>
+                    <v-btn text>
+                        Hỗ trợ
+                    </v-btn>
+                    <v-btn text>
+                        Blog
+                    </v-btn>
+                </v-toolbar-items>
+                | <v-btn icon>
+                    <v-icon>mdi-magnify</v-icon>
+                </v-btn>
+                <span class="ml-9"> <v-icon>mdi-phone</v-icon> <b class="red--text">0123456789</b></span>
+            </v-toolbar>
+            <!-- Responsive -->
+            <v-navigation-drawer v-model="drawer" absolute
+                style="position: fixed; top: 0; z-index: 10; min-height: 0vh !important;">
+                <v-list nav dense>
+                    <v-list-item-group>
+                        <v-list-item>
+                            <v-list-item-title>Trang chủ</v-list-item-title>
                         </v-list-item>
-                    </v-list>
-                </v-menu>
-                <v-btn text>
-                    Hỗ trợ
-                </v-btn>
-                <v-btn text>
-                    Blog
-                </v-btn>
-            </v-toolbar-items>
-            | <v-btn icon>
-                <v-icon>mdi-magnify</v-icon>
-            </v-btn>
-            <span class="ml-9"> <v-icon>mdi-phone</v-icon> <b class="red--text">0123456789</b></span>
-        </v-toolbar>
-        <!-- Responsive -->
-        <v-navigation-drawer v-model="drawer" absolute temporary>
-            <v-list nav dense>
-                <v-list-item-group>
-                    <v-list-item>
-                        <v-list-item-title>Trang chủ</v-list-item-title>
-                    </v-list-item>
-                    <v-list-item>
-                        <v-list-item-title>Dịch vụ</v-list-item-title>
-                    </v-list-item>
-                    <v-list-item>
-                        <v-list-item-title>Hỗ trợ</v-list-item-title>
-                    </v-list-item>
-                    <v-list-item>
-                        <v-list-item-title>Blog</v-list-item-title>
-                    </v-list-item>
-                    <v-text-field append-icon="mdi-magnify" label="Tìm kiếm" outlined dense></v-text-field>
-                    <v-spacer></v-spacer>
-                    <v-list-item>
-                        <v-icon>mdi-phone</v-icon> <b class="red--text ml-2">0123456789</b>
-                    </v-list-item>
-                </v-list-item-group>
-            </v-list>
-        </v-navigation-drawer>
-        <!-- Responsive -->
-        <v-content class="ma-5">
-            <v-tabs-items v-model="tab" class="d-flex flex-column align-center">
-                <v-tab-item>
-                    Trang chủ
-                </v-tab-item>
-            </v-tabs-items>
-        </v-content>
-    </v-app>
+                        <v-list-item>
+                            <v-list-item-title>Dịch vụ</v-list-item-title>
+                        </v-list-item>
+                        <v-list-item>
+                            <v-list-item-title>Hỗ trợ</v-list-item-title>
+                        </v-list-item>
+                        <v-list-item>
+                            <v-list-item-title>Blog</v-list-item-title>
+                        </v-list-item>
+                        <v-text-field append-icon="mdi-magnify" label="Tìm kiếm" outlined dense></v-text-field>
+                        <v-spacer></v-spacer>
+                        <v-list-item>
+                            <v-icon>mdi-phone</v-icon> <b class="red--text ml-2">0123456789</b>
+                        </v-list-item>
+                    </v-list-item-group>
+                </v-list>
+            </v-navigation-drawer>
+            <!-- Responsive -->
+        </v-app>
+    </div>
 </template>
 
 <script lang="ts">
@@ -173,30 +171,19 @@ export default Vue.extend({
         }
     },
     methods: {
-        // close() {
-        //     this.items.forEach(item => {
-        //         if (item.active) {
-        //             _.delay(function () {
-        //                 item.active = false
-        //             }, 300)
-        //             return false
-        //         }
-        //     })
-        // }
     }
 })
 </script>
 
 <style scoped>
-.menu {
-    border-radius: 15px !important;
-    background-color: #E0F7FA;
-    width: 300px;
-}
-
-.menu .v-list-item:hover {
-    background-color: #FFFFFF !important;
-    border-radius: 10px !important;
+.taisanso .v-application--wrap {
+    flex: 1 1 auto !important;
+    backface-visibility: hidden !important;
+    display: flex !important;
+    flex-direction: column !important;
+    min-height: 0vh !important;
+    max-width: 100% !important;
+    position: relative !important;
 }
 
 .tab {
@@ -219,5 +206,15 @@ export default Vue.extend({
 
 .v-sheet.v-toolbar:not(.v-sheet--outlined) {
     box-shadow: none;
+}
+
+.v-application--wrap {
+    flex: 1 1 auto;
+    backface-visibility: hidden;
+    display: flex;
+    flex-direction: column;
+    /* min-height: 100vh; */
+    max-width: 100%;
+    position: relative;
 }
 </style>
