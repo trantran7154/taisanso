@@ -1,6 +1,6 @@
 <template>
   <v-app v-resize="onResize">
-    <Menu />
+    <!-- <Menu /> -->
     <v-main>
       <router-view :size="size" />
     </v-main>
