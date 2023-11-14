@@ -1,102 +1,5 @@
 <template>
   <div class="taisanso">
-    <!-- <v-app app>
-     
-    </v-app> -->
-
-    <!-- <v-toolbar style="position: fixed; top: 0; width: 100%; z-index: 10;">
-                <a href="/">
-                    <v-img max-height="40" max-width="170" src="../img/logo.jpg"></v-img>
-                </a>
-                <v-spacer></v-spacer>
-                <a href="/login" class="ma-2 d-flex d-sm-none" style="text-decoration: none;"><v-icon>mdi-account</v-icon></a>
-                <v-icon @click="drawer = true" class="ma-2 d-flex d-sm-none">mdi-magnify</v-icon>
-                <v-icon @click="drawer = true" class="ma-2 d-flex d-sm-none" size="30">mdi-menu</v-icon>
-            </v-toolbar> -->
-    <!-- <v-toolbar class="d-none d-sm-flex" screen and above rounded tile
-                style="position: fixed; top: 0; width: 100%; z-index: 10; padding: 0px 130px">
-                <v-toolbar-title>
-                    <a href="/">
-                        <v-img max-height="50" max-width="200" src="../img/logo.jpg"></v-img></a>
-                </v-toolbar-title>
-                <v-toolbar-items>
-                    <v-menu class="dropdown" justify-center open-on-hover offset-y>
-                        <template v-slot:activator="{ on, attrs }">
-                            <v-btn href="/" text>
-                                Trang chủ
-                            </v-btn>
-                            <v-btn text v-bind="attrs" v-on="on">
-                                Sản phẩm
-                            </v-btn>
-                        </template>
-                        <v-card max-width="1000">
-                            <v-tabs vertical>
-                                <v-tab v-for="item in itemTab" :key="item" class="tab text-left">
-                                    <v-row>
-                                        <v-col>
-                                            <v-icon left class="mt-3">
-                                                {{ item.icon }}
-                                            </v-icon>
-                                        </v-col>
-                                        <v-col>
-                                            <div class="mt-2">
-                                                {{ item.title }}
-                                                <br />
-                                                <small mt-3 style="color: darkgray !important;"> {{ item.description
-                                                }}</small>
-                                            </div>
-                                        </v-col>
-                                    </v-row>
-                                </v-tab>
-
-                                <v-tab-item class="pa-3" v-for="items in itemTab" :key="items">
-                                    <div style="color: #1976d2">Dịch vụ chính</div>
-                                    <v-row>
-                                        <v-col md="3" cols="12" v-for="item1 in items.subTab" :key="item1">
-                                            <div class="mt-3 ml-3">
-                                                <v-icon>{{ item1.subIcon }}</v-icon> <a>{{ item1.subTitle }}</a>
-                                                <br>
-                                                <small style="color: darkgray !important;"> {{ item1.subDescription
-                                                }}</small>
-                                            </div>
-                                        </v-col>
-                                    </v-row>
-                                </v-tab-item>
-                            </v-tabs>
-                        </v-card>
-                    </v-menu>
-
-                    <v-menu class="dropdown" open-on-hover offset-y>
-                        <template v-slot:activator="{ on, attrs }">
-                            <v-btn text v-bind="attrs" v-on="on">
-                                Dịch vụ
-                            </v-btn>
-                        </template>
-                        <v-list>
-                            <v-list-item v-for="(item, index) in itemService" :key="index">
-                                <v-list-item-title><v-icon>{{ item.icon }}</v-icon> <a>{{ item.title
-                                }}</a></v-list-item-title>
-                            </v-list-item>
-                        </v-list>
-                    </v-menu>
-                    <v-btn text>
-                        Hỗ trợ
-                    </v-btn>
-                    <v-btn text>
-                        Blog
-                    </v-btn>
-                </v-toolbar-items>
-                | <v-btn icon>
-                    <v-icon>mdi-magnify</v-icon>
-                </v-btn>
-                <v-btn href="/login" class="ml-2" color="primary" outlined small style="text-transform: none;">
-                   <v-icon size="20" class="mr-1">mdi-account</v-icon> Đăng nhập
-                </v-btn>
-                <span class="ml-9"> <v-icon>mdi-phone</v-icon> <b class="red--text">0123456789</b></span>
-            </v-toolbar> -->
-
-    <!-- Responsive -->
-
     <v-app-bar app clipped-right flat height="72">
       <v-spacer>
         <v-row>
@@ -105,7 +8,8 @@
           </v-col>
 
           <v-col cols="12" v-if="size.onsize < 1111">
-            <v-img max-height="40" max-width="155" src="../img/logo.jpg" class="float-start" style="margin-left: -15px; !important"></v-img>
+            <v-img max-height="40" max-width="155" src="../img/logo.jpg" class="float-start"
+              style="margin-left: -15px; !important"></v-img>
           </v-col>
 
           <v-col cols="10" v-if="size.onsize >= 1111">
@@ -197,34 +101,47 @@
             <v-list-item-title>Sản phẩm</v-list-item-title>
           </template>
 
-          <v-list-group no-action sub-group v-for="item in itemTab" :key="item">
-            <template v-slot:activator>
-              <v-list-item-content>
-                <v-list-item-title><v-icon>{{ item.icon }}</v-icon> {{ item.title }}
-                  <br />
-                  <small mt-3 style="color: darkgray !important">
-                    {{ item.description }}
-                  </small>
-                </v-list-item-title>
-              </v-list-item-content>
-            </template>
-            <v-list-item link>
-              <div class="mt-5">
-                <b class="ml-5">Dịch vụ chính</b>
-                <v-row class="ma-0">
-                  <v-col cols="12" md="12" v-for="item1 in item.subTab" :key="item1">
-                    <div class="ml-6">
-                      <v-icon>{{ item1.subIcon }}</v-icon>
-                      <a>{{ item1.subTitle }}</a>
-                      <br />
-                      <small style="color: darkgray !important">
-                        {{ item1.subDescription }}</small>
-                    </div>
-                  </v-col>
-                </v-row>
-              </div>
-            </v-list-item>
-          </v-list-group>
+          <div v-for="item in menus" :key="item.name">
+            <v-list-group no-action sub-group v-for="item1 in item.items" :key="item1.name">
+              <template v-slot:activator>
+                <v-list-item style="padding: 0 0px !important;">
+                  <v-list-item-avatar>
+                    <img :src="item1.url" :alt="item1.name" />
+                  </v-list-item-avatar>
+
+                  <v-list-item-content>
+                    <v-list-item-title>{{ item1.name }}</v-list-item-title>
+                    <v-list-item-subtitle>{{
+                      item1.description
+                    }}</v-list-item-subtitle>
+                  </v-list-item-content>
+                </v-list-item>
+              </template>
+              <v-list-item link>
+                <div class="mt-5">
+                  <b class="mb-5">Dịch vụ chính</b>
+                  <v-row>
+                    <v-col cols="12" md="12" v-for="item2 in item1.items" :key="item2.name">
+                      <div class="pa-2 ml-3">
+                        <v-row>
+                          <v-col cols="2">
+                            <img width="20" :src="item2.url" :alt="item2.name" />
+                          </v-col>
+
+                          <v-col>
+                            <h5>{{ item2.name }}</h5>
+                            <p class="text--secondary" style="font-size: 12px !important">
+                              {{ item2.description }}
+                            </p>
+                          </v-col>
+                        </v-row>
+                      </div>
+                    </v-col>
+                  </v-row>
+                </div>
+              </v-list-item>
+            </v-list-group>
+          </div>
         </v-list-group>
 
         <v-list-group prepend-icon="mdi mdi-store-cog" no-action>
@@ -610,94 +527,6 @@ export default Vue.extend({
         ["Update", "update"],
         ["Delete", "delete"],
       ],
-      itemTab: [
-        {
-          title: "Email",
-          icon: "mdi-email",
-          description: "Kinh doanh với Email",
-          subTab: [
-            {
-              subTitle: "Gmail USA",
-              subDescription: "Kho 4000+ mail.",
-              subIcon: "mdi-email-fast-outline",
-            },
-            {
-              subTitle: "Hotmail",
-              subDescription: "Kho 4000+ mail.",
-              subIcon: "mdi-email-fast-outline",
-            },
-            {
-              subTitle: "Gmail",
-              subDescription: "Kho 4000+ mail.",
-              subIcon: "mdi-email-fast-outline",
-            },
-            {
-              subTitle: "Email theo Domain",
-              subDescription: "Kho 4000+ mail.",
-              subIcon: "mdi-email-fast-outline",
-            },
-          ],
-        },
-        {
-          title: "Phần mềm",
-          icon: "mdi-code-braces",
-          description: "Quản lý kinh doanh, doanh nghiệp",
-          subTab: [
-            {
-              subTitle: "Netflix",
-              subDescription: "Cung cấp tài khoản vip.",
-              subIcon: "mdi mdi-netflix",
-            },
-            {
-              subTitle: "Tools",
-              subDescription: "Chạy tool theo yêu cầu.",
-              subIcon: "mdi-tools",
-            },
-          ],
-        },
-        {
-          title: "Tài khoản",
-          icon: "mdi-account",
-          description: "Mua bán tài khoản",
-          subTab: [
-            {
-              subTitle: "Facebook",
-              subDescription: "Cung cấp tài khoản facebook ảo.",
-              subIcon: "mdi-facebook",
-            },
-            {
-              subTitle: "Google",
-              subDescription: "Cung cấp tài khoản google ảo.",
-              subIcon: "mdi-google",
-            },
-          ],
-        },
-        {
-          title: "Internet",
-          icon: "mdi-earth",
-          description: "Hạ tầng lưu trữ, điện toán",
-          subTab: [
-            {
-              subTitle: "Hosting",
-              subDescription:
-                "Cung cấp hosting dành riêng cho doanh nghiệp, giáo dục...",
-              subIcon: "mdi-cloud-check-outline",
-            },
-            {
-              subTitle: "Domain",
-              subDescription:
-                "Kiểm tra tên miền miễn phí, nhanh chóng chỉ với 3 giây có ngay domain chất lượng.",
-              subIcon: "mdi mdi-web",
-            },
-            {
-              subTitle: "Vps",
-              subDescription:
-                "Gói giải pháp hạ tầng dành riêng cho phát triển web, ứng dụng trên windows, linux.",
-              subIcon: "mdi-server-minus-outline",
-            },
-          ],
-        },
-      ],
       itemService: [
         { title: "Làm phần mềm", icon: "mdi-xml" },
         { title: "Blockchain", icon: "mdi-hand-coin-outline" },
@@ -762,6 +591,10 @@ export default Vue.extend({
 
 .v-application--is-ltr .v-list-group--no-action>.v-list-group__items>.v-list-item {
   padding-left: 39px;
+}
+
+.v-application--is-ltr .v-list-group--sub-group .v-list-group__header {
+    padding-left: 18px;
 }
 
 .wrap {
