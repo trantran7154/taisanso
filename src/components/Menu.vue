@@ -105,7 +105,7 @@
           </v-col>
 
           <v-col cols="12" v-if="size.onsize < 1111">
-            <v-img max-height="40" max-width="170" src="../img/logo.jpg"></v-img>
+            <v-img max-height="40" max-width="155" src="../img/logo.jpg" class="float-start" style="margin-left: -15px; !important"></v-img>
           </v-col>
 
           <v-col cols="10" v-if="size.onsize >= 1111">
