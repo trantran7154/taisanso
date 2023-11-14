@@ -104,6 +104,10 @@
             <v-img max-height="40" max-width="170" src="../img/logo.jpg"></v-img>
           </v-col>
 
+          <v-col cols="12" v-if="size.onsize < 1111">
+            <v-img max-height="40" max-width="170" src="../img/logo.jpg"></v-img>
+          </v-col>
+
           <v-col cols="10" v-if="size.onsize >= 1111">
             <v-btn style="font-size: 14px" text class="text-none" depressed v-for="item in menus" :key="item.name"
               @click="item.isDropdown ? clickMenu(item) : ''">
@@ -113,24 +117,11 @@
           </v-col>
         </v-row>
       </v-spacer>
-      <v-responsive max-width="156" class="float-end" v-if="size.onsize >= 1111">
+
+      <v-responsive max-width="156" class="float-end">
         <v-btn color="var(--color-3)" outlined class="text-none font-weight-bold ml-10" dark>Đăng nhập</v-btn>
       </v-responsive>
-      <div v-if="size.onsize < 1111">
-        <v-row>
-        <v-col cols="5">
-          <v-img class="mt-1" max-height="40" max-width="170" src="../img/logo.jpg"></v-img>
-        </v-col>
-        <v-col cols="5">
-          <v-responsive max-width="156" class="float-end">
-            <v-btn color="var(--color-3)" outlined class="text-none font-weight-bold ml-10 mt-1" dark>Đăng nhập</v-btn>
-          </v-responsive>
-        </v-col>
-        <v-col cols="2">
-          <v-app-bar-nav-icon class="float-end" @click="drawer = !drawer"></v-app-bar-nav-icon>
-        </v-col>
-      </v-row>
-      </div>
+      <v-app-bar-nav-icon v-if="size.onsize < 1111" @click="drawer = !drawer"></v-app-bar-nav-icon>
     </v-app-bar>
 
     <XyzTransition xyz="fade-100%" v-if="size.onsize >= 1111">
