@@ -130,7 +130,7 @@
 
                           <v-col>
                             <h5>{{ item2.name }}</h5>
-                            <p class="text--secondary" style="font-size: 12px !important">
+                            <p class="text--secondary" style="font-size: 12px !important; margin-top: -26px !important;">
                               {{ item2.description }}
                             </p>
                           </v-col>
