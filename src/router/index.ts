@@ -1,7 +1,9 @@
 import Vue from 'vue'
 import VueRouter, { RouteConfig } from 'vue-router'
 import HomeView from '../views/HomeView.vue'
-import Login from '../views/Login.vue'
+import Login from '../views/User/Login.vue'
+import SignUp from '../views/User/SignUp.vue'
+import ForgotPassword from '../views/User/ForgotPassword.vue'
 
 Vue.use(VueRouter)
 
@@ -15,6 +17,16 @@ const routes: Array<RouteConfig> = [
     path: '/login',
     name: 'login',
     component: Login
+  },
+  {
+    path: '/sign-up',
+    name: 'signup',
+    component: SignUp
+  },
+  {
+    path: '/forgot-password',
+    name: 'forgotpassword',
+    component: ForgotPassword
   }
 ]
 const router = new VueRouter({
