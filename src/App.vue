@@ -1,6 +1,6 @@
 <template>
   <v-app v-resize="onResize">
-    <Menu />
+    <Menu :size="size" />
     <v-main>
       <router-view :size="size" />
     </v-main>
@@ -68,6 +68,11 @@ export default Vue.extend({
 :root {
   --color-green: #166062;
   --color-yellow: #c9a14a;
+  --color-1: #72FFFF;
+  --color-2: #00D7FF;
+  --color-3: #590696;
+  --color-4: #0096FF;
+  --color-5: #5800FF;
 }
 
 .v-main {
