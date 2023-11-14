@@ -29,11 +29,11 @@
           nhập</v-btn>
 
         <div class="text-center font-weight-bold">
-          <a href="#" class="forgot">Bạn quên mật khẩu?</a>
+          <a href="/forgot-password" class="forgot" style="color: blue;">Bạn quên mật khẩu?</a>
         </div>
 
         <div class="text-center font-weight-bold mt-6">
-          <a href="#" class="forgot">Bạn chưa là thành viên? <a href="/signup"
+          <a href="#" class="forgot">Bạn chưa là thành viên? <a href="/sign-up"
               style="color: blue; text-decoration: none;">Đăng ký</a> và bắt đầu ngay!</a>
         </div>
       </v-form>
