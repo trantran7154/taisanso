@@ -100,70 +100,49 @@
     <v-app-bar app clipped-right flat height="72">
       <v-spacer>
         <v-row>
-          <v-col cols="2">
-            <v-img
-              max-height="40"
-              max-width="170"
-              src="../img/logo.jpg"
-            ></v-img>
+          <v-col cols="2" v-if="size.onsize >= 1111">
+            <v-img max-height="40" max-width="170" src="../img/logo.jpg"></v-img>
           </v-col>
 
           <v-col cols="10" v-if="size.onsize >= 1111">
-            <v-btn
-              style="font-size: 14px"
-              text
-              class="text-none"
-              depressed
-              v-for="item in menus"
-              :key="item.name"
-              @click="item.isDropdown ? clickMenu(item) : ''"
-            >
+            <v-btn style="font-size: 14px" text class="text-none" depressed v-for="item in menus" :key="item.name"
+              @click="item.isDropdown ? clickMenu(item) : ''">
               <v-img width="20" :src="item.url"></v-img>
               <span class="ml-2"> {{ item.name }}</span>
             </v-btn>
           </v-col>
         </v-row>
       </v-spacer>
-
-      <v-responsive max-width="156" class="float-end">
-        <v-btn
-          color="var(--color-3)"
-          outlined
-          class="text-none font-weight-bold ml-10"
-          dark
-          >Đăng nhập</v-btn
-        >
+      <v-responsive max-width="156" class="float-end" v-if="size.onsize >= 1111">
+        <v-btn color="var(--color-3)" outlined class="text-none font-weight-bold ml-10" dark>Đăng nhập</v-btn>
       </v-responsive>
-      <v-app-bar-nav-icon
-        v-if="size.onsize < 1111"
-        @click="drawer = !drawer"
-      ></v-app-bar-nav-icon>
+      <div v-if="size.onsize < 1111">
+        <v-row>
+        <v-col cols="5">
+          <v-img class="mt-1" max-height="40" max-width="170" src="../img/logo.jpg"></v-img>
+        </v-col>
+        <v-col cols="5">
+          <v-responsive max-width="156" class="float-end">
+            <v-btn color="var(--color-3)" outlined class="text-none font-weight-bold ml-10 mt-1" dark>Đăng nhập</v-btn>
+          </v-responsive>
+        </v-col>
+        <v-col cols="2">
+          <v-app-bar-nav-icon class="float-end" @click="drawer = !drawer"></v-app-bar-nav-icon>
+        </v-col>
+      </v-row>
+      </div>
     </v-app-bar>
 
     <XyzTransition xyz="fade-100%" v-if="size.onsize >= 1111">
       <v-app-bar app style="margin-top: 72px" height="420px" v-if="isShowMenu">
         <v-row>
           <v-col cols="3">
-            <v-card
-              class="change-color elevation-0"
-              style="border-radius: 10px"
-            >
+            <v-card class="change-color elevation-0" style="border-radius: 10px">
               <div class="pa-3">
-                <v-sheet
-                  style="border-radius: 10px; cursor: pointer"
-                  @mouseover="moveMenu(item)"
-                  v-for="item in items"
-                  :key="item.name"
-                  class="mt-3"
-                  :color="checkMenuLeft === item.name ? 'while' : 'transparent'"
-                >
-                  <v-list
-                    dense
-                    style="border-radius: 10px"
-                    :color="
-                      checkMenuLeft === item.name ? 'while' : 'transparent'
-                    "
-                  >
+                <v-sheet style="border-radius: 10px; cursor: pointer" @mouseover="moveMenu(item)" v-for="item in items"
+                  :key="item.name" class="mt-3" :color="checkMenuLeft === item.name ? 'while' : 'transparent'">
+                  <v-list dense style="border-radius: 10px" :color="checkMenuLeft === item.name ? 'while' : 'transparent'
+                    ">
                     <v-list-item>
                       <v-list-item-avatar>
                         <img :src="item.url" :alt="item.name" />
@@ -187,13 +166,8 @@
             <div class="mt-5">
               <v-row>
                 <v-col v-for="item in itemsSub" :key="item.name" cols="3">
-                  <v-sheet
-                    style="border-radius: 10px; cursor: pointer"
-                    @mouseover="moveItemSub(item)"
-                    :color="
-                      checkMenuRight === item.name ? '#EDE7F6' : 'transparent'
-                    "
-                  >
+                  <v-sheet style="border-radius: 10px; cursor: pointer" @mouseover="moveItemSub(item)" :color="checkMenuRight === item.name ? '#EDE7F6' : 'transparent'
+                    ">
                     <div class="pa-2">
                       <v-row>
                         <v-col cols="2">
@@ -202,10 +176,7 @@
 
                         <v-col>
                           <h5>{{ item.name }}</h5>
-                          <p
-                            class="text--secondary"
-                            style="font-size: 12px !important"
-                          >
+                          <p class="text--secondary" style="font-size: 12px !important">
                             {{ item.description }}
                           </p>
                         </v-col>
@@ -220,11 +191,8 @@
       </v-app-bar>
     </XyzTransition>
 
-    <v-navigation-drawer
-      v-model="drawer"
-      absolute
-      style="position: fixed; top: 0; z-index: 10; min-height: 0vh !important"
-    >
+    <v-navigation-drawer v-model="drawer" absolute
+      style="position: fixed; top: 0; z-index: 10; min-height: 0vh !important">
       <v-list>
         <v-list-item>
           <v-list-item-icon>
@@ -241,8 +209,7 @@
           <v-list-group no-action sub-group v-for="item in itemTab" :key="item">
             <template v-slot:activator>
               <v-list-item-content>
-                <v-list-item-title
-                  ><v-icon>{{ item.icon }}</v-icon> {{ item.title }}
+                <v-list-item-title><v-icon>{{ item.icon }}</v-icon> {{ item.title }}
                   <br />
                   <small mt-3 style="color: darkgray !important">
                     {{ item.description }}
@@ -254,19 +221,13 @@
               <div class="mt-5">
                 <b class="ml-5">Dịch vụ chính</b>
                 <v-row class="ma-0">
-                  <v-col
-                    cols="12"
-                    md="12"
-                    v-for="item1 in item.subTab"
-                    :key="item1"
-                  >
+                  <v-col cols="12" md="12" v-for="item1 in item.subTab" :key="item1">
                     <div class="ml-6">
                       <v-icon>{{ item1.subIcon }}</v-icon>
                       <a>{{ item1.subTitle }}</a>
                       <br />
                       <small style="color: darkgray !important">
-                        {{ item1.subDescription }}</small
-                      >
+                        {{ item1.subDescription }}</small>
                     </div>
                   </v-col>
                 </v-row>
@@ -303,20 +264,13 @@
         </v-list-item>
 
         <v-list-item class="mt-2">
-          <v-text-field
-            append-icon="mdi-magnify"
-            label="Tìm kiếm"
-            outlined
-            dense
-          ></v-text-field>
+          <v-text-field append-icon="mdi-magnify" label="Tìm kiếm" outlined dense></v-text-field>
         </v-list-item>
 
         <v-list-item>
           <div class="wrap">
-            <span
-              ><v-icon>mdi-phone</v-icon>
-              <b class="red--text ml-2">0123456789</b></span
-            >
+            <span><v-icon>mdi-phone</v-icon>
+              <b class="red--text ml-2">0123456789</b></span>
           </div>
         </v-list-item>
       </v-list>
@@ -510,7 +464,7 @@ export default Vue.extend({
                 },
                 {
                   name: "Tài Khoản BM",
-                   description: "Các tài khoản BM.",
+                  description: "Các tài khoản BM.",
                   url: "https://muataikhoan.vn/wp-content/uploads/2023/08/cRWzjY.svg",
                 },
                 {
@@ -520,7 +474,7 @@ export default Vue.extend({
                 },
                 {
                   name: "Tài Khoản Twitter",
-                   description: "Các tài khoản Twitter.",
+                  description: "Các tài khoản Twitter.",
                   url: cryptocurrency,
                 },
                 {
@@ -569,7 +523,7 @@ export default Vue.extend({
               name: "Khác",
               description: "Các sản phẩm số khác",
               url: p_other,
-               items: [
+              items: [
                 {
                   name: "Tài khoản FB",
                   description: "Các tài khoản FB.",
@@ -577,7 +531,7 @@ export default Vue.extend({
                 },
                 {
                   name: "Tài Khoản BM",
-                   description: "Các tài khoản BM.",
+                  description: "Các tài khoản BM.",
                   url: "https://muataikhoan.vn/wp-content/uploads/2023/08/cRWzjY.svg",
                 },
                 {
@@ -587,7 +541,7 @@ export default Vue.extend({
                 },
                 {
                   name: "Tài Khoản Twitter",
-                   description: "Các tài khoản Twitter.",
+                  description: "Các tài khoản Twitter.",
                   url: cryptocurrency,
                 },
                 {
@@ -789,7 +743,7 @@ export default Vue.extend({
   display: inline-block;
 }
 
-.v-tabs--vertical > .v-tabs-bar .v-tab {
+.v-tabs--vertical>.v-tabs-bar .v-tab {
   height: 54px;
 }
 
@@ -815,10 +769,7 @@ export default Vue.extend({
   position: relative;
 }
 
-.v-application--is-ltr
-  .v-list-group--no-action
-  > .v-list-group__items
-  > .v-list-item {
+.v-application--is-ltr .v-list-group--no-action>.v-list-group__items>.v-list-item {
   padding-left: 39px;
 }
 
@@ -837,6 +788,7 @@ export default Vue.extend({
   from {
     height: 0px;
   }
+
   to {
     height: 200px;
     background-color: blue;
@@ -853,33 +805,43 @@ export default Vue.extend({
   0% {
     background-color: #ffebee;
   }
+
   10% {
     background-color: #fce4ec;
   }
+
   20% {
     background-color: #f3e5f5;
   }
+
   30% {
     background-color: #ede7f6;
   }
+
   40% {
     background-color: #e8eaf6;
   }
+
   50% {
     background-color: #e3f2fd;
   }
+
   60% {
     background-color: #e1f5fe;
   }
+
   70% {
     background-color: #e0f7fa;
   }
+
   80% {
     background-color: #e0f2f1;
   }
+
   90% {
     background-color: #e8f5e9;
   }
+
   100% {
     background-color: #f1f8e9;
   }
