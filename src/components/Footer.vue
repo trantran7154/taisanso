@@ -1,6 +1,6 @@
 <template>
     <footer class="footer">
-        <v-row style="padding-left: 80px;">
+        <v-row style="padding: 50px 0px 40px 100px;">
             <v-col cols="12" md="3" v-for="item in itemFooter" :key="item">
                 <ul class="footer__nav">
                     <li class="nav__item">
@@ -38,29 +38,33 @@
             </v-col>
         </v-row>
 
-        <div class="legal mt-5">
-            <div class="d-flex pa-2">
-                <p class="mt-3">&copy; All rights reserved </p>
-                <v-img src="../img/logo.jpg" style="background-size: cover; height: 50px; width: 180px;"></v-img>
+        <div class="d-flex legal">
+            <div class="mr-auto">
+                <div class="d-flex pa-2 ml-5">
+                    <p class="mt-3">&copy; All rights reserved </p>
+                    <v-img src="../img/logo.jpg" style="background-size: cover; height: 50px; width: 180px;"></v-img>
+                </div>
             </div>
 
-            <div class="legal__links">
-                <v-btn text class="text-capitalize">Điều khoản</v-btn>
-                <v-btn class="mx-2" fab dark small outlined color="primary">
-                    <v-icon dark>
-                        mdi-facebook
-                    </v-icon>
-                </v-btn>
-                <v-btn class="mx-2" fab dark small outlined color="primary">
-                    <v-icon dark>
-                        mdi-linkedin
-                    </v-icon>
-                </v-btn>
-                <v-btn class="mx-2" fab dark small outlined color="primary">
-                    <v-icon dark>
-                        mdi-youtube
-                    </v-icon>
-                </v-btn>
+            <div class="pa-2">
+                <div class="legal__links pa-2">
+                    <v-btn text class="text-capitalize">Điều khoản</v-btn>
+                    <v-btn class="mx-2" fab dark small outlined color="primary">
+                        <v-icon dark>
+                            mdi-facebook
+                        </v-icon>
+                    </v-btn>
+                    <v-btn class="mx-2" fab dark small outlined color="primary">
+                        <v-icon dark>
+                            mdi-linkedin
+                        </v-icon>
+                    </v-btn>
+                    <v-btn class="mx-2" fab dark small outlined color="primary">
+                        <v-icon dark>
+                            mdi-youtube
+                        </v-icon>
+                    </v-btn>
+                </div>
             </div>
         </div>
     </footer>
@@ -153,7 +157,6 @@ body {
 
 .footer {
     flex-flow: row wrap;
-    padding: 50px 30px 20px 20px;
     color: #2f2f2f;
     background-color: #fff;
     border-top: 1px solid #e5e5e5;
