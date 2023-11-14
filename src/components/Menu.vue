@@ -104,7 +104,7 @@
           <div v-for="item in menus" :key="item.name">
             <v-list-group no-action sub-group v-for="item1 in item.items" :key="item1.name">
               <template v-slot:activator>
-                <v-list-item style="padding: 0 0px !important;">
+                <v-list-item style="padding: 0 0px !important; margin-left: -13px;">
                   <v-list-item-avatar>
                     <img :src="item1.url" :alt="item1.name" />
                   </v-list-item-avatar>
