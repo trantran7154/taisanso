@@ -1,6 +1,6 @@
 <template>
     <div class="d-flex align-center justify-center forgot mt-5">
-        <v-sheet width="440" class="mx-auto" style="background-color: #F5F5F5; border-radius: 20px; padding: 50px;">
+        <v-sheet width="300" class="mx-auto">
             <v-img src="../../img/forgot-password.png"></v-img>
             <v-form ref="form" v-model="formForgot.valid" lazy-validation fast-fail>
                 <h3 class="text-center font-weight-regular mt-5" style="font-size: 24px;">Đặt lại mật khẩu của bạn nếu quên
