@@ -118,7 +118,7 @@
                 </v-list-item>
               </template>
               <v-list-item link>
-                <div class="mt-5">
+                <div class="mt-5 mb-9">
                   <b class="mb-5">Dịch vụ chính</b>
                   <v-row>
                     <v-col cols="12" md="12" v-for="item2 in item1.items" :key="item2.name">
