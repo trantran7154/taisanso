@@ -1,6 +1,6 @@
 <template>
     <footer class="footer">
-        <v-row style="padding: 50px 0px 50px 70px;">
+        <v-row style="padding: 50px 0px 50px 60px;">
             <v-col cols="12" md="3" v-for="item in itemFooter" :key="item">
                 <ul class="footer__nav">
                     <li class="nav__item">
