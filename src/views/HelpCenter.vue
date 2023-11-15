@@ -92,7 +92,7 @@
                             </div>
                         </div>
 
-                        <div class="pa-2 ml-auto">
+                        <div class="pa-2 ml-auto mt-2">
                             <p>Xem Tất Cả >></p>
                         </div>
                     </div>
@@ -126,7 +126,7 @@
                             </div>
                         </div>
 
-                        <div class="pa-2 ml-auto">
+                        <div class="pa-2 ml-auto mt-2">
                             <p>Xem Tất Cả >></p>
                         </div>
                     </div>
@@ -180,7 +180,7 @@
                             </div>
                         </div>
 
-                        <div class="pa-2 ml-auto">
+                        <div class="pa-2 ml-auto mt-1">
                             <p>Xem Tất Cả >></p>
                         </div>
                     </div>
@@ -214,7 +214,7 @@
                             </div>
                         </div>
 
-                        <div class="pa-2 ml-auto">
+                        <div class="pa-2 ml-auto mt-1">
                             <p>Xem Tất Cả >></p>
                         </div>
                     </div>
