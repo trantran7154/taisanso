@@ -4,6 +4,7 @@ import HomeView from '../views/HomeView.vue'
 import Login from '../views/User/Login.vue'
 import SignUp from '../views/User/SignUp.vue'
 import ForgotPassword from '../views/User/ForgotPassword.vue'
+import HelpCenter from '../views/HelpCenter.vue'
 
 Vue.use(VueRouter)
 
@@ -27,6 +28,11 @@ const routes: Array<RouteConfig> = [
     path: '/forgot-password',
     name: 'forgotpassword',
     component: ForgotPassword
+  },
+  {
+    path: '/help-center',
+    name: 'helpcenter',
+    component: HelpCenter
   }
 ]
 const router = new VueRouter({
