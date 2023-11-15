@@ -219,7 +219,7 @@
                         </div>
                     </div>
 
-                    <div id="app">
+                    <div class="pa-3" id="app">
                         <v-app id="inspire">
                             <v-row>
                                 <v-col cols="6" md="6" lg="3" v-for="item in itemsVideo" :key="item.title">

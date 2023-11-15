@@ -8,8 +8,8 @@
           </v-col>
 
           <v-col cols="12" v-if="size.onsize < 1111">
-            <v-img max-height="40" max-width="155" src="../img/logo.jpg" class="float-start"
-              style="margin-left: -15px; !important"></v-img>
+            <a href="/"><v-img max-height="40" max-width="155" src="../img/logo.jpg" class="float-start"
+                style="margin-left: -15px; !important"></v-img></a>
           </v-col>
 
           <v-col cols="10" v-if="size.onsize >= 1111">
@@ -23,7 +23,8 @@
       </v-spacer>
 
       <v-responsive max-width="156" class="float-end">
-        <v-btn color="var(--color-3)" outlined class="text-none font-weight-bold ml-10" dark>Đăng nhập</v-btn>
+        <v-btn color="var(--color-3)" outlined class="text-none font-weight-bold ml-10" dark href="/login">Đăng
+          nhập</v-btn>
       </v-responsive>
       <v-app-bar-nav-icon v-if="size.onsize < 1111" @click="drawer = !drawer"></v-app-bar-nav-icon>
     </v-app-bar>
@@ -93,7 +94,7 @@
           <v-list-item-icon>
             <v-icon>mdi-home</v-icon>
           </v-list-item-icon>
-          <v-list-item-title>Trang chủ</v-list-item-title>
+          <v-list-item-title><a href="/" class="item-menu">Trang chủ</a></v-list-item-title>
         </v-list-item>
 
         <v-list-group prepend-icon="mdi mdi-archive">
@@ -130,7 +131,8 @@
 
                           <v-col>
                             <h5>{{ item2.name }}</h5>
-                            <p class="text--secondary" style="font-size: 12px !important; margin-bottom: -26px !important;">
+                            <p class="text--secondary"
+                              style="font-size: 12px !important; margin-bottom: -26px !important;">
                               {{ item2.description }}
                             </p>
                           </v-col>
@@ -161,7 +163,7 @@
           <v-list-item-icon>
             <v-icon>mdi mdi-face-agent</v-icon>
           </v-list-item-icon>
-          <v-list-item-title>Hỗ trợ</v-list-item-title>
+          <v-list-item-title><a href="/help-center" class="item-menu">Hỗ trợ</a></v-list-item-title>
         </v-list-item>
 
         <v-list-item>
@@ -594,7 +596,7 @@ export default Vue.extend({
 }
 
 .v-application--is-ltr .v-list-group--sub-group .v-list-group__header {
-    padding-left: 18px;
+  padding-left: 18px;
 }
 
 .wrap {
@@ -669,5 +671,10 @@ export default Vue.extend({
   100% {
     background-color: #f1f8e9;
   }
+}
+
+.item-menu {
+  text-decoration: none !important;
+  color: #000;
 }
 </style>
