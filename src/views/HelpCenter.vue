@@ -265,7 +265,7 @@
 import Vue from "vue";
 
 export default Vue.extend({
-    name: "HelloWorld",
+    name: "HelpCenter",
     props: ["size"],
     data: () => ({
         dialogRoto: false,

@@ -1,11 +1,12 @@
 import Vue from 'vue'
 import VueRouter, { RouteConfig } from 'vue-router'
 import HomeView from '../views/HomeView.vue'
+import HelpCenter from '../views/HelpCenter.vue'
+import OTP from '../views/OTP.vue'
 import Login from '../views/User/Login.vue'
 import SignUp from '../views/User/SignUp.vue'
 import ForgotPassword from '../views/User/ForgotPassword.vue'
-import HelpCenter from '../views/HelpCenter.vue'
-import OTP from '../views/OTP.vue'
+import Profile from '../views/User/Profile.vue'
 
 Vue.use(VueRouter)
 
@@ -39,6 +40,11 @@ const routes: Array<RouteConfig> = [
     path: '/otp',
     name: 'otp',
     component: OTP
+  },
+  {
+    path: '/profile',
+    name: 'profile',
+    component: Profile
   }
 ]
 const router = new VueRouter({
