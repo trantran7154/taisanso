@@ -33,7 +33,7 @@
     </v-sheet>
 </template>
 
-<script lang="ts">
+<script>
 export default {
     data: () => ({
         otp: '',
@@ -46,7 +46,7 @@ export default {
         expectedOtp: '123456',
     }),
     methods: {
-        onFinish(rsp: any) {
+        onFinish(rsp) {
             this.loading = true;
             setTimeout(() => {
                 this.loading = false;
