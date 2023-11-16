@@ -9,8 +9,10 @@
                             <v-col cols="4" md="4" lg="4">
                                 <div class="dashboard">
                                     <div class="user mt-5" style="width: 310px;">
-                                        <img src="https://randomuser.me/api/portraits/women/44.jpg" alt="" />
-                                        <h3>Dagny Taggart</h3>
+                                        <v-avatar size="150"><img
+                                                src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQQLHZh0aF5Og2DF4G19yPVx_QGjXfaBByFZA&usqp=CAU"
+                                                alt="" /></v-avatar>
+                                        <h3 class="mt-3">Dagny Taggart</h3>
                                         <p class="text-online">Online</p>
                                     </div>
 
@@ -19,10 +21,10 @@
                                     </div>
 
                                     <div class="d-flex flex-column mt-3" style="font-size: 16px;">
-                                        <small class="ma-2"><v-icon>mdi-calendar-month</v-icon> 16-11-2023 14:25</small>
-                                        <small class="ma-2"><v-icon>mdi-map-marker-outline</v-icon>IP:
+                                        <small class="ma-1"><v-icon>mdi-calendar-month</v-icon> 16-11-2023 14:25</small>
+                                        <small class="ma-1"><v-icon>mdi-map-marker-outline</v-icon>IP:
                                             2402:9d80:c1e:cb00:5ef:1631:3e7c:f406</small>
-                                        <small class="ma-2"><v-icon>mdi-cellphone-link</v-icon> Device: Chrome 119 on
+                                        <small class="ma-1"><v-icon>mdi-cellphone-link</v-icon> Device: Chrome 119 on
                                             Windows</small>
                                     </div>
 
@@ -34,7 +36,8 @@
                                         <h1>LV 0</h1>
                                         <v-progress-linear color="light-blue" height="25" value="0"
                                             striped>0%</v-progress-linear>
-                                        <em class="mt-1" style="color: red; text-align: center; font-size: 15px;">Hãy mua/bán thêm 100.000đ
+                                        <em class="mt-1" style="color: red; text-align: center; font-size: 15px;">Hãy
+                                            mua/bán thêm 100.000đ
                                             để
                                             đạt
                                             level
@@ -134,22 +137,23 @@
                             <v-col cols="12" md="12" lg="12">
                                 <div class="dashboard">
                                     <div class="user" style="display: block !important; width: 100%;">
-                                        <v-avatar size="150"><img src="https://randomuser.me/api/portraits/women/44.jpg"
-                                                alt="" class="circle" /></v-avatar>
+                                        <v-avatar size="120"><img
+                                                src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQQLHZh0aF5Og2DF4G19yPVx_QGjXfaBByFZA&usqp=CAU"
+                                                alt="" /></v-avatar>
 
-                                        <h3>Dagny Taggart</h3>
+                                        <h3 class="mt-3">Dagny Taggart</h3>
                                         <p class="text-online">Online</p>
                                     </div>
 
-                                    <div class="pa-4 font-weight-bold">
+                                    <div class="font-weight-bold mt-4">
                                         <span style="border-bottom: 2px solid blue;">Lịch sử đăng nhập</span>
                                     </div>
 
-                                    <div class="d-flex flex-column mt-3" style="font-size: 13px">
-                                        <small class="ma-2"><v-icon>mdi-calendar-month</v-icon> 16-11-2023 14:25</small>
-                                        <small class="ma-2"><v-icon>mdi-map-marker-outline</v-icon>IP:
+                                    <div class="d-flex flex-column mt-3" style="font-size: 16px">
+                                        <small class="ma-1"><v-icon>mdi-calendar-month</v-icon> 16-11-2023 14:25</small>
+                                        <small class="ma-1"><v-icon>mdi-map-marker-outline</v-icon>IP:
                                             2402:9d80:c1e:cb00:5ef:1631:3e7c:f406</small>
-                                        <small class="ma-2"><v-icon>mdi-cellphone-link</v-icon> Device: Chrome 119 on
+                                        <small class="ma-1"><v-icon>mdi-cellphone-link</v-icon> Device: Chrome 119 on
                                             Windows</small>
                                     </div>
 
@@ -161,7 +165,8 @@
                                         <h1>LV 0</h1>
                                         <v-progress-linear color="light-blue" height="25" value="0"
                                             striped>0%</v-progress-linear>
-                                        <em class="mt-1" style="color: red; text-align: center; font-size: 15px;">Hãy mua/bán thêm 100.000đ
+                                        <em class="mt-1" style="color: red; text-align: center; font-size: 15px;">Hãy
+                                            mua/bán thêm 100.000đ
                                             để
                                             đạt
                                             level
@@ -307,8 +312,6 @@ export default Vue.extend({
             background: linear-gradient(to right bottom,
                     rgba(255, 255, 255, 0.7),
                     rgba(255, 255, 255, 0.3));
-            -webkit-backdrop-filter: blur(2rem);
-            backdrop-filter: blur(2rem);
         }
     }
 
@@ -437,5 +440,4 @@ export default Vue.extend({
             left: 60%;
         }
     }
-}
-</style>
+}</style>
