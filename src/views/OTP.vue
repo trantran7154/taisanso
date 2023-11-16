@@ -47,14 +47,14 @@ export default {
     }),
     methods: {
         onFinish(rsp: any) {
-            this.loading = true
+            this.loading = true;
             setTimeout(() => {
-                this.loading = false
-                this.snackbarColor = (rsp === this.expectedOtp) ? 'success' : 'error'
-                this.notification = (rsp === this.expectedOtp) ? 'Xác minh thành công' : 'Mã xác minh chưa đúng'
-                this.icon = (rsp === this.expectedOtp) ? 'mdi-check-circle-outline' : 'mdi-alert-circle-outline'
-                this.text = `${this.notification}`
-                this.snackbar = true
+                this.loading = false;
+                this.snackbarColor = (rsp === this.expectedOtp) ? 'success' : 'error';
+                this.notification = (rsp === this.expectedOtp) ? 'Xác minh thành công' : 'Mã xác minh chưa đúng';
+                this.icon = (rsp === this.expectedOtp) ? 'mdi-check-circle-outline' : 'mdi-alert-circle-outline';
+                this.text = `${this.notification}`;
+                this.snackbar = true;
             }, 2000)
         },
     },
