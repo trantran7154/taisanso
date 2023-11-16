@@ -17,7 +17,7 @@
                                     </div>
 
                                     <div class="font-weight-bold mt-5">
-                                        <span style="color: blue;">Lịch sử đăng nhập</span>
+                                        <span style="color: blue;">--- Lịch sử đăng nhập ---</span>
                                     </div>
 
                                     <div class="d-flex flex-column mt-3" style="font-size: 16px;">
@@ -146,7 +146,7 @@
                                     </div>
 
                                     <div class="font-weight-bold mt-4">
-                                        <span style="color: blue;">Lịch sử đăng nhập</span>
+                                        <span style="color: blue;">--- Lịch sử đăng nhập ---</span>
                                     </div>
 
                                     <div class="d-flex flex-column mt-3" style="font-size: 13px">
@@ -325,9 +325,8 @@ export default Vue.extend({
         background: linear-gradient(to right bottom,
                 rgba(255, 255, 255, 0.7),
                 rgba(255, 255, 255, 0.3));
-        border-radius: 2rem;
+        border-radius: 30px;
         padding: 30px;
-        border: 2px solid black;
         background-color: paleturquoise;
     }
 
