@@ -23,7 +23,7 @@
                                     <div class="d-flex flex-column mt-3" style="font-size: 16px;">
                                         <small class="ma-1"><v-icon>mdi-calendar-month</v-icon> 16-11-2023 14:25</small>
                                         <small class="ma-1"><v-icon>mdi-map-marker-outline</v-icon>IP:
-                                            2402:9d80:c1e:cb00:5ef:1631:3e7c:f406</small>
+                                            2901:9d70:c8e:cb00:5ef:1239:3e7c:f234</small>
                                         <small class="ma-1"><v-icon>mdi-cellphone-link</v-icon> Device: Chrome 119 on
                                             Windows</small>
                                     </div>
@@ -78,7 +78,8 @@
                                                     </tr>
                                                     <tr>
                                                         <td class="font-weight-bold">Số bài viết</td>
-                                                        <td><a href="#" style="text-decoration: none; color: limegreen;">0 bài
+                                                        <td><a href="#" style="text-decoration: none; color: limegreen;">0
+                                                                bài
                                                                 viết</a>
                                                         </td>
                                                     </tr>
@@ -93,7 +94,8 @@
                                                             <span style="color: red;"><v-icon color="error"
                                                                     size="20">mdi-close-circle</v-icon> Chưa bật</span>
                                                             <br>
-                                                            <small style="color: limegreen;" class="font-weight-bold">(Hãy bảo
+                                                            <small style="color: limegreen;" class="font-weight-bold">(Hãy
+                                                                bảo
                                                                 vệ
                                                                 tài
                                                                 khoản
@@ -106,7 +108,8 @@
                                                             <span style="color: red;"><v-icon color="error"
                                                                     size="20">mdi-close-circle</v-icon> Chưa kết nối</span>
                                                             <br>
-                                                            <small style="color: limegreen;" class="font-weight-bold">(Bạn có
+                                                            <small style="color: limegreen;" class="font-weight-bold">(Bạn
+                                                                có
                                                                 thể
                                                                 gởi và
                                                                 nhận được tin nhắn mới (chưa xem) qua Telegram nếu có kết
@@ -152,7 +155,7 @@
                                     <div class="d-flex flex-column mt-3" style="font-size: 13px">
                                         <small class="ma-1"><v-icon>mdi-calendar-month</v-icon> 16-11-2023 14:25</small>
                                         <small class="ma-1"><v-icon>mdi-map-marker-outline</v-icon>IP:
-                                            2402:9d80:c1e:cb00:5ef:1631:3e7c:f406</small>
+                                            2901:9d70:c8e:cb00:5ef:1239:3e7c:f234</small>
                                         <small class="ma-1"><v-icon>mdi-cellphone-link</v-icon> Device: Chrome 119 on
                                             Windows</small>
                                     </div>
@@ -207,7 +210,8 @@
                                                     </tr>
                                                     <tr>
                                                         <td class="font-weight-bold">Số bài viết</td>
-                                                        <td><a href="#" style="text-decoration: none; color: limegreen;">0 bài
+                                                        <td><a href="#" style="text-decoration: none; color: limegreen;">0
+                                                                bài
                                                                 viết</a>
                                                         </td>
                                                     </tr>
@@ -222,7 +226,8 @@
                                                             <span style="color: red;"><v-icon color="error"
                                                                     size="20">mdi-close-circle</v-icon> Chưa bật</span>
                                                             <br>
-                                                            <small style="color: limegreen;" class="font-weight-bold">(Hãy bảo
+                                                            <small style="color: limegreen;" class="font-weight-bold">(Hãy
+                                                                bảo
                                                                 vệ
                                                                 tài
                                                                 khoản
@@ -235,7 +240,8 @@
                                                             <span style="color: red;"><v-icon color="error"
                                                                     size="20">mdi-close-circle</v-icon> Chưa kết nối</span>
                                                             <br>
-                                                            <small style="color: limegreen;" class="font-weight-bold">(Bạn có
+                                                            <small style="color: limegreen;" class="font-weight-bold">(Bạn
+                                                                có
                                                                 thể
                                                                 gởi và
                                                                 nhận được tin nhắn mới (chưa xem) qua Telegram nếu có kết
@@ -282,17 +288,11 @@ export default Vue.extend({
     margin: 0;
     padding: 0;
     box-sizing: border-box;
-    // --main-bg-color: #65dfc9;
-    // --secondary-bg-color: #6cdbeb;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
 }
 
 .content {
-    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
     min-height: 100vh;
-    background: var(--main-bg-color);
-    background: linear-gradient(to right top,
-            var(--main-bg-color),
-            var(--secondary-bg-color));
     display: flex;
     align-items: center;
     justify-content: center;
@@ -330,11 +330,10 @@ export default Vue.extend({
         background-color: paleturquoise;
     }
 
-    .user,
-    .h2 {
+    .user {
         display: none;
     }
-
+    
     .level {
         flex: 3;
         margin: 1rem;
@@ -419,5 +418,4 @@ export default Vue.extend({
             margin-right: 0.5rem;
         }
     }
-}
-</style>
+}</style>
