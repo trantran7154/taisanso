@@ -149,7 +149,7 @@
                                         <span style="border-bottom: 2px solid blue;">Lịch sử đăng nhập</span>
                                     </div>
 
-                                    <div class="d-flex flex-column mt-3" style="font-size: 16px">
+                                    <div class="d-flex flex-column mt-3" style="font-size: 13px">
                                         <small class="ma-1"><v-icon>mdi-calendar-month</v-icon> 16-11-2023 14:25</small>
                                         <small class="ma-1"><v-icon>mdi-map-marker-outline</v-icon>IP:
                                             2402:9d80:c1e:cb00:5ef:1631:3e7c:f406</small>
