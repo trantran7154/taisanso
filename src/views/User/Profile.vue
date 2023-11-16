@@ -133,7 +133,7 @@
                         <v-row>
                             <v-col cols="12" md="12" lg="12">
                                 <div class="dashboard">
-                                    <div class="user" style="display: block !important;">
+                                    <div class="user" style="display: block !important; width: 100%;">
                                         <v-avatar size="150"><img src="https://randomuser.me/api/portraits/women/44.jpg"
                                                 alt="" class="circle" /></v-avatar>
 
@@ -145,7 +145,7 @@
                                         <span style="border-bottom: 2px solid blue;">Lịch sử đăng nhập</span>
                                     </div>
 
-                                    <div class="d-flex flex-column mt-3" style="font-size: 16px">
+                                    <div class="d-flex flex-column mt-3" style="font-size: 14px">
                                         <small class="ma-2"><v-icon>mdi-calendar-month</v-icon> 16-11-2023 14:25</small>
                                         <small class="ma-2"><v-icon>mdi-map-marker-outline</v-icon>IP:
                                             2402:9d80:c1e:cb00:5ef:1631:3e7c:f406</small>
