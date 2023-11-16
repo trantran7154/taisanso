@@ -16,8 +16,8 @@
                                         <p class="text-online">Online</p>
                                     </div>
 
-                                    <div class="pa-4 font-weight-bold mt-5">
-                                        <span style="border-bottom: 2px solid blue;">Lịch sử đăng nhập</span>
+                                    <div class="font-weight-bold mt-5">
+                                        <span style="color: blue;">Lịch sử đăng nhập</span>
                                     </div>
 
                                     <div class="d-flex flex-column mt-3" style="font-size: 16px;">
@@ -146,7 +146,7 @@
                                     </div>
 
                                     <div class="font-weight-bold mt-4">
-                                        <span style="border-bottom: 2px solid blue;">Lịch sử đăng nhập</span>
+                                        <span style="color: blue;">Lịch sử đăng nhập</span>
                                     </div>
 
                                     <div class="d-flex flex-column mt-3" style="font-size: 13px">
