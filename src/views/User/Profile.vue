@@ -78,7 +78,7 @@
                                                     </tr>
                                                     <tr>
                                                         <td class="font-weight-bold">Số bài viết</td>
-                                                        <td><a href="#" style="text-decoration: none; color: green;">0 bài
+                                                        <td><a href="#" style="text-decoration: none; color: limegreen;">0 bài
                                                                 viết</a>
                                                         </td>
                                                     </tr>
@@ -93,7 +93,7 @@
                                                             <span style="color: red;"><v-icon color="error"
                                                                     size="20">mdi-close-circle</v-icon> Chưa bật</span>
                                                             <br>
-                                                            <small style="color: green;" class="font-weight-bold">(Hãy bảo
+                                                            <small style="color: limegreen;" class="font-weight-bold">(Hãy bảo
                                                                 vệ
                                                                 tài
                                                                 khoản
@@ -106,7 +106,7 @@
                                                             <span style="color: red;"><v-icon color="error"
                                                                     size="20">mdi-close-circle</v-icon> Chưa kết nối</span>
                                                             <br>
-                                                            <small style="color: green;" class="font-weight-bold">(Bạn có
+                                                            <small style="color: limegreen;" class="font-weight-bold">(Bạn có
                                                                 thể
                                                                 gởi và
                                                                 nhận được tin nhắn mới (chưa xem) qua Telegram nếu có kết
@@ -207,7 +207,7 @@
                                                     </tr>
                                                     <tr>
                                                         <td class="font-weight-bold">Số bài viết</td>
-                                                        <td><a href="#" style="text-decoration: none; color: green;">0 bài
+                                                        <td><a href="#" style="text-decoration: none; color: limegreen;">0 bài
                                                                 viết</a>
                                                         </td>
                                                     </tr>
@@ -222,7 +222,7 @@
                                                             <span style="color: red;"><v-icon color="error"
                                                                     size="20">mdi-close-circle</v-icon> Chưa bật</span>
                                                             <br>
-                                                            <small style="color: green;" class="font-weight-bold">(Hãy bảo
+                                                            <small style="color: limegreen;" class="font-weight-bold">(Hãy bảo
                                                                 vệ
                                                                 tài
                                                                 khoản
@@ -235,7 +235,7 @@
                                                             <span style="color: red;"><v-icon color="error"
                                                                     size="20">mdi-close-circle</v-icon> Chưa kết nối</span>
                                                             <br>
-                                                            <small style="color: green;" class="font-weight-bold">(Bạn có
+                                                            <small style="color: limegreen;" class="font-weight-bold">(Bạn có
                                                                 thể
                                                                 gởi và
                                                                 nhận được tin nhắn mới (chưa xem) qua Telegram nếu có kết
@@ -282,8 +282,8 @@ export default Vue.extend({
     margin: 0;
     padding: 0;
     box-sizing: border-box;
-    --main-bg-color: #65dfc9;
-    --secondary-bg-color: #6cdbeb;
+    // --main-bg-color: #65dfc9;
+    // --secondary-bg-color: #6cdbeb;
 }
 
 .content {
@@ -327,11 +327,12 @@ export default Vue.extend({
                 rgba(255, 255, 255, 0.3));
         border-radius: 2rem;
         padding: 30px;
+        border: 2px solid black;
+        background-color: paleturquoise;
     }
 
     .user,
-    .h2,
-    .progress {
+    .h2 {
         display: none;
     }
 
@@ -377,7 +378,7 @@ export default Vue.extend({
     }
 
     .text-online {
-        color: green;
+        color: limegreen;
         font-weight: 500;
         opacity: 0.8;
     }
@@ -418,26 +419,6 @@ export default Vue.extend({
         .card img {
             margin-right: 0.5rem;
         }
-
-        .progress {
-            display: block;
-            background: linear-gradient(to right top,
-                    var(--main-bg-color),
-                    var(--secondary-bg-color));
-            width: 100%;
-            height: 25%;
-            border-radius: 1rem;
-            position: relative;
-            overflow: hidden;
-        }
-
-        .progress::after {
-            content: "";
-            width: 100%;
-            height: 100%;
-            background: rgb(236, 236, 236);
-            position: absolute;
-            left: 60%;
-        }
     }
-}</style>
+}
+</style>
