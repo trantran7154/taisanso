@@ -5,6 +5,7 @@ import Login from '../views/User/Login.vue'
 import SignUp from '../views/User/SignUp.vue'
 import ForgotPassword from '../views/User/ForgotPassword.vue'
 import HelpCenter from '../views/HelpCenter.vue'
+import OTP from '../views/OTP.vue'
 
 Vue.use(VueRouter)
 
@@ -33,6 +34,11 @@ const routes: Array<RouteConfig> = [
     path: '/help-center',
     name: 'helpcenter',
     component: HelpCenter
+  },
+  {
+    path: '/otp',
+    name: 'otp',
+    component: OTP
   }
 ]
 const router = new VueRouter({
