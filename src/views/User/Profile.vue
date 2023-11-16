@@ -113,6 +113,12 @@
                                                 </tbody>
                                             </template>
                                         </v-simple-table>
+
+                                        <div class="text-center mt-8">
+                                            <v-btn depressed color="primary">
+                                                Chỉnh sửa
+                                            </v-btn>
+                                        </div>
                                     </div>
                                 </div>
                             </v-col>
@@ -128,8 +134,9 @@
                             <v-col cols="12" md="12" lg="12">
                                 <div class="dashboard">
                                     <div class="user" style="display: block !important;">
-                                        <v-avatar size="150"><img src="https://randomuser.me/api/portraits/women/44.jpg" alt="" class="circle" /></v-avatar>
-                                        
+                                        <v-avatar size="150"><img src="https://randomuser.me/api/portraits/women/44.jpg"
+                                                alt="" class="circle" /></v-avatar>
+
                                         <h3>Dagny Taggart</h3>
                                         <p class="text-online">Online</p>
                                     </div>
@@ -233,6 +240,12 @@
                                                 </tbody>
                                             </template>
                                         </v-simple-table>
+
+                                        <div class="text-center mt-4">
+                                            <v-btn depressed color="primary">
+                                                Chỉnh sửa
+                                            </v-btn>
+                                        </div>
                                     </div>
                                 </div>
                             </v-col>
