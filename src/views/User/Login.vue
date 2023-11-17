@@ -79,38 +79,38 @@ export default Vue.extend({
 })
 </script>
 
-<style scoped>
+<style lang="scss" scoped>
 .login {
   font-family: Muli, sans-serif;
   padding: 50px 0px 50px 0px;
-}
 
-.login .btn {
-  align-items: center !important;
-  justify-content: center !important
-}
+  .btn {
+    align-items: center !important;
+    justify-content: center !important
+  }
 
-.login .button {
-  border: 1px solid #dadce0;
-  border-radius: 4px;
-  padding: 12px 24px;
-}
+  .button {
+    border: 1px solid #dadce0;
+    border-radius: 4px;
+    padding: 12px 24px;
+  }
 
-.login p {
-  margin-top: -29px;
-  color: #979797;
-  font-size: 17px;
-}
+  p {
+    margin-top: -29px;
+    color: #979797;
+    font-size: 17px;
+  }
 
-.login .btn-login {
-  font-size: 14px;
-  text-transform: none;
-  font-weight: bold;
-}
+  .btn-login {
+    font-size: 14px;
+    text-transform: none;
+    font-weight: bold;
+  }
 
-.login .forgot {
-  text-decoration: none;
-  color: black;
-  font-size: 16px;
+  .forgot {
+    text-decoration: none;
+    color: black;
+    font-size: 16px;
+  }
 }
 </style>

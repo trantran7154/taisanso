@@ -7,6 +7,7 @@ import Login from '../views/User/Login.vue'
 import SignUp from '../views/User/SignUp.vue'
 import ForgotPassword from '../views/User/ForgotPassword.vue'
 import Profile from '../views/User/Profile.vue'
+import ChangePassword from '../views/User/ChangePassword.vue'
 
 Vue.use(VueRouter)
 
@@ -45,6 +46,11 @@ const routes: Array<RouteConfig> = [
     path: '/profile',
     name: 'profile',
     component: Profile
+  },
+  {
+    path: '/change-password',
+    name: 'changepassword',
+    component: ChangePassword
   }
 ]
 const router = new VueRouter({

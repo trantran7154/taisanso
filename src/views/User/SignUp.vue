@@ -97,39 +97,39 @@ export default Vue.extend({
 })
 </script>
   
-<style scoped>
+<style lang="scss" scoped>
 .signup {
     font-family: Muli, sans-serif;
     padding: 50px 0px 50px 0px;
-}
 
-.signup .btn {
-    align-items: center !important;
-    justify-content: center !important
-}
+    .btn {
+        align-items: center !important;
+        justify-content: center !important
+    }
 
-.signup .button {
-    border: 1px solid #dadce0;
-    border-radius: 4px;
-    padding: 12px 24px;
-}
+    .button {
+        border: 1px solid #dadce0;
+        border-radius: 4px;
+        padding: 12px 24px;
+    }
 
-.signup p {
-    margin-top: -29px;
-    color: #979797;
-    font-size: 17px;
-}
+    p {
+        margin-top: -29px;
+        color: #979797;
+        font-size: 17px;
+    }
 
-.signup .btn-signup {
-    font-size: 14px;
-    text-transform: none;
-    font-weight: bold;
-}
+    .btn-signup {
+        font-size: 14px;
+        text-transform: none;
+        font-weight: bold;
+    }
 
-.signup .forgot {
-    text-decoration: none;
-    color: black;
-    font-size: 16px;
+    .forgot {
+        text-decoration: none;
+        color: black;
+        font-size: 16px;
+    }
 }
 </style>
   

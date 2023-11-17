@@ -52,39 +52,39 @@ export default Vue.extend({
 })
 </script>
   
-<style scoped>
+<style lang="scss" scoped>
 .forgot {
     font-family: Muli, sans-serif;
     padding: 50px 0px 50px 0px;
-}
 
-.forgot .btn {
-    align-items: center !important;
-    justify-content: center !important
-}
+    .btn {
+        align-items: center !important;
+        justify-content: center !important
+    }
 
-.forgot .button {
-    border: 1px solid #dadce0;
-    border-radius: 4px;
-    padding: 12px 24px;
-}
+    .button {
+        border: 1px solid #dadce0;
+        border-radius: 4px;
+        padding: 12px 24px;
+    }
 
-.forgot p {
-    margin-top: -29px;
-    color: #979797;
-    font-size: 17px;
-}
+    p {
+        margin-top: -29px;
+        color: #979797;
+        font-size: 17px;
+    }
 
-.forgot .btn-forgot {
-    font-size: 14px;
-    text-transform: none;
-    font-weight: bold;
-}
+    .btn-forgot {
+        font-size: 14px;
+        text-transform: none;
+        font-weight: bold;
+    }
 
-.forgot .forgot {
-    text-decoration: none;
-    color: black;
-    font-size: 16px;
+    .forgot {
+        text-decoration: none;
+        color: black;
+        font-size: 16px;
+    }
 }
 </style>
   
