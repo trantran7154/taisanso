@@ -452,6 +452,10 @@ $color_grey_dark: #a2a2a2;
 
         .read-more {
             text-align: right;
+            
+            a{
+                text-decoration: none;
+            }
         }
     }
 
