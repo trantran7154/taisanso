@@ -6,7 +6,8 @@ import OTP from '../views/OTP.vue'
 import Login from '../views/User/Login.vue'
 import SignUp from '../views/User/SignUp.vue'
 import ForgotPassword from '../views/User/ForgotPassword.vue'
-import Profile from '../views/User/Profile.vue'
+import ProfileDetail from '../views/User/Profile/Detail.vue'
+import ProfileEdit from '../views/User/Profile/Edit.vue'
 import ChangePassword from '../views/User/ChangePassword.vue'
 
 Vue.use(VueRouter)
@@ -43,9 +44,14 @@ const routes: Array<RouteConfig> = [
     component: OTP
   },
   {
-    path: '/profile',
+    path: '/user/profile/detail',
     name: 'profile',
-    component: Profile
+    component: ProfileDetail
+  },
+  {
+    path: '/user/profile/edit',
+    name: 'profileedit',
+    component: ProfileEdit
   },
   {
     path: '/change-password',

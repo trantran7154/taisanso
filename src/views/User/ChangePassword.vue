@@ -2,7 +2,7 @@
     <div class="d-flex align-center justify-center changepassword">
         <v-sheet width="300" class="mx-auto">
             <v-form ref="form" v-model="formChangePassword.valid" lazy-validation fast-fail>
-                <h3 class="text-center mb-5" style="font-size: 24px;">Đổi mật khẩu</h3>
+                <h3 class="text-center mb-7" style="font-size: 24px;">Đổi mật khẩu</h3>
 
                 <v-text-field label="Mật khẩu cũ" v-model="formChangePassword.value.passwordOld"  :append-icon="formChangePassword.showPasswordOld ? 'mdi-eye' : 'mdi-eye-off'"
                     :type="formChangePassword.showPasswordOld ? 'text' : 'password'"
@@ -22,7 +22,7 @@
                     :rules="[(formChangePassword.value.passwordNew === formChangePassword.value.confirmPasswordNew) || 'Xác nhận mật khẩu chưa đúng']"
                     persistent-hint outlined dense></v-text-field>
 
-                <v-btn @click="changePassword()" class="white--text btn-change-password mb-5" type="submit" color="#000"
+                <v-btn @click="changePassword()" class="white--text btn-change-password mb-5 mt-1" type="submit" color="#000"
                     block x-large>Cập nhật</v-btn>
             </v-form>
         </v-sheet>

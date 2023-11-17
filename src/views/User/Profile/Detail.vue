@@ -253,7 +253,7 @@
                                         </v-simple-table>
 
                                         <div class="text-center mt-4">
-                                            <v-btn depressed color="primary">
+                                            <v-btn href="/user/profile/edit" depressed color="primary">
                                                 Chỉnh sửa
                                             </v-btn>
                                         </div>
@@ -273,7 +273,7 @@
 import Vue from "vue";
 
 export default Vue.extend({
-    name: "Profile",
+    name: "Detail",
     props: ["size"],
     data: () => ({
 
