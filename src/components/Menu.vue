@@ -23,7 +23,7 @@
       </v-spacer>
 
       <v-responsive max-width="156" class="float-end">
-        <v-btn color="var(--color-3)" outlined class="text-none font-weight-bold ml-10" dark href="/login">Đăng
+        <v-btn color="var(--color-3)" outlined class="text-none font-weight-bold ml-10" dark  onclick="window.location.href='/login'">Đăng
           nhập</v-btn>
       </v-responsive>
       <v-app-bar-nav-icon v-if="size.onsize < 1111" @click="drawer = !drawer"></v-app-bar-nav-icon>
