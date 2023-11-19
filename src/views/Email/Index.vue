@@ -1,64 +1,670 @@
 <template>
     <v-app app>
-        <div style="padding: 30px 50px 50px 50px;">
-            <v-row>
-                <v-col cols="12" md="4" lg="4">
-                    <div class="filter">
-                        <v-card class="mx-auto" max-width="350" outlined>
-                            <v-list-item three-line>
-                                <v-list-item-content>
-                                    <v-list-item-title class="text-h5 mb-2 font-weight-bold">
-                                        <v-icon size="30">mdi-filter</v-icon> Bộ lọc
-                                    </v-list-item-title>
+        <XyzTransition xyz="fade-100%">
+            <div style="padding: 30px 50px 50px 50px;" v-if="size.onsize >= 1111">
+                <v-row>
+                    <v-col cols="12" md="4" lg="4">
+                        <div class="filter">
+                            <v-card class="mx-auto" max-width="350" outlined>
+                                <v-list-item three-line>
+                                    <v-list-item-content>
+                                        <v-list-item-title class="text-h5 mb-2 font-weight-bold">
+                                            <v-icon size="30">mdi-filter</v-icon> Bộ lọc
+                                        </v-list-item-title>
 
-                                    <div style="border-bottom: 1px dashed"></div>
+                                        <div style="border-bottom: 1px dashed"></div>
 
-                                    <v-card-actions @click="show = !show" class="mt-2">
-                                        <v-btn outlined color="blue">
-                                            <div class="font-weight-bold">
-                                                Chọn 1 hoặc nhiều sản phẩm
-                                            </div> <v-icon>{{ show ? 'mdi-chevron-up' : 'mdi-chevron-down' }}</v-icon>
-                                        </v-btn>
-                                    </v-card-actions>
+                                        <v-card-actions @click="show = !show" class="mt-2">
+                                            <v-btn outlined color="blue">
+                                                <div class="font-weight-bold">
+                                                    Chọn 1 hoặc nhiều sản phẩm
+                                                </div> <v-icon>{{ show ? 'mdi-chevron-up' : 'mdi-chevron-down' }}</v-icon>
+                                            </v-btn>
+                                        </v-card-actions>
 
-                                    <v-expand-transition>
-                                        <div class="ml-2 mb-3" v-show="show">
-                                            <v-checkbox v-model="formEmail.value.gmail" label="Gmail" color="blue"
-                                                hide-details></v-checkbox>
+                                        <v-expand-transition>
+                                            <div class="ml-2 mb-3" v-show="show">
+                                                <v-checkbox v-model="formEmail.value.gmail" label="Gmail" color="blue"
+                                                    hide-details></v-checkbox>
 
-                                            <v-checkbox v-model="formEmail.value.hotMail" label="HotMail" color="blue"
-                                                hide-details></v-checkbox>
+                                                <v-checkbox v-model="formEmail.value.hotMail" label="HotMail" color="blue"
+                                                    hide-details></v-checkbox>
 
-                                            <v-checkbox v-model="formEmail.value.outlookMail" label="OutlookMail"
-                                                color="blue" hide-details></v-checkbox>
+                                                <v-checkbox v-model="formEmail.value.outlookMail" label="OutlookMail"
+                                                    color="blue" hide-details></v-checkbox>
 
-                                            <v-checkbox v-model="formEmail.value.ruMail" label="RuMail" color="blue"
-                                                hide-details></v-checkbox>
+                                                <v-checkbox v-model="formEmail.value.ruMail" label="RuMail" color="blue"
+                                                    hide-details></v-checkbox>
 
-                                            <v-checkbox v-model="formEmail.value.domainMail" label="DomainMail" color="blue"
-                                                hide-details></v-checkbox>
+                                                <v-checkbox v-model="formEmail.value.domainMail" label="DomainMail"
+                                                    color="blue" hide-details></v-checkbox>
 
-                                            <v-checkbox v-model="formEmail.value.yahooMail" label="YahooMail" color="blue"
-                                                hide-details></v-checkbox>
+                                                <v-checkbox v-model="formEmail.value.yahooMail" label="YahooMail"
+                                                    color="blue" hide-details></v-checkbox>
 
-                                            <v-checkbox v-model="formEmail.value.protonMail" label="ProtonMail" color="blue"
-                                                hide-details></v-checkbox>
+                                                <v-checkbox v-model="formEmail.value.protonMail" label="ProtonMail"
+                                                    color="blue" hide-details></v-checkbox>
 
-                                            <v-checkbox v-model="formEmail.value.othersMail" label="Loại Mail Khác"
-                                                color="blue" hide-details></v-checkbox>
+                                                <v-checkbox v-model="formEmail.value.othersMail" label="Loại Mail Khác"
+                                                    color="blue" hide-details></v-checkbox>
+                                            </div>
+                                        </v-expand-transition>
+                                    </v-list-item-content>
+                                </v-list-item>
+
+                                <v-card-actions>
+                                    <v-btn class="white--text ml-4 mb-5" color="green">
+                                        Tìm kiếm
+                                    </v-btn>
+                                </v-card-actions>
+                            </v-card>
+
+                            <v-card class="mx-auto mt-6 new" max-width="350" outlined>
+                                <v-list-item three-line>
+                                    <v-list-item-content>
+                                        <v-list-item-title class="text-h5 font-weight-bold mb-2">
+                                            <v-icon size="30">mdi-pencil-box-multiple</v-icon> Bài viết tham khảo
+                                        </v-list-item-title>
+
+                                        <div style="border-bottom: 1px dashed"></div>
+                                        <div class="container">
+                                            <div class="blog-card-vertical" v-for="item in itemsBlog" :key="item.title">
+                                                <div class="meta">
+                                                    <div class="ribbon ribbon-victory">
+                                                        <p class="pa-2 white--text">New</p>
+                                                    </div>
+                                                    <v-img class="photo" :src="item.img"></v-img>
+                                                </div>
+                                                <div class="description">
+                                                    <h1>{{ item.title }}</h1>
+                                                    <p class="mt-3 line mb-3"></p>
+                                                    <span class="mt-2"><v-icon size="20">mdi-eye-outline</v-icon> <b>{{
+                                                        item.view }}</b></span>
+                                                    <span class="mt-2 ml-2"><v-icon size="20">mdi-thumb-up-outline</v-icon>
+                                                        <b>{{ item.like
+                                                        }}</b></span> <span class="mt-2 ml-2"><v-icon
+                                                            size="20">mdi-comment-multiple-outline</v-icon> <b>{{
+                                                                item.comment
+                                                            }}</b></span>
+                                                    <br>
+                                                    <div class="mt-1 font-weight-bold" style="font-size: 15px;">Người đăng:
+                                                        <v-icon size="20">mdi-account-circle</v-icon><span
+                                                            style="color: red;">
+                                                            {{ item.author }}</span>
+                                                    </div>
+                                                    <p class="read-more">
+                                                        <a href="#"><v-btn class="font-weight-bold" outlined small>Chi tiết
+                                                                <v-icon size="18">mdi-arrow-right</v-icon></v-btn></a>
+                                                    </p>
+                                                </div>
+                                            </div>
                                         </div>
-                                    </v-expand-transition>
-                                </v-list-item-content>
-                            </v-list-item>
+                                    </v-list-item-content>
+                                </v-list-item>
+                            </v-card>
+                        </div>
+                    </v-col>
+                    <v-col cols="12" md="8" lg="8">
+                        <h2>Gian hàng email
+                            <small><em>( Tổng 560 gian hàng )</em></small>
+                        </h2>
 
-                            <v-card-actions>
-                                <v-btn class="white--text ml-4 mb-5" color="green">
-                                    Tìm kiếm
-                                </v-btn>
-                            </v-card-actions>
-                        </v-card>
+                        <v-tabs class="mt-3" color="deep-purple accent-4">
+                            <v-tab style="text-transform: none;">
+                                <v-icon left>
+                                    mdi-fire
+                                </v-icon>
+                                Phổ biến
+                            </v-tab>
+                            <v-tab style="text-transform: none;">
+                                <v-icon left>
+                                    mdi-arrow-up
+                                </v-icon>
+                                Giá tăng dần
+                            </v-tab>
+                            <v-tab style="text-transform: none;">
+                                <v-icon left>
+                                    mdi-arrow-down
+                                </v-icon>
+                                Giá giảm dần
+                            </v-tab>
+                            <!--Tab 1-->
+                            <v-tab-item>
+                                <v-card flat>
+                                    <div class="mb-6 mt-6 word-wrap">
+                                        <em>Đối với gian hàng không trùng, chúng tôi cam kết sản phẩm được bán ra 1
+                                            lần
+                                            duy
+                                            nhất trên hệ
+                                            thống, tránh trường hợp sản phẩm đó được bán nhiều lần.</em>
+                                    </div>
 
-                        <v-card class="mx-auto mt-6 new" max-width="350" outlined>
+                                    <div class="blog-item pa-2" v-for="item in itemsEmail" :key="item.title">
+                                        <a href="#">
+                                            <div class="icon">
+                                                <img :src="item.img" height="150" width="160" alt="">
+                                                <v-rating class="mt-3" :value="item.rating" color="yellow darken-3"
+                                                    background-color="grey darken-1" empty-icon="$ratingFull"
+                                                    half-increments hover small></v-rating>
+                                                <div
+                                                    style="font-size: 14px; font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;">
+                                                    <v-icon size="20">mdi-account</v-icon>Người đăng: <b>{{ item.seller
+                                                    }}</b>
+                                                </div>
+                                            </div>
+                                            <div class="content">
+                                                <div class="title">
+                                                    <div v-if="item.donors == true">
+                                                        <v-chip class="ma-1" color="#FFD600" label text-color="white"
+                                                            style="font-size: 12px">
+                                                            <v-icon left>
+                                                                mdi-star
+                                                            </v-icon>
+                                                            Tài trợ
+                                                        </v-chip> {{ item.title }} <span class="blog-date">{{ item.price
+                                                        }}</span>
+                                                    </div>
+                                                    <div v-if="item.donors == false">
+                                                        <v-chip class="ma-1" color="black" label text-color="white"
+                                                            style="font-size: 12px">
+                                                            <v-icon left>
+                                                                mdi-label
+                                                            </v-icon>
+                                                            Sản phẩm
+                                                        </v-chip> {{ item.title }} <span class="blog-date">{{ item.price
+                                                        }}</span>
+                                                    </div>
+                                                </div>
+
+                                                <div style="font-size: 14px">
+                                                    <div class="mt-1">Sản phẩm: <b style="font-size: 16px">{{
+                                                        item.productName
+                                                    }}</b> | Tồn
+                                                        kho: <b style="color: red; font-size: 17px">{{ item.amount }}</b>
+                                                        <div><b>{{
+                                                            item.review }}</b> Reviews | Đã bán:
+                                                            <b>{{ item.sold }}</b> | Khiếu nại: <b>{{ item.complain }}</b>
+                                                        </div>
+
+
+                                                    </div>
+                                                </div>
+
+                                                <div class="rounded"></div>
+
+                                                <span v-html="item.description"></span>
+                                            </div>
+
+                                            <div class="item-arrow">
+                                                <i class="fa fa-long-arrow-right" aria-hidden="true"></i>
+                                            </div>
+                                        </a>
+                                    </div>
+                                </v-card>
+                            </v-tab-item>
+                            <!--Tab 2-->
+                            <v-tab-item>
+                                <v-card flat>
+                                    <div class="mb-6 mt-6 word-wrap">
+                                        <em>Đối với gian hàng không trùng, chúng tôi cam kết sản phẩm được bán ra 1
+                                            lần
+                                            duy
+                                            nhất trên hệ
+                                            thống, tránh trường hợp sản phẩm đó được bán nhiều lần.</em>
+                                    </div>
+
+                                    <div class="blog-item pa-2" v-for="item in itemsEmail" :key="item.title">
+                                        <a href="#">
+                                            <div class="icon">
+                                                <img :src="item.img" height="150" width="160" alt="">
+                                                <v-rating class="mt-3" :value="item.rating" color="yellow darken-3"
+                                                    background-color="grey darken-1" empty-icon="$ratingFull"
+                                                    half-increments hover small></v-rating>
+                                                <div
+                                                    style="font-size: 14px; font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;">
+                                                    <v-icon size="20">mdi-account</v-icon>Người đăng: <b>{{ item.seller
+                                                    }}</b>
+                                                </div>
+                                            </div>
+                                            <div class="content">
+                                                <div class="title">
+                                                    <div v-if="item.donors == true">
+                                                        <v-chip class="ma-1" color="#FFD600" label text-color="white"
+                                                            style="font-size: 12px">
+                                                            <v-icon left>
+                                                                mdi-star
+                                                            </v-icon>
+                                                            Tài trợ
+                                                        </v-chip> {{ item.title }} <span class="blog-date">{{ item.price
+                                                        }}</span>
+                                                    </div>
+                                                    <div v-if="item.donors == false">
+                                                        <v-chip class="ma-1" color="black" label text-color="white"
+                                                            style="font-size: 12px">
+                                                            <v-icon left>
+                                                                mdi-label
+                                                            </v-icon>
+                                                            Sản phẩm
+                                                        </v-chip> {{ item.title }} <span class="blog-date">{{ item.price
+                                                        }}</span>
+                                                    </div>
+                                                </div>
+
+                                                <div style="font-size: 14px">
+                                                    <div class="mt-1">Sản phẩm: <b style="font-size: 16px">{{
+                                                        item.productName
+                                                    }}</b> | Tồn
+                                                        kho: <b style="color: red; font-size: 17px">{{ item.amount }}</b>
+                                                        <div><b>{{
+                                                            item.review }}</b> Reviews | Đã bán:
+                                                            <b>{{ item.sold }}</b> | Khiếu nại: <b>{{ item.complain }}</b>
+                                                        </div>
+
+
+                                                    </div>
+                                                </div>
+
+                                                <div class="rounded"></div>
+
+                                                <span v-html="item.description"></span>
+                                            </div>
+
+                                            <div class="item-arrow">
+                                                <i class="fa fa-long-arrow-right" aria-hidden="true"></i>
+                                            </div>
+                                        </a>
+                                    </div>
+                                </v-card>
+                            </v-tab-item>
+                            <!--Tab 3-->
+                            <v-tab-item>
+                                <v-card flat>
+                                    <div class="mb-6 mt-6 word-wrap">
+                                        <em>Đối với gian hàng không trùng, chúng tôi cam kết sản phẩm được bán ra 1
+                                            lần
+                                            duy
+                                            nhất trên hệ
+                                            thống, tránh trường hợp sản phẩm đó được bán nhiều lần.</em>
+                                    </div>
+
+                                    <div class="blog-item pa-2" v-for="item in itemsEmail" :key="item.title">
+                                        <a href="#">
+                                            <div class="icon">
+                                                <img :src="item.img" height="150" width="160" alt="">
+                                                <v-rating class="mt-3" :value="item.rating" color="yellow darken-3"
+                                                    background-color="grey darken-1" empty-icon="$ratingFull"
+                                                    half-increments hover small></v-rating>
+                                                <div
+                                                    style="font-size: 14px; font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;">
+                                                    <v-icon size="20">mdi-account</v-icon>Người đăng: <b>{{ item.seller
+                                                    }}</b>
+                                                </div>
+                                            </div>
+                                            <div class="content">
+                                                <div class="title">
+                                                    <div v-if="item.donors == true">
+                                                        <v-chip class="ma-1" color="#FFD600" label text-color="white"
+                                                            style="font-size: 12px">
+                                                            <v-icon left>
+                                                                mdi-star
+                                                            </v-icon>
+                                                            Tài trợ
+                                                        </v-chip> {{ item.title }} <span class="blog-date">{{ item.price
+                                                        }}</span>
+                                                    </div>
+                                                    <div v-if="item.donors == false">
+                                                        <v-chip class="ma-1" color="black" label text-color="white"
+                                                            style="font-size: 12px">
+                                                            <v-icon left>
+                                                                mdi-label
+                                                            </v-icon>
+                                                            Sản phẩm
+                                                        </v-chip> {{ item.title }} <span class="blog-date">{{ item.price
+                                                        }}</span>
+                                                    </div>
+                                                </div>
+
+                                                <div style="font-size: 14px">
+                                                    <div class="mt-1">Sản phẩm: <b style="font-size: 16px">{{
+                                                        item.productName
+                                                    }}</b> | Tồn
+                                                        kho: <b style="color: red; font-size: 17px">{{ item.amount }}</b>
+                                                        <div><b>{{
+                                                            item.review }}</b> Reviews | Đã bán:
+                                                            <b>{{ item.sold }}</b> | Khiếu nại: <b>{{ item.complain }}</b>
+                                                        </div>
+
+
+                                                    </div>
+                                                </div>
+
+                                                <div class="rounded"></div>
+
+                                                <span v-html="item.description"></span>
+                                            </div>
+
+                                            <div class="item-arrow">
+                                                <i class="fa fa-long-arrow-right" aria-hidden="true"></i>
+                                            </div>
+                                        </a>
+                                    </div>
+                                </v-card>
+                            </v-tab-item>
+                        </v-tabs>
+                    </v-col>
+                </v-row>
+            </div>
+
+            <!--Responsive-->
+            <div style="padding: 20px 20px 30px 30px;" v-if="size.onsize < 1111">
+                <v-row>
+                    <v-col cols="12">
+                        <div class="filter">
+                            <v-card class="mx-auto" outlined>
+                                <v-list-item three-line>
+                                    <v-list-item-content>
+                                        <v-list-item-title class="text-h5 mb-2 font-weight-bold">
+                                            <v-icon size="30">mdi-filter</v-icon> Bộ lọc
+                                        </v-list-item-title>
+
+                                        <div style="border-bottom: 1px dashed"></div>
+
+                                        <v-card-actions @click="show = !show" class="mt-2">
+                                            <v-btn outlined color="blue">
+                                                <div class="font-weight-bold">
+                                                    Chọn 1 hoặc nhiều sản phẩm
+                                                </div> <v-icon>{{ show ? 'mdi-chevron-up' : 'mdi-chevron-down' }}</v-icon>
+                                            </v-btn>
+                                        </v-card-actions>
+
+                                        <v-expand-transition>
+                                            <div class="ml-2 mb-3" v-show="show">
+                                                <v-checkbox v-model="formEmail.value.gmail" label="Gmail" color="blue"
+                                                    hide-details></v-checkbox>
+
+                                                <v-checkbox v-model="formEmail.value.hotMail" label="HotMail" color="blue"
+                                                    hide-details></v-checkbox>
+
+                                                <v-checkbox v-model="formEmail.value.outlookMail" label="OutlookMail"
+                                                    color="blue" hide-details></v-checkbox>
+
+                                                <v-checkbox v-model="formEmail.value.ruMail" label="RuMail" color="blue"
+                                                    hide-details></v-checkbox>
+
+                                                <v-checkbox v-model="formEmail.value.domainMail" label="DomainMail"
+                                                    color="blue" hide-details></v-checkbox>
+
+                                                <v-checkbox v-model="formEmail.value.yahooMail" label="YahooMail"
+                                                    color="blue" hide-details></v-checkbox>
+
+                                                <v-checkbox v-model="formEmail.value.protonMail" label="ProtonMail"
+                                                    color="blue" hide-details></v-checkbox>
+
+                                                <v-checkbox v-model="formEmail.value.othersMail" label="Loại Mail Khác"
+                                                    color="blue" hide-details></v-checkbox>
+                                            </div>
+                                        </v-expand-transition>
+                                    </v-list-item-content>
+                                </v-list-item>
+
+                                <v-card-actions>
+                                    <v-btn class="white--text ml-4 mb-5" color="green">
+                                        Tìm kiếm
+                                    </v-btn>
+                                </v-card-actions>
+                            </v-card>
+                        </div>
+                    </v-col>
+                    <v-col cols="12">
+                        <h2>Gian hàng email
+                            <small><em>( Tổng 560 gian hàng )</em></small>
+                        </h2>
+
+                        <v-tabs class="mt-3" color="deep-purple accent-4">
+                            <v-tab style="text-transform: none; font-size: 12px;">
+                                <v-icon left>
+                                    mdi-fire
+                                </v-icon>
+                                Phổ biến
+                            </v-tab>
+                            <v-tab style="text-transform: none; font-size: 12px;">
+                                <v-icon left>
+                                    mdi-arrow-up
+                                </v-icon>
+                                Giá tăng dần
+                            </v-tab>
+                            <v-tab style="text-transform: none; font-size: 12px;">
+                                <v-icon left>
+                                    mdi-arrow-down
+                                </v-icon>
+                                Giá giảm dần
+                            </v-tab>
+                            <!--Tab 1-->
+                            <v-tab-item>
+                                <v-card flat>
+                                    <div class="mb-6 mt-6 word-wrap">
+                                        <em>Đối với gian hàng không trùng, chúng tôi cam kết sản phẩm được bán ra 1
+                                            lần
+                                            duy
+                                            nhất trên hệ
+                                            thống, tránh trường hợp sản phẩm đó được bán nhiều lần.</em>
+                                    </div>
+
+                                    <div class="blog-item pa-2" v-for="item in itemsEmail" :key="item.title">
+                                        <a href="#">
+                                            <div class="icon">
+                                                <img :src="item.img" height="150" width="160" alt="">
+                                                <v-rating class="mt-3" :value="item.rating" color="yellow darken-3"
+                                                    background-color="grey darken-1" empty-icon="$ratingFull"
+                                                    half-increments hover small></v-rating>
+                                                <div
+                                                    style="font-size: 14px; font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;">
+                                                    <v-icon size="20">mdi-account</v-icon>Người đăng: <b>{{ item.seller
+                                                    }}</b>
+                                                </div>
+                                            </div>
+                                            <div class="content">
+                                                <div class="title">
+                                                    <div v-if="item.donors == true">
+                                                        <v-chip class="ma-1" color="#FFD600" label text-color="white"
+                                                            style="font-size: 12px">
+                                                            <v-icon left>
+                                                                mdi-star
+                                                            </v-icon>
+                                                            Tài trợ
+                                                        </v-chip> {{ item.title }} <span class="blog-date">{{ item.price
+                                                        }}</span>
+                                                    </div>
+                                                    <div v-if="item.donors == false">
+                                                        <v-chip class="ma-1" color="black" label text-color="white"
+                                                            style="font-size: 12px">
+                                                            <v-icon left>
+                                                                mdi-label
+                                                            </v-icon>
+                                                            Sản phẩm
+                                                        </v-chip> {{ item.title }} <span class="blog-date">{{ item.price
+                                                        }}</span>
+                                                    </div>
+                                                </div>
+
+                                                <div style="font-size: 14px">
+                                                    <div class="mt-1">Sản phẩm: <b style="font-size: 16px">{{
+                                                        item.productName
+                                                    }}</b> | Tồn
+                                                        kho: <b style="color: red; font-size: 17px">{{ item.amount }}</b>
+                                                        <div><b>{{
+                                                            item.review }}</b> Reviews | Đã bán:
+                                                            <b>{{ item.sold }}</b> | Khiếu nại: <b>{{ item.complain }}</b>
+                                                        </div>
+
+
+                                                    </div>
+                                                </div>
+
+                                                <div class="rounded"></div>
+
+                                                <span v-html="item.description"></span>
+                                            </div>
+
+                                            <div class="item-arrow">
+                                                <i class="fa fa-long-arrow-right" aria-hidden="true"></i>
+                                            </div>
+                                        </a>
+                                    </div>
+                                </v-card>
+                            </v-tab-item>
+                            <!--Tab 2-->
+                            <v-tab-item>
+                                <v-card flat>
+                                    <div class="mb-6 mt-6 word-wrap">
+                                        <em>Đối với gian hàng không trùng, chúng tôi cam kết sản phẩm được bán ra 1
+                                            lần
+                                            duy
+                                            nhất trên hệ
+                                            thống, tránh trường hợp sản phẩm đó được bán nhiều lần.</em>
+                                    </div>
+
+                                    <div class="blog-item pa-2" v-for="item in itemsEmail" :key="item.title">
+                                        <a href="#">
+                                            <div class="icon">
+                                                <img :src="item.img" height="150" width="160" alt="">
+                                                <v-rating class="mt-3" :value="item.rating" color="yellow darken-3"
+                                                    background-color="grey darken-1" empty-icon="$ratingFull"
+                                                    half-increments hover small></v-rating>
+                                                <div
+                                                    style="font-size: 14px; font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;">
+                                                    <v-icon size="20">mdi-account</v-icon>Người đăng: <b>{{ item.seller
+                                                    }}</b>
+                                                </div>
+                                            </div>
+                                            <div class="content">
+                                                <div class="title">
+                                                    <div v-if="item.donors == true">
+                                                        <v-chip class="ma-1" color="#FFD600" label text-color="white"
+                                                            style="font-size: 12px">
+                                                            <v-icon left>
+                                                                mdi-star
+                                                            </v-icon>
+                                                            Tài trợ
+                                                        </v-chip> {{ item.title }} <span class="blog-date">{{ item.price
+                                                        }}</span>
+                                                    </div>
+                                                    <div v-if="item.donors == false">
+                                                        <v-chip class="ma-1" color="black" label text-color="white"
+                                                            style="font-size: 12px">
+                                                            <v-icon left>
+                                                                mdi-label
+                                                            </v-icon>
+                                                            Sản phẩm
+                                                        </v-chip> {{ item.title }} <span class="blog-date">{{ item.price
+                                                        }}</span>
+                                                    </div>
+                                                </div>
+
+                                                <div style="font-size: 14px">
+                                                    <div class="mt-1">Sản phẩm: <b style="font-size: 16px">{{
+                                                        item.productName
+                                                    }}</b> | Tồn
+                                                        kho: <b style="color: red; font-size: 17px">{{ item.amount }}</b>
+                                                        <div><b>{{
+                                                            item.review }}</b> Reviews | Đã bán:
+                                                            <b>{{ item.sold }}</b> | Khiếu nại: <b>{{ item.complain }}</b>
+                                                        </div>
+
+
+                                                    </div>
+                                                </div>
+
+                                                <div class="rounded"></div>
+
+                                                <span v-html="item.description"></span>
+                                            </div>
+
+                                            <div class="item-arrow">
+                                                <i class="fa fa-long-arrow-right" aria-hidden="true"></i>
+                                            </div>
+                                        </a>
+                                    </div>
+                                </v-card>
+                            </v-tab-item>
+                            <!--Tab 3-->
+                            <v-tab-item>
+                                <v-card flat>
+                                    <div class="mb-6 mt-6 word-wrap">
+                                        <em>Đối với gian hàng không trùng, chúng tôi cam kết sản phẩm được bán ra 1
+                                            lần
+                                            duy
+                                            nhất trên hệ
+                                            thống, tránh trường hợp sản phẩm đó được bán nhiều lần.</em>
+                                    </div>
+
+                                    <div class="blog-item pa-2" v-for="item in itemsEmail" :key="item.title">
+                                        <a href="#">
+                                            <div class="icon">
+                                                <img :src="item.img" height="150" width="160" alt="">
+                                                <v-rating class="mt-3" :value="item.rating" color="yellow darken-3"
+                                                    background-color="grey darken-1" empty-icon="$ratingFull"
+                                                    half-increments hover small></v-rating>
+                                                <div
+                                                    style="font-size: 14px; font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;">
+                                                    <v-icon size="20">mdi-account</v-icon>Người đăng: <b>{{ item.seller
+                                                    }}</b>
+                                                </div>
+                                            </div>
+                                            <div class="content">
+                                                <div class="title">
+                                                    <div v-if="item.donors == true">
+                                                        <v-chip class="ma-1" color="#FFD600" label text-color="white"
+                                                            style="font-size: 12px">
+                                                            <v-icon left>
+                                                                mdi-star
+                                                            </v-icon>
+                                                            Tài trợ
+                                                        </v-chip> {{ item.title }} <span class="blog-date">{{ item.price
+                                                        }}</span>
+                                                    </div>
+                                                    <div v-if="item.donors == false">
+                                                        <v-chip class="ma-1" color="black" label text-color="white"
+                                                            style="font-size: 12px">
+                                                            <v-icon left>
+                                                                mdi-label
+                                                            </v-icon>
+                                                            Sản phẩm
+                                                        </v-chip> {{ item.title }} <span class="blog-date">{{ item.price
+                                                        }}</span>
+                                                    </div>
+                                                </div>
+
+                                                <div style="font-size: 14px">
+                                                    <div class="mt-1">Sản phẩm: <b style="font-size: 16px">{{
+                                                        item.productName
+                                                    }}</b> | Tồn
+                                                        kho: <b style="color: red; font-size: 17px">{{ item.amount }}</b>
+                                                        <div><b>{{
+                                                            item.review }}</b> Reviews | Đã bán:
+                                                            <b>{{ item.sold }}</b> | Khiếu nại: <b>{{ item.complain }}</b>
+                                                        </div>
+
+
+                                                    </div>
+                                                </div>
+
+                                                <div class="rounded"></div>
+
+                                                <span v-html="item.description"></span>
+                                            </div>
+
+                                            <div class="item-arrow">
+                                                <i class="fa fa-long-arrow-right" aria-hidden="true"></i>
+                                            </div>
+                                        </a>
+                                    </div>
+                                </v-card>
+                            </v-tab-item>
+                        </v-tabs>
+                    </v-col>
+                    <v-col cols="12">
+                        <v-card class="mx-auto new" outlined>
                             <v-list-item three-line>
                                 <v-list-item-content>
                                     <v-list-item-title class="text-h5 font-weight-bold mb-2">
@@ -82,7 +688,8 @@
                                                 <span class="mt-2 ml-2"><v-icon size="20">mdi-thumb-up-outline</v-icon>
                                                     <b>{{ item.like
                                                     }}</b></span> <span class="mt-2 ml-2"><v-icon
-                                                        size="20">mdi-comment-multiple-outline</v-icon> <b>{{ item.comment
+                                                        size="20">mdi-comment-multiple-outline</v-icon> <b>{{
+                                                            item.comment
                                                         }}</b></span>
                                                 <br>
                                                 <div class="mt-1 font-weight-bold" style="font-size: 15px;">Người đăng:
@@ -99,260 +706,17 @@
                                 </v-list-item-content>
                             </v-list-item>
                         </v-card>
-                    </div>
-                </v-col>
-                <v-col cols="12" md="8" lg="8">
-                    <h2>Gian hàng email
-                        <small><em>( Tổng 560 gian hàng )</em></small>
-                    </h2>
-
-                    <v-tabs class="mt-3" color="deep-purple accent-4">
-                        <v-tab style="text-transform: none;">
-                            <v-icon left>
-                                mdi-fire
-                            </v-icon>
-                            Phổ biến
-                        </v-tab>
-                        <v-tab style="text-transform: none;">
-                            <v-icon left>
-                                mdi-arrow-up
-                            </v-icon>
-                            Giá tăng dần
-                        </v-tab>
-                        <v-tab style="text-transform: none;">
-                            <v-icon left>
-                                mdi-arrow-down
-                            </v-icon>
-                            Giá giảm dần
-                        </v-tab>
-                        <!--Tab 1-->
-                        <v-tab-item>
-                            <v-card flat>
-                                <center>
-                                    <v-chip class="mb-5 mt-5" color="green" outlined label text-color="green"
-                                        style="padding: 25px;">
-                                        <em>Đối với gian hàng không trùng, chúng tôi cam kết sản phẩm được bán ra 1 lần duy
-                                            nhất trên hệ
-                                            thống, tránh trường hợp <br> sản phẩm đó được bán nhiều lần.</em>
-                                    </v-chip>
-                                </center>
-
-                                <div class="blog-item pa-2" v-for="item in itemsEmail" :key="item.title">
-                                    <a href="#">
-                                        <div class="icon">
-                                            <img :src="item.img" height="150" width="160" alt="">
-                                            <v-rating class="mt-3" :value="item.rating" color="yellow darken-3"
-                                                background-color="grey darken-1" empty-icon="$ratingFull" half-increments
-                                                hover small></v-rating>
-                                            <div
-                                                style="font-size: 14px; font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;">
-                                                <v-icon size="20">mdi-account</v-icon>Người đăng: <b>{{ item.seller }}</b>
-                                            </div>
-                                        </div>
-                                        <div class="content">
-                                            <div class="title">
-                                                <div v-if="item.donors == true">
-                                                    <v-chip class="ma-1" color="#FFD600" label text-color="white"
-                                                        style="font-size: 12px">
-                                                        <v-icon left>
-                                                            mdi-star
-                                                        </v-icon>
-                                                        Tài trợ
-                                                    </v-chip> {{ item.title }} <span class="blog-date">{{ item.price
-                                                    }}</span>
-                                                </div>
-                                                <div v-if="item.donors == false">
-                                                    <v-chip class="ma-1" color="black" label text-color="white"
-                                                        style="font-size: 12px">
-                                                        <v-icon left>
-                                                            mdi-label
-                                                        </v-icon>
-                                                        Sản phẩm
-                                                    </v-chip> {{ item.title }} <span class="blog-date">{{ item.price
-                                                    }}</span>
-                                                </div>
-                                            </div>
-
-                                            <div style="font-size: 14px">
-                                                <div class="mt-1">Sản phẩm: <b style="font-size: 16px">{{ item.productName
-                                                }}</b> | Tồn
-                                                    kho: <b style="color: red; font-size: 17px">{{ item.amount }}</b>
-                                                    <div><b>{{
-                                                        item.review }}</b> Reviews | Đã bán:
-                                                        <b>{{ item.sold }}</b> | Khiếu nại: <b>{{ item.complain }}</b>
-                                                    </div>
-
-
-                                                </div>
-                                            </div>
-
-                                            <div class="rounded"></div>
-
-                                            <span v-html="item.description"></span>
-                                        </div>
-
-                                        <div class="item-arrow">
-                                            <i class="fa fa-long-arrow-right" aria-hidden="true"></i>
-                                        </div>
-                                    </a>
-                                </div>
-                            </v-card>
-                        </v-tab-item>
-                        <!--Tab 2-->
-                        <v-tab-item>
-                            <v-card flat>
-                                <center>
-                                    <v-chip class="mb-5 mt-5" color="green" outlined label text-color="green"
-                                        style="padding: 25px;">
-                                        <em>Đối với gian hàng không trùng, chúng tôi cam kết sản phẩm được bán ra 1 lần duy
-                                            nhất trên hệ
-                                            thống, tránh trường hợp <br> sản phẩm đó được bán nhiều lần.</em>
-                                    </v-chip>
-                                </center>
-
-                                <div class="blog-item pa-2" v-for="item in itemsEmail" :key="item.title">
-                                    <a href="#">
-                                        <div class="icon">
-                                            <img :src="item.img" height="150" width="160" alt="">
-                                            <v-rating class="mt-3" :value="item.rating" color="yellow darken-3"
-                                                background-color="grey darken-1" empty-icon="$ratingFull" half-increments
-                                                hover small></v-rating>
-                                            <div
-                                                style="font-size: 14px; font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;">
-                                                <v-icon size="20">mdi-account</v-icon>Người đăng: <b>{{ item.seller }}</b>
-                                            </div>
-                                        </div>
-                                        <div class="content">
-                                            <div class="title">
-                                                <div v-if="item.donors == true">
-                                                    <v-chip class="ma-1" color="#FFD600" label text-color="white"
-                                                        style="font-size: 12px">
-                                                        <v-icon left>
-                                                            mdi-star
-                                                        </v-icon>
-                                                        Tài trợ
-                                                    </v-chip> {{ item.title }} <span class="blog-date">{{ item.price
-                                                    }}</span>
-                                                </div>
-                                                <div v-if="item.donors == false">
-                                                    <v-chip class="ma-1" color="black" label text-color="white"
-                                                        style="font-size: 12px">
-                                                        <v-icon left>
-                                                            mdi-label
-                                                        </v-icon>
-                                                        Sản phẩm
-                                                    </v-chip> {{ item.title }} <span class="blog-date">{{ item.price
-                                                    }}</span>
-                                                </div>
-                                            </div>
-
-                                            <div style="font-size: 14px">
-                                                <div class="mt-1">Sản phẩm: <b style="font-size: 16px">{{ item.productName
-                                                }}</b> | Tồn
-                                                    kho: <b style="color: red; font-size: 17px">{{ item.amount }}</b>
-                                                    <div><b>{{
-                                                        item.review }}</b> Reviews | Đã bán:
-                                                        <b>{{ item.sold }}</b> | Khiếu nại: <b>{{ item.complain }}</b>
-                                                    </div>
-
-
-                                                </div>
-                                            </div>
-
-                                            <div class="rounded"></div>
-
-                                            <span v-html="item.description"></span>
-                                        </div>
-
-                                        <div class="item-arrow">
-                                            <i class="fa fa-long-arrow-right" aria-hidden="true"></i>
-                                        </div>
-                                    </a>
-                                </div>
-                            </v-card>
-                        </v-tab-item>
-                        <!--Tab 3-->
-                        <v-tab-item>
-                            <v-card flat>
-                                <center>
-                                    <v-chip class="mb-5 mt-5" color="green" outlined label text-color="green"
-                                        style="padding: 25px;">
-                                        <em>Đối với gian hàng không trùng, chúng tôi cam kết sản phẩm được bán ra 1 lần duy
-                                            nhất trên hệ
-                                            thống, tránh trường hợp <br> sản phẩm đó được bán nhiều lần.</em>
-                                    </v-chip>
-                                </center>
-
-                                <div class="blog-item pa-2" v-for="item in itemsEmail" :key="item.title">
-                                    <a href="#">
-                                        <div class="icon">
-                                            <img :src="item.img" height="150" width="160" alt="">
-                                            <v-rating class="mt-3" :value="item.rating" color="yellow darken-3"
-                                                background-color="grey darken-1" empty-icon="$ratingFull" half-increments
-                                                hover small></v-rating>
-                                            <div
-                                                style="font-size: 14px; font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;">
-                                                <v-icon size="20">mdi-account</v-icon>Người đăng: <b>{{ item.seller }}</b>
-                                            </div>
-                                        </div>
-                                        <div class="content">
-                                            <div class="title">
-                                                <div v-if="item.donors == true">
-                                                    <v-chip class="ma-1" color="#FFD600" label text-color="white"
-                                                        style="font-size: 12px">
-                                                        <v-icon left>
-                                                            mdi-star
-                                                        </v-icon>
-                                                        Tài trợ
-                                                    </v-chip> {{ item.title }} <span class="blog-date">{{ item.price
-                                                    }}</span>
-                                                </div>
-                                                <div v-if="item.donors == false">
-                                                    <v-chip class="ma-1" color="black" label text-color="white"
-                                                        style="font-size: 12px">
-                                                        <v-icon left>
-                                                            mdi-label
-                                                        </v-icon>
-                                                        Sản phẩm
-                                                    </v-chip> {{ item.title }} <span class="blog-date">{{ item.price
-                                                    }}</span>
-                                                </div>
-                                            </div>
-
-                                            <div style="font-size: 14px">
-                                                <div class="mt-1">Sản phẩm: <b style="font-size: 16px">{{ item.productName
-                                                }}</b> | Tồn
-                                                    kho: <b style="color: red; font-size: 17px">{{ item.amount }}</b>
-                                                    <div><b>{{
-                                                        item.review }}</b> Reviews | Đã bán:
-                                                        <b>{{ item.sold }}</b> | Khiếu nại: <b>{{ item.complain }}</b>
-                                                    </div>
-
-
-                                                </div>
-                                            </div>
-
-                                            <div class="rounded"></div>
-
-                                            <span v-html="item.description"></span>
-                                        </div>
-
-                                        <div class="item-arrow">
-                                            <i class="fa fa-long-arrow-right" aria-hidden="true"></i>
-                                        </div>
-                                    </a>
-                                </div>
-                            </v-card>
-                        </v-tab-item>
-                    </v-tabs>
-                </v-col>
-            </v-row>
-        </div>
+                    </v-col>
+                </v-row>
+            </div>
+        </XyzTransition>
     </v-app>
 </template>
 
 <script lang="ts">
 export default {
+    name: "Index",
+    props: ["size"],
     data: () => ({
         show: false,
         formEmail: {
@@ -771,5 +1135,15 @@ body {
         display: block;
         padding: 30px;
     }
+}
 
-}</style>
+.word-wrap {
+    word-wrap: break-word !important;
+    border: 1px solid green;
+    color: green;
+    font-size: 13px;
+    padding: 6px;
+    border-radius: 5px;
+    text-align: center;
+}
+</style>
