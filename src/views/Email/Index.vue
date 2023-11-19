@@ -102,112 +102,249 @@
                     </div>
                 </v-col>
                 <v-col cols="12" md="8" lg="8">
-                    <div class="section is-primary">
-                        <h2>Gian hàng email
-                            <small><em>( Tổng 560 gian hàng )</em></small>
-                        </h2>
+                    <h2>Gian hàng email
+                        <small><em>( Tổng 560 gian hàng )</em></small>
+                    </h2>
 
-                        <div class="container">
-                            <div v-for="item in itemsEmail" :key="item.title">
-                                <div class="blog-card" v-if="item.donors == true">
-                                    <div class="image-wrapper">
-                                        <div class="ribbon ribbon-victory" v-if="item.overlap == false">
-                                            <div class="pa-2 white--text"
-                                                style="font-size: 11px; background-color: black; border-bottom-right-radius: 5px;">
-                                                Không trùng</div>
-                                        </div>
-                                        <div class="ribbon ribbon-victory" v-if="item.overlap == true">
-                                            <div class="pa-2 white--text"
-                                                style="font-size: 11px; background-color: black; border-bottom-right-radius: 5px;">
-                                                Trùng lặp</div>
-                                        </div>
-                                        <v-img class="image" :src="item.img"></v-img>
-                                    </div>
+                    <v-tabs class="mt-3" color="deep-purple accent-4">
+                        <v-tab style="text-transform: none;">
+                            <v-icon left>
+                                mdi-fire
+                            </v-icon>
+                            Phổ biến
+                        </v-tab>
+                        <v-tab style="text-transform: none;">
+                            <v-icon left>
+                                mdi-arrow-up
+                            </v-icon>
+                            Giá tăng dần
+                        </v-tab>
+                        <v-tab style="text-transform: none;">
+                            <v-icon left>
+                                mdi-arrow-down
+                            </v-icon>
+                            Giá giảm dần
+                        </v-tab>
+                        <!--Tab 1-->
+                        <v-tab-item>
+                            <v-card flat>
+                                <center>
+                                    <v-chip class="mb-5 mt-5" color="green" outlined label text-color="green"
+                                        style="padding: 25px;">
+                                        <em>Đối với gian hàng không trùng, chúng tôi cam kết sản phẩm được bán ra 1 lần duy
+                                            nhất trên hệ
+                                            thống, tránh trường hợp <br> sản phẩm đó được bán nhiều lần.</em>
+                                    </v-chip>
+                                </center>
 
-                                    <div class="description">
-                                        <h1 class="title">{{ item.title }}</h1>
-                                        <span style="font-size: 14px"> <v-rating :value="item.rating"
-                                                color="yellow darken-3" background-color="grey darken-1"
-                                                empty-icon="$ratingFull" half-increments hover small></v-rating> <b>{{
-                                                    item.review }}</b> Reviews | Đã bán:
-                                            <b>{{ item.sold }}</b> | Khiếu nại: <b>{{ item.complain }}</b></span>
-
-                                        <p></p>
-
-                                        <div v-html="item.description" style="font-size: 15px; margin-top: 30px"></div>
-
-                                        <div class="mt-2">
-                                            <v-btn style="text-transform: none" class="font-weight-bold" color="#FFAB00"
-                                                outlined small><v-icon color="#FFAB00" size="18">mdi-star</v-icon> Tài
-                                                trợ</v-btn>
-                                        </div>
-
-                                        <div class="card-actions mt-2">
-                                            <a href="#" class="font-weight-bold">
-                                                <v-btn class="font-weight-bold" outlined small>Xem thêm <v-icon
-                                                        size="16">mdi-arrow-right</v-icon></v-btn>
-                                            </a>
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
-
-                            <div style="padding: 0px 70px 0px 70px">
-                                <v-row>
-                                    <v-col cols="12" md="12" lg="12" v-for="item in itemsEmail" :key="item.title">
-                                        <div v-if="item.donors == false">
-                                            <div class="blog-card">
-                                                <div class="image-wrapper">
-                                                    <div class="ribbon ribbon-victory" v-if="item.overlap == false">
-                                                        <div class="pa-2 white--text"
-                                                            style="font-size: 11px; background-color: black; border-bottom-right-radius: 5px;">
-                                                            Không trùng</div>
-                                                    </div>
-                                                    <div class="ribbon ribbon-victory" v-if="item.overlap == true">
-                                                        <div class="pa-2 white--text"
-                                                            style="font-size: 11px; background-color: black; border-bottom-right-radius: 5px;">
-                                                            Trùng lặp</div>
-                                                    </div>
-                                                    <v-img class="image" :src="item.img"></v-img>
-                                                </div>
-
-                                                <div class="description">
-                                                    <h1 class="title">{{ item.title }}</h1>
-                                                    <span style="font-size: 14px"> <v-rating :value="item.rating"
-                                                            color="yellow darken-3" background-color="grey darken-1"
-                                                            empty-icon="$ratingFull" half-increments hover small></v-rating>
-                                                        <b>{{
-                                                            item.review }}</b> Reviews | Đã bán:
-                                                        <b>{{ item.sold }}</b> | Khiếu nại: <b>{{ item.complain
-                                                        }}</b></span>
-
-                                                    <p></p>
-
-                                                    <div v-html="item.description"
-                                                        style="font-size: 14px; margin-top: 30px">
-                                                    </div>
-
-                                                    <div class="mt-2" v-if="item.donors == true">
-                                                        <v-btn style="text-transform: none" class="font-weight-bold"
-                                                            color="#FFAB00" outlined small><v-icon color="#FFAB00"
-                                                                size="18">mdi-star</v-icon> Tài
-                                                            trợ</v-btn>
-                                                    </div>
-
-                                                    <div class="card-actions mt-2">
-                                                        <a href="#" class="font-weight-bold">
-                                                            <v-btn class="font-weight-bold mt-2" outlined small>Xem thêm <v-icon
-                                                                    size="16">mdi-arrow-right</v-icon></v-btn>
-                                                        </a>
-                                                    </div>
-                                                </div>
+                                <div class="blog-item pa-2" v-for="item in itemsEmail" :key="item.title">
+                                    <a href="#">
+                                        <div class="icon">
+                                            <img :src="item.img" height="150" width="160" alt="">
+                                            <v-rating class="mt-3" :value="item.rating" color="yellow darken-3"
+                                                background-color="grey darken-1" empty-icon="$ratingFull" half-increments
+                                                hover small></v-rating>
+                                            <div
+                                                style="font-size: 14px; font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;">
+                                                <v-icon size="20">mdi-account</v-icon>Người đăng: <b>{{ item.seller }}</b>
                                             </div>
                                         </div>
-                                    </v-col>
-                                </v-row>
-                            </div>
-                        </div>
-                    </div>
+                                        <div class="content">
+                                            <div class="title">
+                                                <div v-if="item.donors == true">
+                                                    <v-chip class="ma-1" color="#FFD600" label text-color="white"
+                                                        style="font-size: 12px">
+                                                        <v-icon left>
+                                                            mdi-star
+                                                        </v-icon>
+                                                        Tài trợ
+                                                    </v-chip> {{ item.title }} <span class="blog-date">{{ item.price
+                                                    }}</span>
+                                                </div>
+                                                <div v-if="item.donors == false">
+                                                    <v-chip class="ma-1" color="black" label text-color="white"
+                                                        style="font-size: 12px">
+                                                        <v-icon left>
+                                                            mdi-label
+                                                        </v-icon>
+                                                        Sản phẩm
+                                                    </v-chip> {{ item.title }} <span class="blog-date">{{ item.price
+                                                    }}</span>
+                                                </div>
+                                            </div>
+
+                                            <div style="font-size: 14px">
+                                                <div class="mt-1">Sản phẩm: <b style="font-size: 16px">{{ item.productName
+                                                }}</b> | Tồn
+                                                    kho: <b style="color: red; font-size: 17px">{{ item.amount }}</b>
+                                                    <div><b>{{
+                                                        item.review }}</b> Reviews | Đã bán:
+                                                        <b>{{ item.sold }}</b> | Khiếu nại: <b>{{ item.complain }}</b>
+                                                    </div>
+
+
+                                                </div>
+                                            </div>
+
+                                            <div class="rounded"></div>
+
+                                            <span v-html="item.description"></span>
+                                        </div>
+
+                                        <div class="item-arrow">
+                                            <i class="fa fa-long-arrow-right" aria-hidden="true"></i>
+                                        </div>
+                                    </a>
+                                </div>
+                            </v-card>
+                        </v-tab-item>
+                        <!--Tab 2-->
+                        <v-tab-item>
+                            <v-card flat>
+                                <center>
+                                    <v-chip class="mb-5 mt-5" color="green" outlined label text-color="green"
+                                        style="padding: 25px;">
+                                        <em>Đối với gian hàng không trùng, chúng tôi cam kết sản phẩm được bán ra 1 lần duy
+                                            nhất trên hệ
+                                            thống, tránh trường hợp <br> sản phẩm đó được bán nhiều lần.</em>
+                                    </v-chip>
+                                </center>
+
+                                <div class="blog-item pa-2" v-for="item in itemsEmail" :key="item.title">
+                                    <a href="#">
+                                        <div class="icon">
+                                            <img :src="item.img" height="150" width="160" alt="">
+                                            <v-rating class="mt-3" :value="item.rating" color="yellow darken-3"
+                                                background-color="grey darken-1" empty-icon="$ratingFull" half-increments
+                                                hover small></v-rating>
+                                            <div
+                                                style="font-size: 14px; font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;">
+                                                <v-icon size="20">mdi-account</v-icon>Người đăng: <b>{{ item.seller }}</b>
+                                            </div>
+                                        </div>
+                                        <div class="content">
+                                            <div class="title">
+                                                <div v-if="item.donors == true">
+                                                    <v-chip class="ma-1" color="#FFD600" label text-color="white"
+                                                        style="font-size: 12px">
+                                                        <v-icon left>
+                                                            mdi-star
+                                                        </v-icon>
+                                                        Tài trợ
+                                                    </v-chip> {{ item.title }} <span class="blog-date">{{ item.price
+                                                    }}</span>
+                                                </div>
+                                                <div v-if="item.donors == false">
+                                                    <v-chip class="ma-1" color="black" label text-color="white"
+                                                        style="font-size: 12px">
+                                                        <v-icon left>
+                                                            mdi-label
+                                                        </v-icon>
+                                                        Sản phẩm
+                                                    </v-chip> {{ item.title }} <span class="blog-date">{{ item.price
+                                                    }}</span>
+                                                </div>
+                                            </div>
+
+                                            <div style="font-size: 14px">
+                                                <div class="mt-1">Sản phẩm: <b style="font-size: 16px">{{ item.productName
+                                                }}</b> | Tồn
+                                                    kho: <b style="color: red; font-size: 17px">{{ item.amount }}</b>
+                                                    <div><b>{{
+                                                        item.review }}</b> Reviews | Đã bán:
+                                                        <b>{{ item.sold }}</b> | Khiếu nại: <b>{{ item.complain }}</b>
+                                                    </div>
+
+
+                                                </div>
+                                            </div>
+
+                                            <div class="rounded"></div>
+
+                                            <span v-html="item.description"></span>
+                                        </div>
+
+                                        <div class="item-arrow">
+                                            <i class="fa fa-long-arrow-right" aria-hidden="true"></i>
+                                        </div>
+                                    </a>
+                                </div>
+                            </v-card>
+                        </v-tab-item>
+                        <!--Tab 3-->
+                        <v-tab-item>
+                            <v-card flat>
+                                <center>
+                                    <v-chip class="mb-5 mt-5" color="green" outlined label text-color="green"
+                                        style="padding: 25px;">
+                                        <em>Đối với gian hàng không trùng, chúng tôi cam kết sản phẩm được bán ra 1 lần duy
+                                            nhất trên hệ
+                                            thống, tránh trường hợp <br> sản phẩm đó được bán nhiều lần.</em>
+                                    </v-chip>
+                                </center>
+
+                                <div class="blog-item pa-2" v-for="item in itemsEmail" :key="item.title">
+                                    <a href="#">
+                                        <div class="icon">
+                                            <img :src="item.img" height="150" width="160" alt="">
+                                            <v-rating class="mt-3" :value="item.rating" color="yellow darken-3"
+                                                background-color="grey darken-1" empty-icon="$ratingFull" half-increments
+                                                hover small></v-rating>
+                                            <div
+                                                style="font-size: 14px; font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;">
+                                                <v-icon size="20">mdi-account</v-icon>Người đăng: <b>{{ item.seller }}</b>
+                                            </div>
+                                        </div>
+                                        <div class="content">
+                                            <div class="title">
+                                                <div v-if="item.donors == true">
+                                                    <v-chip class="ma-1" color="#FFD600" label text-color="white"
+                                                        style="font-size: 12px">
+                                                        <v-icon left>
+                                                            mdi-star
+                                                        </v-icon>
+                                                        Tài trợ
+                                                    </v-chip> {{ item.title }} <span class="blog-date">{{ item.price
+                                                    }}</span>
+                                                </div>
+                                                <div v-if="item.donors == false">
+                                                    <v-chip class="ma-1" color="black" label text-color="white"
+                                                        style="font-size: 12px">
+                                                        <v-icon left>
+                                                            mdi-label
+                                                        </v-icon>
+                                                        Sản phẩm
+                                                    </v-chip> {{ item.title }} <span class="blog-date">{{ item.price
+                                                    }}</span>
+                                                </div>
+                                            </div>
+
+                                            <div style="font-size: 14px">
+                                                <div class="mt-1">Sản phẩm: <b style="font-size: 16px">{{ item.productName
+                                                }}</b> | Tồn
+                                                    kho: <b style="color: red; font-size: 17px">{{ item.amount }}</b>
+                                                    <div><b>{{
+                                                        item.review }}</b> Reviews | Đã bán:
+                                                        <b>{{ item.sold }}</b> | Khiếu nại: <b>{{ item.complain }}</b>
+                                                    </div>
+
+
+                                                </div>
+                                            </div>
+
+                                            <div class="rounded"></div>
+
+                                            <span v-html="item.description"></span>
+                                        </div>
+
+                                        <div class="item-arrow">
+                                            <i class="fa fa-long-arrow-right" aria-hidden="true"></i>
+                                        </div>
+                                    </a>
+                                </div>
+                            </v-card>
+                        </v-tab-item>
+                    </v-tabs>
                 </v-col>
             </v-row>
         </div>
@@ -269,6 +406,8 @@ export default {
                 title: 'Gmail 2019 2021 đã qua Premium . 6 - 7 tháng',
                 img: 'https://www.heraldobinario.com.mx/u/fotografias/m/2022/2/2/f638x638-23635_81802_5050.jpg',
                 rating: '4.5',
+                amount: 4540,
+                price: '5.000 đ - 8.000 đ',
                 review: '14',
                 sold: ' 96562',
                 complain: '0.0%',
@@ -282,6 +421,8 @@ export default {
                 title: 'Gmail USA - Gmail Mỹ số lượng lớn',
                 img: 'https://taphoammo.net/img/gmail-usa-gmail-my-so-luong-lon_720513773.png',
                 rating: '5',
+                amount: 1706,
+                price: '5.000 đ - 8.000 đ',
                 review: '10',
                 sold: '4835',
                 complain: '0.0%',
@@ -295,6 +436,8 @@ export default {
                 title: 'Gmail PC / IOS - USA đã trên 7 - 30 ngày',
                 img: 'https://taphoammo.net/img/gmail-ios-pc-a-tren-3-5-ngay47.png',
                 rating: '5',
+                amount: 200,
+                price: '2.000 đ - 7.000 đ',
                 review: '10',
                 sold: '4835',
                 complain: '0.0%',
@@ -308,6 +451,8 @@ export default {
                 title: 'Gmail NEW iOS Us và Ngoại. Chỉ bán min 30 cái',
                 img: 'https://taphoammo.net/img/gmail-ngoai-new-ios-random-ip-ngam-tren-14_728121551.png',
                 rating: '5',
+                amount: 667,
+                price: '5.000 đ - 18.000 đ',
                 review: '10',
                 sold: '4835',
                 complain: '0.0%',
@@ -321,6 +466,8 @@ export default {
                 title: 'HOTMAIL Live vĩnh viễn / bật full POP3 + IMAP / Không cần veri bằng sđt',
                 img: 'https://taphoammo.net/img/hotmail-live-vinh-vien-bat-full-pop3-imap-khong-can-veri-bang-s-t_432172254.png',
                 rating: '4',
+                amount: 119,
+                price: '5.000 đ - 8.000 đ',
                 review: '10',
                 sold: '4835',
                 complain: '0.0%',
@@ -334,6 +481,8 @@ export default {
                 title: 'OUTLOCK TRUSTED - Live vĩnh viễn - Full POP3 + IMAP',
                 img: 'https://taphoammo.net/img/outlock-trusted-live-vinh-vien-full-pop3-imap_839770.png',
                 rating: '0',
+                amount: 271,
+                price: '5.000 đ - 8.000 đ',
                 review: '10',
                 sold: '4835',
                 complain: '0.0%',
@@ -349,6 +498,9 @@ export default {
 </script>
 
 <style lang="scss" scoped>
+@import "https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css";
+@import url('https://fonts.googleapis.com/css?family=Lato:300,400,700,900&subset=latin-ext');
+
 body {
     font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
     margin: 0;
@@ -478,239 +630,146 @@ body {
     border-width: 0 5px 4px 0;
 }
 
-.blog-card {
+.blog-item img {
+    display: block;
+}
+
+.blog-item a {
     display: flex;
-    flex-direction: column;
-    box-shadow: 0 3px 7px -1px rgba(0, 0, 0, 0.1);
-    margin-bottom: 1.6%;
-    background: #fff;
-    line-height: 1.4;
-    border-radius: 10px;
+    padding: 20px;
     overflow: hidden;
-    z-index: 0;
-}
-
-.blog-card a {
-    color: inherit;
-}
-
-.blog-card a:hover {
-    color: #5ad67d;
-}
-
-.blog-card .image-wrapper {
-    position: relative;
-    z-index: 0;
-    height: 200px;
-}
-
-.blog-card .image-wrapper .image::before {
-    content: "Xem Chi Tiết";
-    height: 100%;
-    width: 100%;
-    opacity: 0;
-    position: absolute;
-    top: 0;
-    left: 0;
-    background-color: rgba(181, 181, 181, 0.3);
-    transition: all 0.7s;
-    display: flex;
-    justify-content: center;
     align-items: center;
-    font-size: 1.1rem;
-    font-weight: bold;
-    color: black;
-    cursor: pointer;
-    font-weight: bold;
-}
-
-.blog-card .image-wrapper .image:hover::before {
-    opacity: 1;
-}
-
-.blog-card .image {
-    position: absolute;
-    top: 0;
-    right: 0;
-    bottom: 0;
-    left: 0;
-    background-size: cover;
-    background-position: center;
-    transition: transform 0.2s;
-}
-
-.blog-card .details,
-.blog-card .details ul {
+    max-width: 1000px;
     margin: auto;
-    padding: 0;
-    list-style: none;
-}
-
-.blog-card .details {
-    position: absolute;
-    top: 0;
-    bottom: 0;
-    left: -100%;
-    margin: auto;
-    transition: left 0.2s;
-    background: rgba(0, 0, 0, 0.6);
-    color: #fff;
-    padding: 10px;
-    width: 100%;
-    font-size: 0.9rem;
-}
-
-.blog-card .details a {
-    text-decoration: dotted underline;
-}
-
-.blog-card .details ul li {
-    display: inline-block;
-}
-
-.blog-card .details .author:before {
-    font-family: FontAwesome;
-    margin-right: 10px;
-    content: "";
-}
-
-.blog-card .details .date:before {
-    font-family: FontAwesome;
-    margin-right: 10px;
-    content: "";
-}
-
-.blog-card .details .tags ul:before {
-    font-family: FontAwesome;
-    content: "";
-    margin-right: 10px;
-}
-
-.blog-card .details .tags li {
-    margin-right: 2px;
-}
-
-.blog-card .details .tags li:first-child {
-    margin-left: -4px;
-}
-
-.blog-card .description {
-    padding: 1rem;
-    background: #fff;
-    position: relative;
-    z-index: 1;
-}
-
-.blog-card .description:before {
-    content: "";
-    border-radius: 10px;
-    background: #fff;
-    width: 100%;
-    position: absolute;
-    top: -10px;
-    left: 0;
-    bottom: 0;
-    z-index: -1;
-}
-
-
-.blog-card .description h1 {
-    line-height: 1;
-    margin: 0;
-    font-size: 19px;
-}
-
-.blog-card .description h2 {
-    font-size: 1rem;
-    font-weight: 300;
-    text-transform: uppercase;
-    color: #a2a2a2;
-    margin-top: 5px;
-}
-
-.blog-card .description .card-actions {
-    float: right;
+    color: #333;
+    font-family: 'Lato', sans-serif;
     font-size: 16px;
-}
-
-.blog-card .description .card-actions a {
-    display: inline-block;
-    position: relative;
+    border-radius: 6px;
+    margin-bottom: 50px;
     text-decoration: none;
+    -webkit-transition: all .3s ease;
+    transition: all .3s ease;
+    box-shadow: rgba(0, 0, 0, 0.05) 0px 0px 0px 1px;
 }
 
-.blog-card .description .card-actions .v-btn {
-    text-transform: none;
+.blog-item a:hover {
+    box-shadow: rgba(17, 17, 26, 0.05) 0px 1px 0px, rgba(17, 17, 26, 0.1) 0px 0px 8px;
+    -webkit-transition: all .3s ease;
+    transition: all .3s ease;
 }
 
-.blog-card p {
+.blog-item .icon {
+    width: 30%;
+    object-fit: cover;
+    border-radius: 6px;
+    overflow: hidden;
+}
+
+.blog-item .content {
+    width: 70%;
+}
+
+.blog-item .content span {
+    font-size: 15px;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+
+.blog-item .content .title {
+    text-transform: capitalize;
+    color: #29B6F6;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    font-weight: bold;
+}
+
+.blog-item .content .title:hover {
+    color: red;
+}
+
+.blog-item .content .title .blog-date {
+    font-size: 15px;
+    margin-left: 11px;
+    color: #333;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    font-weight: bold;
+}
+
+.blog-item .content .title .blog-date:before {
+    content: '/';
+    color: #2bb673;
+    font-size: 25px;
+    top: auto;
     position: relative;
-    margin: 1rem 0 0;
+    margin-right: 10px;
 }
 
-.blog-card p:first-of-type {
-    margin-top: 1.25rem;
+.blog-item .content .rounded {
+    margin-left: 0;
+    margin-top: 10px;
+    margin-bottom: 10px;
 }
 
-.blog-card p:first-of-type:before {
-    content: "";
-    position: absolute;
+.blog-item .item-arrow {
+    height: 20px;
+    width: 15%;
+    position: relative;
+    text-align: center;
+    font-size: 35px;
+    left: 0;
+    -webkit-transition: all .3s ease;
+    transition: all .3s ease;
+}
+
+.blog-item a:hover>.item-arrow {
+    color: #25aae1;
+    left: 30px;
+    -webkit-transition: all .3s ease;
+    transition: all .3s ease;
+}
+
+.rounded {
+    width: 70px;
     height: 5px;
-    background: #5ad67d;
-    width: 35px;
-    top: -0.75rem;
-    border-radius: 3px;
-    text-align: left;
-    height: 3px;
-    border-radius: 50px;
-    background: #d52623;
+    border-radius: 6px;
+    background-image: linear-gradient(to right, #25aae1, #40e495);
+    /* background: #2bb769; */
+    margin-left: 0;
+    margin-top: 10px;
+    margin-bottom: 10px;
 }
 
-.blog-card:hover .details {
-    left: 0%;
-}
+@media screen and (max-width: 768px) {
 
-@media (min-width: 640px) {
-    .blog-card {
-        flex-direction: row;
+    .blog-item .content {
+        width: 100%;
+        margin-top: 35px;
     }
 
-    .blog-card .image-wrapper {
-        flex-basis: 40%;
-        height: auto;
+    .blog-item .content .title {
+        font-size: 18px;
     }
 
-    .blog-card .description {
-        flex-basis: 60%;
+    .blog-item .item-arrow {
+        margin: auto;
     }
 
-    .blog-card .description .title:hover {
-        color: blue;
+    .blog-item .icon {
+        width: 100%;
     }
 
-    .blog-card .description:before {
-        content: "";
-        border-radius: 10px;
-        background: #fff;
-        width: 30px;
-        position: absolute;
-        left: -10px;
-        top: 0;
-        bottom: 0;
-        z-index: -1;
+    .blog-item .icon img {
+        width: 100%;
+        height: 150px;
+        object-fit: cover;
     }
 
-    .blog-card.alt {
-        flex-direction: row-reverse;
+    .blog-item {
+        width: 92%;
+        margin: auto;
     }
 
-    .blog-card.alt .description:before {
-        left: inherit;
-        right: -10px;
+    .blog-item a {
+        display: block;
+        padding: 30px;
     }
 
-    .blog-card.alt .details {
-        padding-left: 25px;
-    }
-}
-</style>
+}</style>
