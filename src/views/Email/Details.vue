@@ -52,16 +52,16 @@
 
                             <b class="ml-2">SẢN PHẨM</b>
                             <br>
-                            <v-chip class="ma-2" color="green" outlined>
+                            <v-chip class="ma-2 word-wrap" color="green" outlined>
                                 Gmail random IP 7 ngày++ email|pass|recovery|geo
                             </v-chip>
-                            <v-chip class="ma-2" color="green" outlined>
+                            <v-chip class="ma-2 word-wrap" color="green" outlined>
                                 Gmail Mỹ, 7 ngày+, reg GGVoice email|pass|recovery
                             </v-chip>
-                            <v-chip class="ma-2" color="green" outlined>
+                            <v-chip class="ma-2 word-wrap" color="green" outlined>
                                 Gmail random IP 1 tháng ++ email|pass|recovery|geo
                             </v-chip>
-                            <v-chip class="ma-2" color="green" outlined>
+                            <v-chip class="ma-2 word-wrap" color="green" outlined>
                                 Gmail USA (Mỹ) , 7 ngày email|pass|recover
                             </v-chip>
 
@@ -201,16 +201,16 @@
 
                             <b class="ml-2">SẢN PHẨM</b>
                             <br>
-                            <v-chip class="ma-2" color="green" outlined>
+                            <v-chip class="ma-2 word-wrap" color="green" outlined>
                                 Gmail random IP 7 ngày++ email|pass|recovery|geo
                             </v-chip>
-                            <v-chip class="ma-2" color="green" outlined>
+                            <v-chip class="ma-2 word-wrap" color="green" outlined>
                                 Gmail Mỹ, 7 ngày+, reg GGVoice email|pass|recovery
                             </v-chip>
-                            <v-chip class="ma-2" color="green" outlined>
+                            <v-chip class="ma-2 word-wrap" color="green" outlined>
                                 Gmail random IP 1 tháng ++ email|pass|recovery|geo
                             </v-chip>
-                            <v-chip class="ma-2" color="green" outlined>
+                            <v-chip class="ma-2 word-wrap" color="green" outlined>
                                 Gmail USA (Mỹ) , 7 ngày email|pass|recover
                             </v-chip>
 
@@ -270,7 +270,7 @@
                             <!--Tab 2-->
                             <v-tab-item>
                                 <div v-for="(item, i) in 5" :key="i">
-                                    <v-card class="pa-5 d-flex" flat>
+                                    <v-card class="mt-5 ml-5 d-flex" flat>
                                         <v-avatar width="80" height="80">
                                             <img src="https://taphoammo.net/images/avatars/user.svg">
                                         </v-avatar>
@@ -281,8 +281,8 @@
                                             <v-rating value="5" background-color="yellow" color="yellow"></v-rating>
                                             <p class="ml-2">Sản phẩm chuẩn chất lượng. Hỗ trợ nhiệt tình.</p>
                                         </div>
-                                        <p class="ml-auto" style="font-style: italic; color: #BDBDBD">28/09/2022</p>
                                     </v-card>
+                                    <p class="text-end" style="font-style: italic; color: #BDBDBD">28/09/2022</p>
                                     <v-divider></v-divider>
                                 </div>
                             </v-tab-item>
@@ -564,5 +564,15 @@ export default Vue.extend({
 button:focus,
 input:focus {
     outline: 0;
+}
+
+.word-wrap {
+    word-wrap: break-word !important;
+    border: 1px solid green;
+    color: green;
+    font-size: 13px;
+    padding: 6px;
+    border-radius: 5px;
+    text-align: center;
 }
 </style>
