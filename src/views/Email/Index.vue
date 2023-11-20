@@ -106,7 +106,7 @@
                     </v-col>
                     <v-col cols="12" md="8" lg="8">
                         <h2>Gian hàng email
-                            <small><em>( Tổng {{ itemsEmail.length }} gian hàng )</em></small>
+                            <small><em>( Tổng <b class="red--text">{{ itemsEmail.length }}</b> gian hàng )</em></small>
                         </h2>
 
                         <v-tabs class="mt-3" color="deep-purple accent-4">
@@ -417,7 +417,7 @@
                     </v-col>
                     <v-col cols="12">
                         <h3 style="padding: 0px 20px 0px 30px;">Gian hàng email
-                            <small><em>( Tổng 560 gian hàng )</em></small>
+                            <small><em>( Tổng <b class="red--text">{{ itemsEmail.length }}</b> gian hàng )</em></small>
                         </h3>
 
                         <v-tabs class="mt-3" color="deep-purple accent-4">
