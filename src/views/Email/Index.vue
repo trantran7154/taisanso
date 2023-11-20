@@ -7,7 +7,7 @@
                         <div class="filter">
                             <v-card class="mx-auto" max-width="350" outlined>
                                 <v-list-item three-line>
-                                    <v-list-item-content>
+                                    <v-list-item-description>
                                         <v-list-item-title class="text-h5 mb-2 font-weight-bold">
                                             <v-icon size="30">mdi-filter</v-icon> Bộ lọc
                                         </v-list-item-title>
@@ -49,7 +49,7 @@
                                                     color="blue" hide-details></v-checkbox>
                                             </div>
                                         </v-expand-transition>
-                                    </v-list-item-content>
+                                    </v-list-item-description>
                                 </v-list-item>
 
                                 <v-card-actions>
@@ -61,7 +61,7 @@
 
                             <v-card class="mx-auto mt-6 new" max-width="350" outlined>
                                 <v-list-item three-line>
-                                    <v-list-item-content>
+                                    <v-list-item-description>
                                         <v-list-item-title class="text-h5 font-weight-bold mb-2">
                                             <v-icon size="30">mdi-pencil-box-multiple</v-icon> Bài viết tham khảo
                                         </v-list-item-title>
@@ -102,7 +102,7 @@
                                                 </div>
                                             </div>
                                         </div>
-                                    </v-list-item-content>
+                                    </v-list-item-description>
                                 </v-list-item>
                             </v-card>
                         </div>
@@ -155,7 +155,7 @@
                                                     }}</b>
                                                 </div>
                                             </div>
-                                            <div class="content">
+                                            <div class="description">
                                                 <div class="title">
                                                     <div v-if="item.donors == true">
                                                         <v-chip class="ma-1" color="#FFD600" label text-color="white"
@@ -229,7 +229,7 @@
                                                     }}</b>
                                                 </div>
                                             </div>
-                                            <div class="content">
+                                            <div class="description">
                                                 <div class="title">
                                                     <div v-if="item.donors == true">
                                                         <v-chip class="ma-1" color="#FFD600" label text-color="white"
@@ -303,7 +303,7 @@
                                                     }}</b>
                                                 </div>
                                             </div>
-                                            <div class="content">
+                                            <div class="description">
                                                 <div class="title">
                                                     <div v-if="item.donors == true">
                                                         <v-chip class="ma-1" color="#FFD600" label text-color="white"
@@ -365,7 +365,7 @@
                         <div class="filter" style="padding: 20px 20px 0px 30px;">
                             <v-card class="mx-auto" outlined>
                                 <v-list-item three-line>
-                                    <v-list-item-content>
+                                    <v-list-item-description>
                                         <v-list-item-title class="text-h5 mb-2 font-weight-bold">
                                             <v-icon size="30">mdi-filter</v-icon> Bộ lọc
                                         </v-list-item-title>
@@ -407,7 +407,7 @@
                                                     color="blue" hide-details></v-checkbox>
                                             </div>
                                         </v-expand-transition>
-                                    </v-list-item-content>
+                                    </v-list-item-description>
                                 </v-list-item>
 
                                 <v-card-actions>
@@ -466,7 +466,7 @@
                                                     }}</b>
                                                 </div>
                                             </div>
-                                            <div class="content">
+                                            <div class="description">
                                                 <div class="title">
                                                     <div v-if="item.donors == true">
                                                         <v-chip class="ma-1" color="#FFD600" label text-color="white"
@@ -540,7 +540,7 @@
                                                     }}</b>
                                                 </div>
                                             </div>
-                                            <div class="content">
+                                            <div class="description">
                                                 <div class="title">
                                                     <div v-if="item.donors == true">
                                                         <v-chip class="ma-1" color="#FFD600" label text-color="white"
@@ -614,7 +614,7 @@
                                                     }}</b>
                                                 </div>
                                             </div>
-                                            <div class="content">
+                                            <div class="description">
                                                 <div class="title">
                                                     <div v-if="item.donors == true">
                                                         <v-chip class="ma-1" color="#FFD600" label text-color="white"
@@ -669,7 +669,7 @@
                     <v-col cols="12">
                         <v-card class="mx-auto mt-6 new" max-width="350" outlined>
                             <v-list-item three-line>
-                                <v-list-item-content>
+                                <v-list-item-description>
                                     <v-list-item-title class="text-h5 font-weight-bold mb-2">
                                         <v-icon size="30">mdi-pencil-box-multiple</v-icon> Bài viết tham khảo
                                     </v-list-item-title>
@@ -709,7 +709,7 @@
                                             </div>
                                         </div>
                                     </div>
-                                </v-list-item-content>
+                                </v-list-item-description>
                             </v-list-item>
                         </v-card>
                     </v-col>
@@ -989,7 +989,7 @@ body {
 }
 
 .ribbon::after {
-    content: " ";
+    description: " ";
     position: absolute;
     left: 0;
     top: 100%;
@@ -1035,27 +1035,27 @@ body {
     overflow: hidden;
 }
 
-.blog-item .content {
+.blog-item .description {
     width: 70%;
 }
 
-.blog-item .content span {
+.blog-item .description span {
     font-size: 15px;
     font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
 }
 
-.blog-item .content .title {
+.blog-item .description .title {
     text-transform: capitalize;
     color: #29B6F6;
     font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
     font-weight: bold;
 }
 
-.blog-item .content .title:hover {
+.blog-item .description .title:hover {
     color: red;
 }
 
-.blog-item .content .title .blog-date {
+.blog-item .description .title .blog-date {
     font-size: 15px;
     margin-left: 11px;
     color: #333;
@@ -1063,8 +1063,8 @@ body {
     font-weight: bold;
 }
 
-.blog-item .content .title .blog-date:before {
-    content: '/';
+.blog-item .description .title .blog-date:before {
+    description: '/';
     color: #2bb673;
     font-size: 25px;
     top: auto;
@@ -1072,7 +1072,7 @@ body {
     margin-right: 10px;
 }
 
-.blog-item .content .rounded {
+.blog-item .description .rounded {
     margin-left: 0;
     margin-top: 10px;
     margin-bottom: 10px;
@@ -1109,12 +1109,12 @@ body {
 
 @media screen and (max-width: 768px) {
 
-    .blog-item .content {
+    .blog-item .description {
         width: 100%;
         margin-top: 35px;
     }
 
-    .blog-item .content .title {
+    .blog-item .description .title {
         font-size: 18px;
     }
 

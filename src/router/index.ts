@@ -10,6 +10,7 @@ import ProfileDetail from '../views/User/Profile/Detail.vue'
 import ProfileEdit from '../views/User/Profile/Edit.vue'
 import ChangePassword from '../views/User/ChangePassword.vue'
 import Email from '../views/Email/Index.vue'
+import EmailDetails from '../views/Email/Details.vue'
 
 Vue.use(VueRouter)
 
@@ -63,6 +64,11 @@ const routes: Array<RouteConfig> = [
     path: '/email',
     name: 'email',
     component: Email
+  },
+  {
+    path: '/email/details',
+    name: 'details',
+    component: EmailDetails
   }
 ]
 const router = new VueRouter({
