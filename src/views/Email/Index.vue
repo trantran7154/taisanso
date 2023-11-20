@@ -78,14 +78,17 @@
                                                 <div class="description">
                                                     <h1>{{ item.title }}</h1>
                                                     <p class="mt-3 line mb-3"></p>
-                                                    <span class="mt-2"><v-icon size="20">mdi-eye-outline</v-icon> <b>{{
-                                                        item.view }}</b></span>
-                                                    <span class="mt-2 ml-2"><v-icon size="20">mdi-thumb-up-outline</v-icon>
-                                                        <b>{{ item.like
-                                                        }}</b></span> <span class="mt-2 ml-2"><v-icon
-                                                            size="20">mdi-comment-multiple-outline</v-icon> <b>{{
-                                                                item.comment
-                                                            }}</b></span>
+                                                    <span class="mt-2">
+                                                        <v-icon size="20">mdi-eye-outline</v-icon> <b>{{ item.view }}</b>
+                                                    </span>
+                                                    <span class="mt-2 ml-2">
+                                                        <v-icon size="20">mdi-thumb-up-outline</v-icon> <b> {{ item.like
+                                                        }}</b>
+                                                    </span>
+                                                    <span class="mt-2 ml-2">
+                                                        <v-icon size="20">mdi-comment-multiple-outline</v-icon> <b>{{
+                                                            item.comment }}</b>
+                                                    </span>
                                                     <br>
                                                     <div class="mt-1 font-weight-bold" style="font-size: 15px;">Người đăng:
                                                         <v-icon size="20">mdi-account-circle</v-icon><span
@@ -664,7 +667,7 @@
                         </v-tabs>
                     </v-col>
                     <v-col cols="12">
-                        <v-card class="mx-auto new" outlined style="padding: 0px 50px 0px 50px;">
+                        <v-card class="mx-auto mt-6 new" max-width="350" outlined>
                             <v-list-item three-line>
                                 <v-list-item-content>
                                     <v-list-item-title class="text-h5 font-weight-bold mb-2">
@@ -683,14 +686,17 @@
                                             <div class="description">
                                                 <h1>{{ item.title }}</h1>
                                                 <p class="mt-3 line mb-3"></p>
-                                                <span class="mt-2"><v-icon size="20">mdi-eye-outline</v-icon> <b>{{
-                                                    item.view }}</b></span>
-                                                <span class="mt-2 ml-2"><v-icon size="20">mdi-thumb-up-outline</v-icon>
-                                                    <b>{{ item.like
-                                                    }}</b></span> <span class="mt-2 ml-2"><v-icon
-                                                        size="20">mdi-comment-multiple-outline</v-icon> <b>{{
-                                                            item.comment
-                                                        }}</b></span>
+                                                <span class="mt-2">
+                                                    <v-icon size="20">mdi-eye-outline</v-icon> <b>{{ item.view }}</b>
+                                                </span>
+                                                <span class="mt-2 ml-2">
+                                                    <v-icon size="20">mdi-thumb-up-outline</v-icon> <b> {{ item.like
+                                                    }}</b>
+                                                </span>
+                                                <span class="mt-2 ml-2">
+                                                    <v-icon size="20">mdi-comment-multiple-outline</v-icon> <b>{{
+                                                        item.comment }}</b>
+                                                </span>
                                                 <br>
                                                 <div class="mt-1 font-weight-bold" style="font-size: 15px;">Người đăng:
                                                     <v-icon size="20">mdi-account-circle</v-icon><span style="color: red;">
