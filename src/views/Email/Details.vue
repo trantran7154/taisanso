@@ -1,151 +1,305 @@
 <template>
     <v-app app>
-        <div class="card" v-for="item in itemsEmail" :key="item.title">
-            <v-row>
-                <v-col cols="3" md="3" lg="3">
-                    <img class="hset" :src="item.img">
-                </v-col>
-                <v-col cols="9" md="9" lg="9">
-                    <div v-if="item.donors == true">
-                        <v-chip color="#FFD600" label text-color="white" style="font-size: 12px">
-                            <v-icon left>
-                                mdi-star
-                            </v-icon>
-                            Tài trợ
-                        </v-chip>
-                    </div>
+        <XyzTransition xyz="fade-100%">
+            <div v-if="size.onsize >= 1111">
+                <div class="card" v-for="item in itemsEmail" :key="item.title">
+                    <v-row>
+                        <v-col cols="3" md="3" lg="3">
+                            <img class="hset" :src="item.img">
+                        </v-col>
+                        <v-col cols="9" md="9" lg="9">
+                            <div v-if="item.donors == true">
+                                <v-chip color="#FFD600" label text-color="white" style="font-size: 12px">
+                                    <v-icon left>
+                                        mdi-star
+                                    </v-icon>
+                                    Tài trợ
+                                </v-chip>
+                            </div>
 
-                    <div v-if="item.donors == false">
-                        <v-chip color="black" label text-color="white" style="font-size: 12px">
-                            <v-icon left>
-                                mdi-label
-                            </v-icon>
-                            Sản phẩm
-                        </v-chip>
-                    </div>
+                            <div v-if="item.donors == false">
+                                <v-chip color="black" label text-color="white" style="font-size: 12px">
+                                    <v-icon left>
+                                        mdi-label
+                                    </v-icon>
+                                    Sản phẩm
+                                </v-chip>
+                            </div>
 
-                    <p class="title mt-3">{{ item.title }}</p>
-                    <v-rating :value="item.rating" color="yellow darken-3" background-color="grey darken-1"
-                        empty-icon="$ratingFull" half-increments hover></v-rating>
-                    <div class="ml-2" style="font-size: 17px">
-                        <div class="mt-1 d-flex">
-                            <b>{{ item.review }}</b> Reviews | Đã bán:
-                            <b class="mr-1">{{ item.sold }}</b> | Khiếu nại: <b>{{ item.complain }}</b>
-                        </div>
-                    </div>
-
-                    <p class="offer-info ml-3">{{ item.content }}</p>
-
-                    <v-divider class="mb-4" width="500"></v-divider>
-
-                    <div style="font-size: 15px;">
-                        <p><v-icon>mdi-account-circle</v-icon> Người đăng: <b>{{ item.seller }}</b></p>
-                        <p><v-icon>mdi-tag</v-icon> Sản phẩm: <b>{{ item.productName }}</b></p>
-                        <p><v-icon>mdi-storefront</v-icon> Kho: <b>{{ item.amount }}</b></p>
-                    </div>
-
-                    <p class="price mt-2 red--text">{{ item.price }}</p>
-
-                    <v-divider class="mb-4" width="500"></v-divider>
-
-                    <b class="ml-2">SẢN PHẨM</b>
-                    <br>
-                    <v-chip class="ma-2" color="green" outlined>
-                        Gmail random IP 7 ngày++ email|pass|recovery|geo
-                    </v-chip>
-                    <v-chip class="ma-2" color="green" outlined>
-                        Gmail Mỹ, 7 ngày+, reg GGVoice email|pass|recovery
-                    </v-chip>
-                    <v-chip class="ma-2" color="green" outlined>
-                        Gmail random IP 1 tháng ++ email|pass|recovery|geo
-                    </v-chip>
-                    <v-chip class="ma-2" color="green" outlined>
-                        Gmail USA (Mỹ) , 7 ngày email|pass|recover
-                    </v-chip>
-
-                    <div class="wrapper mt-3 mb-3">
-                        <button class="btn btn--minus" @click="changeCounter('-1')" type="button" name="button"
-                            style="border-left:  1px solid #EEEEEE;">
-                            -
-                        </button>
-                        <input class="quantity font-weight-medium" type="text" name="name" :value="counter">
-                        <button class="btn btn--plus" @click="changeCounter('1')" type="button" name="button"
-                            style="border-right:  1px solid #EEEEEE;">
-                            +
-                        </button>
-                    </div>
-
-                    <div class="mt-6">
-                        <v-text-field append-icon="mdi-sale-outline" placeholder="Nhập mã giảm giá" outlined dense
-                            style="width: 200px;"></v-text-field>
-                    </div>
-
-                    <button href="#" onclick="showAlert('Product added to cart!')" class="buy-btn"><v-icon
-                            color="white">mdi-cart-outline</v-icon> Mua hàng</button>
-                    <br>
-                    <button class="add-to-wl-btn" onclick="showAlert('Product added to your Wishlist!')">
-                        <v-icon color="#000">mdi-cart-arrow-down</v-icon> Đặt trước</button>
-
-                    <button class="add-to-wl-btn ml-5" onclick="showAlert('Product added to your Wishlist!')">
-                        <v-icon color="#000">mdi-send-outline</v-icon> Nhắn tin</button>
-
-
-                    <button class="add-to-wl-btn ml-5" onclick="showAlert('Product added to your Wishlist!')">
-                        <v-icon color="#000">mdi-handshake-outline</v-icon> Đăng ký reseller</button>
-                </v-col>
-            </v-row>
-            <!--Tab-->
-            <div style="padding: 70px 150px 30px 0px;">
-                <v-tabs color="deep-purple accent-4">
-                    <v-tab class="font-weight-medium" style="text-transform: none; font-size: 17px;">
-                        <span class="ml-2">Mô tả</span>
-                    </v-tab>
-                    <v-tab class="font-weight-medium" style="text-transform: none; font-size: 17px;">
-                        <v-icon>mdi-comment-text-multiple-outline</v-icon><span class="ml-2">Review</span>
-                    </v-tab>
-                    <v-tab class="font-weight-medium" style="text-transform: none; font-size: 17px;">
-                        <span class="ml-2">API</span>
-                    </v-tab>
-                    <!--Tab 1-->
-                    <v-tab-item>
-                        <v-card flat>
-                            <v-card-text>
-                                <span v-html="item.description" style="font-size: 16px"></span>
-                            </v-card-text>
-                        </v-card>
-                    </v-tab-item>
-                    <!--Tab 2-->
-                    <v-tab-item>
-                        <div v-for="(item, i) in 5" :key="i">
-                            <v-card class="pa-5 d-flex" flat>
-                                <v-avatar width="80" height="80">
-                                    <img src="https://taphoammo.net/images/avatars/user.svg">
-                                </v-avatar>
-                                <div class="ml-5">
-                                    <div class="d-flex">
-                                        <b class="green--text ml-2 mr-auto">abc</b>
-                                    </div>
-                                    <v-rating value="5" background-color="yellow" color="yellow"></v-rating>
-                                    <p class="ml-2">Sản phẩm chuẩn chất lượng. Hỗ trợ nhiệt tình.</p>
+                            <p class="title mt-3">{{ item.title }}</p>
+                            <v-rating :value="item.rating" color="yellow darken-3" background-color="grey darken-1"
+                                empty-icon="$ratingFull" half-increments hover></v-rating>
+                            <div class="ml-2" style="font-size: 17px">
+                                <div class="mt-1 d-flex">
+                                    <b>{{ item.review }}</b> Reviews | Đã bán:
+                                    <b class="mr-1">{{ item.sold }}</b> | Khiếu nại: <b>{{ item.complain }}</b>
                                 </div>
-                                <p class="ml-auto" style="font-style: italic; color: #BDBDBD">28/09/2022</p>
-                            </v-card>
-                            <v-divider></v-divider>
-                        </div>
-                    </v-tab-item>
-                    <!--Tab 3-->
-                    <v-tab-item>
-                        <div class="ml-5 mt-3" v-if="item.api == false">
-                            <h3 class="font-weight-bold green--text">Mua hàng bằng API:</h3>
-                            <p class="mt-2">Bạn chưa kích hoạt sử dụng API, nếu bạn chắc chắn muốn sử dụng tính năng này,
-                                hãy vào mục thông tin cá nhân (profile) để active !</p>
-                        </div>
-                    </v-tab-item>
-                </v-tabs>
+                            </div>
+
+                            <p class="offer-info ml-3">{{ item.content }}</p>
+
+                            <v-divider class="mb-4" width="500"></v-divider>
+
+                            <div style="font-size: 15px;">
+                                <p><v-icon>mdi-account-circle</v-icon> Người đăng: <b>{{ item.seller }}</b></p>
+                                <p><v-icon>mdi-tag</v-icon> Sản phẩm: <b>{{ item.productName }}</b></p>
+                                <p><v-icon>mdi-storefront</v-icon> Kho: <b>{{ item.amount }}</b></p>
+                            </div>
+
+                            <p class="price mt-2 red--text">{{ item.price }}</p>
+
+                            <v-divider class="mb-4" width="500"></v-divider>
+
+                            <b class="ml-2">SẢN PHẨM</b>
+                            <br>
+                            <v-chip class="ma-2" color="green" outlined>
+                                Gmail random IP 7 ngày++ email|pass|recovery|geo
+                            </v-chip>
+                            <v-chip class="ma-2" color="green" outlined>
+                                Gmail Mỹ, 7 ngày+, reg GGVoice email|pass|recovery
+                            </v-chip>
+                            <v-chip class="ma-2" color="green" outlined>
+                                Gmail random IP 1 tháng ++ email|pass|recovery|geo
+                            </v-chip>
+                            <v-chip class="ma-2" color="green" outlined>
+                                Gmail USA (Mỹ) , 7 ngày email|pass|recover
+                            </v-chip>
+
+                            <div class="wrapper mt-3 mb-3">
+                                <button class="btn btn--minus" @click="changeCounter('-1')" type="button" name="button"
+                                    style="border-left:  1px solid #EEEEEE;">
+                                    -
+                                </button>
+                                <input class="quantity font-weight-medium" type="text" name="name" :value="counter">
+                                <button class="btn btn--plus" @click="changeCounter('1')" type="button" name="button"
+                                    style="border-right:  1px solid #EEEEEE;">
+                                    +
+                                </button>
+                            </div>
+
+                            <div class="mt-6">
+                                <v-text-field append-icon="mdi-sale-outline" placeholder="Nhập mã giảm giá" outlined dense
+                                    style="width: 200px;"></v-text-field>
+                            </div>
+
+                            <button href="#" onclick="showAlert('Product added to cart!')" class="buy-btn"><v-icon
+                                    color="white">mdi-cart-outline</v-icon> Mua hàng</button>
+                            <br>
+                            <button class="add-to-wl-btn" onclick="showAlert('Product added to your Wishlist!')">
+                                <v-icon color="#000">mdi-cart-arrow-down</v-icon> Đặt trước</button>
+
+                            <button class="add-to-wl-btn ml-5" onclick="showAlert('Product added to your Wishlist!')">
+                                <v-icon color="#000">mdi-send-outline</v-icon> Nhắn tin</button>
+
+
+                            <button class="add-to-wl-btn ml-5" onclick="showAlert('Product added to your Wishlist!')">
+                                <v-icon color="#000">mdi-handshake-outline</v-icon> Đăng ký reseller</button>
+                        </v-col>
+                    </v-row>
+                    <!--Tab-->
+                    <div style="padding: 70px 150px 30px 0px;">
+                        <v-tabs color="deep-purple accent-4">
+                            <v-tab class="font-weight-medium" style="text-transform: none; font-size: 17px;">
+                                <span class="ml-2">Mô tả</span>
+                            </v-tab>
+                            <v-tab class="font-weight-medium" style="text-transform: none; font-size: 17px;">
+                                <v-icon>mdi-comment-text-multiple-outline</v-icon><span class="ml-2">Review</span>
+                            </v-tab>
+                            <v-tab class="font-weight-medium" style="text-transform: none; font-size: 17px;">
+                                <span class="ml-2">API</span>
+                            </v-tab>
+                            <!--Tab 1-->
+                            <v-tab-item>
+                                <v-card flat>
+                                    <v-card-text>
+                                        <span v-html="item.description" style="font-size: 16px"></span>
+                                    </v-card-text>
+                                </v-card>
+                            </v-tab-item>
+                            <!--Tab 2-->
+                            <v-tab-item>
+                                <div v-for="(item, i) in 5" :key="i">
+                                    <v-card class="pa-5 d-flex" flat>
+                                        <v-avatar width="80" height="80">
+                                            <img src="https://taphoammo.net/images/avatars/user.svg">
+                                        </v-avatar>
+                                        <div class="ml-5">
+                                            <div class="d-flex">
+                                                <b class="green--text ml-2 mr-auto">abc</b>
+                                            </div>
+                                            <v-rating value="5" background-color="yellow" color="yellow"></v-rating>
+                                            <p class="ml-2">Sản phẩm chuẩn chất lượng. Hỗ trợ nhiệt tình.</p>
+                                        </div>
+                                        <p class="ml-auto" style="font-style: italic; color: #BDBDBD">28/09/2022</p>
+                                    </v-card>
+                                    <v-divider></v-divider>
+                                </div>
+                            </v-tab-item>
+                            <!--Tab 3-->
+                            <v-tab-item>
+                                <div class="ml-5 mt-3" v-if="item.api == false">
+                                    <h3 class="font-weight-bold green--text">Mua hàng bằng API:</h3>
+                                    <p class="mt-2">Bạn chưa kích hoạt sử dụng API, nếu bạn chắc chắn muốn sử dụng tính năng
+                                        này,
+                                        hãy vào mục thông tin cá nhân (profile) để active !</p>
+                                </div>
+                            </v-tab-item>
+                        </v-tabs>
+                    </div>
+                </div>
             </div>
-        </div>
+
+            <!--Responsive-->
+            <div v-if="size.onsize < 1111">
+                <div class="card-res" v-for="item in itemsEmail" :key="item.title">
+                    <v-row>
+                        <v-col cols="12" md="12" lg="12">
+                            <img class="hset" :src="item.img">
+                        </v-col>
+                        <v-col cols="12" md="12" lg="12">
+                            <div v-if="item.donors == true">
+                                <v-chip color="#FFD600" label text-color="white" style="font-size: 12px">
+                                    <v-icon left>
+                                        mdi-star
+                                    </v-icon>
+                                    Tài trợ
+                                </v-chip>
+                            </div>
+
+                            <div v-if="item.donors == false">
+                                <v-chip color="black" label text-color="white" style="font-size: 12px">
+                                    <v-icon left>
+                                        mdi-label
+                                    </v-icon>
+                                    Sản phẩm
+                                </v-chip>
+                            </div>
+
+                            <p class="title mt-3">{{ item.title }}</p>
+                            <v-rating :value="item.rating" color="yellow darken-3" background-color="grey darken-1"
+                                empty-icon="$ratingFull" half-increments hover></v-rating>
+                            <div class="ml-2" style="font-size: 17px">
+                                <div class="mt-1 d-flex">
+                                    <b>{{ item.review }}</b> Reviews | Đã bán:
+                                    <b class="mr-1">{{ item.sold }}</b> | Khiếu nại: <b>{{ item.complain }}</b>
+                                </div>
+                            </div>
+
+                            <p class="offer-info ml-3">{{ item.content }}</p>
+
+                            <v-divider class="mb-4" width="500"></v-divider>
+
+                            <div style="font-size: 15px;">
+                                <p><v-icon>mdi-account-circle</v-icon> Người đăng: <b>{{ item.seller }}</b></p>
+                                <p><v-icon>mdi-tag</v-icon> Sản phẩm: <b>{{ item.productName }}</b></p>
+                                <p><v-icon>mdi-storefront</v-icon> Kho: <b>{{ item.amount }}</b></p>
+                            </div>
+
+                            <p class="price mt-2 red--text">{{ item.price }}</p>
+
+                            <v-divider class="mb-4" width="500"></v-divider>
+
+                            <b class="ml-2">SẢN PHẨM</b>
+                            <br>
+                            <v-chip class="ma-2" color="green" outlined>
+                                Gmail random IP 7 ngày++ email|pass|recovery|geo
+                            </v-chip>
+                            <v-chip class="ma-2" color="green" outlined>
+                                Gmail Mỹ, 7 ngày+, reg GGVoice email|pass|recovery
+                            </v-chip>
+                            <v-chip class="ma-2" color="green" outlined>
+                                Gmail random IP 1 tháng ++ email|pass|recovery|geo
+                            </v-chip>
+                            <v-chip class="ma-2" color="green" outlined>
+                                Gmail USA (Mỹ) , 7 ngày email|pass|recover
+                            </v-chip>
+
+                            <div class="wrapper mt-3 mb-3">
+                                <button class="btn btn--minus" @click="changeCounter('-1')" type="button" name="button"
+                                    style="border-left:  1px solid #EEEEEE;">
+                                    -
+                                </button>
+                                <input class="quantity font-weight-medium" type="text" name="name" :value="counter">
+                                <button class="btn btn--plus" @click="changeCounter('1')" type="button" name="button"
+                                    style="border-right:  1px solid #EEEEEE;">
+                                    +
+                                </button>
+                            </div>
+
+                            <div class="mt-6">
+                                <v-text-field append-icon="mdi-sale-outline" placeholder="Nhập mã giảm giá" outlined dense
+                                    style="width: 200px;"></v-text-field>
+                            </div>
+
+                            <button href="#" onclick="showAlert('Product added to cart!')" class="buy-btn"><v-icon
+                                    color="white">mdi-cart-outline</v-icon> Mua hàng</button>
+                            <br>
+                            <div class="d-flex">
+                                <button class="add-to-wl-btn" onclick="showAlert('Product added to your Wishlist!')">
+                                    <v-icon color="#000">mdi-cart-arrow-down</v-icon> Đặt trước</button>
+
+                                <button class="add-to-wl-btn ml-5" onclick="showAlert('Product added to your Wishlist!')">
+                                    <v-icon color="#000">mdi-send-outline</v-icon> Nhắn tin</button>
 
 
+                                <button class="add-to-wl-btn ml-5" onclick="showAlert('Product added to your Wishlist!')">
+                                    <v-icon color="#000">mdi-handshake-outline</v-icon> Đăng ký reseller</button>
+                            </div>
+                        </v-col>
+                    </v-row>
+                    <!--Tab-->
+                    <div style="padding: 30px 10px 30px 10px;">
+                        <v-tabs color="deep-purple accent-4">
+                            <v-tab class="font-weight-medium" style="text-transform: none; font-size: 17px;">
+                                <span class="ml-2">Mô tả</span>
+                            </v-tab>
+                            <v-tab class="font-weight-medium" style="text-transform: none; font-size: 17px;">
+                                <v-icon>mdi-comment-text-multiple-outline</v-icon><span class="ml-2">Review</span>
+                            </v-tab>
+                            <v-tab class="font-weight-medium" style="text-transform: none; font-size: 17px;">
+                                <span class="ml-2">API</span>
+                            </v-tab>
+                            <!--Tab 1-->
+                            <v-tab-item>
+                                <v-card flat>
+                                    <v-card-text>
+                                        <span v-html="item.description" style="font-size: 16px"></span>
+                                    </v-card-text>
+                                </v-card>
+                            </v-tab-item>
+                            <!--Tab 2-->
+                            <v-tab-item>
+                                <div v-for="(item, i) in 5" :key="i">
+                                    <v-card class="pa-5 d-flex" flat>
+                                        <v-avatar width="80" height="80">
+                                            <img src="https://taphoammo.net/images/avatars/user.svg">
+                                        </v-avatar>
+                                        <div class="ml-5">
+                                            <div class="d-flex">
+                                                <b class="green--text ml-2 mr-auto">abc</b>
+                                            </div>
+                                            <v-rating value="5" background-color="yellow" color="yellow"></v-rating>
+                                            <p class="ml-2">Sản phẩm chuẩn chất lượng. Hỗ trợ nhiệt tình.</p>
+                                        </div>
+                                        <p class="ml-auto" style="font-style: italic; color: #BDBDBD">28/09/2022</p>
+                                    </v-card>
+                                    <v-divider></v-divider>
+                                </div>
+                            </v-tab-item>
+                            <!--Tab 3-->
+                            <v-tab-item>
+                                <div class="ml-5 mt-3" v-if="item.api == false">
+                                    <h3 class="font-weight-bold green--text">Mua hàng bằng API:</h3>
+                                    <p class="mt-2">Bạn chưa kích hoạt sử dụng API, nếu bạn chắc chắn muốn sử dụng tính năng
+                                        này,
+                                        hãy vào mục thông tin cá nhân (profile) để active !</p>
+                                </div>
+                            </v-tab-item>
+                        </v-tabs>
+                    </div>
+                </div>
+            </div>
+        </XyzTransition>
     </v-app>
 </template>
 <script lang="ts">
@@ -196,6 +350,14 @@ export default Vue.extend({
     background: #fff;
     position: inherit;
     padding: 30px 50px 50px 200px;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+
+.card-res {
+    border-radius: 18px;
+    background: #fff;
+    position: inherit;
+    padding: 30px 10px 30px 20px;
     font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
 }
 
