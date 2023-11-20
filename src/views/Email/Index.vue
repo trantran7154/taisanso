@@ -106,7 +106,7 @@
                     </v-col>
                     <v-col cols="12" md="8" lg="8">
                         <h2>Gian hàng email
-                            <small><em>( Tổng 560 gian hàng )</em></small>
+                            <small><em>( Tổng {{ itemsEmail.length }} gian hàng )</em></small>
                         </h2>
 
                         <v-tabs class="mt-3" color="deep-purple accent-4">
