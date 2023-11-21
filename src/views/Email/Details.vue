@@ -201,7 +201,7 @@
                                 <p><v-icon>mdi-storefront</v-icon> Kho: <b>{{ item.amount }}</b></p>
                             </div>
 
-                            <p class="price mt-2 ml-3 red--text">{{ item.price }}</p>
+                            <p class="price-res mt-2 ml-3 red--text">{{ item.price }}</p>
 
                             <v-divider class="mb-4" width="500"></v-divider>
 
@@ -449,7 +449,7 @@ export default Vue.extend({
 
 .price-res {
     font-weight: 600;
-    font-size: 28px;
+    font-size: 25px;
 }
 
 .price:hover {
@@ -592,9 +592,5 @@ input:focus {
     padding: 6px;
     border-radius: 5px;
     text-align: center;
-}
-
-.word-wrap-res {
-    word-wrap: break-word !important;
 }
 </style>
