@@ -1,22 +1,24 @@
 <template>
   <div class="authentication">
     <v-app id="inspire" v-resize="onResize">
+      <v-main style="padding: 0px">
+        <v-row no-gutters>
+          <v-col cols="5">
+            <router-view :size="size"></router-view>
+          </v-col>
 
-      <v-main style="position: absolute;">
-        <v-container class="position-relative h-100" style="z-index: 310 !important">
-          <router-view :size="size"></router-view>
-        </v-container>
+          <v-col cols="7">
+            <v-sheet color="#131f37" height="100vh"></v-sheet>
+          </v-col>
+        </v-row>
       </v-main>
-
     </v-app>
   </div>
 </template>
-    
+
 <script>
 export default {
-  components: {
-    
-  },
+  components: {},
   data: () => ({
     drawer: null,
     size: {
@@ -33,26 +35,22 @@ export default {
     },
   }),
   mounted() {
-    this.onResize()
+    this.onResize();
   },
   methods: {
     onResize() {
-      this.windowSize = { x: window.innerWidth, y: window.innerHeight }
+      this.windowSize = { x: window.innerWidth, y: window.innerHeight };
       this.resetOnResize();
       this.size.onsize = this.windowSize.x;
       if (this.windowSize.x < 600) {
         this.size.xs = true;
-      }
-      else if (this.windowSize.x < 960) {
+      } else if (this.windowSize.x < 960) {
         this.size.sm = true;
-      }
-      else if (this.windowSize.x < 1264) {
+      } else if (this.windowSize.x < 1264) {
         this.size.md = true;
-      }
-      else if (this.windowSize.x < 2104) {
+      } else if (this.windowSize.x < 2104) {
         this.size.lg = true;
-      }
-      else {
+      } else {
         this.size.xl = true;
       }
     },
@@ -64,8 +62,8 @@ export default {
         md: false,
         lg: false,
         xl: false,
-      }
-    }
-  }
-}
+      };
+    },
+  },
+};
 </script>
