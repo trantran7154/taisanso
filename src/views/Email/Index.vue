@@ -1,14 +1,14 @@
 <template>
     <v-app app>
         <XyzTransition xyz="fade-100%">
-            <div style="padding: 30px 50px 50px 50px;" v-if="size.onsize >= 1111">
+            <div style="padding: 80px 50px 50px 50px;" v-if="size.onsize >= 1111">
                 <v-row>
                     <v-col cols="12" md="4" lg="4">
                         <div class="filter">
                             <v-card class="mx-auto" max-width="350" outlined>
                                 <v-list-item three-line>
                                     <v-list-item-description>
-                                        <v-list-item-title class="text-h5 mb-2 font-weight-bold">
+                                        <v-list-item-title class="text-h5 mt-5 mb-2 font-weight-bold">
                                             <v-icon size="30">mdi-filter</v-icon> Bộ lọc
                                         </v-list-item-title>
 
@@ -62,7 +62,7 @@
                             <v-card class="mx-auto mt-6 new" max-width="350" outlined>
                                 <v-list-item three-line>
                                     <v-list-item-description>
-                                        <v-list-item-title class="text-h5 font-weight-bold mb-2">
+                                        <v-list-item-title class="text-h5 mt-5 font-weight-bold mb-2">
                                             <v-icon size="30">mdi-pencil-box-multiple</v-icon> Bài viết tham khảo
                                         </v-list-item-title>
 
@@ -362,11 +362,11 @@
             <div v-if="size.onsize < 1111">
                 <v-row>
                     <v-col cols="12">
-                        <div class="filter" style="padding: 20px 20px 0px 30px;">
+                        <div class="filter" style="padding: 50px 30px 0px 30px;">
                             <v-card class="mx-auto" outlined>
                                 <v-list-item three-line>
                                     <v-list-item-description>
-                                        <v-list-item-title class="text-h5 mb-2 font-weight-bold">
+                                        <v-list-item-title class="text-h5 mt-5 mb-2 font-weight-bold">
                                             <v-icon size="30">mdi-filter</v-icon> Bộ lọc
                                         </v-list-item-title>
 
@@ -423,27 +423,27 @@
                             <small><em>( Tổng <b class="red--text">{{ itemsEmail.length }}</b> gian hàng )</em></small>
                         </h3>
 
-                        <v-tabs class="mt-3" color="deep-purple accent-4">
+                        <v-tabs class="mt-3" color="deep-purple accent-4" style="padding;left: 10px">
                             <v-tab style="text-transform: none; font-size: 12px;">
-                                <v-icon left>
+                                <v-icon>
                                     mdi-fire
                                 </v-icon>
                                 Phổ biến
                             </v-tab>
                             <v-tab style="text-transform: none; font-size: 12px;">
-                                <v-icon left>
+                                <v-icon>
                                     mdi-arrow-up
                                 </v-icon>
                                 Giá tăng dần
                             </v-tab>
                             <v-tab style="text-transform: none; font-size: 12px;">
-                                <v-icon left>
+                                <v-icon>
                                     mdi-arrow-down
                                 </v-icon>
                                 Giá giảm dần
                             </v-tab>
                             <!--Tab 1-->
-                            <v-tab-item style="padding: 0px 20px 0px 30px;">
+                            <v-tab-item style="padding: 0px 20px 0px 20px;">
                                 <v-card flat>
                                     <div class="mb-6 mt-6 word-wrap">
                                         <em>Đối với gian hàng không trùng, chúng tôi cam kết sản phẩm được bán ra 1
@@ -517,7 +517,7 @@
                                 </v-card>
                             </v-tab-item>
                             <!--Tab 2-->
-                            <v-tab-item>
+                            <v-tab-item style="padding: 0px 20px 0px 20px;">
                                 <v-card flat>
                                     <div class="mb-6 mt-6 word-wrap">
                                         <em>Đối với gian hàng không trùng, chúng tôi cam kết sản phẩm được bán ra 1
@@ -591,7 +591,7 @@
                                 </v-card>
                             </v-tab-item>
                             <!--Tab 3-->
-                            <v-tab-item>
+                            <v-tab-item style="padding: 0px 20px 0px 20px;">
                                 <v-card flat>
                                     <div class="mb-6 mt-6 word-wrap">
                                         <em>Đối với gian hàng không trùng, chúng tôi cam kết sản phẩm được bán ra 1
@@ -667,51 +667,54 @@
                         </v-tabs>
                     </v-col>
                     <v-col cols="12">
-                        <v-card class="mx-auto mt-6 new" max-width="350" outlined>
-                            <v-list-item three-line>
-                                <v-list-item-description>
-                                    <v-list-item-title class="text-h5 font-weight-bold mb-2">
-                                        <v-icon size="30">mdi-pencil-box-multiple</v-icon> Bài viết tham khảo
-                                    </v-list-item-title>
+                        <div style="padding: 0px 30px 0px 30px;">
+                            <v-card class="mx-auto new" max-width="350" outlined>
+                                <v-list-item three-line>
+                                    <v-list-item-description>
+                                        <v-list-item-title class="text-h5 mt-5 font-weight-bold mb-2">
+                                            <v-icon size="30">mdi-pencil-box-multiple</v-icon> Bài viết tham khảo
+                                        </v-list-item-title>
 
-                                    <div style="border-bottom: 1px dashed"></div>
-                                    <div class="container">
-                                        <div class="blog-card-vertical" v-for="item in itemsBlog" :key="item.title">
-                                            <div class="meta">
-                                                <div class="ribbon ribbon-victory">
-                                                    <p class="pa-2 white--text">New</p>
+                                        <div style="border-bottom: 1px dashed"></div>
+                                        <div class="container">
+                                            <div class="blog-card-vertical" v-for="item in itemsBlog" :key="item.title">
+                                                <div class="meta">
+                                                    <div class="ribbon ribbon-victory">
+                                                        <p class="pa-2 white--text">New</p>
+                                                    </div>
+                                                    <v-img class="photo" :src="item.img"></v-img>
                                                 </div>
-                                                <v-img class="photo" :src="item.img"></v-img>
-                                            </div>
-                                            <div class="description">
-                                                <h1>{{ item.title }}</h1>
-                                                <p class="mt-3 line mb-3"></p>
-                                                <span class="mt-2">
-                                                    <v-icon size="20">mdi-eye-outline</v-icon> <b>{{ item.view }}</b>
-                                                </span>
-                                                <span class="mt-2 ml-2">
-                                                    <v-icon size="20">mdi-thumb-up-outline</v-icon> <b> {{ item.like
-                                                    }}</b>
-                                                </span>
-                                                <span class="mt-2 ml-2">
-                                                    <v-icon size="20">mdi-comment-multiple-outline</v-icon> <b>{{
-                                                        item.comment }}</b>
-                                                </span>
-                                                <br>
-                                                <div class="mt-1 font-weight-bold" style="font-size: 15px;">Người đăng:
-                                                    <v-icon size="20">mdi-account-circle</v-icon><span style="color: red;">
-                                                        {{ item.author }}</span>
+                                                <div class="description">
+                                                    <h1>{{ item.title }}</h1>
+                                                    <p class="mt-3 line mb-3"></p>
+                                                    <span class="mt-2">
+                                                        <v-icon size="20">mdi-eye-outline</v-icon> <b>{{ item.view }}</b>
+                                                    </span>
+                                                    <span class="mt-2 ml-2">
+                                                        <v-icon size="20">mdi-thumb-up-outline</v-icon> <b> {{ item.like
+                                                        }}</b>
+                                                    </span>
+                                                    <span class="mt-2 ml-2">
+                                                        <v-icon size="20">mdi-comment-multiple-outline</v-icon> <b>{{
+                                                            item.comment }}</b>
+                                                    </span>
+                                                    <br>
+                                                    <div class="mt-1 font-weight-bold" style="font-size: 15px;">Người đăng:
+                                                        <v-icon size="20">mdi-account-circle</v-icon><span
+                                                            style="color: red;">
+                                                            {{ item.author }}</span>
+                                                    </div>
+                                                    <p class="read-more">
+                                                        <a href="#"><v-btn class="font-weight-bold" outlined small>Chi tiết
+                                                                <v-icon size="18">mdi-arrow-right</v-icon></v-btn></a>
+                                                    </p>
                                                 </div>
-                                                <p class="read-more">
-                                                    <a href="#"><v-btn class="font-weight-bold" outlined small>Chi tiết
-                                                            <v-icon size="18">mdi-arrow-right</v-icon></v-btn></a>
-                                                </p>
                                             </div>
                                         </div>
-                                    </div>
-                                </v-list-item-description>
-                            </v-list-item>
-                        </v-card>
+                                    </v-list-item-description>
+                                </v-list-item>
+                            </v-card>
+                        </div>
                     </v-col>
                 </v-row>
             </div>
@@ -724,7 +727,7 @@ export default {
     name: "Index",
     props: ["size"],
     data: () => ({
-        show: false,
+        show: true,
         formEmail: {
             value: {
                 gmail: '',

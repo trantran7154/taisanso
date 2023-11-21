@@ -52,18 +52,18 @@
 
                             <b class="ml-2">SẢN PHẨM</b>
                             <br>
-                            <v-chip class="ma-2 word-wrap" color="green" outlined>
+                            <div class="ma-2 word-wrap" color="green" outlined>
                                 Gmail random IP 7 ngày++ email|pass|recovery|geo
-                            </v-chip>
+                            </div>
                             <v-chip class="ma-2 word-wrap" color="green" outlined>
                                 Gmail Mỹ, 7 ngày+, reg GGVoice email|pass|recovery
                             </v-chip>
-                            <v-chip class="ma-2 word-wrap" color="green" outlined>
+                            <div class="ma-2 word-wrap" color="green" outlined>
                                 Gmail random IP 1 tháng ++ email|pass|recovery|geo
-                            </v-chip>
-                            <v-chip class="ma-2 word-wrap" color="green" outlined>
+                            </div>
+                            <div class="ma-2 word-wrap" color="green" outlined>
                                 Gmail USA (Mỹ) , 7 ngày email|pass|recover
-                            </v-chip>
+                            </div>
 
                             <div class="wrapper mt-3 mb-3">
                                 <button class="btn btn--minus" @click="changeCounter('-1')" type="button" name="button"
