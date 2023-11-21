@@ -201,16 +201,16 @@
 
                             <b class="ml-2">SẢN PHẨM</b>
                             <br>
-                            <div class="ma-2 word-wrap" color="green" outlined style="width: 400px">
+                            <div class="ma-2 word-wrap" color="green" outlined>
                                 Gmail random IP 7 ngày++ email|pass|recovery|geo
                             </div>
-                            <div class="ma-2 word-wrap" color="green" outlined style="width: 400px">
+                            <div class="ma-2 word-wrap" color="green" outlined>
                                 Gmail Mỹ, 7 ngày+, reg GGVoice email|pass|recovery
                             </div>
-                            <div class="ma-2 word-wrap" color="green" outlined style="width: 400px">
+                            <div class="ma-2 word-wrap" color="green" outlined>
                                 Gmail random IP 1 tháng ++ email|pass|recovery|geo
                             </div>
-                            <div class="ma-2 word-wrap" color="green" outlined style="width: 400px">
+                            <div class="ma-2 word-wrap" color="green" outlined>
                                 Gmail USA (Mỹ) , 7 ngày email|pass|recover
                             </div>
 
@@ -250,7 +250,7 @@
                         </v-col>
                     </v-row>
                     <!--Tab-->
-                    <div style="padding: 30px 10px 30px 10px;">
+                    <div>
                         <v-tabs color="deep-purple accent-4">
                             <v-tab class="font-weight-medium" style="text-transform: none; font-size: 17px;">
                                 <span class="ml-2">Mô tả</span>
@@ -262,7 +262,7 @@
                                 <span class="ml-2">API</span>
                             </v-tab>
                             <!--Tab 1-->
-                            <v-tab-item>
+                            <v-tab-item style="padding: 30px 10px 30px 10px;">
                                 <v-card flat>
                                     <v-card-text>
                                         <span v-html="item.description" style="font-size: 16px"></span>
@@ -270,7 +270,7 @@
                                 </v-card>
                             </v-tab-item>
                             <!--Tab 2-->
-                            <v-tab-item>
+                            <v-tab-item style="padding: 30px 10px 30px 10px;">
                                 <div v-for="(item, i) in 5" :key="i">
                                     <v-card class="mt-5 ml-5 d-flex" flat>
                                         <v-avatar width="80" height="80">
@@ -289,7 +289,7 @@
                                 </div>
                             </v-tab-item>
                             <!--Tab 3-->
-                            <v-tab-item>
+                            <v-tab-item style="padding: 30px 10px 30px 10px;">
                                 <div class="ml-5 mt-3" v-if="item.api == false">
                                     <h3 class="font-weight-bold green--text">Mua hàng bằng API:</h3>
                                     <p class="mt-2">Bạn chưa kích hoạt sử dụng API, nếu bạn chắc chắn muốn sử dụng tính năng
