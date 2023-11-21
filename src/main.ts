@@ -5,10 +5,12 @@ import vuetify from './plugins/vuetify'
 import VueAnimXYZ from '@animxyz/vue'
 import '@animxyz/core' 
 import VueMeta from 'vue-meta'
+import Notifications from 'vue-notification'
 
 Vue.config.productionTip = false
 Vue.use(VueAnimXYZ)
 Vue.use(VueMeta)
+Vue.use(Notifications)
 
 new Vue({
   router,

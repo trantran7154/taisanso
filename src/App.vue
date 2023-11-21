@@ -256,7 +256,6 @@ export default Vue.extend({
 </script>
 
 <style lang="scss" scoped>
-
 :root {
   --color-green: #166062;
   --color-yellow: #c9a14a;
@@ -337,7 +336,6 @@ svg {
     font-size: 2.5rem;
   }
 }
-
 
 .vue-notification {
   padding: 10px;
