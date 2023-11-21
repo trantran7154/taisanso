@@ -11,6 +11,7 @@ import ProfileEdit from '../views/User/Profile/Edit.vue'
 import ChangePassword from '../views/User/ChangePassword.vue'
 import Email from '../views/Email/Index.vue'
 import EmailDetails from '../views/Email/Details.vue'
+import Authenticator from '../views/User/Authenticator.vue'
 
 import HomeLayout from '../views/layout/_Home.vue'
 import AuthenticationLayout from '../views/layout/_Authentication.vue'
@@ -62,6 +63,11 @@ const routes: Array<RouteConfig> = [
         path: '/email/details',
         name: 'details',
         component: EmailDetails
+      },
+      {
+        path: '/user/authenticator',
+        name: 'authenticator',
+        component: Authenticator
       }
     ]
   },
