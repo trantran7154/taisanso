@@ -179,7 +179,7 @@
                             <v-rating :value="item.rating" color="yellow darken-3" background-color="grey darken-1"
                                 empty-icon="$ratingFull" half-increments hover></v-rating>
                             <div class="ml-2" style="font-size: 17px">
-                                <div class="mt-1 d-flex">
+                                <div class="mt-1 d-flex word-wrap-res">
                                     <b>{{ item.review }}</b> Reviews | Đã bán:
                                     <b class="mr-1">{{ item.sold }}</b> | Khiếu nại: <b>{{ item.complain }}</b>
                                 </div>
@@ -359,7 +359,7 @@ export default Vue.extend({
     border-radius: 18px;
     background: #fff;
     position: inherit;
-    padding: 50px 10px 30px 20px;
+    padding: 50px 20px 30px 20px;
     font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
 }
 
@@ -576,5 +576,9 @@ input:focus {
     padding: 6px;
     border-radius: 5px;
     text-align: center;
+}
+
+.word-wrap-res {
+    word-wrap: break-word !important;
 }
 </style>
