@@ -12,64 +12,81 @@ import ChangePassword from '../views/User/ChangePassword.vue'
 import Email from '../views/Email/Index.vue'
 import EmailDetails from '../views/Email/Details.vue'
 
+import HomeLayout from '../views/layout/_Home.vue'
+import AuthenticationLayout from '../views/layout/_Authentication.vue'
+
 Vue.use(VueRouter)
 
 const routes: Array<RouteConfig> = [
   {
     path: '/',
-    name: 'home',
-    component: HomeView
+    redirect: 'home',
+    component: HomeLayout,
+    children: [
+      {
+        path: '/',
+        name: 'home',
+        component: HomeView
+      },
+      {
+        path: '/help-center',
+        name: 'helpcenter',
+        component: HelpCenter
+      },
+      {
+        path: '/otp',
+        name: 'otp',
+        component: OTP
+      },
+      {
+        path: '/user/profile/detail',
+        name: 'profile',
+        component: ProfileDetail
+      },
+      {
+        path: '/user/profile/edit',
+        name: 'profileedit',
+        component: ProfileEdit
+      },
+      {
+        path: '/change-password',
+        name: 'changepassword',
+        component: ChangePassword
+      },
+      {
+        path: '/email',
+        name: 'email',
+        component: Email
+      },
+      {
+        path: '/email/details',
+        name: 'details',
+        component: EmailDetails
+      }
+    ]
   },
   {
-    path: '/login',
-    name: 'login',
-    component: Login
+    path: '/',
+    redirect: 'authentication',
+    component: AuthenticationLayout,
+    children: [
+      {
+        path: '/login',
+        name: 'login',
+        component: Login
+      },
+      {
+        path: '/sign-up',
+        name: 'signup',
+        component: SignUp
+      },
+      {
+        path: '/forgot-password',
+        name: 'forgotpassword',
+        component: ForgotPassword
+      },
+    ]
   },
-  {
-    path: '/sign-up',
-    name: 'signup',
-    component: SignUp
-  },
-  {
-    path: '/forgot-password',
-    name: 'forgotpassword',
-    component: ForgotPassword
-  },
-  {
-    path: '/help-center',
-    name: 'helpcenter',
-    component: HelpCenter
-  },
-  {
-    path: '/otp',
-    name: 'otp',
-    component: OTP
-  },
-  {
-    path: '/user/profile/detail',
-    name: 'profile',
-    component: ProfileDetail
-  },
-  {
-    path: '/user/profile/edit',
-    name: 'profileedit',
-    component: ProfileEdit
-  },
-  {
-    path: '/change-password',
-    name: 'changepassword',
-    component: ChangePassword
-  },
-  {
-    path: '/email',
-    name: 'email',
-    component: Email
-  },
-  {
-    path: '/email/details',
-    name: 'details',
-    component: EmailDetails
-  }
 ]
 const router = new VueRouter({
   mode: 'history',
