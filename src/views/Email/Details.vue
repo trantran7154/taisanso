@@ -233,7 +233,9 @@
 
                             <button href="#" onclick="showAlert('Product added to cart!')" class="buy-btn"><v-icon
                                     color="white">mdi-cart-outline</v-icon> Mua hàng</button>
+                            
                             <br>
+                            
                             <div class="d-flex">
                                 <button class="add-to-wl-btn" onclick="showAlert('Product added to your Wishlist!')">
                                     <v-icon color="#000">mdi-cart-arrow-down</v-icon> Đặt trước</button>
