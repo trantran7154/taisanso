@@ -73,7 +73,8 @@ const routes: Array<RouteConfig> = [
       {
         path: '/login',
         name: 'login',
-        component: Login
+        component: Login,
+        meta: { title: 'Skills - MyApp' }
       },
       {
         path: '/sign-up',

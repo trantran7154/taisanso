@@ -1,40 +1,109 @@
 <template>
-  <div class="d-flex align-center justify-center login">
+  <div class="d-flex align-center justify-center login" style="font-size: 14px">
     <v-sheet width="300" class="mx-auto">
       <v-form ref="form" v-model="formLogin.valid" lazy-validation fast-fail>
-        <h3 class="text-center" style="font-size: 24px;">Đăng nhập</h3>
-        <div class="d-flex pa-4 btn">
-          <a href="#" class="button"><v-img
-              src="https://assets.hostinger.com/images/login/google-213cd1c446.svg"></v-img></a>
-          <a href="#" class="button ml-5" style="background-color: #1877f2"><v-img
-              src="https://assets.hostinger.com/images/login/facebook-7fcb46c06e.svg"></v-img></a>
-        </div>
+        <v-img
+          v-if="size.onsize <= 860"
+          width="200"
+          height="70"
+          style="margin-left: -31px"
+          src="../../img/logo.jpg"
+        ></v-img>
+        <h3 style="font-size: 24px">Đăng nhập</h3>
 
-        <div class="mt-4 d-flex">
-          <v-divider></v-divider>
-          <p class="pa-4">hoặc là</p>
-          <v-divider></v-divider>
-        </div>
+        <div class="mt-5">
+          <label style="color: #6d7a82" class="font-weight-bold">Email</label>
+          <v-text-field
+            placeholder="exampe@gmail.com"
+            v-model="formLogin.value.email"
+            :rules="formLogin.validate.email"
+            persistent-hint
+            outlined
+            dense
+          ></v-text-field>
 
-        <v-text-field label="Email" v-model="formLogin.value.email" :rules="formLogin.validate.email" persistent-hint
-          outlined dense></v-text-field>
+          <label style="color: #6d7a82" class="font-weight-bold"
+            >Mật khẩu</label
+          >
+          <v-text-field
+            :append-icon="formLogin.showPassword ? 'mdi-eye' : 'mdi-eye-off'"
+            :type="formLogin.showPassword ? 'text' : 'password'"
+            @click:append="formLogin.showPassword = !formLogin.showPassword"
+            placeholder="Mật khẩu"
+            v-model="formLogin.value.password"
+            :rules="formLogin.validate.password"
+            persistent-hint
+            outlined
+            dense
+          ></v-text-field>
 
-        <v-text-field :append-icon="formLogin.showPassword ? 'mdi-eye' : 'mdi-eye-off'"
-          :type="formLogin.showPassword ? 'text' : 'password'"
-          @click:append="formLogin.showPassword = !formLogin.showPassword" label="Mật khẩu"
-          v-model="formLogin.value.password" :rules="formLogin.validate.password" persistent-hint outlined
-          dense></v-text-field>
+          <div style="color: #6d7a82">
+            <router-link
+              style="color: #6d7a82"
+              :to="{ path: '/forgot-password' }"
+              >Quên mật khẩu?</router-link
+            >
+          </div>
 
-        <v-btn @click="login()" class="white--text btn-login mb-5" type="submit" color="#000" block x-large>Đăng
-          nhập</v-btn>
+          <v-btn
+            class="white--text btn-login mb-5 mt-5"
+            type="submit"
+            color="var(--color-5)"
+            block
+            depressed
+            large
+            >Đăng nhập</v-btn
+          >
 
-        <div class="text-center font-weight-bold">
-          <a href="/forgot-password" class="forgot" style="color: blue;">Bạn quên mật khẩu?</a>
-        </div>
+          <div class="mt-5" style="color: #6d7a82">
+            Bạn chưa có tài khoản?
+            <router-link style="color: #6d7a82" :to="{ path: '/sign-up' }"
+              >Đăng ký</router-link
+            >
+          </div>
 
-        <div class="text-center font-weight-bold mt-6">
-          <a href="#" class="forgot">Bạn chưa là thành viên? <a href="/sign-up"
-              style="color: blue; text-decoration: none;">Đăng ký</a> và bắt đầu ngay!</a>
+          <!-- <div class="text-center font-weight-bold">
+            <a href="/forgot-password" class="forgot" style="color: blue"
+              >Bạn quên mật khẩu?</a
+            >
+          </div>
+
+          <div class="text-center font-weight-bold mt-6">
+            <a href="#" class="forgot"
+              >Bạn chưa là thành viên?
+              <a href="/sign-up" style="color: blue; text-decoration: none"
+                >Đăng ký</a
+              >
+              và bắt đầu ngay!</a
+            >
+          </div> -->
+
+          <!-- <div class="d-flex pa-4 btn">
+            <a href="#" class="button"
+              ><v-img
+                src="https://assets.hostinger.com/images/login/google-213cd1c446.svg"
+              ></v-img
+            ></a>
+            <a href="#" class="button ml-5" style="background-color: #1877f2"
+              ><v-img
+                src="https://assets.hostinger.com/images/login/facebook-7fcb46c06e.svg"
+              ></v-img
+            ></a>
+          </div> -->
+
+          <div class="mt-10 d-flex">
+            <v-divider></v-divider>
+            <p class="pa-4">hoặc là</p>
+            <v-divider></v-divider>
+          </div>
+
+          <v-btn block outlined x-large class="text-none" disabled>
+            <img
+              src="https://assets.hostinger.com/images/login/google-213cd1c446.svg"
+            />
+
+            <span class="ml-2">Login google</span>
+          </v-btn>
         </div>
       </v-form>
     </v-sheet>
@@ -42,41 +111,43 @@
 </template>
 
 <script lang="ts">
-import Vue from 'vue'
+import Vue from "vue";
 
 export default Vue.extend({
-  name: 'Footer',
-
+  name: "Footer",
+  created() {
+    document.title = "Đăng nhập" + " ~ TaiSanSo";
+  },
+  props: ["size"],
   data() {
     return {
       formLogin: {
         valid: true,
         showPassword: false,
         value: {
-          email: '',
-          password: '',
+          email: "",
+          password: "",
         },
         validate: {
           email: [
-            (v: any) => !!v || 'Vui lòng nhập email',
-            (v: any) => /.+@.+\..+/.test(v) || 'Email chưa đúng'
+            (v: any) => !!v || "Vui lòng nhập email",
+            (v: any) => /.+@.+\..+/.test(v) || "Email chưa đúng",
           ],
           password: [
-            (v: any) => !!v || 'Vui lòng nhập mật khẩu',
-            (v: any) => (v && v.length > 6) || 'Mật khẩu phải trên 6 ký tự',
+            (v: any) => !!v || "Vui lòng nhập mật khẩu",
+            (v: any) => (v && v.length > 6) || "Mật khẩu phải trên 6 ký tự",
           ],
         },
-      }
-
-    }
+      },
+    };
   },
   methods: {
     login() {
       let that = this;
       that.$refs.formLogin as Vue & { validate: () => boolean };
-    }
+    },
   },
-})
+});
 </script>
 
 <style lang="scss" scoped>
@@ -86,7 +157,7 @@ export default Vue.extend({
 
   .btn {
     align-items: center !important;
-    justify-content: center !important
+    justify-content: center !important;
   }
 
   .button {

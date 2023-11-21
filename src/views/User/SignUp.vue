@@ -1,16 +1,23 @@
 <template>
-  <div class="d-flex align-center justify-center signup">
+  <div
+    class="d-flex align-center justify-center signup"
+    style="font-size: 14px"
+  >
     <v-sheet width="300" class="mx-auto">
       <v-form ref="form" v-model="formSignUp.valid" lazy-validation fast-fail>
-        <h3 style="font-size: 22px">Đăng ký tài khoản</h3>
+        <v-img
+          v-if="size.onsize <= 860"
+          width="200"
+          height="70"
+          style="margin-left: -31px"
+          src="../../img/logo.jpg"
+        ></v-img>
+        <h3 style="font-size: 24px">Đăng ký tài khoản</h3>
 
         <div class="mt-5">
-          <label style="font-size: 16px; font-weight: bold; color: #6d7a82"
-            >Email</label
-          >
+          <label style="color: #6d7a82" class="font-weight-bold">Email</label>
           <v-text-field
             class="mt-1"
-            label="Email"
             v-model="formSignUp.value.email"
             :rules="formSignUp.validate.email"
             persistent-hint
@@ -25,7 +32,7 @@
                 <v-text-field label="Số điện thoại" v-model="formSignUp.value.phone" :rules="formSignUp.validate.phone"
                     persistent-hint outlined dense></v-text-field> -->
 
-          <label style="font-size: 16px; font-weight: bold; color: #6d7a82"
+          <label style="color: #6d7a82" class="font-weight-bold"
             >Mật khẩu</label
           >
           <v-text-field
@@ -41,7 +48,7 @@
             dense
           ></v-text-field>
 
-          <label style="font-size: 16px; font-weight: bold; color: #6d7a82"
+          <label style="color: #6d7a82" class="font-weight-bold"
             >Xác nhận mật khẩu</label
           >
           <v-text-field
@@ -75,7 +82,12 @@
             >Đăng ký</v-btn
           >
 
-          <p>Bạn đã có tài khoản? <router-link :to="{path: 'login'}">Đăng nhập</router-link> </p>
+          <div class="mt-5" style="color: #6d7a82">
+            Bạn đã có tài khoản?
+            <router-link style="color: #6d7a82" :to="{ path: 'login' }"
+              >Đăng nhập</router-link
+            >
+          </div>
 
           <div class="mt-10 d-flex">
             <v-divider></v-divider>
@@ -83,18 +95,23 @@
             <v-divider></v-divider>
           </div>
 
-          <div class="d-flex pa-4 btn">
+          <v-btn block outlined x-large class="text-none" disabled>
+            <img
+              src="https://assets.hostinger.com/images/login/google-213cd1c446.svg"
+            />
+
+            <span class="ml-2">Login google</span>
+          </v-btn>
+
+          <!-- <div class="d-flex pa-2 btn">
             <a href="#" class="button"
-              ><v-img
-                src="https://assets.hostinger.com/images/login/google-213cd1c446.svg"
-              ></v-img
-            ></a>
+              ></a>
             <a href="#" class="button ml-5" style="background-color: #1877f2"
               ><v-img
                 src="https://assets.hostinger.com/images/login/facebook-7fcb46c06e.svg"
               ></v-img
             ></a>
-          </div>
+          </div> -->
         </div>
       </v-form>
     </v-sheet>
@@ -106,7 +123,10 @@ import Vue from "vue";
 
 export default Vue.extend({
   name: "Footer",
-
+  props: ["size"],
+  created() {
+    document.title = "Đăng ký" + " ~ TaiSanSo";
+  },
   data() {
     return {
       formSignUp: {

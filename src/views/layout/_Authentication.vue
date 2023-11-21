@@ -2,13 +2,20 @@
   <v-app v-resize="onResize" style="min-height: 0vh !important">
     <v-main style="padding: 0px !important">
       <v-row no-gutters>
-        <v-col cols="5" class="center">
-          <router-view class="center-c" :size="size"></router-view>
+        <v-col :cols="size.onsize > 860 ? 5 : 12">
+          <v-sheet height="100vh" class="center">
+            <router-view class="center-c" :size="size"></router-view>
+          </v-sheet>
         </v-col>
 
-        <v-col cols="7">
+        <v-col :cols="size.onsize > 860 ? 7 : 12" v-if="size.onsize > 860">
           <v-sheet color="#131f37" height="100vh" class="center">
-            <v-img class="center-c" width="306" height="64"  src="@/assets/logoicon-ts.png" />
+            <v-img
+              class="center-c"
+              width="306"
+              height="64"
+              src="@/assets/logoicon-ts.png"
+            />
           </v-sheet>
         </v-col>
       </v-row>
@@ -79,5 +86,9 @@ export default {
   top: 50%;
   left: 50%;
   transform: translate(-50%, -50%);
+}
+
+.text-b {
+  color: #6d7a82 !important;
 }
 </style>
