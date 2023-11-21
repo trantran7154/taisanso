@@ -423,7 +423,7 @@
                             <small><em>( Tổng <b class="red--text">{{ itemsEmail.length }}</b> gian hàng )</em></small>
                         </h3>
 
-                        <v-tabs class="mt-4" color="deep-purple accent-4">
+                        <v-tabs class="mt-3" color="deep-purple accent-4">
                             <v-tab style="text-transform: none; font-size: 12px;">
                                 <v-icon>
                                     mdi-fire
