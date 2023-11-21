@@ -40,32 +40,32 @@
 
                             <v-divider class="mb-4" width="500"></v-divider>
 
-                            <div style="font-size: 15px;">
+                            <div class="ml-3" style="font-size: 15px;">
                                 <p><v-icon>mdi-account-circle</v-icon> Người đăng: <b>{{ item.seller }}</b></p>
                                 <p><v-icon>mdi-tag</v-icon> Sản phẩm: <b>{{ item.productName }}</b></p>
                                 <p><v-icon>mdi-storefront</v-icon> Kho: <b>{{ item.amount }}</b></p>
                             </div>
 
-                            <p class="price mt-2 red--text">{{ item.price }}</p>
+                            <p class="price mt-2 ml-3 red--text">{{ item.price }}</p>
 
                             <v-divider class="mb-4" width="500"></v-divider>
 
                             <b class="ml-2">SẢN PHẨM</b>
                             <br>
-                            <v-chip class="ma-2 word-wrap" color="green" outlined>
+                            <div class="ma-2 word-wrap" color="green" outlined style="width: 400px">
                                 Gmail random IP 7 ngày++ email|pass|recovery|geo
-                            </v-chip>
-                            <v-chip class="ma-2 word-wrap" color="green" outlined>
+                            </div>
+                            <div class="ma-2 word-wrap" color="green" outlined style="width: 400px">
                                 Gmail Mỹ, 7 ngày+, reg GGVoice email|pass|recovery
-                            </v-chip>
-                            <v-chip class="ma-2 word-wrap" color="green" outlined>
+                            </div>
+                            <div class="ma-2 word-wrap" color="green" outlined style="width: 400px">
                                 Gmail random IP 1 tháng ++ email|pass|recovery|geo
-                            </v-chip>
-                            <v-chip class="ma-2 word-wrap" color="green" outlined>
+                            </div>
+                            <div class="ma-2 word-wrap" color="green" outlined style="width: 400px">
                                 Gmail USA (Mỹ) , 7 ngày email|pass|recover
-                            </v-chip>
+                            </div>
 
-                            <div class="wrapper mt-3 mb-3">
+                            <div class="wrapper mt-6 ml-2 mb-3">
                                 <button class="btn btn--minus" @click="changeCounter('-1')" type="button" name="button"
                                     style="border-left:  1px solid #EEEEEE;">
                                     -
@@ -77,7 +77,7 @@
                                 </button>
                             </div>
 
-                            <div class="mt-6">
+                            <div class="mt-4 ml-2">
                                 <v-text-field append-icon="mdi-sale-outline" placeholder="Nhập mã giảm giá" outlined dense
                                     style="width: 200px;"></v-text-field>
                             </div>
@@ -176,45 +176,51 @@
                             </div>
 
                             <p class="title mt-3">{{ item.title }}</p>
-                            <v-rating :value="item.rating" color="yellow darken-3" background-color="grey darken-1"
-                                empty-icon="$ratingFull" half-increments hover></v-rating>
-                            <div class="ml-2" style="font-size: 17px">
-                                <div class="mt-1 d-flex">
-                                    <b>{{ item.review }}</b> Reviews | Đã bán:
+                            <div class="ml-1" style="font-size: 17px">
+                                <div class="mt-1 d-flex word-wrap-res">
+                                    <v-rating :value="item.rating" color="yellow darken-3" background-color="grey darken-1"
+                                        empty-icon="$ratingFull" half-increments hover small></v-rating>( <b>{{ item.review
+                                        }}</b>
+                                    <span class="ml-1">Reviews</span> )
+                                </div>
+                            </div>
+
+                            <div class="ml-3" style="font-size: 17px">
+                                <div class="mt-1 d-flex word-wrap-res"> Đã bán:
                                     <b class="mr-1">{{ item.sold }}</b> | Khiếu nại: <b>{{ item.complain }}</b>
                                 </div>
                             </div>
 
-                            <p class="offer-info ml-3">{{ item.content }}</p>
+                            <p class="offer-info ml-3 mt-2">{{ item.content }}</p>
 
                             <v-divider class="mb-4" width="500"></v-divider>
 
-                            <div style="font-size: 15px;">
+                            <div class="ml-3" style="font-size: 15px;">
                                 <p><v-icon>mdi-account-circle</v-icon> Người đăng: <b>{{ item.seller }}</b></p>
                                 <p><v-icon>mdi-tag</v-icon> Sản phẩm: <b>{{ item.productName }}</b></p>
                                 <p><v-icon>mdi-storefront</v-icon> Kho: <b>{{ item.amount }}</b></p>
                             </div>
 
-                            <p class="price mt-2 red--text">{{ item.price }}</p>
+                            <p class="price-res mt-2 ml-3 red--text">{{ item.price }}</p>
 
                             <v-divider class="mb-4" width="500"></v-divider>
 
                             <b class="ml-2">SẢN PHẨM</b>
                             <br>
-                            <v-chip class="ma-2 word-wrap" color="green" outlined>
+                            <div class="ma-2 word-wrap" color="green" outlined>
                                 Gmail random IP 7 ngày++ email|pass|recovery|geo
-                            </v-chip>
-                            <v-chip class="ma-2 word-wrap" color="green" outlined>
+                            </div>
+                            <div class="ma-2 word-wrap" color="green" outlined>
                                 Gmail Mỹ, 7 ngày+, reg GGVoice email|pass|recovery
-                            </v-chip>
-                            <v-chip class="ma-2 word-wrap" color="green" outlined>
+                            </div>
+                            <div class="ma-2 word-wrap" color="green" outlined>
                                 Gmail random IP 1 tháng ++ email|pass|recovery|geo
-                            </v-chip>
-                            <v-chip class="ma-2 word-wrap" color="green" outlined>
+                            </div>
+                            <div class="ma-2 word-wrap" color="green" outlined>
                                 Gmail USA (Mỹ) , 7 ngày email|pass|recover
-                            </v-chip>
+                            </div>
 
-                            <div class="wrapper mt-3 mb-3">
+                            <div class="wrapper mt-6 ml-2 mb-3">
                                 <button class="btn btn--minus" @click="changeCounter('-1')" type="button" name="button"
                                     style="border-left:  1px solid #EEEEEE;">
                                     -
@@ -226,16 +232,16 @@
                                 </button>
                             </div>
 
-                            <div class="mt-6">
+                            <div class="mt-4 ml-2">
                                 <v-text-field append-icon="mdi-sale-outline" placeholder="Nhập mã giảm giá" outlined dense
                                     style="width: 200px;"></v-text-field>
                             </div>
 
                             <button href="#" onclick="showAlert('Product added to cart!')" class="buy-btn"><v-icon
                                     color="white">mdi-cart-outline</v-icon> Mua hàng</button>
-                            
+
                             <br>
-                            
+
                             <div class="d-flex">
                                 <button class="add-to-wl-btn" onclick="showAlert('Product added to your Wishlist!')">
                                     <v-icon color="#000">mdi-cart-arrow-down</v-icon> Đặt trước</button>
@@ -250,7 +256,7 @@
                         </v-col>
                     </v-row>
                     <!--Tab-->
-                    <div style="padding: 30px 10px 30px 10px;">
+                    <div class="mt-7">
                         <v-tabs color="deep-purple accent-4">
                             <v-tab class="font-weight-medium" style="text-transform: none; font-size: 17px;">
                                 <span class="ml-2">Mô tả</span>
@@ -262,7 +268,7 @@
                                 <span class="ml-2">API</span>
                             </v-tab>
                             <!--Tab 1-->
-                            <v-tab-item>
+                            <v-tab-item style="padding: 30px 10px 30px 10px;">
                                 <v-card flat>
                                     <v-card-text>
                                         <span v-html="item.description" style="font-size: 16px"></span>
@@ -270,7 +276,7 @@
                                 </v-card>
                             </v-tab-item>
                             <!--Tab 2-->
-                            <v-tab-item>
+                            <v-tab-item style="padding: 30px 10px 30px 10px;">
                                 <div v-for="(item, i) in 5" :key="i">
                                     <v-card class="mt-5 ml-5 d-flex" flat>
                                         <v-avatar width="80" height="80">
@@ -289,7 +295,7 @@
                                 </div>
                             </v-tab-item>
                             <!--Tab 3-->
-                            <v-tab-item>
+                            <v-tab-item style="padding: 30px 10px 30px 10px;">
                                 <div class="ml-5 mt-3" v-if="item.api == false">
                                     <h3 class="font-weight-bold green--text">Mua hàng bằng API:</h3>
                                     <p class="mt-2">Bạn chưa kích hoạt sử dụng API, nếu bạn chắc chắn muốn sử dụng tính năng
@@ -351,7 +357,7 @@ export default Vue.extend({
     border-radius: 18px;
     background: #fff;
     position: inherit;
-    padding: 30px 50px 50px 200px;
+    padding: 80px 50px 50px 200px;
     font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
 }
 
@@ -359,7 +365,7 @@ export default Vue.extend({
     border-radius: 18px;
     background: #fff;
     position: inherit;
-    padding: 30px 10px 30px 20px;
+    padding: 50px 20px 30px 20px;
     font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
 }
 
@@ -441,7 +447,17 @@ export default Vue.extend({
     font-size: 38px;
 }
 
+.price-res {
+    font-weight: 600;
+    font-size: 25px;
+}
+
 .price:hover {
+    animation: shake-horizontal 0.8s linear both;
+    cursor: pointer;
+}
+
+.price-res:hover {
     animation: shake-horizontal 0.8s linear both;
     cursor: pointer;
 }

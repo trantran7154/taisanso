@@ -2,7 +2,7 @@
     <XyzTransition xyz="fade-100%">
         <v-app app>
             <!--Responsive-->
-            <div class="content" v-if="size.onsize >= 1111">
+            <div class="content" v-if="size.onsize >= 1111" style="padding-top: 80px;">
                 <div class="container">
                     <v-row>
                         <v-col cols="4" md="4" lg="4">
@@ -131,7 +131,7 @@
                 </div>
             </div>
 
-            <div class="content" v-if="size.onsize < 1111">
+            <div class="content" v-if="size.onsize < 1111" style="padding: 50px 20px 10px 20px;">
                 <div class="container">
                     <v-row>
                         <v-col cols="12" md="12" lg="12">
@@ -292,7 +292,6 @@ export default Vue.extend({
     display: flex;
     align-items: center;
     justify-content: center;
-    padding: 30px;
 
     .container {
         background-color: rgba(255, 255, 255, 0.9);
