@@ -338,6 +338,7 @@ svg {
   }
 }
 
+
 .vue-notification {
   padding: 10px;
   margin: 30px !important;
