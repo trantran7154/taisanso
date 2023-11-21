@@ -1,6 +1,6 @@
 <template>
   <div>
-    <v-app id="inspire" style="min-height: 0vh !important">
+    <v-app id="inspire" style="min-height: 0vh !important" v-if="dialogLoad">
       <v-main style="position: absolute">
         <v-dialog
           v-model="dialogLoad"
@@ -256,6 +256,17 @@ export default Vue.extend({
 </script>
 
 <style lang="scss" scoped>
+
+:root {
+  --color-green: #166062;
+  --color-yellow: #c9a14a;
+  --color-1: #72ffff;
+  --color-2: #00d7ff;
+  --color-3: #590696;
+  --color-4: #0096ff;
+  --color-5: #5800ff;
+}
+
 h1 {
   font-size: 5rem;
   font-family: "Paytone One", sans-serif;

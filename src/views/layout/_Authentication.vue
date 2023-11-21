@@ -1,19 +1,19 @@
 <template>
-  <div class="authentication">
-    <v-app id="inspire" v-resize="onResize">
-      <v-main style="padding: 0px">
-        <v-row no-gutters>
-          <v-col cols="5">
-            <router-view :size="size"></router-view>
-          </v-col>
+  <v-app v-resize="onResize" style="min-height: 0vh !important">
+    <v-main style="padding: 0px !important">
+      <v-row no-gutters>
+        <v-col cols="5" class="center">
+          <router-view class="center-c" :size="size"></router-view>
+        </v-col>
 
-          <v-col cols="7">
-            <v-sheet color="#131f37" height="100vh"></v-sheet>
-          </v-col>
-        </v-row>
-      </v-main>
-    </v-app>
-  </div>
+        <v-col cols="7">
+          <v-sheet color="#131f37" height="100vh" class="center">
+            <v-img class="center-c" width="306" height="64"  src="@/assets/logoicon-ts.png" />
+          </v-sheet>
+        </v-col>
+      </v-row>
+    </v-main>
+  </v-app>
 </template>
 
 <script>
@@ -67,3 +67,17 @@ export default {
   },
 };
 </script>
+
+<style scoped>
+.center {
+  position: relative;
+}
+
+.center-c {
+  margin: 0;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+}
+</style>
