@@ -256,7 +256,7 @@
                         </v-col>
                     </v-row>
                     <!--Tab-->
-                    <div>
+                    <div class="mt-7">
                         <v-tabs color="deep-purple accent-4">
                             <v-tab class="font-weight-medium" style="text-transform: none; font-size: 17px;">
                                 <span class="ml-2">Mô tả</span>
