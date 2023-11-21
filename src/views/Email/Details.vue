@@ -176,16 +176,22 @@
                             </div>
 
                             <p class="title mt-3">{{ item.title }}</p>
-                            <v-rating :value="item.rating" color="yellow darken-3" background-color="grey darken-1"
-                                empty-icon="$ratingFull" half-increments hover></v-rating>
-                            <div class="ml-2" style="font-size: 17px">
+                            <div class="ml-1" style="font-size: 17px">
                                 <div class="mt-1 d-flex word-wrap-res">
-                                    <b>{{ item.review }}</b> Reviews | Đã bán:
+                                    <v-rating :value="item.rating" color="yellow darken-3" background-color="grey darken-1"
+                                        empty-icon="$ratingFull" half-increments hover small></v-rating>( <b>{{ item.review
+                                        }}</b>
+                                    <span class="ml-1">Reviews</span> )
+                                </div>
+                            </div>
+
+                            <div class="ml-3" style="font-size: 17px">
+                                <div class="mt-1 d-flex word-wrap-res"> Đã bán:
                                     <b class="mr-1">{{ item.sold }}</b> | Khiếu nại: <b>{{ item.complain }}</b>
                                 </div>
                             </div>
 
-                            <p class="offer-info ml-3">{{ item.content }}</p>
+                            <p class="offer-info ml-3 mt-2">{{ item.content }}</p>
 
                             <v-divider class="mb-4" width="500"></v-divider>
 
@@ -233,9 +239,9 @@
 
                             <button href="#" onclick="showAlert('Product added to cart!')" class="buy-btn"><v-icon
                                     color="white">mdi-cart-outline</v-icon> Mua hàng</button>
-                            
+
                             <br>
-                            
+
                             <div class="d-flex">
                                 <button class="add-to-wl-btn" onclick="showAlert('Product added to your Wishlist!')">
                                     <v-icon color="#000">mdi-cart-arrow-down</v-icon> Đặt trước</button>
@@ -441,7 +447,17 @@ export default Vue.extend({
     font-size: 38px;
 }
 
+.price-res {
+    font-weight: 600;
+    font-size: 28px;
+}
+
 .price:hover {
+    animation: shake-horizontal 0.8s linear both;
+    cursor: pointer;
+}
+
+.price-res:hover {
     animation: shake-horizontal 0.8s linear both;
     cursor: pointer;
 }
