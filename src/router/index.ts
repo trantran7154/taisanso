@@ -12,6 +12,7 @@ import ChangePassword from '../views/User/ChangePassword.vue'
 import Email from '../views/Email/Index.vue'
 import EmailDetails from '../views/Email/Details.vue'
 import Authenticator from '../views/User/Authenticator.vue'
+import Post from '../views/Post/Index.vue'
 
 import HomeLayout from '../views/layout/_Home.vue'
 import AuthenticationLayout from '../views/layout/_Authentication.vue'
@@ -68,6 +69,11 @@ const routes: Array<RouteConfig> = [
         path: '/user/authenticator',
         name: 'authenticator',
         component: Authenticator
+      },
+      {
+        path: '/post',
+        name: 'post',
+        component: Post
       }
     ]
   },
