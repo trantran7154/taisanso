@@ -121,7 +121,7 @@ class AuthClass {
 
     public async GetProfile() {
         try {
-            const response = await axios.get(this.url + 'get-profile', {
+            const response = await axios.get(this.url + 'profile', {
                 headers: {
                     Authorization: `Bearer ${localStorage.getItem('token')}`
                 }
