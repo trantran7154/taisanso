@@ -1,11 +1,34 @@
 <template>
   <div>
-    <v-navigation-drawer v-model="drawer" app width="300">
+    <v-navigation-drawer v-model="drawer" app width="232">
+      <v-sheet color="#f7f8f8" width="100%">
+        <div style="padding: 20px 20px">
+          <v-row no-gutters>
+            <v-col cols="8">
+              <img width="100" src="../../assets/lg-d.png" />
+            </v-col>
 
-      <v-sheet color="grey lighten-5" height="72" width="100%">
-        <center>
-          <!-- <img width="150" height="70" src="../uploads/logo_chinh.svg" /> -->
-        </center>
+            <v-col cols="4">
+              <v-btn text x-small fab class="float-end">
+                <v-icon size="16">mdi-bell</v-icon>
+              </v-btn>
+            </v-col>
+          </v-row>
+
+          <div class="text--secondary text-center" style="font-size: 16px; padding: 10px">
+            Còn 1000 điểm để lên thành viên bạc
+          </div>
+
+          <div style="padding: 10px 0px">
+            <v-progress-linear
+              color="var(--color-4)"
+              height="10"
+              rounded
+              value="10"
+              striped
+            ></v-progress-linear>
+          </div>
+        </div>
       </v-sheet>
 
       <MenuComponent :color="color" :user="user" />
@@ -22,9 +45,7 @@
       <v-spacer>
         <v-row>
           <v-col cols="3" md="1">
-            <v-btn @click="drawer = !drawer" text fab small>
-             
-            </v-btn>
+            <v-btn @click="drawer = !drawer" text fab small> </v-btn>
           </v-col>
           <v-col cols="9" md="9">
             <v-text-field
@@ -43,9 +64,7 @@
 
       <v-responsive max-width="500">
         <div class="float-end">
-          <v-btn depressed fab small text>
-            
-          </v-btn>
+          <v-btn depressed fab small text> </v-btn>
 
           <v-menu
             v-model="menu"
@@ -55,9 +74,7 @@
             offset-y
           >
             <template v-slot:activator="{ on, attrs }">
-              <v-btn depressed fab small text v-bind="attrs" v-on="on">
-               
-              </v-btn>
+              <v-btn depressed fab small text v-bind="attrs" v-on="on"> </v-btn>
             </template>
 
             <v-card>
@@ -68,9 +85,7 @@
                   </v-list-item-avatar>
 
                   <v-list-item-content>
-                    <v-list-item-title>{{
-                      user.userName
-                    }}</v-list-item-title>
+                    <v-list-item-title>{{ user.userName }}</v-list-item-title>
                     <v-list-item-subtitle>{{
                       user.email
                     }}</v-list-item-subtitle>
@@ -105,16 +120,16 @@
 
 <script lang="ts">
 import Vue from "vue";
-import MenuComponent from '@/components/main/Menu.vue'
+import MenuComponent from "@/components/main/Menu.vue";
 
 export default Vue.extend({
   props: ["color", "size", "user"],
   data: () => ({
     menu: false,
-    drawer: null as any
+    drawer: null as any,
   }),
   components: {
-    MenuComponent
+    MenuComponent,
   },
   methods: {
     logout() {

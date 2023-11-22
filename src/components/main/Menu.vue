@@ -1,49 +1,28 @@
 <template>
-  <v-list dense>
-    <v-list-group
-      :color="color.main"
-      v-for="item in items"
-      :key="item.title"
-      v-model="item.active"
-      :prepend-icon="item.action"
-      no-action
-    >
-      <template v-slot:activator>
-        <v-list-item-content>
-          <v-list-item-title
-            v-text="item.title"
-            class="ml-2"
-          ></v-list-item-title>
-        </v-list-item-content>
-      </template>
-
-      <v-list-item
-        v-for="child in item.items"
-        :key="child.title"
-        :to="child.url"
-        :disabled="!child.active"
-      >
-        <v-list-item-content>
-          <v-list-item-title v-text="child.title"></v-list-item-title>
-        </v-list-item-content>
-      </v-list-item>
-    </v-list-group>
-  </v-list>
+  <div class="menu">
+    <div v-for="(item, i) in items" :key="i">
+      <v-btn depressed block class="text-none btn" large>
+        <v-icon>{{ item.action }}</v-icon>
+       <span> {{ item.title }}</span>
+      </v-btn>
+    </div>
+  </div>
 </template>
-  
+
 <script>
 import Vue from "vue";
 
 export default Vue.extend({
   data: () => ({
-    items: [{
+    items: [
+      {
         action: "mdi-view-dashboard",
         items: [
           { title: "Dashboard", url: { path: "/" }, active: true },
           { title: "Static", url: { path: "/static" }, active: true },
         ],
         active: true,
-        title: "Overview",
+        title: "Sản phẩm",
       },
       {
         action: "mdi-account",
@@ -114,13 +93,24 @@ export default Vue.extend({
         ],
         active: true,
         title: "Website",
-      },],
+      },
+    ],
   }),
   props: ["color", "user"],
-  created() {
-    
-  },
+  created() {},
   methods: {},
 });
 </script>
-  
+
+<style scoped lang="scss">
+.menu {
+  .btn {
+    justify-content: start;
+    font-size: 12px;
+    span {
+        margin-left: 10px;
+        font-weight: 400;
+    }
+  }
+}
+</style>
