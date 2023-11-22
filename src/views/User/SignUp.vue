@@ -26,12 +26,6 @@
             dense
           ></v-text-field>
 
-          <!-- <v-text-field label="Họ và tên" v-model="formSignUp.value.fullName" :rules="formSignUp.validate.fullName"
-                    persistent-hint outlined dense></v-text-field>
-
-                <v-text-field label="Số điện thoại" v-model="formSignUp.value.phone" :rules="formSignUp.validate.phone"
-                    persistent-hint outlined dense></v-text-field> -->
-
           <label style="color: #6d7a82" class="font-weight-bold"
             >Mật khẩu</label
           >
@@ -102,16 +96,6 @@
 
             <span class="ml-2">Login google</span>
           </v-btn>
-
-          <!-- <div class="d-flex pa-2 btn">
-            <a href="#" class="button"
-              ></a>
-            <a href="#" class="button ml-5" style="background-color: #1877f2"
-              ><v-img
-                src="https://assets.hostinger.com/images/login/facebook-7fcb46c06e.svg"
-              ></v-img
-            ></a>
-          </div> -->
         </div>
       </v-form>
     </v-sheet>

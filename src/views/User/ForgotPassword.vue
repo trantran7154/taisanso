@@ -4,7 +4,6 @@
     style="font-size: 14px"
   >
     <v-sheet width="300" class="mx-auto">
-      <!-- <v-img src="../../img/forgot-password.png"></v-img> -->
 
       <v-img
         v-if="size.onsize <= 860"
@@ -19,12 +18,6 @@
         Chúng tôi sẽ gửi hướng dẫn cài đặt lại qua email của bạn
       </div>
       <v-form ref="form" v-model="formForgot.valid" lazy-validation fast-fail>
-        <!-- <h3
-          class="text-center font-weight-regular mt-5"
-          style="font-size: 24px"
-        >
-          Đặt lại mật khẩu của bạn nếu quên mật khẩu
-        </h3> -->
 
         <div class="mt-4">
           <label style="color: #6d7a82" class="font-weight-bold">Email</label>
@@ -53,12 +46,6 @@
               >Quay lại Đăng nhập?</router-link
             >
           </div>
-
-          <!-- <div class="text-center font-weight-bold">
-            <a href="/login" class="forgot" style="color: blue"
-              >Trở lại trang đăng nhập</a
-            >
-          </div> -->
         </div>
       </v-form>
     </v-sheet>

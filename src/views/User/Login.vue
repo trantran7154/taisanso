@@ -68,6 +68,7 @@
             block
             depressed
             large
+            type="submit"
             @click="login()"
             :loading="isLoading"
             >Đăng nhập</v-btn
@@ -79,35 +80,6 @@
               >Đăng ký</router-link
             >
           </div>
-
-          <!-- <div class="text-center font-weight-bold">
-            <a href="/forgot-password" class="forgot" style="color: blue"
-              >Bạn quên mật khẩu?</a
-            >
-          </div>
-
-          <div class="text-center font-weight-bold mt-6">
-            <a href="#" class="forgot"
-              >Bạn chưa là thành viên?
-              <a href="/sign-up" style="color: blue; text-decoration: none"
-                >Đăng ký</a
-              >
-              và bắt đầu ngay!</a
-            >
-          </div> -->
-
-          <!-- <div class="d-flex pa-4 btn">
-            <a href="#" class="button"
-              ><v-img
-                src="https://assets.hostinger.com/images/login/google-213cd1c446.svg"
-              ></v-img
-            ></a>
-            <a href="#" class="button ml-5" style="background-color: #1877f2"
-              ><v-img
-                src="https://assets.hostinger.com/images/login/facebook-7fcb46c06e.svg"
-              ></v-img
-            ></a>
-          </div> -->
 
           <div class="mt-10 d-flex">
             <v-divider></v-divider>
