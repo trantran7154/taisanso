@@ -76,7 +76,7 @@ export default Vue.extend({
           des: "Bạn có thể bán hàng cùng với hệ thống quản lý tốt nhất từ chúng tôi."
         },
         {
-          name: "Bộ tìm kiếm thông minh",
+          name: "Bộ tìm kiếm thông minh 1",
           url: "https://wapi.lunaproxy.com/static/index/img/pay/agency1.png",
           des: "Chúng tôi có bộ lọc tìm kiếm thông tin, dịch vụ, sản phẩm tốt nhất và chất lượng."
         },

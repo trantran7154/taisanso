@@ -137,13 +137,6 @@ export default Vue.extend({
   name: "Footer",
   created() {
     document.title = "Đăng nhập" + " ~ TaiSanSo";
-
-    that.$notify({
-      group: "notification-error",
-      title: "Not enough money",
-      text: "error",
-      type: "error",
-    });
   },
   props: ["size"],
   data() {

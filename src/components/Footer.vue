@@ -1,12 +1,12 @@
 <template>
     <footer class="footer">
         <v-row style="padding: 50px 0px 50px 60px;">
-            <v-col cols="12" md="3" v-for="item in itemFooter" :key="item">
+            <v-col cols="12" md="3" v-for="(item, i) in itemFooter" :key="i">
                 <ul class="footer__nav">
                     <li class="nav__item">
                         <b style="color: blue">{{ item.title }}</b>
                         <div class="mt-1">
-                            <ul class="nav__ul" v-for="items in item.footerSub" :key="items">
+                            <ul class="nav__ul" v-for="(items, j) in item.footerSub" :key="j">
                                 <li>
                                     <a href="#">{{ items.subTitle }}</a>
                                 </li>

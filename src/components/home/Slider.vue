@@ -45,27 +45,27 @@ export default Vue.extend({
   data: () => ({
     items: [
       {
-        text: "vuetify-loader",
+        text: "vuetify-loader 1",
         url: slider1,
       },
       {
-        text: "vuetify-loader",
+        text: "vuetify-loader 2",
         url: slider2,
       },
       {
-        text: "vuetify-loader",
+        text: "vuetify-loader 3",
         url: slider3,
       },
       {
-        text: "vuetify-loader",
+        text: "vuetify-loader 4",
         url: slider3,
       },
       {
-        text: "vuetify-loader",
+        text: "vuetify-loader 5",
         url: slider1,
       },
       {
-        text: "vuetify-loader",
+        text: "vuetify-loader 6",
         url: slider2,
       },
     ],
