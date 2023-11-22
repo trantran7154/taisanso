@@ -2,7 +2,41 @@
     <div class="post">
         <v-row>
             <v-col cols="12" md="8" lg="8">
-                <div ref="first1">
+                <div class="d-flex">
+                    <v-row>
+                        <v-col cols="12" md="1" lg="1">
+                            <v-avatar>
+                                <img src="https://viblo.asia/images/mm.png">
+                            </v-avatar></v-col>
+                        <v-col cols="12" md="11" lg="11">
+                            <div class="d-flex">
+                                <span class="blue--text">
+                                    Nhatfreelancer</span>
+                                <span class="ml-2">@nhatfreelancer2</span>
+                                <v-btn class="ml-2" outlined small>Theo dõi</v-btn>
+                                <div class="ml-auto mt-1" style="font-size: 15px">Đã đăng vào thg 7 18, 2019 4:08 CH 8 phút
+                                    đọc</div>
+                            </div>
+                            <div class="d-flex">
+                                <div class="d-flex"><span><v-icon>mdi-star</v-icon></span><span class="mt-1 ml-1">5</span>
+                                </div>
+                                <div class="d-flex ml-3"><span><v-icon>mdi-account-plus</v-icon></span><span
+                                        class="mt-1 ml-1">5</span>
+                                </div>
+                                <div class="d-flex ml-3"><span><v-icon>mdi-pencil</v-icon></span><span
+                                        class="mt-1 ml-1">5</span>
+                                </div>
+
+                                <div class="d-flex ml-auto">
+                                    <span><v-icon>mdi-eye-outline</v-icon></span><span class="mt-1 ml-1">5K</span>
+                                    <span class="ml-3"><v-icon>mdi-comment-text-multiple-outline</v-icon></span><span class="mt-1 ml-1">5</span>
+                                    <span class="ml-3"><v-icon>mdi-bookmark</v-icon></span><span class="mt-1 ml-1">5</span>
+                                </div>
+                            </div>
+                        </v-col>
+                    </v-row>
+                </div>
+                <div class="mt-5" ref="first1">
                     <h4>API là gì?</h4>
                     <p>API là viết tắt của Application Programming Interface (Giao diện lập trình ứng dụng), một phần mềm
                         trung gian cho phép hai ứng dụng nói chuyện với nhau. Mỗi khi sử dụng một ứng dụng như Facebook, gửi
@@ -151,4 +185,5 @@ export default Vue.extend({
     .v-tabs--vertical>.v-tabs-bar .v-tabs-slider {
         height: auto;
     }
-}</style>
+}
+</style>
