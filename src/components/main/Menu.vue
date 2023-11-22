@@ -1,7 +1,6 @@
 <template>
   <v-list dense>
     <v-list-group
-      v-show="item.show"
       :color="color.main"
       v-for="item in items"
       :key="item.title"
@@ -37,25 +36,18 @@ import Vue from "vue";
 
 export default Vue.extend({
   data: () => ({
-    items: [],
-  }),
-  props: ["color", "user"],
-  created() {
-    this.items = [
-      {
+    items: [{
         action: "mdi-view-dashboard",
         items: [
           { title: "Dashboard", url: { path: "/" }, active: true },
           { title: "Static", url: { path: "/static" }, active: true },
         ],
         active: true,
-        show: true,
         title: "Overview",
       },
       {
         action: "mdi-account",
         active: true,
-        show: true,
         items: [
           { title: "Manage users", url: { name: "user" }, active: true },
           { title: "KYC", url: { name: "kyc" }, active: true },
@@ -76,7 +68,6 @@ export default Vue.extend({
           { title: "Countries", url: { name: "country" }, active: true },
         ],
         active: true,
-        show: this.user.user.email == "admin@admin.admin.com" ? true : false,
         title: "Manage categories",
       },
       {
@@ -94,14 +85,12 @@ export default Vue.extend({
           { title: "Chart", active: true, url: { name: "chart" } },
         ],
         active: true,
-        show: this.user.user.email == "admin@admin.admin.com" ? true : false,
         title: "Manage wallet",
       },
       {
         action: "mdi-newspaper",
         items: [{ title: "News", active: true, url: { name: "news" } }],
         active: true,
-        show: this.user.user.email == "admin@admin.admin.com" ? true : false,
         title: "Manage Posts",
       },
       {
@@ -115,7 +104,6 @@ export default Vue.extend({
           { title: "Settings", active: true, url: { name: "settingsgame" } },
         ],
         active: true,
-        show: this.user.user.email == "admin@admin.admin.com" ? true : false,
         title: "Game manager",
       },
       {
@@ -125,10 +113,12 @@ export default Vue.extend({
           { title: "Settings", active: true, url: { name: "settingwebsite" } },
         ],
         active: true,
-        show: this.user.user.email == "admin@admin.admin.com" ? true : false,
         title: "Website",
-      },
-    ];
+      },],
+  }),
+  props: ["color", "user"],
+  created() {
+    
   },
   methods: {},
 });

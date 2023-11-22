@@ -68,7 +68,6 @@
             block
             depressed
             large
-            type="submit"
             @click="login()"
             :loading="isLoading"
             >Đăng nhập</v-btn

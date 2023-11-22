@@ -60,13 +60,13 @@ export default {
     const user = await AuthApi.GetProfile();
     console.log(user);
 
-    if (!user) {
+    if (user.status != 200) {
       this.$router.push({
         path: "/login",
       });
     }
 
-    this.user = user;
+    this.user = user.data;
   },
   data: () => ({
     snackbar: {
