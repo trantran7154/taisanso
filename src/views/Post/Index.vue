@@ -367,7 +367,7 @@
                         </div>
 
                         <div class="d-flex">
-                            <div class="ml-auto mt-1" style="font-size: 15px">Đã đăng vào thg 7 18, 2019 4:08 CH
+                            <div class="ml-auto mt-2" style="font-size: 15px">Đã đăng vào thg 7 18, 2019 4:08 CH
                                 8 phút
                                 đọc</div>
                         </div>
@@ -563,8 +563,8 @@
                             <h3>Bài viết khác từ Nhatfreelancer</h3>
                             <div class="mt-7">
                                 <v-row>
-                                    <v-col cols="4" md="4" lg="4" v-for="(item, i) in 4" :key="i">
-                                        <v-card max-width="250" outlined>
+                                    <v-col cols="12" md="12" lg="12" v-for="(item, i) in 4" :key="i">
+                                        <v-card max-width="250" outlined class="mx-auto">
                                             <v-list-item three-line>
                                                 <v-list-item-content>
                                                     <v-list-item-title class="text-h5 mb-1">
