@@ -16,6 +16,7 @@ import Post from '../views/Post/Index.vue'
 
 import HomeLayout from '../views/layout/_Home.vue'
 import AuthenticationLayout from '../views/layout/_Authentication.vue'
+import MainLayout from '../views/layout/_Main.vue'
 
 Vue.use(VueRouter)
 
@@ -98,6 +99,18 @@ const routes: Array<RouteConfig> = [
         name: 'forgotpassword',
         component: ForgotPassword
       },
+    ]
+  },
+  {
+    path: '/',
+    redirect: 'main',
+    component: MainLayout,
+    children: [
+      {
+        path: '/main',
+        name: 'main',
+        component: () => import('../views/Main.vue')
+      }
     ]
   },
 ]

@@ -102,7 +102,6 @@
 
 <script>
 import Vue from "vue";
-import AuthApi from "@/api/auth.api";
 import authApi from "@/api/auth.api";
 
 export default Vue.extend({
