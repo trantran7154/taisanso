@@ -353,81 +353,40 @@
             <div class="post-res">
                 <v-row>
                     <v-col cols="12" md="12" lg="12">
-                        <div>
-                            <!-- <v-row>
-                                <v-col cols="12" md="1" lg="1">
-                                    <div class="d-flex">
-                                        <v-avatar>
-                                            <img
-                                                src="https://static.vecteezy.com/system/resources/thumbnails/002/318/271/small/user-profile-icon-free-vector.jpg">
-                                        </v-avatar>
+                        <div class="d-flex">
+                            <v-avatar width="80" height="80">
+                                <img src="https://taphoammo.net/images/avatars/user.svg">
+                            </v-avatar>
 
-                                        <span class="blue--text mt-3 ml-3">
-                                            Nhatfreelancer</span>
-                                    </div>
-                                </v-col>
-                                <v-col cols="12" md="11" lg="11">
-                                    <div class="d-flex">
-                                        <span>@nhatfreelancer2</span>
-                                        <v-btn class="ml-2" outlined small>Theo dõi</v-btn>
-                                    </div>
+                            <b class="blue--text ml-4 mt-8">Nhatfreelancer</b>
+                        </div>
 
-                                    <div class="ml-auto mt-2" style="font-size: 15px">Đã đăng vào thg 7 18, 2019 4:08 CH
-                                        8 phút
-                                        đọc</div>
+                        <div class="d-flex" style="margin-left: 95px; margin-top: -18px">
+                            <small>@nhatfreelancer2</small>
+                            <v-btn class="ml-2" outlined x-small>Theo dõi</v-btn>
+                        </div>
 
-                                    <div class="d-flex mt-5">
-                                        <div class="d-flex"><span><v-icon>mdi-star</v-icon></span><span
-                                                class="mt-1 ml-1">5</span>
-                                        </div>
-                                        <div class="d-flex ml-3"><span><v-icon>mdi-account-plus</v-icon></span><span
-                                                class="mt-1 ml-1">5</span>
-                                        </div>
-                                        <div class="d-flex ml-3"><span><v-icon>mdi-pencil</v-icon></span><span
-                                                class="mt-1 ml-1">5</span>
-                                        </div>
+                        <div class="d-flex">
+                            <div class="ml-auto mt-1" style="font-size: 15px">Đã đăng vào thg 7 18, 2019 4:08 CH
+                                8 phút
+                                đọc</div>
+                        </div>
 
-                                        <div class="d-flex ml-auto">
-                                            <span><v-icon>mdi-eye-outline</v-icon></span><span class="mt-1 ml-1">5K</span>
-                                            <span
-                                                class="ml-3"><v-icon>mdi-comment-text-multiple-outline</v-icon></span><span
-                                                class="mt-1 ml-1">5</span>
-                                            <span class="ml-3"><v-icon>mdi-bookmark</v-icon></span><span
-                                                class="mt-1 ml-1">5</span>
-                                        </div>
-                                    </div>
-                                </v-col>
-                            </v-row> -->
-
-                            <div class="d-flex">
-                                <v-avatar width="80" height="80">
-                                    <img src="https://taphoammo.net/images/avatars/user.svg">
-                                </v-avatar>
-
-                                <b class="blue--text ml-4 mt-8">Nhatfreelancer</b>
+                        <div class="d-flex mt-5" style="font-size: 14px;">
+                            <div class="d-flex"><span><v-icon size="20">mdi-star</v-icon></span><span class="ml-1">5</span>
+                            </div>
+                            <div class="d-flex ml-3"><span><v-icon size="20">mdi-account-plus</v-icon></span><span
+                                    class="ml-1">5</span>
+                            </div>
+                            <div class="d-flex ml-3"><span><v-icon size="20">mdi-pencil</v-icon></span><span
+                                    class="ml-1">5</span>
                             </div>
 
-                            <div class="d-flex" style="margin-left: 95px; margin-top: -18px">
-                                <small>@nhatfreelancer2</small>
-                                <v-btn class="ml-2" outlined x-small>Theo dõi</v-btn>
-                            </div>
-
-                            <div class="d-flex mt-5" style="font-size: 14px;">
-                                <div class="d-flex"><span><v-icon size="20">mdi-star</v-icon></span><span class="ml-1">5</span>
-                                </div>
-                                <div class="d-flex ml-3"><span><v-icon size="20">mdi-account-plus</v-icon></span><span
-                                        class="ml-1">5</span>
-                                </div>
-                                <div class="d-flex ml-3"><span><v-icon size="20">mdi-pencil</v-icon></span><span
-                                        class="ml-1">5</span>
-                                </div>
-
-                                <div class="d-flex ml-auto">
-                                    <span><v-icon size="20">mdi-eye-outline</v-icon></span><span class="ml-1">5K</span>
-                                    <span class="ml-3"><v-icon size="20">mdi-comment-text-multiple-outline</v-icon></span><span
-                                        class="ml-1">5</span>
-                                    <span class="ml-3"><v-icon size="20">mdi-bookmark</v-icon></span><span class="ml-1">5</span>
-                                </div>
+                            <div class="d-flex ml-auto">
+                                <span><v-icon size="20">mdi-eye-outline</v-icon></span><span class="ml-1">5K</span>
+                                <span class="ml-3"><v-icon size="20">mdi-comment-text-multiple-outline</v-icon></span><span
+                                    class="ml-1">5</span>
+                                <span class="ml-3"><v-icon size="20">mdi-bookmark</v-icon></span><span class="ml-1">5</span>
                             </div>
                         </div>
 
