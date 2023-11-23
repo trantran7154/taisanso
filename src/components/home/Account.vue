@@ -1,6 +1,7 @@
 <template>
   <v-container class="account">
-    <h1>Tài khoản</h1>
+    <h1 class="animated">Tài khoản</h1>
+
     <v-row class="mt-5 wrapper">
       <v-col cols="6" md="4" lg="2" v-for="item in items" :key="item.name">
         <v-card class="box item elevation-0">
@@ -103,10 +104,33 @@ export default Vue.extend({
       }
     ],
   }),
+
 });
 </script>
 
 <style lang="scss">
+.animated {
+  animation: textChangeColor 3s linear infinite;
+}
+
+@keyframes textChangeColor {
+  0% {
+    color: black;
+  }
+
+  40% {
+    color: cyan;
+  }
+
+  70% {
+    color: violet;
+  }
+
+  100% {
+    color: magenta;
+  }
+}
+
 @property --angle {
   syntax: "<angle>";
   initial-value: 90deg;
@@ -134,34 +158,27 @@ p {
   --angle: 90deg;
   --gradX: 100%;
   --gradY: 50%;
-  --c1: #dafcfc;
+  --c1: #E0E0E0;
   --c2: rgba(168, 239, 255, 0.1);
 }
 
-.wrapper {
-}
+.wrapper {}
 
 .box {
-  border: 0.25rem solid;
-  border-image: conic-gradient(
-      from var(--angle),
+  border: 0.23rem solid;
+  border-image: conic-gradient(from var(--angle),
       var(--c2),
       var(--c1) 0.1turn,
       var(--c1) 0.15turn,
-      var(--c2) 0.25turn
-    )
-    30;
+      var(--c2) 0.25turn) 30;
   animation: borderRotate var(--d) linear infinite forwards;
 }
 
 .box:nth-child(2) {
-  border-image: radial-gradient(
-      ellipse at var(--gradX) var(--gradY),
+  border-image: radial-gradient(ellipse at var(--gradX) var(--gradY),
       var(--c1),
       var(--c1) 10%,
-      var(--c2) 40%
-    )
-    30;
+      var(--c2) 40%) 30;
   animation: borderRadial var(--d) linear infinite forwards;
 }
 
@@ -176,18 +193,22 @@ p {
     --gradX: 100%;
     --gradY: 50%;
   }
+
   40% {
     --gradX: 100%;
     --gradY: 100%;
   }
+
   60% {
     --gradX: 50%;
     --gradY: 100%;
   }
+
   80% {
     --gradX: 0%;
     --gradY: 50%;
   }
+
   100% {
     --gradX: 50%;
     --gradY: 0%;
@@ -202,6 +223,7 @@ p {
   h1 {
     text-align: center;
   }
+
   p {
     text-align: center;
     font-family: Inter-Light, Inter;
@@ -209,11 +231,13 @@ p {
     color: #718494;
     margin-top: 20px;
   }
+
   .item {
     h2 {
       margin-top: 10px;
       font-size: 13px;
     }
+
     background: #ffffff;
     box-shadow: 0px 0px 14px 0px rgba(58, 118, 209, 0.11);
     border-radius: 10px 10px 10px 10px;
@@ -225,5 +249,4 @@ p {
     transition: all 0.5s;
     cursor: pointer;
   }
-}
-</style>
+}</style>

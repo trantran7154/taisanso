@@ -1,6 +1,6 @@
 <template>
   <v-container class="product">
-    <h1>Danh mục sản phẩm</h1>
+    <h1 class="animated">Danh mục sản phẩm</h1>
     <p>
       Chúng tôi cung cấp hơn 200.000 sản phẩm số và bạn có thể mua nhanh chóng.
     </p>

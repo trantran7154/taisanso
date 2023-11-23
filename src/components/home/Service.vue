@@ -1,6 +1,6 @@
 <template>
   <v-container class="service">
-    <h1>Danh sách dịch vụ</h1>
+    <h1 class="animated">Danh sách dịch vụ</h1>
     <p>
       Các dịch vụ hỗ trợ nhanh chóng và làm nhanh quá trình công việc của bạn.
     </p>
@@ -65,6 +65,28 @@ export default Vue.extend({
 </script>
 
 <style lang="scss">
+
+.animated {
+  animation: textChangeColor 3s linear infinite;
+}
+
+@keyframes textChangeColor {
+  0% {
+    color: black;
+  }
+
+  40% {
+    color: cyan;
+  }
+
+  70% {
+    color: violet;
+  }
+
+  100% {
+    color: magenta;
+  }
+}
 
 @property --angle {
   syntax: "<angle>";
