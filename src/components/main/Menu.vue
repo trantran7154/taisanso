@@ -1,52 +1,30 @@
 <template>
-  <v-list dense>
-    <v-list-group
-      :color="color.main"
-      v-for="item in items"
-      :key="item.title"
-      v-model="item.active"
-      :prepend-icon="item.action"
-      no-action
-    >
-      <template v-slot:activator>
-        <v-list-item-content>
-          <v-list-item-title
-            v-text="item.title"
-            class="ml-2"
-          ></v-list-item-title>
-        </v-list-item-content>
-      </template>
-
-      <v-list-item
-        v-for="child in item.items"
-        :key="child.title"
-        :to="child.url"
-        :disabled="!child.active"
-      >
-        <v-list-item-content>
-          <v-list-item-title v-text="child.title"></v-list-item-title>
-        </v-list-item-content>
-      </v-list-item>
-    </v-list-group>
-  </v-list>
+  <div class="menu">
+    <div v-for="(item, i) in items" :key="i">
+      <v-btn text depressed block class="text-none btn" large>
+        <img width="35" height="35" :src="require(`../../assets/${item.action}`)" />
+        <span> {{ item.title }}</span>
+      </v-btn>
+    </div>
+  </div>
 </template>
-  
+
 <script>
 import Vue from "vue";
-
 export default Vue.extend({
   data: () => ({
-    items: [{
-        action: "mdi-view-dashboard",
+    items: [
+      {
+        action: "home.gif",
         items: [
           { title: "Dashboard", url: { path: "/" }, active: true },
           { title: "Static", url: { path: "/static" }, active: true },
         ],
         active: true,
-        title: "Overview",
+        title: "Trang chủ",
       },
       {
-        action: "mdi-account",
+        action: "checklist.gif",
         active: true,
         items: [
           { title: "Manage users", url: { name: "user" }, active: true },
@@ -58,20 +36,20 @@ export default Vue.extend({
           },
           { title: "Settings", url: { name: "settinguser" }, active: true },
         ],
-        title: "Account Management",
+        title: "Đơn hàng",
       },
       {
-        action: "mdi-format-list-bulleted",
+        action: "sanpham.gif",
         items: [
           { title: "Categorys", url: { name: "category" }, active: true },
           { title: "Documents", url: { name: "document" }, active: true },
           { title: "Countries", url: { name: "country" }, active: true },
         ],
         active: true,
-        title: "Manage categories",
+        title: "Bán hàng",
       },
       {
-        action: "mdi-format-page-break",
+        action: "phantich.gif",
         items: [
           {
             title: "Manage transactions",
@@ -85,16 +63,10 @@ export default Vue.extend({
           { title: "Chart", active: true, url: { name: "chart" } },
         ],
         active: true,
-        title: "Manage wallet",
+        title: "Phân tích",
       },
       {
-        action: "mdi-newspaper",
-        items: [{ title: "News", active: true, url: { name: "news" } }],
-        active: true,
-        title: "Manage Posts",
-      },
-      {
-        action: "mdi-gamepad-variant",
+        action: "lienhe.gif",
         items: [
           { title: "Football player", url: { name: "product" }, active: true },
           { title: "Manage bots", url: { name: "bot" }, active: true },
@@ -104,23 +76,36 @@ export default Vue.extend({
           { title: "Settings", active: true, url: { name: "settingsgame" } },
         ],
         active: true,
-        title: "Game manager",
+        title: "Liên hệ",
       },
       {
-        action: "mdi-earth",
+        action: "setting.gif",
         items: [
           { title: "Contess", active: true, url: { name: "contess" } },
           { title: "Settings", active: true, url: { name: "settingwebsite" } },
         ],
         active: true,
-        title: "Website",
-      },],
+        title: "Cài đặt",
+      },
+    ],
   }),
   props: ["color", "user"],
-  created() {
+  created() {},
+  methods: {
     
   },
-  methods: {},
 });
 </script>
-  
+
+<style scoped lang="scss">
+.menu {
+  .btn {
+    justify-content: start;
+    font-size: 12px;
+    span {
+      margin-left: 10px;
+      font-weight: 400;
+    }
+  }
+}
+</style>
