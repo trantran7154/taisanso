@@ -1,6 +1,6 @@
 <template>
   <div>
-    <v-navigation-drawer v-model="drawer" app width="232">
+    <v-navigation-drawer v-model="drawer" app width="232" color="#f7f8f8">
       <v-sheet color="#f7f8f8" width="100%">
         <div style="padding: 20px 20px">
           <v-row no-gutters>
