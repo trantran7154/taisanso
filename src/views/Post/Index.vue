@@ -153,6 +153,7 @@
                         </div>
                     </v-col>
 
+                    <!--Bình luận-->
                     <v-col cols="12" md="4" lg="4">
                         <div class="d-flex">
                             <h4>MỤC LỤC</h4>
@@ -174,6 +175,7 @@
                     </v-col>
                 </v-row>
 
+                <!--Bài viết liên quan-->
                 <div class="mt-3">
                     <h3>Bài viết liên quan</h3>
                     <v-carousel cycle height="250" hide-delimiter-background show-arrows-on-hover>
@@ -212,6 +214,7 @@
                     </v-carousel>
                 </div>
 
+                <!--Bài viết khác-->
                 <div>
                     <h3>Bài viết khác từ Nhatfreelancer</h3>
                     <div class="mt-9">
@@ -245,6 +248,7 @@
                     </div>
                 </div>
 
+                <!--Bình luận-->
                 <div class="mt-9">
                     <h3>Bình luận</h3>
                     <div class="mt-9 ml-3" v-if="user == false">
@@ -268,65 +272,73 @@
                     </div>
                 </div>
 
+                <!--Bình luận-->
                 <div class="mt-9">
                     <div class="mt-9 ml-3">
                         <v-row>
                             <v-card width="100%" outlined>
                                 <div class="pa-5" v-for="(item, i) in 1" :key="i">
                                     <v-row>
-                                        <v-col cols="1" md="1" lg="1">
-                                            <v-avatar width="80" height="80">
+                                        <v-card class="mt-5 ml-5 d-flex" flat>
+                                            <v-avatar width="50" height="50">
                                                 <img src="https://taphoammo.net/images/avatars/user.svg">
-                                            </v-avatar></v-col>
-                                        <v-col cols="11" md="11" lg="11">
-                                            <div class="d-flex">
-                                                <b class="green--text ml-2">abc</b>
-                                                <p class="ml-2" style="font-size: 15px; color: #757575; margin-top: 2px;">
-                                                    @particular</p>
+                                            </v-avatar>
+                                            <div class="ml-3">
+                                                <div class="d-flex">
+                                                    <b class="green--text ml-2">abc</b>
+                                                    <p class="mr-auto ml-2"
+                                                        style="font-size: 15px; color: #757575; margin-top: 2px;">
+                                                        @particular</p>
+                                                </div>
+                                                <p class="ml-2" style="font-size: 15px; color: #BDBDBD">thg 6 10,
+                                                    2021
+                                                    5:22 CH
+                                                </p>
+                                                <p class="ml-2" style="font-size: 15px; word-break: break-word !important;">
+                                                    Ủa
+                                                    nếu mà các bên họ dùng api của facebook cho thì
+                                                    họ có
+                                                    thể vẫn
+                                                    lấy được tài khoàn và mật khẩu người dùng. Việc là họ sẽ dùng
+                                                    api
+                                                    xác thực ở
+                                                    một nơi và facebook có kiểm tra thế nào thì dừ liệu nhập từ một
+                                                    web
+                                                    khác.
+                                                </p>
                                             </div>
-                                            <p class="ml-2" style="font-size: 15px; color: #BDBDBD">thg 6 10, 2021 5:22 CH
-                                            </p>
-                                            <p class="ml-2">Ủa nếu mà các bên họ dùng api của facebook cho thì họ có thể vẫn
-                                                lấy được tài khoàn và mật khẩu người dùng. Việc là họ sẽ dùng api xác thực ở
-                                                một nơi và facebook có kiểm tra thế nào thì dừ liệu nhập từ một web khác.
-                                            </p>
-                                            <small class="ml-2 blue--text"><v-icon size="20">mdi-reply-outline</v-icon>Trả
-                                                lời</small>
-                                            <small class="ml-2"><v-icon size="18">mdi-share-variant-outline</v-icon>Chia
-                                                sẻ</small>
-
-                                            <v-divider class="mt-4"></v-divider>
-                                        </v-col>
+                                        </v-card>
+                                        <v-divider></v-divider>
                                     </v-row>
 
-                                    <div class="ml-8 mt-3" v-if="reply == true">
-                                        <v-row>
-                                            <v-col cols="1" md="1" lg="1">
-                                                <v-avatar width="80" height="80">
-                                                    <img src="https://taphoammo.net/images/avatars/user.svg">
-                                                </v-avatar></v-col>
-                                            <v-col cols="11" md="11" lg="11">
+                                    <div class="ml-5 mt-9" v-if="reply == true">
+                                        <v-card class="mt-5 ml-5 d-flex" flat>
+                                            <v-avatar width="50" height="50">
+                                                <img src="https://taphoammo.net/images/avatars/user.svg">
+                                            </v-avatar>
+                                            <div class="ml-3">
                                                 <div class="d-flex">
                                                     <b class="green--text ml-2">Hoang Vu</b>
-                                                    <p class="ml-2"
+                                                    <p class="mr-auto ml-2"
                                                         style="font-size: 15px; color: #757575; margin-top: 2px;">
                                                         @hoangvh185</p>
                                                 </div>
-                                                <p class="ml-2" style="font-size: 15px; color: #BDBDBD">thg 6 10, 2021
+                                                <p class="ml-2" style="font-size: 15px; color: #BDBDBD">thg 6 10,
+                                                    2021
                                                     5:22 CH
                                                 </p>
-                                                <p class="ml-2">việc xác thực là của fb mà bạn thì các web ứng dụng làm sao
-                                                    biết được tài khoản mật khẩu của user chứ.Thứ mà fb trả lại cho web ứng
-                                                    dụng chỉ là những thông tin như tên , avatar,...Hay nói cách khác fb cho
+                                                <p class="ml-2" style="font-size: 15px; word-break: break-word !important;">
+                                                    việc
+                                                    xác thực là của fb mà bạn thì các web ứng dụng
+                                                    làm sao
+                                                    biết được tài khoản mật khẩu của user chứ.Thứ mà fb trả lại cho
+                                                    web ứng
+                                                    dụng chỉ là những thông tin như tên , avatar,...Hay nói cách
+                                                    khác fb cho
                                                     gì thì mình dùng đấy chứ không phải mình muốn lấy gì cũng được.
                                                 </p>
-                                                <small class="ml-2 blue--text"><v-icon
-                                                        size="20">mdi-reply-outline</v-icon>Trả
-                                                    lời</small>
-                                                <small class="ml-2"><v-icon size="18">mdi-share-variant-outline</v-icon>Chia
-                                                    sẻ</small>
-                                            </v-col>
-                                        </v-row>
+                                            </div>
+                                        </v-card>
                                     </div>
                                 </div>
                             </v-card>
@@ -340,55 +352,47 @@
         <div v-if="size.onsize < 1111">
             <div class="post-res">
                 <v-row>
-                    <v-col cols="12" md="8" lg="8">
+                    <v-col cols="12" md="12" lg="12">
                         <div class="d-flex">
-                            <v-row>
-                                <v-col cols="12" md="1" lg="1">
-                                    <div class="d-flex">
-                                        <v-avatar>
-                                            <img
-                                                src="https://static.vecteezy.com/system/resources/thumbnails/002/318/271/small/user-profile-icon-free-vector.jpg">
-                                        </v-avatar>
+                            <v-avatar width="80" height="80">
+                                <img src="https://taphoammo.net/images/avatars/user.svg">
+                            </v-avatar>
 
-                                        <span class="blue--text mt-3 ml-3">
-                                            Nhatfreelancer</span>
-                                    </div>
-                                </v-col>
-                                <v-col cols="12" md="11" lg="11">
-                                    <div class="d-flex">
-                                        <span>@nhatfreelancer2</span>
-                                        <v-btn class="ml-2" outlined small>Theo dõi</v-btn>
-                                    </div>
-
-                                    <div class="ml-auto mt-2" style="font-size: 15px">Đã đăng vào thg 7 18, 2019 4:08 CH
-                                        8 phút
-                                        đọc</div>
-
-                                    <div class="d-flex mt-5">
-                                        <div class="d-flex"><span><v-icon>mdi-star</v-icon></span><span
-                                                class="mt-1 ml-1">5</span>
-                                        </div>
-                                        <div class="d-flex ml-3"><span><v-icon>mdi-account-plus</v-icon></span><span
-                                                class="mt-1 ml-1">5</span>
-                                        </div>
-                                        <div class="d-flex ml-3"><span><v-icon>mdi-pencil</v-icon></span><span
-                                                class="mt-1 ml-1">5</span>
-                                        </div>
-
-                                        <div class="d-flex ml-auto">
-                                            <span><v-icon>mdi-eye-outline</v-icon></span><span class="mt-1 ml-1">5K</span>
-                                            <span
-                                                class="ml-3"><v-icon>mdi-comment-text-multiple-outline</v-icon></span><span
-                                                class="mt-1 ml-1">5</span>
-                                            <span class="ml-3"><v-icon>mdi-bookmark</v-icon></span><span
-                                                class="mt-1 ml-1">5</span>
-                                        </div>
-                                    </div>
-                                </v-col>
-                            </v-row>
+                            <b class="blue--text ml-4 mt-8">Nhatfreelancer</b>
                         </div>
 
-                        <div class="mt-6" ref="first1">
+                        <div class="d-flex" style="margin-left: 95px; margin-top: -18px">
+                            <small>@nhatfreelancer2</small>
+                            <v-btn class="ml-2" outlined x-small>Theo dõi</v-btn>
+                        </div>
+
+                        <div class="d-flex">
+                            <div class="ml-auto mt-2" style="font-size: 15px">Đã đăng vào thg 7 18, 2019 4:08 CH
+                                8 phút
+                                đọc</div>
+                        </div>
+
+                        <div class="d-flex mt-5" style="font-size: 14px;">
+                            <div class="d-flex"><span><v-icon size="20">mdi-star</v-icon></span><span class="ml-1">5</span>
+                            </div>
+                            <div class="d-flex ml-3"><span><v-icon size="20">mdi-account-plus</v-icon></span><span
+                                    class="ml-1">5</span>
+                            </div>
+                            <div class="d-flex ml-3"><span><v-icon size="20">mdi-pencil</v-icon></span><span
+                                    class="ml-1">5</span>
+                            </div>
+
+                            <div class="d-flex ml-auto">
+                                <span><v-icon size="20">mdi-eye-outline</v-icon></span><span class="ml-1">5K</span>
+                                <span class="ml-3"><v-icon size="20">mdi-comment-text-multiple-outline</v-icon></span><span
+                                    class="ml-1">5</span>
+                                <span class="ml-3"><v-icon size="20">mdi-bookmark</v-icon></span><span class="ml-1">5</span>
+                            </div>
+                        </div>
+
+                        <h2 class="mt-5">API là gì? Tất tần tật về API</h2>
+
+                        <div class="mt-4" ref="first1">
                             <h4>API là gì?</h4>
                             <p>API là viết tắt của Application Programming Interface (Giao diện lập trình ứng dụng), một
                                 phần mềm
@@ -478,25 +482,216 @@
                                 tính năng
                                 xác thực hộ các dịch vụ khác.</p>
                         </div>
-                    </v-col>
-                    <v-col cols="12" md="4" lg="4">
+
                         <div class="d-flex">
-                            <h4>MỤC LỤC</h4>
-                            <div class="mt-5 ml-3" style="width: 300px">
-                                <v-divider></v-divider>
+                            <v-chip class="ma-2" label>API</v-chip>
+                            <v-chip class="ma-2" label>WebAPI</v-chip>
+                            <v-chip class="ma-2" label>Restful API</v-chip>
+                        </div>
+
+                        <p class="ma-2 mt-3" style="font-size: 15px; color:#757575">All rights reserved</p>
+
+                        <div class="d-flex">
+                            <div class="ml-auto">
+                                <v-icon>mdi-facebook</v-icon>
+                                <v-icon class="ml-2">mdi-twitter</v-icon>
                             </div>
                         </div>
-                        <v-tabs class="mt-3" vertical>
-                            <v-tab @click="scrollTo('first1')" class="back--text">API là gì?</v-tab>
-                            <v-tab @click="scrollTo('first2')" class="back--text">Giải thích chi tiết</v-tab>
-                            <v-tab @click="scrollTo('first3')" class="back--text">Những điểm nổi bật của API.</v-tab>
-                            <v-tab @click="scrollTo('first4')" class="back--text">Ưu điểm</v-tab>
-                            <v-tab @click="scrollTo('first5')" class="back--text">Vậy API có phải một ngôn ngữ lập trình
-                                không?</v-tab>
-                            <v-tab @click="scrollTo('first6')" class="back--text">Tầm quan trọng của API</v-tab>
-                            <v-tab @click="scrollTo('first7')" class="back--text">Hiểu hơn về API qua ví dụ về
-                                Facebook</v-tab>
-                        </v-tabs>
+
+                        <!--Mục lục-->
+                        <v-col cols="12" md="4" lg="4">
+                            <div class="d-flex mt-5">
+                                <h4>MỤC LỤC</h4>
+                                <div class="mt-5 ml-3" style="width: 200px">
+                                    <v-divider></v-divider>
+                                </div>
+                            </div>
+                            <v-tabs class="mt-3" vertical>
+                                <v-tab @click="scrollTo('first1')" class="back--text">API là gì?</v-tab>
+                                <v-tab @click="scrollTo('first2')" class="back--text">Giải thích chi tiết</v-tab>
+                                <v-tab @click="scrollTo('first3')" class="back--text">Những điểm nổi bật của API.</v-tab>
+                                <v-tab @click="scrollTo('first4')" class="back--text">Ưu điểm</v-tab>
+                                <v-tab @click="scrollTo('first5')" class="back--text">Vậy API có phải một ngôn ngữ lập trình
+                                    không?</v-tab>
+                                <v-tab @click="scrollTo('first6')" class="back--text">Tầm quan trọng của API</v-tab>
+                                <v-tab @click="scrollTo('first7')" class="back--text">Hiểu hơn về API qua ví dụ về
+                                    Facebook</v-tab>
+                            </v-tabs>
+                        </v-col>
+
+                        <!--Bài viết liên quan-->
+                        <div class="mt-1">
+                            <h3>Bài viết liên quan</h3>
+                            <v-carousel class="mt-5" cycle height="160" hide-delimiter-background show-arrows-on-hover>
+                                <v-carousel-item v-for="(item, i) in 5" :key="i">
+                                    <v-sheet height="100%">
+                                        <v-row class="fill-height" align="center" justify="center">
+                                            <v-card v-for="(item, i) in 4" :key="i" class="ma-3" max-width="250" outlined>
+                                                <v-list-item three-line>
+                                                    <v-list-item-content>
+                                                        <v-list-item-title class="text-h5 mb-1">
+                                                            Restful API là gì?
+                                                        </v-list-item-title>
+                                                        <div class="mt-2">
+                                                            <span class="blue--text">Abc</span>
+                                                            <p style="font-size: 15px; color: #757575">4 phút đọc</p>
+
+                                                            <div class="d-flex" style="font-size: 15px;">
+                                                                <span><v-icon size="18">mdi-eye-outline</v-icon></span><span
+                                                                    class="ml-1">5K</span>
+                                                                <span class="ml-3"><v-icon
+                                                                        size="18">mdi-bookmark</v-icon></span><span
+                                                                    class="ml-1">5</span>
+                                                                <span class="ml-3"><v-icon
+                                                                        size="18">mdi-comment-text-multiple-outline</v-icon></span><span
+                                                                    class="ml-1">5</span>
+                                                                <span class="ml-2"><v-icon size="25"
+                                                                        style="margin-top: -4px;">mdi-menu-swap</v-icon></span><span>5</span>
+                                                            </div>
+                                                        </div>
+                                                    </v-list-item-content>
+                                                </v-list-item>
+                                            </v-card>
+                                        </v-row>
+                                    </v-sheet>
+                                </v-carousel-item>
+                            </v-carousel>
+                        </div>
+
+                        <!--Bài viết khác-->
+                        <div class="mt-3">
+                            <h3>Bài viết khác từ Nhatfreelancer</h3>
+                            <div class="mt-7">
+                                <v-row>
+                                    <v-col cols="12" md="12" lg="12" v-for="(item, i) in 4" :key="i">
+                                        <v-card max-width="250" outlined class="mx-auto">
+                                            <v-list-item three-line>
+                                                <v-list-item-content>
+                                                    <v-list-item-title class="text-h5 mb-1">
+                                                        Websocket là gì? Hiểu rõ về Websocket
+                                                    </v-list-item-title>
+                                                    <div class="mt-2">
+                                                        <span class="blue--text">Nhatfreelancer</span>
+                                                        <p style="font-size: 15px; color: #757575">4 phút đọc</p>
+
+                                                        <div class="d-flex" style="font-size: 15px;">
+                                                            <span><v-icon size="18">mdi-eye-outline</v-icon></span><span
+                                                                class="ml-1">5K</span>
+                                                            <span class="ml-3"><v-icon
+                                                                    size="18">mdi-bookmark</v-icon></span><span
+                                                                class="ml-1">5</span>
+                                                            <span class="ml-3"><v-icon
+                                                                    size="18">mdi-comment-text-multiple-outline</v-icon></span><span
+                                                                class="ml-1">5</span>
+                                                            <span class="ml-2"><v-icon size="25"
+                                                                    style="margin-top: -4px;">mdi-menu-swap</v-icon></span><span>5</span>
+                                                        </div>
+                                                    </div>
+                                                </v-list-item-content>
+                                            </v-list-item>
+                                        </v-card>
+                                    </v-col>
+                                </v-row>
+                            </div>
+                        </div>
+
+                        <!--Bình luận-->
+                        <div class="mt-9">
+                            <h3>Bình luận</h3>
+                            <div class="mt-9 ml-3" v-if="user == false">
+                                <v-row>
+                                    <v-card class="ma-3 mx-auto" height="50" width="100%" outlined>
+                                        <div class="text-center ma-2" style="color: #BDBDBD"><v-icon
+                                                color="#BDBDBD">mdi-chat-outline</v-icon> Đăng nhập để bình luận</div>
+                                    </v-card>
+                                </v-row>
+                            </div>
+
+                            <div class="mt-9 ml-3" v-if="user == true">
+                                <v-col cols="12" md="12" lg="12">
+                                    <v-textarea outlined name="input-7-4" label="Nhập nội dung để bình luận..."
+                                        value=""></v-textarea>
+
+                                    <div class="d-flex">
+                                        <v-btn class="ml-auto" color="blue" outlined>Bình luận</v-btn>
+                                    </div>
+                                </v-col>
+                            </div>
+                        </div>
+
+                        <!--Bình luận-->
+                        <div class="mt-9">
+                            <div class="mt-9 ml-3">
+                                <v-row>
+                                    <v-card width="100%" outlined>
+                                        <div class="pa-5" v-for="(item, i) in 1" :key="i">
+                                            <v-row>
+                                                <v-card class="mt-5 ml-5 d-flex" flat>
+                                                    <v-avatar width="50" height="50">
+                                                        <img src="https://taphoammo.net/images/avatars/user.svg">
+                                                    </v-avatar>
+                                                    <div class="ml-3">
+                                                        <div class="d-flex">
+                                                            <b class="green--text ml-2">abc</b>
+                                                            <p class="mr-auto ml-2"
+                                                                style="font-size: 15px; color: #757575; margin-top: 2px;">
+                                                                @particular</p>
+                                                        </div>
+                                                        <p class="ml-2" style="font-size: 15px; color: #BDBDBD">thg 6 10,
+                                                            2021
+                                                            5:22 CH
+                                                        </p>
+                                                        <p class="ml-2"
+                                                            style="font-size: 14px; word-break: break-word !important;">Ủa
+                                                            nếu mà các bên họ dùng api của facebook cho thì
+                                                            họ có
+                                                            thể vẫn
+                                                            lấy được tài khoàn và mật khẩu người dùng. Việc là họ sẽ dùng
+                                                            api
+                                                            xác thực ở
+                                                            một nơi và facebook có kiểm tra thế nào thì dừ liệu nhập từ một
+                                                            web
+                                                            khác.
+                                                        </p>
+                                                    </div>
+                                                </v-card>
+                                                <v-divider></v-divider>
+                                            </v-row>
+
+                                            <div class="ml-5 mt-9" v-if="reply == true">
+                                                <v-card class="mt-5 ml-5 d-flex" flat>
+                                                    <v-avatar width="50" height="50">
+                                                        <img src="https://taphoammo.net/images/avatars/user.svg">
+                                                    </v-avatar>
+                                                    <div class="ml-3">
+                                                        <div class="d-flex">
+                                                            <b class="green--text ml-2">Hoang Vu</b>
+                                                            <p class="mr-auto ml-2"
+                                                                style="font-size: 15px; color: #757575; margin-top: 2px;">
+                                                                @hoangvh185</p>
+                                                        </div>
+                                                        <p class="ml-2" style="font-size: 15px; color: #BDBDBD">thg 6 10,
+                                                            2021
+                                                            5:22 CH
+                                                        </p>
+                                                        <p class="ml-2"
+                                                            style="font-size: 14px; word-break: break-word !important;">việc
+                                                            xác thực là của fb mà bạn thì các web ứng dụng
+                                                            làm sao
+                                                            biết được tài khoản mật khẩu của user chứ.Thứ mà fb trả lại cho
+                                                            web ứng
+                                                            dụng chỉ là những thông tin như tên , avatar,...Hay nói cách
+                                                            khác fb cho
+                                                            gì thì mình dùng đấy chứ không phải mình muốn lấy gì cũng được.
+                                                        </p>
+                                                    </div>
+                                                </v-card>
+                                            </div>
+                                        </div>
+                                    </v-card>
+                                </v-row>
+                            </div>
+                        </div>
                     </v-col>
                 </v-row>
             </div>
@@ -533,7 +728,7 @@ export default Vue.extend({
   
 <style lang="scss">
 .post {
-    padding: 80px 50px 50px 50px;
+    padding: 90px 50px 50px 50px;
     font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
 
     .v-tabs--vertical>.v-tabs-bar .v-tabs-bar__content {
@@ -568,7 +763,7 @@ export default Vue.extend({
 }
 
 .post-res {
-    padding: 80px 20px 50px 20px;
+    padding: 90px 20px 50px 20px;
     font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
 
     .v-tabs--vertical>.v-tabs-bar .v-tabs-bar__content {
