@@ -16,21 +16,28 @@
     </div>
 
     <v-container style="margin-top: 100px">
-      <h1 class="text-center" style="font-size: 44px">
-       Tính năng quan trọng
+      <h1 class="text-center animated" style="font-size: 44px">
+        Tính năng quan trọng
       </h1>
 
       <v-row class="mt-5">
-        <v-col cols="4" v-for="item in items" :key="item.name">
-          <center>
-            <v-img
-              width="200"
-              :src="item.url"
-            ></v-img>
-            <h3 class="mt-3">{{item.name}}</h3>
-            <p class="text--secondary mt-3">{{item.des}}</p>
-          </center>
-        </v-col>
+        <div class="box-wrapper" style="margin-bottom: 100px;">
+          <v-row>
+            <v-col cols="12" md="3" lg="3" v-for="(item, index) in items" :key="index">
+              <div class="card-four">
+                <div class="card-bg-four" style="background-image: url('https://wapi.lunaproxy.com/static/index/img/pay/agency1.png'); background-repeat: repeat; background-size: cover;">
+                </div>
+                <div class="card-content-four">
+                  <h1 class="red--text ma-3">0{{index+1}}</h1>
+                  <div class="title ma-3">{{ item.name }}</div>
+                  <div class="description mt-2 ma-3">
+                    {{item.des}}
+                  </div>
+                </div>
+              </div>
+            </v-col>
+          </v-row>
+        </div>
       </v-row>
     </v-container>
   </div>
@@ -77,7 +84,7 @@ export default Vue.extend({
         },
         {
           name: "Bộ tìm kiếm thông minh 1",
-          url: "https://wapi.lunaproxy.com/static/index/img/pay/agency1.png",
+          url: "https://www.bkns.vn/wp-content/uploads/2022/10/GettyImages-1047578412-692fa117cf86450287d8873eeb1a95c8.jpg",
           des: "Chúng tôi có bộ lọc tìm kiếm thông tin, dịch vụ, sản phẩm tốt nhất và chất lượng."
         },
       ]
@@ -92,3 +99,76 @@ export default Vue.extend({
   },
 });
 </script>
+
+<style lang="scss" scoped>
+.animated {
+  animation: textChangeColor 3s linear infinite;
+}
+
+@keyframes textChangeColor {
+  0% {
+    color: black;
+  }
+
+  40% {
+    color: cyan;
+  }
+
+  70% {
+    color: violet;
+  }
+
+  100% {
+    color: magenta;
+  }
+}
+
+.title {
+  font-size: 20px;
+  font-weight: 700;
+}
+
+.description {
+  font-size: 16px;
+  word-wrap: break-word;
+}
+
+.card-four {
+  display: flex;
+  flex-direction: column;
+  flex: 1;
+  margin: 50px 15px auto 15px;
+  transition: all 250ms ease;
+}
+
+.card-bg-four {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 100%;
+  height: 180px;
+  border-radius: 8px;
+  box-shadow: 0 4px 20px 0 rgba(0, 0, 0, .1);
+  transition: all 250ms ease;
+  margin: 0 auto;
+}
+
+.card-content-four {
+  width: 88%;
+  padding: 10px;
+  background: #FFF;
+  border-radius: 0 0 8px 8px;
+  transition: all 250ms ease;
+  box-shadow: 0 4px 20px 0 rgba(0, 0, 0, .1);
+  margin: 0 auto;
+}
+
+.card-four:hover {
+  cursor: pointer;
+  transform: translate(0, 15px);
+}
+
+.card-four:hover .card-bg-four {
+  transform: scale(1.08, 1.08) translate(0, -8px);
+}
+</style>
