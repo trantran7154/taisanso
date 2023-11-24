@@ -1,6 +1,12 @@
 <template>
   <div>
-    <v-navigation-drawer v-model="drawer" app width="232" color="#f7f8f8">
+    <v-navigation-drawer
+      v-model="drawer"
+      class="header"
+      app
+      width="232"
+      color="#f7f8f8"
+    >
       <v-sheet color="#f7f8f8" width="100%">
         <div style="padding: 20px 20px">
           <v-row no-gutters>
@@ -15,7 +21,10 @@
             </v-col>
           </v-row>
 
-          <div class="text--secondary text-center" style="font-size: 16px; padding: 10px">
+          <div
+            class="text--secondary text-center"
+            style="font-size: 16px; padding: 10px"
+          >
             Còn 1000 điểm để lên thành viên bạc
           </div>
 
@@ -32,9 +41,103 @@
       </v-sheet>
 
       <MenuComponent :color="color" :user="user" />
+
+      <div class="sub_div">
+        <v-menu
+          v-model="menu"
+          :close-on-content-click="false"
+          :nudge-width="200"
+          offset-x
+        >
+          <template v-slot:activator="{ on, attrs }">
+            <v-btn color="indigo" dark v-bind="attrs" v-on="on">
+              Menu as Popover
+            </v-btn>
+
+            <div v-bind="attrs" v-on="on">
+              <v-list class="w">
+              <v-list-item link>
+                <v-list-item-avatar>
+                  <img :src="user.avatar" alt="John" />
+                </v-list-item-avatar>
+
+                <v-list-item-content>
+                  <v-list-item-title class="title">{{
+                    user.username
+                  }}</v-list-item-title>
+                  <v-list-item-subtitle class="subtitle">{{
+                    user.email
+                  }}</v-list-item-subtitle>
+                </v-list-item-content>
+
+                <v-list-item-action>
+                  <v-icon class="ml-10" size="15">fi fi-sr-sort</v-icon>
+                </v-list-item-action>
+              </v-list-item>
+            </v-list>
+            </div>
+            
+          </template>
+
+          <v-card>
+            <v-list>
+              <v-list-item>
+                <v-list-item-avatar>
+                  <img
+                    src="https://cdn.vuetifyjs.com/images/john.jpg"
+                    alt="John"
+                  />
+                </v-list-item-avatar>
+
+                <v-list-item-content>
+                  <v-list-item-title>John Leider</v-list-item-title>
+                  <v-list-item-subtitle
+                    >Founder of Vuetify</v-list-item-subtitle
+                  >
+                </v-list-item-content>
+
+                <v-list-item-action>
+                  <v-btn
+                    :class="fav ? 'red--text' : ''"
+                    icon
+                    @click="fav = !fav"
+                  >
+                    <v-icon>mdi-heart</v-icon>
+                  </v-btn>
+                </v-list-item-action>
+              </v-list-item>
+            </v-list>
+
+            <v-divider></v-divider>
+
+            <v-list>
+              <v-list-item>
+                <v-list-item-action>
+                  <v-switch v-model="message" color="purple"></v-switch>
+                </v-list-item-action>
+                <v-list-item-title>Enable messages</v-list-item-title>
+              </v-list-item>
+
+              <v-list-item>
+                <v-list-item-action>
+                  <v-switch v-model="hints" color="purple"></v-switch>
+                </v-list-item-action>
+                <v-list-item-title>Enable hints</v-list-item-title>
+              </v-list-item>
+            </v-list>
+
+            <v-card-actions>
+              <v-spacer></v-spacer>
+
+              <v-btn text @click="menu = false"> Cancel </v-btn>
+              <v-btn color="primary" text @click="menu = false"> Save </v-btn>
+            </v-card-actions>
+          </v-card>
+        </v-menu>
+      </div>
     </v-navigation-drawer>
 
-    <v-app-bar
+    <!-- <v-app-bar
       app
       clipped-right
       flat
@@ -114,7 +217,7 @@
           </v-menu>
         </div>
       </v-responsive>
-    </v-app-bar>
+    </v-app-bar> -->
   </div>
 </template>
 
@@ -140,8 +243,25 @@ export default Vue.extend({
 });
 </script>
 
-<style>
-.v-responsive {
+<style lang="scss" scoped>
+> .v-responsive {
   overflow: inherit !important;
+}
+
+.header {
+  .sub_div {
+    position: absolute;
+    bottom: 0px;
+    font-size: 12px !important;
+    .w {
+      width: 70%;
+    }
+    .title {
+      font-size: 14px !important;
+    }
+    .subtitle {
+      font-size: 12px;
+    }
+  }
 }
 </style>
