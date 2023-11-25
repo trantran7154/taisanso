@@ -50,9 +50,6 @@
           offset-x
         >
           <template v-slot:activator="{ on, attrs }">
-            <v-btn color="indigo" dark v-bind="attrs" v-on="on">
-              Menu as Popover
-            </v-btn>
 
             <div v-bind="attrs" v-on="on">
               <v-list class="w">
@@ -252,6 +249,7 @@ export default Vue.extend({
   .sub_div {
     position: absolute;
     bottom: 0px;
+    width: 100%;
     font-size: 12px !important;
     .w {
       width: 70%;
