@@ -2,7 +2,7 @@
   <v-app id="inspire" v-resize="onResize">
     <HeaderComponent :color="color" :user="user" :size="size" />
 
-    <v-main style="background-color: #f4f6fd">
+    <v-main>
       <div style="padding: 20px 20px">
         <router-view
           @snackbarEmit="snackbar = $event"

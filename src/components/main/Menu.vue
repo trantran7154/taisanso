@@ -1,8 +1,12 @@
 <template>
   <div class="menu">
     <div v-for="(item, i) in items" :key="i">
-      <v-btn text depressed block class="text-none btn" large>
-        <img width="35" height="35" :src="require(`../../assets/${item.action}`)" />
+      <v-btn :to="{path: item.path}" text depressed block class="text-none btn" large>
+        <img
+          width="35"
+          height="35"
+          :src="require(`../../assets/${item.action}`)"
+        />
         <span> {{ item.title }}</span>
       </v-btn>
     </div>
@@ -17,15 +21,17 @@ export default Vue.extend({
       {
         action: "home.gif",
         items: [
-          { title: "Dashboard", url: { path: "/" }, active: true },
+          { title: "Dashboard", url: { path: "/main" }, active: true },
           { title: "Static", url: { path: "/static" }, active: true },
         ],
         active: true,
+        path: "/main",
         title: "Trang chủ",
       },
       {
         action: "checklist.gif",
         active: true,
+        path: "/main2",
         items: [
           { title: "Manage users", url: { name: "user" }, active: true },
           { title: "KYC", url: { name: "kyc" }, active: true },
@@ -40,6 +46,7 @@ export default Vue.extend({
       },
       {
         action: "sanpham.gif",
+        path: "/main2",
         items: [
           { title: "Categorys", url: { name: "category" }, active: true },
           { title: "Documents", url: { name: "document" }, active: true },
@@ -50,6 +57,7 @@ export default Vue.extend({
       },
       {
         action: "phantich.gif",
+        path: "/main2",
         items: [
           {
             title: "Manage transactions",
@@ -67,6 +75,7 @@ export default Vue.extend({
       },
       {
         action: "lienhe.gif",
+        path: "/main2",
         items: [
           { title: "Football player", url: { name: "product" }, active: true },
           { title: "Manage bots", url: { name: "bot" }, active: true },
@@ -80,6 +89,7 @@ export default Vue.extend({
       },
       {
         action: "setting.gif",
+        path: "/main2",
         items: [
           { title: "Contess", active: true, url: { name: "contess" } },
           { title: "Settings", active: true, url: { name: "settingwebsite" } },
@@ -91,9 +101,7 @@ export default Vue.extend({
   }),
   props: ["color", "user"],
   created() {},
-  methods: {
-    
-  },
+  methods: {},
 });
 </script>
 
@@ -108,6 +116,4 @@ export default Vue.extend({
     }
   }
 }
-
-
 </style>

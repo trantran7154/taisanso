@@ -110,6 +110,11 @@ const routes: Array<RouteConfig> = [
         path: '/main',
         name: 'main',
         component: () => import('../views/Main.vue')
+      },
+      {
+        path: '/balance',
+        name: 'balance',
+        component: () => import('../views/payment/Balance.vue')
       }
     ]
   },

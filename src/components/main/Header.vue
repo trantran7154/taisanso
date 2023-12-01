@@ -5,9 +5,9 @@
       class="header"
       app
       width="232"
-      color="#f7f8f8"
+      color="white"
     >
-      <v-sheet color="#f7f8f8" width="100%">
+      <v-sheet color="white" width="100%">
         <div style="padding: 20px 20px">
           <v-row no-gutters>
             <v-col cols="8">
@@ -23,9 +23,9 @@
 
           <div
             class="text--secondary text-center"
-            style="font-size: 16px; padding: 10px"
+            style="font-size: 14px; padding: 10px"
           >
-            Còn 1000 điểm để lên thành viên bạc
+            Còn 1000 xu để lên thành viên bạc
           </div>
 
           <div style="padding: 10px 0px">
@@ -37,99 +37,72 @@
               striped
             ></v-progress-linear>
           </div>
+
+          <div class="text--secondary mt-2 text-center" style="font-size: 14px">
+            Bạn đang có <v-chip label small>0</v-chip> xu
+          </div>
         </div>
       </v-sheet>
 
       <MenuComponent :color="color" :user="user" />
 
-      <div class="sub_div">
+      <div class="sub_div" style="width: 100%">
         <v-menu
           v-model="menu"
           :close-on-content-click="false"
-          :nudge-width="200"
-          offset-x
+          offset-y
+          top="200"
         >
           <template v-slot:activator="{ on, attrs }">
-
             <div v-bind="attrs" v-on="on">
-              <v-list class="w">
-              <v-list-item link>
-                <v-list-item-avatar>
-                  <img :src="user.avatar" alt="John" />
-                </v-list-item-avatar>
+              <v-list>
+                <v-list-item link>
+                  <v-list-item-avatar>
+                    <img :src="user.avatar" alt="John" />
+                  </v-list-item-avatar>
 
-                <v-list-item-content>
-                  <v-list-item-title class="title">{{
-                    user.username
-                  }}</v-list-item-title>
-                  <v-list-item-subtitle class="subtitle">{{
-                    user.email
-                  }}</v-list-item-subtitle>
-                </v-list-item-content>
+                  <v-list-item-content>
+                    <v-list-item-title class="title">{{
+                      user.username
+                    }}</v-list-item-title>
+                    <v-list-item-subtitle class="subtitle">{{
+                      user.email
+                    }}</v-list-item-subtitle>
+                  </v-list-item-content>
 
-                <v-list-item-action>
-                  <v-icon class="ml-10" size="15">fi fi-sr-sort</v-icon>
-                </v-list-item-action>
-              </v-list-item>
-            </v-list>
+                  <v-list-item-action>
+                    <v-icon class="ml-10" size="15">fi fi-sr-sort</v-icon>
+                  </v-list-item-action>
+                </v-list-item>
+              </v-list>
             </div>
-            
           </template>
 
-          <v-card>
-            <v-list>
-              <v-list-item>
-                <v-list-item-avatar>
-                  <img
-                    src="https://cdn.vuetifyjs.com/images/john.jpg"
-                    alt="John"
-                  />
-                </v-list-item-avatar>
+          <v-sheet class="elevation-0" style="border-radius: 15px">
+            <v-list flat dense style="border-radius: 15px">
+              <v-list-item-group
+                tyle="border-radius: 15px;"
+                color="primary"
+                class="elevation-0"
+              >
+                <v-list-item
+                  v-for="(item, i) in items"
+                  :key="i"
+                  :to="{ path: item.to }"
+                >
+                  <v-list-item-content v-if="item.text != 'div'">
+                    <v-list-item-title>{{ item.text }}</v-list-item-title>
+                  </v-list-item-content>
 
-                <v-list-item-content>
-                  <v-list-item-title>John Leider</v-list-item-title>
-                  <v-list-item-subtitle
-                    >Founder of Vuetify</v-list-item-subtitle
-                  >
-                </v-list-item-content>
-
-                <v-list-item-action>
-                  <v-btn
-                    :class="fav ? 'red--text' : ''"
-                    icon
-                    @click="fav = !fav"
-                  >
-                    <v-icon>mdi-heart</v-icon>
-                  </v-btn>
-                </v-list-item-action>
-              </v-list-item>
+                  <v-list-item-content v-else>
+                    <v-list-item-title>
+                      <v-divider></v-divider>
+                    </v-list-item-title>
+                  </v-list-item-content>
+                </v-list-item>
+              </v-list-item-group>
             </v-list>
-
-            <v-divider></v-divider>
-
-            <v-list>
-              <v-list-item>
-                <v-list-item-action>
-                  <v-switch v-model="message" color="purple"></v-switch>
-                </v-list-item-action>
-                <v-list-item-title>Enable messages</v-list-item-title>
-              </v-list-item>
-
-              <v-list-item>
-                <v-list-item-action>
-                  <v-switch v-model="hints" color="purple"></v-switch>
-                </v-list-item-action>
-                <v-list-item-title>Enable hints</v-list-item-title>
-              </v-list-item>
-            </v-list>
-
-            <v-card-actions>
-              <v-spacer></v-spacer>
-
-              <v-btn text @click="menu = false"> Cancel </v-btn>
-              <v-btn color="primary" text @click="menu = false"> Save </v-btn>
-            </v-card-actions>
-          </v-card>
+          </v-sheet>
         </v-menu>
       </div>
     </v-navigation-drawer>
@@ -227,6 +200,11 @@ export default Vue.extend({
   data: () => ({
     menu: false,
     drawer: null as any,
+    items: [
+      { text: "Balance", icon: "mdi-clock", to: "/balance" },
+      { text: "div", icon: "mdi-account" },
+      { text: "Đăng xuất", icon: "mdi-flag" },
+    ],
   }),
   components: {
     MenuComponent,
@@ -261,5 +239,12 @@ export default Vue.extend({
       font-size: 12px;
     }
   }
+}
+
+.v-menu__content--fixed {
+  position: fixed;
+  border-radius: 15px;
+  box-shadow: none;
+  border: 1px solid #eceff1 !important;
 }
 </style>
