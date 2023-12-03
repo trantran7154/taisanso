@@ -115,6 +115,11 @@ const routes: Array<RouteConfig> = [
         path: '/balance',
         name: 'balance',
         component: () => import('../views/payment/Balance.vue')
+      },
+      {
+        path: '/deposit',
+        name: 'deposit',
+        component: () => import('../views/payment/Deposit.vue')
       }
     ]
   },
