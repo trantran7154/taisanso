@@ -202,8 +202,7 @@ export default Vue.extend({
     drawer: null as any,
     items: [
       { text: "Balance", icon: "mdi-clock", to: "/balance" },
-      { text: "div", icon: "mdi-account" },
-      { text: "Đăng xuất", icon: "mdi-flag" },
+      { text: "Đăng xuất", icon: "mdi-flag", to: "/" },
     ],
   }),
   components: {

@@ -11,7 +11,7 @@
           <div class="pa-6">
             <v-row>
               <v-col cols="12" sm="3">
-                <v-btn color="primary" block  depressed>Nạp tiền</v-btn>
+                <v-btn color="primary" block  depressed :to="{path: '/deposit'}">Nạp tiền</v-btn>
               </v-col>
 
               <v-col cols="12" sm="3">
