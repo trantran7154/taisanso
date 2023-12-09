@@ -147,7 +147,7 @@ export default Vue.extend({
         );
 
         if (login.status == 200) {
-          window.location.href = "/";
+          window.location.href = "/main";
         } else {
           that.message = login.message;
         }

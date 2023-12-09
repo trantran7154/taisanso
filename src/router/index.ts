@@ -112,6 +112,11 @@ const routes: Array<RouteConfig> = [
         component: () => import('../views/Main.vue')
       },
       {
+        path: '/channel/:uui_user',
+        name: 'channel',
+        component: () => import('../views/channel/Channel.vue')
+      },
+      {
         path: '/balance',
         name: 'balance',
         component: () => import('../views/payment/Balance.vue')

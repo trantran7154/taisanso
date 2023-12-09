@@ -256,9 +256,7 @@ export default Vue.extend({
 </script>
 
 <style lang="scss" scoped>
-.v-main {
-   font-family: 'Maven Pro', sans-serif;
-}
+
 
 :root {
   --color-green: #166062;

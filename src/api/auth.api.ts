@@ -9,7 +9,7 @@ class AuthClass {
             });
 
             localStorage.setItem('token', response.data.data.token);
-            
+
             return response.data;
         } catch (err: any) {
             return err.response.data;
@@ -23,7 +23,8 @@ class AuthClass {
             });
 
             localStorage.setItem('token', response.data.data.token);
-            
+
+
             return response.data;
         } catch (err: any) {
             return err.response.data;
@@ -51,7 +52,7 @@ class AuthClass {
             });
 
             localStorage.setItem('token', response.data.data.token);
-            
+
             return response.data;
         } catch (err: any) {
             return err.response.data;
@@ -65,13 +66,13 @@ class AuthClass {
                     Authorization: `Bearer ${localStorage.getItem('token')}`
                 }
             });
-            
+
             return response.data;
         } catch (err: any) {
             return err.response.data;
         }
     }
-    
+
 
     public async ChangePassword(oldPassword: string, newPassword: string, confirmPassword: string, otp: string) {
         try {
@@ -97,7 +98,7 @@ class AuthClass {
             const response = await axios.post(this.url + 'forgot-password', {
                 email
             });
-            
+
             return response.data;
         } catch (err: any) {
             return err.response.data;
@@ -112,7 +113,7 @@ class AuthClass {
                 newPassword,
                 otp
             });
-            
+
             return response.data;
         } catch (err: any) {
             return err.response.data;
@@ -126,7 +127,13 @@ class AuthClass {
                     Authorization: `Bearer ${localStorage.getItem('token')}`
                 }
             });
-            
+
+            const uuid = localStorage.getItem("uui");
+
+            if (!uuid) {
+                localStorage.setItem('uui', response.data.data._id);
+            }
+
             return response.data;
         } catch (err: any) {
             return err.response.data;
@@ -135,12 +142,12 @@ class AuthClass {
 
     public async Verify(otp: string) {
         try {
-            const response = await axios.post(this.url + 'verify', { otp}, {
+            const response = await axios.post(this.url + 'verify', { otp }, {
                 headers: {
                     Authorization: `Bearer ${localStorage.getItem('token')}`
                 }
             });
-            
+
             return response.data;
         } catch (err: any) {
             return err.response.data;
@@ -154,7 +161,7 @@ class AuthClass {
                     Authorization: `Bearer ${localStorage.getItem('token')}`
                 }
             });
-            
+
             return response.data;
         } catch (err: any) {
             return err.response.data;

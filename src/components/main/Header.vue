@@ -55,7 +55,7 @@
         >
           <template v-slot:activator="{ on, attrs }">
             <div v-bind="attrs" v-on="on">
-              <v-list>
+              <v-list color="white">
                 <v-list-item link>
                   <v-list-item-avatar>
                     <img :src="user.avatar" alt="John" />
