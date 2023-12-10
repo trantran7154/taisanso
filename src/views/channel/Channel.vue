@@ -37,7 +37,7 @@
     </div>
 
     <div class="">
-        Content
+        
     </div>
   </v-container>
 </template>
@@ -64,6 +64,21 @@ export default Vue.extend({
 </script>
 
 <style lang="scss" scoped>
+
+.center {
+  height: 200px;
+  position: relative;
+  border: 3px solid green;
+}
+
+.center p {
+  margin: 0;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+}
+
 .border {
   border: 1px solid #f5f5f5;
 }

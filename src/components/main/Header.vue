@@ -51,7 +51,6 @@
           v-model="menu"
           :close-on-content-click="false"
           offset-y
-          top="200"
         >
           <template v-slot:activator="{ on, attrs }">
             <div v-bind="attrs" v-on="on">

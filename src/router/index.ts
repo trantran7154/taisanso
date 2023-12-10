@@ -125,6 +125,11 @@ const routes: Array<RouteConfig> = [
         path: '/deposit',
         name: 'deposit',
         component: () => import('../views/payment/Deposit.vue')
+      },
+      {
+        path: '/taisanso-xu',
+        name: 'xu',
+        component: () => import('../views/xu/Xu.vue')
       }
     ]
   },

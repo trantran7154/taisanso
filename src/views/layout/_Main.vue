@@ -58,7 +58,6 @@ import AuthApi from "@/api/auth.api";
 export default {
   async created() {
     const user = await AuthApi.GetProfile();
-    console.log(user);
 
     if (user.status != 200) {
       this.$router.push({

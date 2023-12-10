@@ -1,6 +1,6 @@
 <template>
   <div class="menu">
-    <div v-for="(item, i) in items" :key="i">
+    <div v-for="item in items" :key="item.title">
       <v-btn
         :to="{ path: item.path }"
         text
@@ -24,7 +24,7 @@
     </div>
 
     <div style="padding: 10px 25px"><h3>Tài khoản</h3></div>
-    <div v-for="(item, i) in items4" :key="i">
+    <div v-for="item in items4" :key="item.title">
       <v-btn
         :to="{ path: item.path }"
         text
@@ -48,7 +48,7 @@
     </div>
 
     <div style="padding: 10px 25px"><h3>Blog</h3></div>
-    <div v-for="(item, i) in items3" :key="i">
+    <div v-for="item in items3" :key="item.title">
       <v-btn
         :to="{ path: item.path }"
         text
@@ -92,6 +92,13 @@ export default Vue.extend({
         path: "/main2",
         items: [],
         title: "Blog",
+      },
+      {
+        action: "coin-bank.gif",
+        active: true,
+        path: "/taisanso-xu",
+        items: [],
+        title: "TSS xu",
       },
     ],
     items3: [
