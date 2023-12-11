@@ -126,53 +126,6 @@
       <v-responsive max-width="500">
         <div class="float-end">
           <v-img width="100" class="mt-9" src="../../assets/lg-d.png"></v-img>
-
-          <v-menu
-            v-model="menu"
-            open-on-hover
-            :close-on-content-click="false"
-            :nudge-width="200"
-            offset-y
-          >
-            <template v-slot:activator="{ on, attrs }">
-              <v-btn depressed fab small text v-bind="attrs" v-on="on"> </v-btn>
-            </template>
-
-            <v-card>
-              <v-list>
-                <v-list-item>
-                  <v-list-item-avatar>
-                    <img :src="user.avatar" alt="John" />
-                  </v-list-item-avatar>
-
-                  <v-list-item-content>
-                    <v-list-item-title>{{ user.userName }}</v-list-item-title>
-                    <v-list-item-subtitle>{{
-                      user.email
-                    }}</v-list-item-subtitle>
-                  </v-list-item-content>
-                </v-list-item>
-              </v-list>
-
-              <v-divider></v-divider>
-
-              <v-list>
-                <v-list-item> </v-list-item>
-
-                <v-list-item> </v-list-item>
-              </v-list>
-
-              <v-card-actions>
-                <v-spacer></v-spacer>
-
-                <v-btn text @click="menu = false"> Cancel </v-btn>
-                <v-btn color="error" text @click="logout()">
-                  <v-icon size="15">mdi-logout</v-icon>
-                  Log out
-                </v-btn>
-              </v-card-actions>
-            </v-card>
-          </v-menu>
         </div>
       </v-responsive>
     </v-app-bar>
