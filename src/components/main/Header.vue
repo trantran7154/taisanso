@@ -125,7 +125,7 @@
 
       <v-responsive max-width="500">
         <div class="float-end">
-          <v-img width="100" class="mt-9" src="../../assets/lg-d.png"></v-img>
+          <!-- <v-img width="100" class="mt-9" src="../../assets/lg-d.png"></v-img> -->
         </div>
       </v-responsive>
     </v-app-bar>
