@@ -99,6 +99,11 @@ const routes: Array<RouteConfig> = [
         name: 'forgotpassword',
         component: ForgotPassword
       },
+      {
+        path: '/verify',
+        name: 'verify',
+        component: () => import('../views/User/Verify.vue')
+      },
     ]
   },
   {

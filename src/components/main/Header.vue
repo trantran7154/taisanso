@@ -99,6 +99,12 @@
                     </v-list-item-title>
                   </v-list-item-content>
                 </v-list-item>
+
+                <v-list-item @click="logout()">
+                  <v-list-item-content>
+                    <v-list-item-title>Đăng xuất</v-list-item-title>
+                  </v-list-item-content>
+                </v-list-item>
               </v-list-item-group>
             </v-list>
           </v-sheet>
@@ -201,7 +207,6 @@ export default Vue.extend({
     drawer: null as any,
     items: [
       { text: "Balance", icon: "mdi-clock", to: "/balance" },
-      { text: "Đăng xuất", icon: "mdi-flag", to: "/" },
     ],
   }),
   components: {

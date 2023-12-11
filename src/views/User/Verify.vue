@@ -14,7 +14,11 @@
           style="margin-left: -31px"
           src="../../img/logo.jpg"
         ></v-img>
-        <h3 style="font-size: 24px">Đăng nhập</h3>
+        <h3 style="font-size: 24px">Mã xác nhận</h3>
+
+        <div class="text--secondary">
+          Vui lòng nhập mã xác nhận được gửi đến {{ email }}
+        </div>
 
         <v-alert
           v-if="message"
@@ -29,23 +33,9 @@
         </v-alert>
 
         <div class="mt-5">
-          <label style="color: #6d7a82" class="font-weight-bold">Email</label>
-          <v-text-field
-            class="mt-2"
-            placeholder="exampe@gmail.com"
-            v-model="formLogin.value.email"
-            :rules="formLogin.validate.email"
-            persistent-hint
-            outlined
-          ></v-text-field>
+          <v-otp-input :disabled="isLoading" @finish="verify()" v-model="otp" length="6" type="number"></v-otp-input>
 
-          <div style="color: #6d7a82">
-            <!-- <router-link
-              style="color: #6d7a82"
-              :to="{ path: '/forgot-password' }"
-              >Quên mật khẩu?</router-link
-            > -->
-          </div>
+          <div style="color: #6d7a82">Bạn chưa nhận được mã? Gửi lại</div>
 
           <v-btn
             class="white--text btn-login mb-5 mt-5"
@@ -53,9 +43,9 @@
             block
             depressed
             large
-            @click="login()"
+            @click="verify()"
             :loading="isLoading"
-            >Đăng nhập</v-btn
+            >Xác nhận</v-btn
           >
 
           <!-- <div class="mt-5" style="color: #6d7a82">
@@ -89,11 +79,15 @@ import Vue from "vue";
 import authApi from "@/api/auth.api";
 
 export default Vue.extend({
-  name: "Footer",
-  created() {},
-  props: ["size", "user"],
+  name: "verify",
+  created() {
+    document.title = "Đăng nhập" + " ~ TaiSanSo";
+  },
+  props: ["size"],
   data() {
     return {
+      email: "",
+      otp: "",
       isLoading: false,
       isError: false,
       message: "",
@@ -112,21 +106,26 @@ export default Vue.extend({
       },
     };
   },
+  created() {
+    let that = this;
+    const email = localStorage.getItem("email");
+
+    if (!email) {
+      window.location.href = "/login";
+    } else {
+      that.email = email;
+    }
+  },
   methods: {
-    async login() {
+    async verify() {
       let that = this;
       that.isLoading = true;
-      const valid = that.$refs.formLogin.validate();
+      const verify = await authApi.Verify(that.otp, that.email);
 
-      if (valid) {
-        const login = await authApi.Login(that.formLogin.value.email);
-
-        if (login.status == 200) {
-          localStorage.setItem("email", that.formLogin.value.email);
-          window.location.href = "/verify";
-        } else {
-          that.message = login.message;
-        }
+      if (verify.status == 200) {
+        window.location.href = "/main";
+      } else {
+        that.message = verify.message;
       }
 
       that.isLoading = false;

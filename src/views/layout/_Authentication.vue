@@ -4,7 +4,11 @@
       <v-row no-gutters>
         <v-col :cols="size.onsize > 860 ? 5 : 12">
           <v-sheet height="100vh" class="center">
-            <router-view class="center-c" :size="size"></router-view>
+            <router-view
+              :user="user"
+              class="center-c"
+              :size="size"
+            ></router-view>
           </v-sheet>
         </v-col>
 
@@ -24,9 +28,11 @@
 </template>
 
 <script>
+import AuthApi from "@/api/auth.api";
 export default {
   components: {},
   data: () => ({
+    user: null,
     drawer: null,
     size: {
       onsize: 0,
@@ -43,6 +49,13 @@ export default {
   }),
   mounted() {
     this.onResize();
+  },
+  async created() {
+    const user = await AuthApi.GetProfile();
+
+    if (user.status == 200) {
+      window.location.href = "/main";
+    }
   },
   methods: {
     onResize() {

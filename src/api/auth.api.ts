@@ -140,13 +140,9 @@ class AuthClass {
         }
     }
 
-    public async Verify(otp: string) {
+    public async Verify(otp: number, email: string) {
         try {
-            const response = await axios.post(this.url + 'verify', { otp }, {
-                headers: {
-                    Authorization: `Bearer ${localStorage.getItem('token')}`
-                }
-            });
+            const response = await axios.post(this.url + 'verify', { email, otp });
 
             return response.data;
         } catch (err: any) {
