@@ -47,11 +47,7 @@
       <MenuComponent :color="color" :user="user" />
 
       <div class="sub_div" style="width: 100%">
-        <v-menu
-          v-model="menu"
-          :close-on-content-click="false"
-          offset-y
-        >
+        <v-menu v-model="menu" :close-on-content-click="false" offset-y>
           <template v-slot:activator="{ on, attrs }">
             <div v-bind="attrs" v-on="on">
               <v-list color="white">
@@ -112,37 +108,24 @@
       </div>
     </v-navigation-drawer>
 
-    <!-- <v-app-bar
+    <v-app-bar
+      v-if="size.onsize < 1264"
       app
       clipped-right
       flat
-      height="72"
+      height="40"
       color="white"
       style="border-bottom: 1px solid rgba(0, 0, 0, 0.12) !important"
     >
       <v-spacer>
-        <v-row>
-          <v-col cols="3" md="1">
-            <v-btn @click="drawer = !drawer" text fab small> </v-btn>
-          </v-col>
-          <v-col cols="9" md="9">
-            <v-text-field
-              v-if="size.onsize > 650"
-              class="w-100"
-              :color="color.main"
-              outlined
-              dense
-              rounded
-              hide-details=""
-              placeholder="Search"
-            ></v-text-field>
-          </v-col>
-        </v-row>
+        <v-btn @click="drawer = !drawer" text fab small>
+          <v-icon>fi fi-rr-apps</v-icon>
+        </v-btn>
       </v-spacer>
 
       <v-responsive max-width="500">
         <div class="float-end">
-          <v-btn depressed fab small text> </v-btn>
+          <v-img width="100" class="mt-9" src="../../assets/lg-d.png"></v-img>
 
           <v-menu
             v-model="menu"
@@ -192,7 +175,7 @@
           </v-menu>
         </div>
       </v-responsive>
-    </v-app-bar> -->
+    </v-app-bar>
   </div>
 </template>
 
@@ -205,9 +188,7 @@ export default Vue.extend({
   data: () => ({
     menu: false,
     drawer: null as any,
-    items: [
-      { text: "Balance", icon: "mdi-clock", to: "/balance" },
-    ],
+    items: [{ text: "Balance", icon: "mdi-clock", to: "/balance" }],
   }),
   components: {
     MenuComponent,

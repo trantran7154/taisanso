@@ -3,7 +3,7 @@
     <HeaderComponent :color="color" :user="user" :size="size" />
 
     <v-main>
-      <div style="padding: 20px 20px">
+      <div style="padding: 10px 10px">
         <router-view
           @snackbarEmit="snackbar = $event"
           :color="color"
