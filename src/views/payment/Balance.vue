@@ -1,5 +1,5 @@
 <template>
-  <v-container class="balance" style="color: #363e43">
+  <v-container class="balance" style="color: #363e43;">
     <Breadcrumb name="Balance" url_back="/" content_back="Cài đặt" />
 
     <BalanceVue />

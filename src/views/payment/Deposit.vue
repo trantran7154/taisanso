@@ -10,20 +10,20 @@
 
     <v-row>
       <v-col cols="12" md="4" v-if="panel == 0 || panel == 2">
-        <v-card
-          class="elevation-0"
-          style="border: 1px solid #f5f5f5"
-          v-if="panel == 0"
-        >
-          <div class="pa-5">
-            <h2>Số tiền nạp</h2>
+        <v-card class="elevation-0" style="border: 1px solid #f5f5f5" v-if="panel == 0">
+          <div class="pa-6">
+            <h2 style="color: #806ce8">Số tiền nạp</h2>
 
-            <p>Kiểm tra số tiền nạp bằng cách nhấp vào lựa chọn bên dưới</p>
+            <div style="padding: 5px 0px">
+              <v-divider></v-divider>
+            </div>
+
+            <p class="mt-1">Kiểm tra số tiền nạp bằng cách nhấp vào lựa chọn bên dưới</p>
 
             <div>
               <v-row>
                 <v-col cols="6" v-for="item in amounts" :key="item">
-                  <v-btn class="text-none" block depressed x-large>{{
+                  <v-btn class="text-none font-weight-bold btn-11" outlined block depressed x-large>{{
                     amountPrice(item)
                   }}</v-btn>
                 </v-col>
@@ -32,26 +32,22 @@
           </div>
         </v-card>
 
-        <v-card
-          class="elevation-0"
-          style="border: 1px solid #f5f5f5"
-          v-else-if="panel == 2"
-        >
+        <v-card class="elevation-0" style="border: 1px solid #f5f5f5" v-else-if="panel == 2">
           <div class="pa-5">
             <h4>Hướng Dẫn + Lưu Ý Khi Nạp Tiền Vào Tài Khoản</h4>
             <div class="mt-5 text--secondary" style="font-size: 14px">
               <ul>
-                <li class="mt-1">Bước 1: Mở app ngân hàng bạn đang sử dụng.</li>
+                <li class="mt-1"><b>Bước 1:</b> Mở app ngân hàng bạn đang sử dụng.</li>
                 <li class="mt-1">
-                  Bước 2: Quét mã QR hoặc nhập STK Bank ở dưới bằng thủ công.
+                  <b>Bước 2:</b> Quét mã QR hoặc nhập STK Bank ở dưới bằng thủ công.
                 </li>
                 <li class="mt-1">
-                  Bước 3: Nhập số tiền bạn muốn nạp vào tài khoản Nạp tối thiểu
+                  <b>Bước 3:</b> Nhập số tiền bạn muốn nạp vào tài khoản Nạp tối thiểu
                   <b class="error--text">10.000VND</b> vào tài khoản. Nếu nạp
                   dưới 10K lỗi giao dịch, TaiSanSo không hỗ trợ.
                 </li>
                 <li class="mt-1">
-                  Bước 4: Sao Chép Nội Dung
+                  <b>Bước 4:</b> Sao Chép Nội Dung
                   <b class="error--text">{{ user.username }}</b> ở ô dưới vào
                   Nội dung / Lời nhắn trước khi thực hiện chuyển tiền Hệ thống
                   xử lý giao dịch nạp tiền tự động từ 1Phút - 10Phút , nếu chờ
@@ -68,9 +64,9 @@
           <v-expansion-panel style="box-shadow: none !important">
             <v-expansion-panel-header>
               <span class="float-start">
-                <v-img width="20" src="../../assets/credit-card.png"></v-img>
+                <v-img width="30" src="../../assets/credit-card.png"></v-img>
               </span>
-              <span class="float-start ml-2">Thẻ tín dụng</span>
+              <span class="float-start ml-2" style="font-size: 19px;">Thẻ tín dụng</span>
             </v-expansion-panel-header>
             <v-expansion-panel-content>
               <div style="padding: 20px 0px 0px 0px">
@@ -78,105 +74,55 @@
 
                 <v-row class="mt-2">
                   <v-col cols="6">
-                    <v-combobox
-                      outlined
-                      height="45"
-                      dense
-                      label="Quốc gia"
-                      hide-details=""
-                    ></v-combobox>
+                    <v-combobox outlined height="45" dense label="Quốc gia" prepend-inner-icon="mdi-flag"
+                      hide-details=""></v-combobox>
                   </v-col>
 
                   <v-col cols="6"> </v-col>
 
                   <v-col cols="6">
-                    <v-text-field
-                      outlined
-                      height="45"
-                      dense
-                      label="Tên"
-                      hide-details=""
-                    ></v-text-field>
+                    <v-text-field outlined height="45" dense label="Tên" prepend-inner-icon="mdi-account" hide-details=""
+                      readonly></v-text-field>
                   </v-col>
 
                   <v-col cols="6">
-                    <v-text-field
-                      outlined
-                      height="45"
-                      dense
-                      hide-details=""
-                      label="Họ"
-                    ></v-text-field>
+                    <v-text-field outlined height="45" dense hide-details="" label="Họ"
+                      prepend-inner-icon="mdi-account"></v-text-field>
                   </v-col>
 
                   <v-col cols="6">
-                    <v-text-field
-                      outlined
-                      height="45"
-                      dense
-                      hide-details=""
-                      label="Địa chỉ"
-                    ></v-text-field>
+                    <v-text-field outlined height="45" dense hide-details="" label="Địa chỉ"
+                      prepend-inner-icon="mdi-map-marker"></v-text-field>
                   </v-col>
 
                   <v-col cols="6">
-                    <v-text-field
-                      outlined
-                      height="45"
-                      dense
-                      hide-details=""
-                      label="Địa chỉ 2"
-                    ></v-text-field>
+                    <v-text-field outlined height="45" dense hide-details="" label="Địa chỉ 2"
+                      prepend-inner-icon="mdi-map-marker"></v-text-field>
                   </v-col>
 
                   <v-col cols="4">
-                    <v-text-field
-                      outlined
-                      height="45"
-                      dense
-                      hide-details=""
-                      label="Thành phố / Tỉnh thành"
-                    ></v-text-field>
+                    <v-text-field outlined height="45" dense hide-details="" label="Thành phố / Tỉnh thành"
+                      prepend-inner-icon="mdi-city"></v-text-field>
                   </v-col>
 
                   <v-col cols="4">
-                    <v-text-field
-                      outlined
-                      height="45"
-                      dense
-                      hide-details=""
-                      label="Tiểu bang / Phường xã"
-                    ></v-text-field>
+                    <v-text-field outlined height="45" dense hide-details="" label="Tiểu bang / Phường xã"
+                      prepend-inner-icon="mdi-city-variant"></v-text-field>
                   </v-col>
 
                   <v-col cols="4">
-                    <v-text-field
-                      outlined
-                      height="45"
-                      dense
-                      hide-details=""
-                      label="Zipcode"
-                    ></v-text-field>
+                    <v-text-field outlined height="45" dense hide-details="" label="Zipcode"
+                      prepend-inner-icon="mdi-zip-box"></v-text-field>
                   </v-col>
 
-                  <v-col cols="2">
-                    <v-combobox
-                      outlined
-                      height="45"
-                      dense
-                      hide-details=""
-                      label="Vùng"
-                    ></v-combobox>
+                  <v-col cols="3">
+                    <v-combobox outlined height="45" dense hide-details="" label="Vùng"
+                      prepend-inner-icon="mdi-map-marker-radius"></v-combobox>
                   </v-col>
 
                   <v-col cols="6">
-                    <v-text-field
-                      outlined
-                      height="45"
-                      dense
-                      hide-details=""
-                      label="Số điện thoại"
-                    ></v-text-field>
+                    <v-text-field outlined height="45" dense hide-details="" label="Số điện thoại"
+                      prepend-inner-icon="mdi-cellphone"></v-text-field>
                   </v-col>
                 </v-row>
 
@@ -186,55 +132,30 @@
 
                 <v-row>
                   <v-col cols="6">
-                    <v-text-field
-                      outlined
-                      height="45"
-                      dense
-                      hide-details=""
-                      label="Card number"
-                    ></v-text-field>
+                    <v-text-field outlined height="45" dense hide-details="" label="Card number"
+                      prepend-inner-icon="mdi-credit-card"></v-text-field>
                   </v-col>
 
                   <v-col cols="6"> </v-col>
 
                   <v-col cols="6">
-                    <v-text-field
-                      outlined
-                      height="45"
-                      dense
-                      hide-details=""
-                      label="Expireation date"
-                    ></v-text-field>
+                    <v-text-field outlined height="45" dense hide-details="" label="Expireation date"
+                      prepend-inner-icon="mdi-calendar-month"></v-text-field>
                   </v-col>
 
                   <v-col cols="6">
-                    <v-text-field
-                      outlined
-                      height="45"
-                      dense
-                      hide-details=""
-                      label="Security code"
-                    ></v-text-field>
+                    <v-text-field outlined height="45" dense hide-details="" label="Security code"
+                      prepend-inner-icon="mdi-shield-lock"></v-text-field>
                   </v-col>
 
                   <v-col cols="6">
-                    <v-text-field
-                      outlined
-                      height="45"
-                      dense
-                      hide-details=""
-                      placeholder="First name"
-                    ></v-text-field>
+                    <v-text-field outlined height="45" dense hide-details="" placeholder="First name"
+                      prepend-inner-icon="mdi-account"></v-text-field>
                   </v-col>
 
                   <v-col cols="6">
-                    <v-text-field
-                      outlined
-                      height="45"
-                      dense
-                      hide-details=""
-                      placeholder="Last name"
-                    ></v-text-field>
+                    <v-text-field outlined height="45" dense hide-details="" placeholder="Last name"
+                      prepend-inner-icon="mdi-account"></v-text-field>
                   </v-col>
                 </v-row>
               </div>
@@ -244,9 +165,9 @@
           <v-expansion-panel>
             <v-expansion-panel-header>
               <span class="float-start">
-                <v-img width="20" src="@/assets/gift-card.png"></v-img>
+                <v-img width="30" src="@/assets/gift-card.png"></v-img>
               </span>
-              <span class="float-start ml-2">Gift card</span>
+              <span class="float-start ml-2" style="font-size: 19px;">Gift card</span>
             </v-expansion-panel-header>
             <v-expansion-panel-content>
               <div style="padding: 20px 0px 0px 0px">
@@ -268,36 +189,22 @@
                     <v-row no-gutters class="mt-10">
                       <v-col cols="12" sm="6" md="6">
                         <div class="pa-1">
-                          <v-text-field
-                            outlined
-                            height="45"
-                            dense
-                            placeholder="Nhập mã của bạn ở đây"
-                          ></v-text-field>
+                          <v-text-field outlined height="45" dense placeholder="Nhập mã của bạn ở đây"></v-text-field>
                         </div>
                       </v-col>
 
                       <v-col cols="12" sm="6" md="4">
                         <div class="pa-1">
-                          <v-text-field
-                            height="45"
-                            outlined
-                            dense
-                            placeholder="Nhập mật khẩu giftcard"
-                          ></v-text-field>
+                          <v-text-field height="45" outlined dense placeholder="Nhập mật khẩu giftcard"></v-text-field>
                         </div>
                       </v-col>
 
                       <v-col cols="12" sm="12" md="2">
                         <div class="pa-1">
-                          <v-btn
-                            block
-                            large
-                            color="primary"
-                            class="text-none"
-                            depressed
-                            >Nạp</v-btn
-                          >
+                          <v-btn block large color="primary" class="text-none" depressed
+                            style="background: linear-gradient( to right, #6480ef, #7775e8, #806ce8 ); color: white; font-family: system-ui;">
+                           <v-icon class="mr-1" size="20">mdi-tray-arrow-down</v-icon> Nạp
+                          </v-btn>
                         </div>
                       </v-col>
                     </v-row>
@@ -310,9 +217,9 @@
           <v-expansion-panel>
             <v-expansion-panel-header>
               <span class="float-start">
-                <v-img width="20" src="@/assets/bank.png"></v-img>
+                <v-img width="30" src="@/assets/bank.png"></v-img>
               </span>
-              <span class="float-start ml-2"> Chuyển khoản ngân hàng</span>
+              <span class="float-start ml-2" style="font-size: 19px;"> Chuyển khoản ngân hàng</span>
             </v-expansion-panel-header>
             <v-expansion-panel-content>
               <div style="padding: 20px 0px 0px 0px">
@@ -321,27 +228,17 @@
                   <v-row no-gutters class="mt-3">
                     <v-col cols="12" sm="6" md="6">
                       <div>
-                        <v-text-field
-                          outlined
-                          height="45"
-                          dense
-                          disabled
-                          :value="user.username"
-                          placeholder="Nhập mã của bạn ở đây"
-                        ></v-text-field>
+                        <v-text-field outlined height="45" dense disabled :value="user.username"
+                          placeholder="Nhập mã của bạn ở đây"></v-text-field>
                       </div>
                     </v-col>
 
                     <v-col cols="12" sm="12" md="2">
                       <div>
-                        <v-btn
-                          block
-                          large
-                          color="primary"
-                          class="text-none ml-1"
-                          depressed
-                          >Sao chép</v-btn
-                        >
+                        <v-btn block large color="primary" class="text-none ml-2" depressed
+                          style="background: linear-gradient( to right, #6480ef, #7775e8, #806ce8 ); color: white; font-family: system-ui;">
+                          <v-icon class="mr-1">mdi-content-copy</v-icon>
+                        Sao chép</v-btn>
                       </div>
                     </v-col>
                   </v-row>
@@ -444,6 +341,7 @@ export default Vue.extend({
 
 .deposit {
   font-size: 16px;
+
   h4 {
     font-size: 16px;
   }
@@ -476,7 +374,47 @@ export default Vue.extend({
   border-right: 1px solid #f5f5f5;
 }
 
-.v-expansion-panel-header > *:not(.v-expansion-panel-header__icon) {
+.v-expansion-panel-header>*:not(.v-expansion-panel-header__icon) {
   flex: inherit;
+}
+
+.btn-11 {
+  border: none;
+  overflow: hidden;
+  border-color: #E3E3E3 !important;
+  border: 1px solid
+}
+
+.btn-11:before,
+.btn-11:after {
+  content: '';
+  position: absolute;
+  top: 0;
+  right: 0;
+  height: 3px;
+  width: 0;
+  background: #c9c9c9;
+  box-shadow:
+    -1px -1px 5px 0px #fff,
+    7px 7px 20px 0px #0003,
+    4px 4px 5px 0px #0002;
+  transition: 400ms ease all;
+}
+
+.btn-11:after {
+  right: inherit;
+  top: inherit;
+  left: 0;
+  bottom: 0;
+}
+
+.btn-11:hover:before,
+.btn-11:hover:after {
+  width: 100%;
+  transition: 800ms ease all;
+}
+
+.theme--light.v-text-field--outlined:not(.v-input--is-focused):not(.v-input--has-state)>.v-input__control>.v-input__slot fieldset {
+  color: #E3E3E3 !important;
 }
 </style>
