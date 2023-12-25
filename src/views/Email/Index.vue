@@ -28,9 +28,11 @@
                         Loại Mail Khác
                     </v-btn>
                 </div>
-                <h2 class="ml-2 mt-4">Gian hàng email
-                    <small><em>( Tổng <b class="red--text">{{ itemsEmail.length }}</b> gian hàng )</em></small>
-                </h2>
+                <h3 class="ml-2 mt-4" style="font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif; font-size: 25px">
+                    Gian hàng email
+                    <small style="opacity: 0.5; font-size: 24px">( Tổng <span class="red--text">{{ itemsEmail.length
+                    }}</span> gian hàng )</small>
+                </h3>
 
                 <v-tabs color="deep-purple accent-4">
                     <v-tab style="text-transform: none;">
@@ -407,7 +409,7 @@ export default {
 
 <style lang="scss" scoped>
 .email {
-    font-family: 'Muli', sans-serif;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
     line-height: 1.5;
     display: flex;
     align-items: center;
