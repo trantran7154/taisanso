@@ -19,11 +19,14 @@ export class SellService implements ISell {
 
     public async salesRegistration(phone: string, linkFacebook: string, nameBank: string) {
         try {
+            const key = "/register"
             const data = {
-
+                phone, linkFacebook, nameBank
             }
-            const response = await axios.post(this.api, data, {
-                ...default_.auth
+            const response = await axios.post(this.api + key, data, {
+                headers: {
+                    ...default_.auth
+                }
             });
 
             return response.data;
@@ -33,5 +36,5 @@ export class SellService implements ISell {
     }
 }
 
-const link = "/api/user/v1/";
-const sellService = new SellService(default_._VUE_APP_BACKEND_URL, link);
+const link = "/api/v1/sell";
+export const sellService = new SellService(default_._VUE_APP_BACKEND_URL, link);

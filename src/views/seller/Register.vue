@@ -4,6 +4,18 @@
       <div class="pa-4">
         <h2>Thông tin cửa hàng</h2>
 
+        <div>
+          <ul>
+            <li>Số điện thoại: {{ user.store.phone }}</li>
+            <li>Link facebook: {{ user.store.linkFacebook }}</li>
+            <li>Số điện thoại: {{ user.store.phone }}</li>
+          </ul>
+        </div>
+
+        <v-alert dense outlined type="error" class="mt-3" v-show="message">
+          {{ message }}
+        </v-alert>
+
         <v-form
           ref="formRegister"
           class="mt-5"
@@ -107,12 +119,15 @@
 
 <script>
 import Vue from "vue";
+import { sellService } from "@/api/sell.api";
 
 export default Vue.extend({
   name: "register",
-  props: ["size"],
+  props: ["size", "user"],
   data() {
     return {
+      isLoading: false,
+      message: "",
       formRegister: {
         valid: true,
         isApcept: false,
@@ -133,20 +148,34 @@ export default Vue.extend({
                 v
               ) || "Không hợp lệ",
           ],
-          nameBank: [
-            (v) => !!v || "Bắt buộc"
-          ],
+          nameBank: [(v) => !!v || "Bắt buộc"],
         },
       },
     };
   },
   components: {},
   methods: {
-    register() {
-      const valid = this.$refs.formRegister.validate();
-      console.log(valid);
-      if (valid) {
-        alert("asasasa");
+    async register() {
+      try {
+        const valid = this.$refs.formRegister.validate();
+        if (valid) {
+          this.isLoading = true;
+          const { phone, linkFacebook, nameBank } = this.formRegister.value;
+          const salesRegistration = await sellService.salesRegistration(
+            phone,
+            linkFacebook,
+            nameBank
+          );
+          if (salesRegistration.status == 200) {
+            this.message = salesRegistration.message;
+          } else {
+            this.message = salesRegistration.message;
+          }
+          this.isLoading = false;
+        }
+      } catch (error) {
+        this.message = "Lỗi kết nối máy chủ";
+        this.isLoading = false;
       }
     },
   },
