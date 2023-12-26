@@ -135,6 +135,11 @@ const routes: Array<RouteConfig> = [
         path: '/taisanso-xu',
         name: 'xu',
         component: () => import('../views/xu/Xu.vue')
+      },
+      {
+        path: '/register',
+        name: 'register',
+        component: () => import('../views/seller/Register.vue')
       }
     ]
   },

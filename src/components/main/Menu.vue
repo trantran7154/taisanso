@@ -100,6 +100,15 @@ export default Vue.extend({
         items: [],
         title: "TSS xu",
       },
+      {
+        action: "seller.gif",
+        items: [
+         
+        ],
+        active: true,
+        path: "/register",
+        title: "Đăng ký bán hàng",
+      },
     ],
     items3: [
       {
