@@ -5,10 +5,66 @@
                 <div v-for="item in itemsEmail" :key="item.title">
                     <v-row>
                         <v-col cols="12" md="3">
-                            <v-carousel cycle height="300" hide-delimiter-background show-arrows-on-hover>
+                            <!-- <v-carousel cycle height="300" hide-delimiter-background show-arrows-on-hover>
                                 <v-carousel-item v-for="items in item.image" :key="items" :src="items.src">
                                 </v-carousel-item>
-                            </v-carousel>
+                            </v-carousel> -->
+
+                            <div class="product-slider">
+                                <div id="carousel" class="carousel slide" data-ride="carousel">
+                                    <div class="carousel-inner">
+                                        <div class="item active"> <img src="http://placehold.it/1600x700?text=Product+01">
+                                        </div>
+                                        <div class="item"> <img src="http://placehold.it/1600x700?text=Product+02"> </div>
+                                        <div class="item"> <img src="http://placehold.it/1600x700?text=Product+03"> </div>
+                                        <div class="item"> <img src="http://placehold.it/1600x700?text=Product+04"> </div>
+                                        <div class="item"> <img src="http://placehold.it/1600x700?text=Product+05"> </div>
+                                        <div class="item"> <img src="http://placehold.it/1600x700?text=Product+06"> </div>
+                                        <div class="item"> <img src="http://placehold.it/1600x700?text=Product+07"> </div>
+                                        <div class="item"> <img src="http://placehold.it/1600x700?text=Product+08"> </div>
+                                        <div class="item"> <img src="http://placehold.it/1600x700?text=Product+09"> </div>
+                                        <div class="item"> <img src="http://placehold.it/1600x700?text=Product+10"> </div>
+                                    </div>
+                                </div>
+                                <div class="clearfix">
+                                    <div id="thumbcarousel" class="carousel slide" data-interval="false">
+                                        <div class="carousel-inner">
+                                            <div class="item active">
+                                                <div data-target="#carousel" data-slide-to="0" class="thumb"><img
+                                                        src="http://placehold.it/100x80?text=Thumb+01"></div>
+                                                <div data-target="#carousel" data-slide-to="1" class="thumb"><img
+                                                        src="http://placehold.it/100x80?text=Thumb+02"></div>
+                                                <div data-target="#carousel" data-slide-to="2" class="thumb"><img
+                                                        src="http://placehold.it/100x80?text=Thumb+03"></div>
+                                                <div data-target="#carousel" data-slide-to="3" class="thumb"><img
+                                                        src="http://placehold.it/100x80?text=Thumb+04"></div>
+                                                <div data-target="#carousel" data-slide-to="4" class="thumb"><img
+                                                        src="http://placehold.it/100x80?text=Thumb+05"></div>
+                                            </div>
+                                            <div class="item">
+                                                <div data-target="#carousel" data-slide-to="5" class="thumb"><img
+                                                        src="http://placehold.it/100x80?text=Thumb+06"></div>
+                                                <div data-target="#carousel" data-slide-to="6" class="thumb"><img
+                                                        src="http://placehold.it/100x80?text=Thumb+07"></div>
+                                                <div data-target="#carousel" data-slide-to="7" class="thumb"><img
+                                                        src="http://placehold.it/100x80?text=Thumb+08"></div>
+                                                <div data-target="#carousel" data-slide-to="8" class="thumb"><img
+                                                        src="http://placehold.it/100x80?text=Thumb+08"></div>
+                                                <div data-target="#carousel" data-slide-to="9" class="thumb"><img
+                                                        src="http://placehold.it/100x80?text=Thumb+10"></div>
+                                            </div>
+                                        </div>
+                                        <!-- /carousel-inner -->
+                                        <a class="left carousel-control" href="#thumbcarousel" role="button"
+                                            data-slide="prev"> <i class="fa fa-angle-left" aria-hidden="true"></i> </a> <a
+                                            class="right carousel-control" href="#thumbcarousel" role="button"
+                                            data-slide="next"><i class="fa fa-angle-right" aria-hidden="true"></i> </a>
+                                    </div>
+                                    <!-- /thumbcarousel -->
+
+                                </div>
+                            </div>
+
                         </v-col>
                         <v-col cols="12" md="6">
                             <div class="card">
@@ -343,8 +399,8 @@
                                         dense style="width: 200px;"></v-text-field>
                                 </div>
 
-                                <button href="#" class="buy-btn"><v-icon
-                                        color="white">mdi-cart-outline</v-icon> Mua hàng</button>
+                                <button href="#" class="buy-btn"><v-icon color="white">mdi-cart-outline</v-icon> Mua
+                                    hàng</button>
                                 <br>
                                 <button class="add-to-wl-btn" onclick="showAlert('Product added to your Wishlist!')">
                                     <v-icon color="#000">mdi-cart-arrow-down</v-icon> Đặt trước</button>
@@ -500,67 +556,85 @@ export default Vue.extend({
 });
 </script>
 <style lang="scss" scoped>
-.product {
+.product-slider {
+    padding: 45px;
+}
+
+.product-slider #carousel {
+    border: 4px solid #1089c0;
+    margin: 0;
+}
+
+.product-slider #thumbcarousel {
+    margin: 12px 0 0;
+    padding: 0 45px;
+}
+
+.product-slider #thumbcarousel .item {
+    text-align: center;
+}
+
+.product-slider #thumbcarousel .item .thumb {
+    border: 4px solid #cecece;
+    width: 20%;
+    margin: 0 2%;
+    display: inline-block;
+    vertical-align: middle;
+    cursor: pointer;
+    max-width: 98px;
+}
+
+.product-slider #thumbcarousel .item .thumb:hover {
+    border-color: #1089c0;
+}
+
+.product-slider .item img {
     width: 100%;
-    height: 100%;
-    min-height: 100vh;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    background-color: #212529;
-    color: #212529;
-
-    &__slider-box {
-        display: flex;
-        align-items: center;
-        justify-content: center;
-
-        img {
-            width: 400px;
-            border-radius: 20px;
-        }
-    }
+    height: auto;
 }
 
-.nav {
-    &__slider {
-        width: 500px;
-        margin: auto;
-        margin-top: 20px;
-
-        &-box {
-            display: flex;
-            align-items: center;
-            justify-content: center;
-        }
-
-        img {
-            width: 100px;
-            border-radius: 20px;
-        }
-    }
+.carousel-control {
+    color: #0284b8;
+    text-align: center;
+    text-shadow: none;
+    font-size: 30px;
+    width: 30px;
+    height: 30px;
+    line-height: 20px;
+    top: 23%;
 }
 
-.slick-dots li.slick-active button:before {
-    color: #fff;
+.carousel-control:hover,
+.carousel-control:focus,
+.carousel-control:active {
+    color: #333;
 }
 
-.slick-dots li button:before {
-    color: #fff;
+.carousel-caption,
+.carousel-control .fa {
+    font: normal normal normal 30px/26px FontAwesome;
+}
+
+.carousel-control {
+    background-color: rgba(0, 0, 0, 0);
+    bottom: auto;
+    font-size: 20px;
+    left: 0;
+    position: absolute;
+    top: 30%;
+    width: auto;
+}
+
+.carousel-control.right,
+.carousel-control.left {
+    background-color: rgba(0, 0, 0, 0);
+    background-image: none;
 }
 
 .card {
     border-radius: 18px;
     background: #fff;
     position: inherit;
-    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-}
-
-.card-res {
-    border-radius: 18px;
-    background: #fff;
-    position: inherit;
-    padding: 50px 20px 30px 20px;
     font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
 }
 
@@ -741,5 +815,4 @@ export default Vue.extend({
 button:focus,
 input:focus {
     outline: 0;
-}
-</style>
+}</style>

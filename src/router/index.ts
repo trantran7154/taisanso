@@ -62,7 +62,7 @@ const routes: Array<RouteConfig> = [
         component: Email
       },
       {
-        path: '/email/details',
+        path: '/details',
         name: 'details',
         component: EmailDetails
       },
