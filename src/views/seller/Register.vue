@@ -4,13 +4,13 @@
       <div class="pa-4">
         <h2>Thông tin cửa hàng</h2>
 
-        <div>
+        <!-- <div>
           <ul>
             <li>Số điện thoại: {{ user.store.phone }}</li>
             <li>Link facebook: {{ user.store.linkFacebook }}</li>
-            <li>Số điện thoại: {{ user.store.phone }}</li>
+            <li>Tên ngân hàng: {{ user.store.nameBank }}</li>
           </ul>
-        </div>
+        </div> -->
 
         <v-alert dense outlined type="error" class="mt-3" v-show="message">
           {{ message }}
