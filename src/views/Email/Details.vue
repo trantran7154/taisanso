@@ -370,7 +370,8 @@
                                                             <h6 class="comment-name by-author mt-1"><a
                                                                     href="http://creaticode.com/blog">Admin</a></h6>
 
-                                                            <v-chip label small text-color="white" color="success" class="font-weight-bold">QTV</v-chip>
+                                                            <v-chip label small text-color="white" color="success"
+                                                                class="font-weight-bold">QTV</v-chip>
 
                                                             <span class="ml-3 mt-1">27/12/2023</span>
 
@@ -478,13 +479,48 @@
             <div style="padding: 100px 50px 50px 50px;" v-if="size.onsize < 1111">
                 <div v-for="item in itemsEmail" :key="item.title">
                     <v-row>
-                        <v-col cols="12" md="3">
-                            <v-carousel cycle height="300" hide-delimiter-background show-arrows-on-hover>
+                        <v-col cols="12" md="4" sm="12">
+                            <!-- <v-carousel cycle height="300" hide-delimiter-background show-arrows-on-hover>
                                 <v-carousel-item v-for="items in item.image" :key="items" :src="items.src">
                                 </v-carousel-item>
-                            </v-carousel>
+                            </v-carousel> -->
+
+                            <div class="slider">
+                                <input type="radio" name="slide_switch" id="id1" checked="checked" />
+                                <label for="id1">
+                                    <img src="https://vietplayplus.com/api/public/files/SanPham_YTB12_3Ed4OXXz8.jpg"
+                                        width="50" height="50" style="border-radius: 6px;" />
+                                </label>
+                                <img src="https://vietplayplus.com/api/public/files/SanPham_YTB12_3Ed4OXXz8.jpg"
+                                    width="100%" height="280" />
+
+                                <input type="radio" name="slide_switch" id="id2" />
+                                <label for="id2">
+                                    <img src="https://taphoammo.net/img/student-store_984702383.png" width="50" height="50"
+                                        style="border-radius: 6px;" />
+                                </label>
+                                <img src="https://taphoammo.net/img/student-store_984702383.png" width="100%"
+                                    height="280" />
+
+                                <input type="radio" name="slide_switch" id="id3" />
+                                <label for="id3">
+                                    <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQ0i6MvHVGGcaSRoCqgeGrPXcNTmVyDhck2wg&usqp=CAU"
+                                        width="50" height="50" style="border-radius: 6px;" />
+                                </label>
+                                <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQ0i6MvHVGGcaSRoCqgeGrPXcNTmVyDhck2wg&usqp=CAU"
+                                    width="100%" height="280" />
+
+                                <input type="radio" name="slide_switch" id="id4" />
+                                <label for="id4">
+                                    <img src="https://tech-haat.com/wp-content/uploads/2023/05/Copy-of-1-Month-10.png"
+                                        width="50" height="50" style="border-radius: 6px;" />
+                                </label>
+                                <img src="https://tech-haat.com/wp-content/uploads/2023/05/Copy-of-1-Month-10.png"
+                                    width="100%" height="280" />
+                            </div>
                         </v-col>
-                        <v-col cols="12" md="6">
+
+                        <v-col cols="12" md="5" sm="12">
                             <div class="card">
                                 <p class="title">{{ item.title }}</p>
 
@@ -518,19 +554,20 @@
                                     <b v-else class="error--text ml-5">Hết hàng</b>
                                 </div>
 
-                                <div class="ml-2 mt-4 info-email" style="font-size: 15px;">
+                                <div class="mt-4 info-email" style="font-size: 15px;">
                                     <div><v-icon>mdi-account-circle</v-icon> Người đăng: <b class="ml-2">{{ item.seller
                                     }}</b>
                                     </div>
                                     <div class="mt-2"><v-icon>mdi-tag</v-icon> Sản phẩm: <b class="ml-2">{{ item.productName
                                     }}</b>
                                     </div>
-                                    <div class="mt-2"><v-icon>mdi-storefront</v-icon> Kho: <b class="ml-2">{{ item.amount
+                                    <div class="mt-2 mb-2"><v-icon>mdi-storefront</v-icon> Kho: <b class="ml-2">{{
+                                        item.amount
                                     }}</b>
                                     </div>
                                 </div>
 
-                                <div class="ml-2 mt-6" style="color: #000; border: 1px solid #f1f1f1;">
+                                <div class="mt-6" style="color: #000; border: 1px solid #f1f1f1;">
                                     <div class="text-left text-h6"
                                         style="background-color: #f1f1f1; padding: 10px 20px 10px 20px;">
                                         THÔNG TIN
@@ -542,39 +579,46 @@
                                     </div>
                                 </div>
 
-                                <v-row class="pa-0 mt-4 ml-1">
-                                    <v-col>
-                                        <v-chip color="success" label outlined> <v-checkbox color="success" hide-details
-                                                style="margin-top: -5px !important;"></v-checkbox> Gmail random IP 7
+                                <v-row class="pa-0 mt-4">
+                                    <v-col cols="12" md="6">
+                                        <div class="d-flex ml-1 btn-check">
+                                            <v-checkbox class="ml-2" color="success" hide-details
+                                                style="margin-top: -3px !important;"></v-checkbox> Gmail random IP 7
                                             ngày++ email|pass|recovery|geo
-                                        </v-chip>
+                                        </div>
                                     </v-col>
-                                    <v-col>
-                                        <v-chip color="success" label outlined>
-                                            <v-checkbox color="success" hide-details
-                                                style="margin-top: -5px !important;"></v-checkbox> Gmail Mỹ, 7 ngày+, reg
+
+                                    <v-col cols="12" md="6">
+                                        <div class="d-flex ml-1 btn-check">
+                                            <v-checkbox class="ml-2" color="success" hide-details
+                                                style="margin-top: -3px !important;"></v-checkbox> Gmail Mỹ, 7 ngày+,
+                                            reg
                                             GGVoice
                                             email|pass|recovery
-                                        </v-chip>
+                                        </div>
                                     </v-col>
-                                    <v-col>
-                                        <v-chip color="success" label outlined>
-                                            <v-checkbox color="success" hide-details
-                                                style="margin-top: -5px !important;"></v-checkbox> Gmail random IP 1 tháng
+
+                                    <v-col cols="12" md="6">
+                                        <div class="d-flex ml-1 btn-check">
+                                            <v-checkbox class="ml-2" color="success" hide-details
+                                                style="margin-top: -3px !important;"></v-checkbox> Gmail random IP 1
+                                            tháng
                                             ++
                                             email|pass|recovery|geo
-                                        </v-chip>
+                                        </div>
                                     </v-col>
-                                    <v-col>
-                                        <v-chip color="success" label outlined>
-                                            <v-checkbox color="success" hide-details
-                                                style="margin-top: -5px !important;"></v-checkbox> Gmail USA (Mỹ) , 7 ngày
+
+                                    <v-col cols="12" md="6">
+                                        <div class="d-flex ml-1 btn-check">
+                                            <v-checkbox class="ml-2" color="success" hide-details
+                                                style="margin-top: -3px !important;"></v-checkbox> Gmail USA (Mỹ) , 7
+                                            ngày
                                             email|pass|recover
-                                        </v-chip>
+                                        </div>
                                     </v-col>
                                 </v-row>
 
-                                <div class="wrapper mt-6 ml-3 mb-3">
+                                <div class="wrapper mt-6 ml-1    mb-3">
                                     <button class="btn btn--minus" @click="changeCounter('-1')" type="button" name="button"
                                         style="border-left:  1px solid #EEEEEE;">
                                         -
@@ -586,89 +630,21 @@
                                     </button>
                                 </div>
 
-                                <div class="mt-4 ml-3">
+                                <div class="mt-4 ml-1">
                                     <v-text-field append-icon="mdi-sale-outline" placeholder="Nhập mã giảm giá" outlined
                                         dense style="width: 200px;"></v-text-field>
                                 </div>
 
-                                <button href="#" class="buy-btn"><v-icon color="white">mdi-cart-outline</v-icon> Mua
-                                    hàng</button>
-                                <br>
-                                <button class="add-to-wl-btn" onclick="showAlert('Product added to your Wishlist!')">
-                                    <v-icon color="#000">mdi-cart-arrow-down</v-icon> Đặt trước</button>
-
-                                <button class="add-to-wl-btn ml-5" onclick="showAlert('Product added to your Wishlist!')">
-                                    <v-icon color="#000">mdi-send-outline</v-icon> Nhắn tin</button>
-
-
-                                <button class="add-to-wl-btn ml-5" onclick="showAlert('Product added to your Wishlist!')">
-                                    <v-icon color="#000">mdi-handshake-outline</v-icon> Đăng ký reseller</button>
-
-                                <!--Tab-->
-                                <div style="padding: 50px 0px 30px 0px;">
-                                    <v-tabs color="deep-purple accent-4">
-                                        <v-tab class="font-weight-medium" style="text-transform: none; font-size: 17px;">
-                                            <span class="ml-2">Mô tả</span>
-                                        </v-tab>
-                                        <v-tab class="font-weight-medium" style="text-transform: none; font-size: 17px;">
-                                            <v-icon>mdi-comment-text-multiple-outline</v-icon><span
-                                                class="ml-2">Review</span>
-                                        </v-tab>
-                                        <v-tab class="font-weight-medium" style="text-transform: none; font-size: 17px;">
-                                            <span class="ml-2">API</span>
-                                        </v-tab>
-                                        <!--Tab 1-->
-                                        <v-tab-item>
-                                            <v-card flat>
-                                                <v-card-text>
-                                                    <span v-html="item.description" style="font-size: 16px"></span>
-                                                </v-card-text>
-                                            </v-card>
-                                        </v-tab-item>
-                                        <!--Tab 2-->
-                                        <v-tab-item>
-                                            <div v-for="(item, i) in 5" :key="i">
-                                                <v-card class="pa-5 d-flex" flat>
-                                                    <v-avatar width="80" height="80">
-                                                        <img src="https://taphoammo.net/images/avatars/user.svg">
-                                                    </v-avatar>
-                                                    <div class="ml-5">
-                                                        <div class="d-flex">
-                                                            <b class="green--text ml-2 mr-auto">abc</b>
-                                                        </div>
-                                                        <v-rating value="5" background-color="yellow"
-                                                            color="yellow accent-4" dense half-increments hover
-                                                            size="18"></v-rating>
-                                                        <p class="ml-2">Sản phẩm chuẩn chất lượng. Hỗ trợ nhiệt tình.</p>
-                                                    </div>
-                                                    <p class="ml-auto" style="font-style: italic; color: #BDBDBD">28/09/2022
-                                                    </p>
-                                                </v-card>
-                                                <v-divider></v-divider>
-                                            </div>
-                                        </v-tab-item>
-                                        <!--Tab 3-->
-                                        <v-tab-item>
-                                            <div class="ml-5 mt-3" v-if="item.api == false">
-                                                <h3 class="font-weight-bold green--text">Mua hàng bằng API:</h3>
-                                                <p class="mt-2">Bạn chưa kích hoạt sử dụng API, nếu bạn chắc chắn muốn sử
-                                                    dụng
-                                                    tính
-                                                    năng
-                                                    này,
-                                                    hãy vào mục thông tin cá nhân (profile) để active !</p>
-                                            </div>
-                                        </v-tab-item>
-                                    </v-tabs>
-                                </div>
+                                <button href="#" onclick="" class="buy-btn ml-1" style="width: 250px; padding: 15px"><v-icon
+                                        color="white">mdi-cart-outline</v-icon> Mua hàng</button>
                             </div>
                         </v-col>
-                        <v-col cols="12" md="3">
-                            <v-card outlined class="pa-3"
-                                style="font-size: 14px; font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;">
+
+                        <v-col cols="12" md="3" sm="12">
+                            <v-card outlined class="pa-3 mt-5 mb-2"
+                                style="font-size: 15px; font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;">
                                 <span><v-icon color="#6200ea" size="20">mdi-check-decagram-outline</v-icon> Bảo hành:
-                                    <b>Trọn
-                                        đời</b></span>
+                                    <b>6 tháng</b></span>
 
                                 <v-divider style="margin-top: 8px; padding-bottom: 8px;"></v-divider>
 
@@ -682,12 +658,12 @@
 
                                 <v-divider style="margin-top: 8px; padding-bottom: 8px;"></v-divider>
 
-                                <span><v-icon color="#6200ea" size="20">mdi-phone</v-icon> <i>Địa chỉ: 14 Hoa Sữa, Phường 7,
+                                <span><v-icon color="#6200ea" size="20">mdi-phone</v-icon> <i>Địa chỉ: 123A, Phường 7,
                                         Phú
                                         Nhuận,
                                         TPHCM</i>
                                     <br>
-                                    <p style="font-size: 13px;">Hotline: 0903.199.997 (09:00 - 20:00)</p>
+                                    <div style="font-size: 14px;">Hotline: 0903.199.997 (09:00 - 20:00)</div>
                                 </span>
 
                                 <v-divider style="margin-top: 8px; padding-bottom: 8px;"></v-divider>
@@ -695,8 +671,281 @@
                                 <span><v-icon color="#6200ea" size="20">mdi-check-decagram-outline</v-icon> Hoàn tiền
                                     <b>100%</b> nếu tài khoản không sử dụng được</span>
                             </v-card>
+
+                            <button class="add-to-wl-btn" onclick="">
+                                <v-icon color="#000">mdi-cart-arrow-down</v-icon> Đặt trước</button>
+
+                            <button class="add-to-wl-btn float-right" onclick="">
+                                <v-icon color="#000">mdi-send-outline</v-icon> Nhắn tin</button>
+
+                            <button class="add-to-wl-btn" onclick="">
+                                <v-icon color="#000">mdi-handshake-outline</v-icon> Đăng ký reseller</button>
                         </v-col>
                     </v-row>
+
+                    <v-divider style="margin-top: 50px; padding-bottom: 8px;"></v-divider>
+
+                    <div class="mt-7" style="color: #7f8c8d;">
+                        <v-row>
+                            <v-col cols="12" md="12">
+                                <h3 class="mb-3 black--text" style="text-transform: uppercase;">GIỚI THIỆU SẢN PHẨM {{
+                                    item.title }}
+                                </h3>
+
+                                <span v-html="item.description" style="font-size: 15px;"></span>
+
+                                <v-divider style="margin-top: 50px; padding-bottom: 15px;"></v-divider>
+
+
+                                <div class="mb-5">
+                                    <h3 class="black--text">Thông tin sản phẩm</h3>
+
+                                    <v-divider style="margin-top: 8px; padding-bottom: 8px;"></v-divider>
+
+                                    <div class="d-flex pa-0" style="font-size: 15px;">
+                                        <v-col>
+                                            <div>Tên sản phẩm:</div>
+                                        </v-col>
+                                        <v-col>
+                                            <div class="black--text">{{ item.title }}</div>
+                                        </v-col>
+                                    </div>
+
+                                    <v-divider></v-divider>
+
+                                    <div class="d-flex pa-0" style="font-size: 15px;">
+                                        <v-col>
+                                            <div>Tính năng:</div>
+                                        </v-col>
+                                        <v-col>
+                                            <div class="black--text">Sử dụng năng cấp tài khoản youtube premium để nghe
+                                                nhạc,
+                                                xem phim mà không cần
+                                                phải chờ đợi quảng cáo</div>
+                                        </v-col>
+                                    </div>
+
+                                    <v-divider></v-divider>
+
+                                    <div class="d-flex pa-0" style="font-size: 15px;">
+                                        <v-col>
+                                            <div>Nền tảng:</div>
+                                        </v-col>
+                                        <v-col>
+                                            <div class="black--text">Youtube</div>
+                                        </v-col>
+                                    </div>
+
+                                    <v-divider></v-divider>
+
+                                    <div class="d-flex pa-0" style="font-size: 15px;">
+                                        <v-col>
+                                            <div>Thể loại:</div>
+                                        </v-col>
+                                        <v-col>
+                                            <div class="black--text">Gmail</div>
+                                        </v-col>
+                                    </div>
+                                </div>
+
+                                <div class="pa-3">
+                                    <div class="mb-3 black--text">27 Đánh giá sản phẩm này</div>
+
+                                    <v-card class="mb-5 pa-3" outlined>
+                                        <v-row>
+                                            <v-col>
+                                                <div
+                                                    style="text-align: center; align-items: center; align-content: center;">
+                                                    <b style="color: #ffd600; font-size: 40px;">5/5</b>
+                                                    <v-rating value="5" background-color="yellow" color="yellow accent-4"
+                                                        dense half-increments hover size="18"></v-rating>
+                                                    <small>27 đánh giá</small>
+                                                </div>
+                                            </v-col>
+                                            <v-col>
+                                                <div
+                                                    style="text-align: center; align-items: center; align-content: center;">
+                                                    <div class="d-flex">
+                                                        <div> 5 <v-icon color="yellow accent-4" size="20"
+                                                                class="ml-1">mdi-star</v-icon></div>
+
+                                                        <v-progress-linear color="yellow accent-4" rounded value="100"
+                                                            class="ml-2 mt-3" style="width: 150px;"></v-progress-linear>
+
+                                                        <a style="font-size: 15px; color: #015494;" class="ml-2"><b>27</b>
+                                                            đánh
+                                                            giá</a>
+                                                    </div>
+
+                                                    <div class="d-flex">
+                                                        <div> 4 <v-icon color="yellow accent-4" size="20"
+                                                                class="ml-1">mdi-star</v-icon></div>
+
+                                                        <v-progress-linear color="yellow accent-4" rounded value="0"
+                                                            class="ml-2 mt-3" style="width: 150px;"></v-progress-linear>
+
+                                                        <a style="font-size: 15px; color: #015494;" class="ml-2">0 đánh
+                                                            giá</a>
+                                                    </div>
+
+                                                    <div class="d-flex">
+                                                        <div> 3 <v-icon color="yellow accent-4" size="20"
+                                                                class="ml-1">mdi-star</v-icon></div>
+
+                                                        <v-progress-linear color="yellow accent-4" rounded value="0"
+                                                            class="ml-2 mt-3" style="width: 150px;"></v-progress-linear>
+
+                                                        <a style="font-size: 15px; color: #015494;" class="ml-2">0 đánh
+                                                            giá</a>
+                                                    </div>
+
+                                                    <div class="d-flex">
+                                                        <div> 2 <v-icon color="yellow accent-4" size="20"
+                                                                class="ml-1">mdi-star</v-icon></div>
+
+                                                        <v-progress-linear color="yellow accent-4" rounded value="0"
+                                                            class="ml-2 mt-3" style="width: 150px;"></v-progress-linear>
+
+                                                        <a style="font-size: 15px; color: #015494;" class="ml-2">0 đánh
+                                                            giá</a>
+                                                    </div>
+
+                                                    <div class="d-flex">
+                                                        <div> 1 <v-icon color="yellow accent-4" size="20"
+                                                                class="ml-1">mdi-star</v-icon></div>
+
+                                                        <v-progress-linear color="yellow accent-4" rounded value="0"
+                                                            class="ml-2 mt-3" style="width: 150px;"></v-progress-linear>
+
+                                                        <a style="font-size: 15px; color: #015494;" class="ml-2">0 đánh
+                                                            giá</a>
+                                                    </div>
+                                                </div>
+                                            </v-col>
+                                            <v-col>
+                                                <a class="btn-rating" style="margin: 0px 0 20px 32px;">Gửi
+                                                    đánh giá của bạn</a>
+                                            </v-col>
+                                        </v-row>
+                                    </v-card>
+
+                                    <!-- Contenedor Principal -->
+                                    <div class="comments-container">
+                                        <ul id="comments-list" class="comments-list">
+                                            <li>
+                                                <div class="comment-main-level d-flex">
+                                                    <div class="comment-avatar"><img
+                                                            src="https://static.vecteezy.com/system/resources/previews/002/275/847/non_2x/male-avatar-profile-icon-of-smiling-caucasian-man-vector.jpg"
+                                                            alt=""></div>
+
+                                                    <div class="comment-box">
+                                                        <div class="comment-head">
+                                                            <h6 class="comment-name by-author"><a
+                                                                    href="http://creaticode.com/blog">Agustin Ortiz</a></h6>
+
+                                                            <span>27/12/2023</span>
+
+                                                            <v-icon>mdi-reply-outline</v-icon>
+
+                                                            <v-icon>mdi-heart-outline</v-icon>
+                                                        </div>
+
+                                                        <div class="comment-content">
+                                                            <v-rating :value="item.rating" background-color="yellow"
+                                                                color="yellow accent-4" dense half-increments hover
+                                                                size="15"></v-rating>
+
+                                                            <div class="ml-1">wow! giá tốt quá, 50$ mà chỉ còn 990k, trời ơi
+                                                                tin được không.</div>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                            </li>
+
+                                            <!--Reply-->
+                                            <li class="mt-6 ml-7">
+                                                <div class="comment-main-level d-flex" style="padding: 10px 0px 0px 20px">
+                                                    <div class="comment-avatar"><img
+                                                            src="https://img.freepik.com/free-vector/businessman-character-avatar-isolated_24877-60111.jpg"
+                                                            alt=""></div>
+
+                                                    <div class="comment-box">
+                                                        <div class="comment-head">
+                                                            <h6 class="comment-name by-author mt-1"><a
+                                                                    href="http://creaticode.com/blog">Admin</a></h6>
+
+                                                            <v-chip label small text-color="white" color="success"
+                                                                class="font-weight-bold">QTV</v-chip>
+
+                                                            <span class="ml-3 mt-1">27/12/2023</span>
+
+                                                            <v-icon>mdi-reply-outline</v-icon>
+
+                                                            <v-icon>mdi-heart-outline</v-icon>
+                                                        </div>
+
+                                                        <div class="comment-content">
+
+                                                            <div class="ml-1 mt-2">Chào bạn,
+                                                                Các mặt hàng code, shop sẽ check kiểm tra trước khi
+                                                                gửi, nên khi nhập vào 100% là được. Nếu nhập vào
+                                                                không được thì thường là do khác hệ, lúc đó chỉ
+                                                                cần tạo account hệ khác là nhập được.
+                                                                Thông tin đến bạn.</div>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                            </li>
+                                        </ul>
+                                    </div>
+                                </div>
+
+                                <h3 class="mb-3 black--text">Bạn cũng sẽ thích <v-chip class="ma-1" label>
+                                        4
+                                    </v-chip></h3>
+
+                                <v-row>
+                                    <v-col cols="12" md="3" v-for="(item, i) in 4" :key="i">
+                                        <v-card>
+                                            <v-img src="https://cdn.vuetifyjs.com/images/cards/sunshine.jpg"></v-img>
+
+                                            <div class="pa-3">
+                                                <div style="font-size: 17px; font-weight: bold">
+                                                    Gmail 2019 2021 đã qua Premium
+                                                </div>
+                                                <div class="mt-2 error--text" style="font-size: 14px; font-weight: bold">
+                                                    5.000 đ - 8.000 đ
+                                                </div>
+                                            </div>
+                                        </v-card>
+                                    </v-col>
+                                </v-row>
+
+                                <v-divider style="margin-top: 50px; padding-bottom: 15px;"></v-divider>
+                            </v-col>
+
+                            <v-col cols="12" md="12">
+                                <div class="mt-5">
+                                    <h3 class="black--text mb-3">Tin tức liên quan</h3>
+
+                                    <div v-for="(item, i) in 5" :key="i">
+                                        <v-card class="mb-5" outlined>
+                                            <v-list-item three-line>
+                                                <v-list-item-avatar tile size="80" color="grey"></v-list-item-avatar>
+                                                <v-list-item-content>
+                                                    <b class="text-h7">
+                                                        Gmail 2019 2021 đã qua Premium
+                                                    </b>
+                                                    <v-list-item-subtitle><span>9 tháng trước</span> - <span>Lượt xem:
+                                                            190</span></v-list-item-subtitle>
+                                                </v-list-item-content>
+                                            </v-list-item>
+                                        </v-card>
+                                    </div>
+                                </div>
+                            </v-col>
+                        </v-row>
+                    </div>
                 </div>
             </div>
         </XyzTransition>
