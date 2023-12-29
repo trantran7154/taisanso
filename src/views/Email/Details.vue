@@ -249,7 +249,7 @@
                                     <Rating />
 
                                     <!-- Comment -->
-                                   <Comment />
+                                    <Comment />
                                 </div>
                             </v-col>
 
@@ -605,156 +605,11 @@
                                 </div>
 
                                 <div class="pa-3">
-                                    <div class="mb-3 black--text">27 Đánh giá sản phẩm này</div>
+                                    <!-- Rating -->
+                                    <Rating />
 
-                                    <v-card class="mb-5 pa-3" outlined>
-                                        <v-row>
-                                            <v-col>
-                                                <div
-                                                    style="text-align: center; align-items: center; align-content: center;">
-                                                    <b style="color: #ffd600; font-size: 40px;">5/5</b>
-                                                    <v-rating value="5" background-color="amber darken-3"
-                                                        color="amber darken-3" dense half-increments hover
-                                                        size="18"></v-rating>
-                                                    <small>27 đánh giá</small>
-                                                </div>
-                                            </v-col>
-                                            <v-col>
-                                                <div
-                                                    style="text-align: center; align-items: center; align-content: center;">
-                                                    <div class="d-flex">
-                                                        <div> 5 <v-icon color="amber darken-3" size="20"
-                                                                class="ml-1">mdi-star</v-icon></div>
-
-                                                        <v-progress-linear color="amber darken-3" rounded value="100"
-                                                            class="ml-2 mt-3" style="width: 150px;"></v-progress-linear>
-
-                                                        <a style="font-size: 15px; color: #015494;" class="ml-2"><b>27</b>
-                                                            đánh
-                                                            giá</a>
-                                                    </div>
-
-                                                    <div class="d-flex">
-                                                        <div> 4 <v-icon color="amber darken-3" size="20"
-                                                                class="ml-1">mdi-star</v-icon></div>
-
-                                                        <v-progress-linear color="amber darken-3" rounded value="0"
-                                                            class="ml-2 mt-3" style="width: 150px;"></v-progress-linear>
-
-                                                        <a style="font-size: 15px; color: #015494;" class="ml-2">0 đánh
-                                                            giá</a>
-                                                    </div>
-
-                                                    <div class="d-flex">
-                                                        <div> 3 <v-icon color="amber darken-3" size="20"
-                                                                class="ml-1">mdi-star</v-icon></div>
-
-                                                        <v-progress-linear color="amber darken-3" rounded value="0"
-                                                            class="ml-2 mt-3" style="width: 150px;"></v-progress-linear>
-
-                                                        <a style="font-size: 15px; color: #015494;" class="ml-2">0 đánh
-                                                            giá</a>
-                                                    </div>
-
-                                                    <div class="d-flex">
-                                                        <div> 2 <v-icon color="amber darken-3" size="20"
-                                                                class="ml-1">mdi-star</v-icon></div>
-
-                                                        <v-progress-linear color="amber darken-3" rounded value="0"
-                                                            class="ml-2 mt-3" style="width: 150px;"></v-progress-linear>
-
-                                                        <a style="font-size: 15px; color: #015494;" class="ml-2">0 đánh
-                                                            giá</a>
-                                                    </div>
-
-                                                    <div class="d-flex">
-                                                        <div> 1 <v-icon color="amber darken-3" size="20"
-                                                                class="ml-1">mdi-star</v-icon></div>
-
-                                                        <v-progress-linear color="amber darken-3" rounded value="0"
-                                                            class="ml-2 mt-3" style="width: 150px;"></v-progress-linear>
-
-                                                        <a style="font-size: 15px; color: #015494;" class="ml-2">0 đánh
-                                                            giá</a>
-                                                    </div>
-                                                </div>
-                                            </v-col>
-                                            <v-col>
-                                                <a class="btn-rating" style="margin: 0px 0 20px 32px;">Gửi
-                                                    đánh giá của bạn</a>
-                                            </v-col>
-                                        </v-row>
-                                    </v-card>
-
-                                    <!-- Contenedor Principal -->
-                                    <div class="comments-container">
-                                        <ul id="comments-list" class="comments-list">
-                                            <li>
-                                                <div class="comment-main-level d-flex">
-                                                    <div class="comment-avatar"><img
-                                                            src="https://static.vecteezy.com/system/resources/previews/002/275/847/non_2x/male-avatar-profile-icon-of-smiling-caucasian-man-vector.jpg"
-                                                            alt=""></div>
-
-                                                    <div class="comment-box">
-                                                        <div class="comment-head">
-                                                            <h6 class="comment-name by-author"><a
-                                                                    href="http://creaticode.com/blog">Agustin Ortiz</a></h6>
-
-                                                            <span>27/12/2023</span>
-
-                                                            <v-icon>mdi-reply-outline</v-icon>
-
-                                                            <v-icon>mdi-heart-outline</v-icon>
-                                                        </div>
-
-                                                        <div class="comment-content">
-                                                            <v-rating :value="item.rating" background-color="amber darken-3"
-                                                                color="amber darken-3" dense half-increments hover
-                                                                size="15"></v-rating>
-
-                                                            <div class="ml-1">wow! giá tốt quá, 50$ mà chỉ còn 990k, trời ơi
-                                                                tin được không.</div>
-                                                        </div>
-                                                    </div>
-                                                </div>
-                                            </li>
-
-                                            <!--Reply-->
-                                            <li class="mt-6 ml-7">
-                                                <div class="comment-main-level d-flex" style="padding: 10px 0px 0px 20px">
-                                                    <div class="comment-avatar"><img
-                                                            src="https://img.freepik.com/free-vector/businessman-character-avatar-isolated_24877-60111.jpg"
-                                                            alt=""></div>
-
-                                                    <div class="comment-box">
-                                                        <div class="comment-head">
-                                                            <h6 class="comment-name by-author mt-1"><a
-                                                                    href="http://creaticode.com/blog">Admin</a></h6>
-
-                                                            <v-chip label small text-color="white" color="success"
-                                                                class="font-weight-bold">QTV</v-chip>
-
-                                                            <span class="ml-3 mt-1">27/12/2023</span>
-
-                                                            <v-icon>mdi-reply-outline</v-icon>
-
-                                                            <v-icon>mdi-heart-outline</v-icon>
-                                                        </div>
-
-                                                        <div class="comment-content">
-
-                                                            <div class="ml-1 mt-2">Chào bạn,
-                                                                Các mặt hàng code, shop sẽ check kiểm tra trước khi
-                                                                gửi, nên khi nhập vào 100% là được. Nếu nhập vào
-                                                                không được thì thường là do khác hệ, lúc đó chỉ
-                                                                cần tạo account hệ khác là nhập được.
-                                                                Thông tin đến bạn.</div>
-                                                        </div>
-                                                    </div>
-                                                </div>
-                                            </li>
-                                        </ul>
-                                    </div>
+                                    <!-- Comment -->
+                                    <Comment />
                                 </div>
 
                                 <h3 class="mb-3 black--text">Bạn cũng sẽ thích <v-chip class="ma-1" label>
