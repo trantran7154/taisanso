@@ -52,8 +52,8 @@
                                 <div class="offer-info mt-2 mb-2">{{ item.content }}</div>
 
                                 <div class="d-flex">
-                                    <v-rating :value="item.rating" background-color="yellow" color="yellow accent-4" dense
-                                        half-increments hover size="18"></v-rating>
+                                    <v-rating :value="item.rating" background-color="amber darken-3" color="amber darken-3"
+                                        dense half-increments hover size="18"></v-rating>
                                     <a href="#" class="ml-2 mt-1" style="text-decoration: none; font-size: 17px;">
                                         ( <b>{{ item.review }}</b> đánh giá )
                                     </a>
@@ -245,155 +245,11 @@
                                 <v-divider style="margin-top: 50px; padding-bottom: 15px;"></v-divider>
 
                                 <div class="pa-3">
-                                    <div class="mb-3 black--text">27 Đánh giá sản phẩm này</div>
+                                    <!-- Rating -->
+                                    <Rating />
 
-                                    <v-card class="mb-5 pa-3" outlined>
-                                        <v-row>
-                                            <v-col cols="12" md="3">
-                                                <div
-                                                    style="border-right: 1px solid #e4e4e4; text-align: center; align-items: center; align-content: center;">
-                                                    <b style="color: #ffd600; font-size: 40px;">5/5</b>
-                                                    <v-rating value="5" background-color="yellow" color="yellow accent-4"
-                                                        dense half-increments hover size="18"></v-rating>
-                                                    <small>27 đánh giá</small>
-                                                </div>
-                                            </v-col>
-                                            <v-col cols="12" md="5">
-                                                <div
-                                                    style="border-right: 1px solid #e4e4e4; text-align: center; align-items: center; align-content: center;">
-                                                    <div class="d-flex">
-                                                        <div> 5 <v-icon color="yellow accent-4" size="20"
-                                                                class="ml-1">mdi-star</v-icon></div>
-
-                                                        <v-progress-linear color="yellow accent-4" rounded value="100"
-                                                            class="ml-2 mt-3" style="width: 150px;"></v-progress-linear>
-
-                                                        <a style="font-size: 15px; color: #015494;" class="ml-2"><b>27</b>
-                                                            đánh
-                                                            giá</a>
-                                                    </div>
-
-                                                    <div class="d-flex">
-                                                        <div> 4 <v-icon color="yellow accent-4" size="20"
-                                                                class="ml-1">mdi-star</v-icon></div>
-
-                                                        <v-progress-linear color="yellow accent-4" rounded value="0"
-                                                            class="ml-2 mt-3" style="width: 150px;"></v-progress-linear>
-
-                                                        <a style="font-size: 15px; color: #015494;" class="ml-2">0 đánh
-                                                            giá</a>
-                                                    </div>
-
-                                                    <div class="d-flex">
-                                                        <div> 3 <v-icon color="yellow accent-4" size="20"
-                                                                class="ml-1">mdi-star</v-icon></div>
-
-                                                        <v-progress-linear color="yellow accent-4" rounded value="0"
-                                                            class="ml-2 mt-3" style="width: 150px;"></v-progress-linear>
-
-                                                        <a style="font-size: 15px; color: #015494;" class="ml-2">0 đánh
-                                                            giá</a>
-                                                    </div>
-
-                                                    <div class="d-flex">
-                                                        <div> 2 <v-icon color="yellow accent-4" size="20"
-                                                                class="ml-1">mdi-star</v-icon></div>
-
-                                                        <v-progress-linear color="yellow accent-4" rounded value="0"
-                                                            class="ml-2 mt-3" style="width: 150px;"></v-progress-linear>
-
-                                                        <a style="font-size: 15px; color: #015494;" class="ml-2">0 đánh
-                                                            giá</a>
-                                                    </div>
-
-                                                    <div class="d-flex">
-                                                        <div> 1 <v-icon color="yellow accent-4" size="20"
-                                                                class="ml-1">mdi-star</v-icon></div>
-
-                                                        <v-progress-linear color="yellow accent-4" rounded value="0"
-                                                            class="ml-2 mt-3" style="width: 150px;"></v-progress-linear>
-
-                                                        <a style="font-size: 15px; color: #015494;" class="ml-2">0 đánh
-                                                            giá</a>
-                                                    </div>
-                                                </div>
-                                            </v-col>
-                                            <v-col cols="12" md="4">
-                                                <a class="btn-rating">Gửi
-                                                    đánh giá của bạn</a>
-                                            </v-col>
-                                        </v-row>
-                                    </v-card>
-
-                                    <!-- Contenedor Principal -->
-                                    <div class="comments-container">
-                                        <ul id="comments-list" class="comments-list">
-                                            <li>
-                                                <div class="comment-main-level d-flex">
-                                                    <div class="comment-avatar"><img
-                                                            src="https://static.vecteezy.com/system/resources/previews/002/275/847/non_2x/male-avatar-profile-icon-of-smiling-caucasian-man-vector.jpg"
-                                                            alt=""></div>
-
-                                                    <div class="comment-box">
-                                                        <div class="comment-head">
-                                                            <h6 class="comment-name by-author"><a
-                                                                    href="http://creaticode.com/blog">Agustin Ortiz</a></h6>
-
-                                                            <span>27/12/2023</span>
-
-                                                            <v-icon>mdi-reply-outline</v-icon>
-
-                                                            <v-icon>mdi-heart-outline</v-icon>
-                                                        </div>
-
-                                                        <div class="comment-content">
-                                                            <v-rating :value="item.rating" background-color="yellow"
-                                                                color="yellow accent-4" dense half-increments hover
-                                                                size="15"></v-rating>
-
-                                                            <div class="ml-1">wow! giá tốt quá, 50$ mà chỉ còn 990k, trời ơi
-                                                                tin được không.</div>
-                                                        </div>
-                                                    </div>
-                                                </div>
-                                            </li>
-
-                                            <!--Reply-->
-                                            <li class="mt-6 ml-7">
-                                                <div class="comment-main-level d-flex" style="padding: 10px 0px 0px 20px">
-                                                    <div class="comment-avatar"><img
-                                                            src="https://img.freepik.com/free-vector/businessman-character-avatar-isolated_24877-60111.jpg"
-                                                            alt=""></div>
-
-                                                    <div class="comment-box">
-                                                        <div class="comment-head">
-                                                            <h6 class="comment-name by-author mt-1"><a
-                                                                    href="http://creaticode.com/blog">Admin</a></h6>
-
-                                                            <v-chip label small text-color="white" color="success"
-                                                                class="font-weight-bold">QTV</v-chip>
-
-                                                            <span class="ml-3 mt-1">27/12/2023</span>
-
-                                                            <v-icon>mdi-reply-outline</v-icon>
-
-                                                            <v-icon>mdi-heart-outline</v-icon>
-                                                        </div>
-
-                                                        <div class="comment-content">
-
-                                                            <div class="ml-1 mt-2">Chào bạn,
-                                                                Các mặt hàng code, shop sẽ check kiểm tra trước khi
-                                                                gửi, nên khi nhập vào 100% là được. Nếu nhập vào
-                                                                không được thì thường là do khác hệ, lúc đó chỉ
-                                                                cần tạo account hệ khác là nhập được.
-                                                                Thông tin đến bạn.</div>
-                                                        </div>
-                                                    </div>
-                                                </div>
-                                            </li>
-                                        </ul>
-                                    </div>
+                                    <!-- Comment -->
+                                   <Comment />
                                 </div>
                             </v-col>
 
@@ -527,8 +383,8 @@
                                 <div class="offer-info mt-2 mb-2">{{ item.content }}</div>
 
                                 <div class="d-flex">
-                                    <v-rating :value="item.rating" background-color="yellow" color="yellow accent-4" dense
-                                        half-increments hover size="18"></v-rating>
+                                    <v-rating :value="item.rating" background-color="amber darken-3" color="amber darken-3"
+                                        dense half-increments hover size="18"></v-rating>
                                     <a href="#" class="ml-2 mt-1" style="text-decoration: none; font-size: 17px;">
                                         ( <b>{{ item.review }}</b> đánh giá )
                                     </a>
@@ -757,8 +613,9 @@
                                                 <div
                                                     style="text-align: center; align-items: center; align-content: center;">
                                                     <b style="color: #ffd600; font-size: 40px;">5/5</b>
-                                                    <v-rating value="5" background-color="yellow" color="yellow accent-4"
-                                                        dense half-increments hover size="18"></v-rating>
+                                                    <v-rating value="5" background-color="amber darken-3"
+                                                        color="amber darken-3" dense half-increments hover
+                                                        size="18"></v-rating>
                                                     <small>27 đánh giá</small>
                                                 </div>
                                             </v-col>
@@ -766,10 +623,10 @@
                                                 <div
                                                     style="text-align: center; align-items: center; align-content: center;">
                                                     <div class="d-flex">
-                                                        <div> 5 <v-icon color="yellow accent-4" size="20"
+                                                        <div> 5 <v-icon color="amber darken-3" size="20"
                                                                 class="ml-1">mdi-star</v-icon></div>
 
-                                                        <v-progress-linear color="yellow accent-4" rounded value="100"
+                                                        <v-progress-linear color="amber darken-3" rounded value="100"
                                                             class="ml-2 mt-3" style="width: 150px;"></v-progress-linear>
 
                                                         <a style="font-size: 15px; color: #015494;" class="ml-2"><b>27</b>
@@ -778,10 +635,10 @@
                                                     </div>
 
                                                     <div class="d-flex">
-                                                        <div> 4 <v-icon color="yellow accent-4" size="20"
+                                                        <div> 4 <v-icon color="amber darken-3" size="20"
                                                                 class="ml-1">mdi-star</v-icon></div>
 
-                                                        <v-progress-linear color="yellow accent-4" rounded value="0"
+                                                        <v-progress-linear color="amber darken-3" rounded value="0"
                                                             class="ml-2 mt-3" style="width: 150px;"></v-progress-linear>
 
                                                         <a style="font-size: 15px; color: #015494;" class="ml-2">0 đánh
@@ -789,10 +646,10 @@
                                                     </div>
 
                                                     <div class="d-flex">
-                                                        <div> 3 <v-icon color="yellow accent-4" size="20"
+                                                        <div> 3 <v-icon color="amber darken-3" size="20"
                                                                 class="ml-1">mdi-star</v-icon></div>
 
-                                                        <v-progress-linear color="yellow accent-4" rounded value="0"
+                                                        <v-progress-linear color="amber darken-3" rounded value="0"
                                                             class="ml-2 mt-3" style="width: 150px;"></v-progress-linear>
 
                                                         <a style="font-size: 15px; color: #015494;" class="ml-2">0 đánh
@@ -800,10 +657,10 @@
                                                     </div>
 
                                                     <div class="d-flex">
-                                                        <div> 2 <v-icon color="yellow accent-4" size="20"
+                                                        <div> 2 <v-icon color="amber darken-3" size="20"
                                                                 class="ml-1">mdi-star</v-icon></div>
 
-                                                        <v-progress-linear color="yellow accent-4" rounded value="0"
+                                                        <v-progress-linear color="amber darken-3" rounded value="0"
                                                             class="ml-2 mt-3" style="width: 150px;"></v-progress-linear>
 
                                                         <a style="font-size: 15px; color: #015494;" class="ml-2">0 đánh
@@ -811,10 +668,10 @@
                                                     </div>
 
                                                     <div class="d-flex">
-                                                        <div> 1 <v-icon color="yellow accent-4" size="20"
+                                                        <div> 1 <v-icon color="amber darken-3" size="20"
                                                                 class="ml-1">mdi-star</v-icon></div>
 
-                                                        <v-progress-linear color="yellow accent-4" rounded value="0"
+                                                        <v-progress-linear color="amber darken-3" rounded value="0"
                                                             class="ml-2 mt-3" style="width: 150px;"></v-progress-linear>
 
                                                         <a style="font-size: 15px; color: #015494;" class="ml-2">0 đánh
@@ -851,8 +708,8 @@
                                                         </div>
 
                                                         <div class="comment-content">
-                                                            <v-rating :value="item.rating" background-color="yellow"
-                                                                color="yellow accent-4" dense half-increments hover
+                                                            <v-rating :value="item.rating" background-color="amber darken-3"
+                                                                color="amber darken-3" dense half-increments hover
                                                                 size="15"></v-rating>
 
                                                             <div class="ml-1">wow! giá tốt quá, 50$ mà chỉ còn 990k, trời ơi
@@ -952,10 +809,16 @@
     </v-app>
 </template>
 <script lang="ts">
-import Vue from "vue";
+import Vue from "vue"
+import Rating from "../../components/email/Rating.vue"
+import Comment from "../../components/email/Comment.vue"
 
 export default Vue.extend({
     name: "Details",
+    components: {
+        Rating,
+        Comment
+    },
     props: ["size"],
     data: () => ({
         counter: 1,
@@ -1304,19 +1167,6 @@ export default Vue.extend({
     cursor: pointer;
 }
 
-.btn-rating {
-    display: block;
-    width: 200px;
-    margin: 45px auto 0 16px;
-    padding: 10px;
-    color: #fff;
-    background-color: #cd1818;
-    border-radius: 5px;
-    text-align: center;
-    box-sizing: border-box;
-    font-size: 16px;
-}
-
 .btn:hover {
     font-size: 20px;
     font-weight: bold;
@@ -1334,165 +1184,5 @@ a {
 
 ul {
     list-style-type: none;
-}
-
-.comments-container {
-    margin: 60px auto 15px;
-    width: 768px;
-}
-
-.comments-container h1 {
-    font-size: 36px;
-    color: #283035;
-    font-weight: 400;
-}
-
-.comments-container h1 a {
-    font-size: 18px;
-    font-weight: 700;
-}
-
-.comments-list {
-    margin-top: 30px;
-    position: relative;
-}
-
-.reply-list:before,
-.reply-list:after {
-    display: none;
-}
-
-.comments-list .comment-avatar {
-    width: 65px;
-    height: 65px;
-    position: relative;
-    z-index: 99;
-    float: left;
-    border-radius: 8px;
-    -moz-border-radius: 4px;
-    border-radius: 4px;
-    -webkit-box-shadow: 0 1px 2px rgba(0, 0, 0, 0.2);
-    -moz-box-shadow: 0 1px 2px rgba(0, 0, 0, 0.2);
-    box-shadow: 0 1px 2px rgba(0, 0, 0, 0.2);
-    overflow: hidden;
-}
-
-.comments-list .comment-avatar img {
-    width: 100%;
-    height: 100%;
-}
-
-.reply-list .comment-avatar {
-    width: 50px;
-    height: 50px;
-}
-
-.comment-main-level:after {
-    content: '';
-    width: 0;
-    height: 0;
-    display: block;
-    clear: both;
-}
-
-.comments-list .comment-box {
-    width: 600px;
-    float: right;
-    position: relative;
-    -webkit-box-shadow: 0 1px 1px rgba(0, 0, 0, 0.15);
-    -moz-box-shadow: 0 1px 1px rgba(0, 0, 0, 0.15);
-    box-shadow: 0 1px 1px rgba(0, 0, 0, 0.15);
-    margin-left: 20px;
-    margin-top: 15px;
-}
-
-.comments-list .comment-box:before,
-.comments-list .comment-box:after {
-    content: '';
-    height: 0;
-    width: 0;
-    position: absolute;
-    display: block;
-    border-width: 10px 12px 10px 0;
-    border-style: solid;
-    border-color: transparent #e7e7e7;
-    top: 8px;
-    left: -11px;
-}
-
-.comments-list .comment-box:before {
-    border-width: 11px 13px 11px 0;
-    border-color: transparent rgba(0, 0, 0, 0.05);
-    left: -12px;
-}
-
-.comment-box .comment-head {
-    background: #e7e7e7;
-    padding: 10px 12px;
-    border-bottom: 1px solid #E5E5E5;
-    overflow: hidden;
-    -webkit-border-radius: 4px 4px 0 0;
-    -moz-border-radius: 4px 4px 0 0;
-    border-radius: 4px 4px 0 0;
-}
-
-.comment-box .comment-head i {
-    float: right;
-    margin-left: 14px;
-    position: relative;
-    top: 2px;
-    cursor: pointer;
-    -webkit-transition: color 0.3s ease;
-    -o-transition: color 0.3s ease;
-    transition: color 0.3s ease;
-}
-
-.comment-box .comment-head i:hover {
-    color: #03658c;
-}
-
-.comment-box .comment-name {
-    color: #283035;
-    font-size: 14px;
-    font-weight: 700;
-    float: left;
-    margin-right: 10px;
-}
-
-.comment-box .comment-name a {
-    color: #283035;
-}
-
-.comment-box .comment-head span {
-    float: left;
-    color: #999;
-    font-size: 13px;
-    position: relative;
-    top: 1px;
-}
-
-.comment-box .comment-content {
-    background: #FFF;
-    padding: 1px 12px 12px 12px;
-    font-size: 15px;
-    color: #595959;
-    -webkit-border-radius: 0 0 4px 4px;
-    -moz-border-radius: 0 0 4px 4px;
-    border-radius: 0 0 4px 4px;
-    border-color: #f1f1f1;
-}
-
-@media only screen and (max-width: 766px) {
-    .comments-container {
-        width: 480px;
-    }
-
-    .comments-list .comment-box {
-        width: 390px;
-    }
-
-    .reply-list .comment-box {
-        width: 320px;
-    }
 }
 </style>
