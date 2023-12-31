@@ -2,11 +2,10 @@
     <v-app>
         <div class="mb-3 black--text">27 Đánh giá sản phẩm này</div>
 
-        <v-card class="mb-5 pa-3" outlined>
+        <v-card class="mb-5 pa-4" outlined>
             <v-row>
                 <v-col cols="12" md="3">
-                    <div
-                        style="border-right: 1px solid #e4e4e4; text-align: center; align-items: center; align-content: center;">
+                    <div class="border-right">
                         <b style="color: #FF8F00; font-size: 40px;">5/5</b>
                         <v-rating value="5" background-color="amber darken-3" color="amber darken-3" dense half-increments
                             hover size="18"></v-rating>
@@ -14,8 +13,7 @@
                     </div>
                 </v-col>
                 <v-col cols="12" md="5">
-                    <div
-                        style="border-right: 1px solid #e4e4e4; text-align: center; align-items: center; align-content: center;">
+                    <div class="border-right">
                         <div class="d-flex">
                             <div> 5 <v-icon color="amber darken-3" size="20" class="ml-1">mdi-star</v-icon></div>
 
@@ -78,6 +76,14 @@
 </template>
 
 <style scoped>
+.border-right {
+    border-right: 1px solid #e4e4e4;
+    height: 100%;
+    text-align: center;
+    align-items: center;
+    align-content: center;
+}
+
 .btn-rating {
     display: block;
     width: 200px;
